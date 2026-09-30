@@ -1,0 +1,82 @@
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# SPARQL: SELECT * WHERE { ?european_highway wdt:P31 wd:Q34442 ; wdt:P16 wd:Q106123 . FILTER NOT EXISTS {?european_highway wdt:P361 ?hw}.} LIMIT 10
+
+start = @<#highway>
+
+<#highway> EXTRA p:P31{
+  # Data indications
+
+      #instance of
+      p:P31 { ps:P31  [wd:Q34442] };
+
+      #highway system
+      p:P16 { ps:P16  @<#international_E-road_network> } ;
+      
+       #length
+      p:P2043 { psv:P2043  IRI *; ps:P2043  xsd:decimal *; psn:P2043  IRI *;  };
+
+      #terminus location
+      p:P609 { ps:P609  [wd:~]; 
+               pq:P560  {wdt:P31 [wd:Q23718]}? # Qualifier direction pointing to an item with P31  cardinal direction
+                   } +;
+
+      #road number
+      p:P1824 { ps:P1824  xsd:string };
+
+      #connects with
+      p:P2789 { ps:P2789  IRI } *;
+
+      #traffic sign
+      p:P14 { ps:P14  IRI };
+
+      #country
+      p:P17 { ps:P17  IRI } +;
+
+      #route map
+      p:P15 { ps:P15  IRI }?;
+
+      #has part
+      p:P527 { ps:P527  IRI } *;
+
+      ## Identifiers
+      #BabelNet ID
+      p:P2581 { psn:P2581  IRI ; ps:P2581  xsd:string ;  }?;
+
+      #OSM relation ID
+      p:P402 { ps:P402  xsd:string  };
+
+}
+
+<#international_E-road_network> {
+            p:P31 {ps:P31 [
+                                   wd:Q106123 # international E-road network
+                                   wd:Q25631158 # Highway system
+                                   ] 
+};
+       }

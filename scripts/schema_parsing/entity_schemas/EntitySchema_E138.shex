@@ -1,0 +1,33 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q253623. } LIMIT 10
+
+start =@<#patent>
+<#patent>  {
+
+    # instance of
+    wdt:P31 [ wd:Q253623 ] ;
+    # publication date
+    wdt:P577 xsd:dateTime ? ;
+    # title
+    wdt:P1476 rdf:langString ? ;
+    # sponsor
+    wdt:P859 IRI * ;    
+    # main subject
+    wdt:P921 IRI * ;
+    # language of work or name
+    wdt:P407 IRI ? ;
+    # discoverer or inventor
+    wdt:P61 IRI * ;
+    # scanned file on Wikimedia Commons
+    wdt:P996 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # patent number; 
+    wdt:P1246 xsd:string * ;
+    # NIOSHTIC-2 ID
+    wdt:P2880 xsd:string * ;
+}

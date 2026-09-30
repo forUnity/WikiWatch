@@ -1,0 +1,20 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sdc: <https://commons.wikimedia.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+   
+sdc:mediaInfo {
+  wdt:P31 [wd:Q1126556] ; # Q1126556 = bird vocalization
+  wdt:P571 xsd:dateTime ;  # inception
+  wdt:P6216 [wd:~] ; # copyright status currently takes all qids TODO: make or import copyright schema
+  wdt:P9149 geo:wktLiteral ;
+  wdt:P180 @<wd_taxon> ;
+  wdt:P7482 [wd:~] ; # source of file any wd. currently takes all qids TODO: make or import source schema
+}
+
+<wd_taxon> {
+  wdt:P31 [wd:Q16521] ;
+}

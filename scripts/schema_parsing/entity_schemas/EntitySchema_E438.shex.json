@@ -1,0 +1,1 @@
+{"type": "Schema", "start": "wikimedia-disambiguation-page", "shapes": [{"type": "Shape", "id": "wikimedia-disambiguation-page", "expression": {"type": "TripleConstraint", "predicate": "http://www.wikidata.org/prop/direct/P31", "valueExpr": {"type": "NodeConstraint", "values": ["http://www.wikidata.org/entity/Q4167410"]}}}]}

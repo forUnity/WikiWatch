@@ -1,0 +1,44 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example query for validation: SELECT ?id WHERE {?id wdt:P31*/wdt:P279* wd:Q59057226 . }  LIMIT 10
+
+start = @<EthicsCommitteeShape>
+
+<EthicsCommitteeShape> EXTRA wdt:P31 {
+	# Instance of an ethics committee, IRB or IACUC - zero or more values
+	wdt:P31 [wd:Q59057226 wd:Q362104 wd:Q6041131];
+
+	# Part of - zero or more values
+	wdt:P361 . * ;
+
+	# Parent organization - zero or more values
+	wdt:P749 . * ;
+
+	# Country - zero or more values
+	wdt:P17 . * ;
+
+	# Field of work - zero or more values
+	wdt:P101 . * ;
+
+	# Inception - zero or one value
+	wdt:P571 . ? ;
+
+	# Official website - zero or more values
+	wdt:P856 . * ;
+
+	# Chairperson - zero or more values
+	wdt:P488 . * ;
+
+	# Official name - zero or one value
+	wdt:P1448 . ? ;
+
+	# Short name - zero or more values
+	wdt:P1813 . * ;
+
+	# Described at URL - zero or more values
+	wdt:P973 . * ;
+
+	# Described by source - zero or more values
+	wdt:P1343 . * ;
+}

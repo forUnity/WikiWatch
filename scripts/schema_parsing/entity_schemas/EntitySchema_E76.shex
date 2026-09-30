@@ -1,0 +1,58 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E15>
+PREFIX E15: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E15#>
+
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Danish lexeme
+
+# SELECT ?lexeme { ?lexeme dct:language wd:Q9035 ; wikibase:lexicalCategory wd:Q34698 }
+
+
+START = @<danish-adjective>
+
+
+<danish-adjective> {
+
+  wikibase:lexicalCategory [ wd:Q34698 ]
+    // rdfs:label "Lexical category"
+    // rdfs:comment "Lexical category must be adjective" ;
+
+  dct:language [ wd:Q9035 ]
+    // rdfs:label "Language"
+    // rdfs:comment "Language must be Danish" ;
+
+  wikibase:lemma [ @da ]
+    // rdfs:label "Lemma"
+    // rdfs:comment "Lemma must must have one Danish value" ; 
+
+  wdt:P5187 [ @da ]
+    // rdfs:label "Word stem"
+    // rdfs:comment "Must have one Danish word stem" ;
+
+  p:P6140 @E15:dannet-statement 
+    // rdfs:label "DanNet"
+    // rdfs:comment "DanNet must have one value" ;
+
+  p:P5912 @E15:oqaasileriffik-statement
+    // rdf:label "Oqaasileriffik statement"
+    // rdf:comment "Danish lexeme must have one Oqaasileriffik statement" ;
+}
+AND (
+  # If the lexeme is a compound then it must have a 'combines' proper
+  # with at least two parts
+  NOT {
+    wdt:P31 wd:Q245423
+  } 
+  OR {
+    wdt:P5238 IRI {2,}
+  }
+)

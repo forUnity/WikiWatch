@@ -1,0 +1,54 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# + one or more
+# ?  zero or one
+# * zero or more
+
+START = @<gov-agency>
+
+<gov-agency> {
+ wdt:P31 . + ; #instance of
+ wdt:P101 . + ; #field of work
+ wdt:P571 . + ; #inception
+ wdt:P17 . ? ; #country
+ wdt:P1001 . * ; #applies to jurisdiction
+ wdt:P131 . * ; #located in the administrative territorial entity
+ wdt:P749 . * ; #parent organization
+ wdt:P968 . * ; #email address
+ wdt:P1329 . * ; #phone number
+ wdt:P856 . * ; #official website
+ wdt:P92 . * ; #main regulatory text
+ wdt:P9798 . ? ; #Classification of the Functions of Government
+ wdt:P9732 . ? ; #citizen's initiatives URL
+ wdt:P2769 . * ; #budget
+ wdt:P2402 . * ; #total expenditure
+ wdt:P1454 . ? ;#legal form
+ wdt:P159 . * ; #headquarters location
+ wdt:P1128 . * ;#employees
+ wdt:P1448 . * ;#official name
+ wdt:P1581 . * ;#official blog URL
+ wdt:P1278 . ? ;#Legal Entity Identifier
+ wdt:P2388 . ? ;#position held by head of the organization
+ wdt:P9214 . ? ;#FAQ URL
+ wdt:P3761 . ? ;#IPv4 routing prefix
+ wdt:P488 . ? ;#chairperson
+ wdt:P1313 . ? ; #office held by head of government
+ wdt:P1320 . ? ; #OpenCorporates ID
+ wdt:P355 . ? ;#child organization/unit
+
+ # social
+ wdt:P2002 . * ; # X (Twitter)
+ wdt:P2003 . * ; # Instagram
+ wdt:P2397 . * ; # YouTube
+ wdt:P4264 . * ; # LinkedIn
+ wdt:P2013 . * ; # Facebook
+ wdt:P2037 . * ; # GitHub
+ wdt:P3789 . * ; # Telegram
+ wdt:P7085 . * ; # TikTok
+ wdt:P4033 . * ; # Mastodon
+ wdt:P12361 . * ; # Bluesky
+ wdt:P3267 . * ; # Flickr
+ 
+ 
+}

@@ -1,0 +1,160 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+# Result for pattern { wdt:~ __;} and query SELECT DISTINCT ?x WHERE {?x wdt:P31 wd:Q179700. } LIMIT 10
+<statue> {
+    # instance of; frequency: [10/10]
+    wdt:P31 [ <http://www.wikidata.org/entity>~ ] + ;
+    # image; frequency: [9/10]
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # coordinate location; frequency: [8/10]
+    wdt:P625 geo:wktLiteral * ;
+    # country; frequency: [7/10]
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # creator; frequency: [7/10]
+    wdt:P170 [ <http://www.wikidata.org/entity>~ ] * ;
+    # Commons category; frequency: [7/10]
+    wdt:P373 xsd:string ? ;
+    # inception; frequency: [7/10]
+    wdt:P571 xsd:dateTime * ;
+    # material used; frequency: [6/10]
+    wdt:P186 [ <http://www.wikidata.org/entity>~ ] * ;
+    # location; frequency: [6/10]
+    wdt:P276 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # depicts; frequency: [6/10]
+    wdt:P180 [ <http://www.wikidata.org/entity>~ ] * ;
+    # located in the administrative territorial entity; frequency: [5/10]
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] * ;
+    # Freebase ID; frequency: [5/10]
+    wdt:P646 xsd:string ? ;
+    # genre; frequency: [5/10]
+    wdt:P136 [ <http://www.wikidata.org/entity>~ ] * ;
+    # height; frequency: [5/10]
+    wdt:P2048 xsd:decimal ? ;
+    # BabelNet ID; frequency: [5/10]
+    wdt:P2581 xsd:string ? ;
+    # VIAF ID; frequency: [3/10]
+    wdt:P214 xsd:string ? ;
+    # topic's main category; frequency: [3/10]
+    wdt:P910 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Encyclopædia Britannica Online ID; frequency: [3/10]
+    wdt:P1417 xsd:string ? ;
+    # heritage designation; frequency: [3/10]
+    wdt:P1435 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # part of; frequency: [2/10]
+    wdt:P361 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # official website; frequency: [2/10]
+    wdt:P856 IRI ? ;
+    # GeoNames ID; frequency: [2/10]
+    wdt:P1566 xsd:string ? ;
+    # Quora topic ID; frequency: [2/10]
+    wdt:P3417 xsd:string ? ;
+    # movement; frequency: [2/10]
+    wdt:P135 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # collection; frequency: [2/10]
+    wdt:P195 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # inventory number; frequency: [2/10]
+    wdt:P217 xsd:string * ;
+    # Atlas ID; frequency: [2/10]
+    wdt:P1212 xsd:string ? ;
+    # NE.se ID; frequency: [2/10]
+    wdt:P3222 xsd:string ? ;
+    # 3D model; frequency: [2/10]
+    wdt:P4896 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+    # derivative work; frequency: [2/10]
+    wdt:P4969 [ <http://www.wikidata.org/entity>~ ] * ;
+    # location of discovery; frequency: [2/10]
+    wdt:P189 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # described at URL; frequency: [2/10]
+    wdt:P973 IRI * ;
+    # manufacturer; frequency: [1/10]
+    wdt:P176 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # commemorates; frequency: [1/10]
+    wdt:P547 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # located on street; frequency: [1/10]
+    wdt:P669 [ <http://www.wikidata.org/entity>~ ] * ;
+    # sponsor; frequency: [1/10]
+    wdt:P859 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # main subject; frequency: [1/10]
+    wdt:P921 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # date of official opening; frequency: [1/10]
+    wdt:P1619 xsd:dateTime ? ;
+    # New York City Parks monument ID; frequency: [1/10]
+    wdt:P4430 xsd:string ? ;
+    # fabrication method; frequency: [1/10]
+    wdt:P2079 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # present in work; frequency: [1/10]
+    wdt:P1441 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # CONA ID; frequency: [1/10]
+    wdt:P1669 xsd:string ? ;
+    # Cultureel Woordenboek identifier; frequency: [1/10]
+    wdt:P3569 xsd:string ? ;
+    # Panorama de l'art ID; frequency: [1/10]
+    wdt:P6332 xsd:string ? ;
+    # Arachne object ID; frequency: [1/10]
+    wdt:P7021 xsd:string ? ;
+    # GND ID; frequency: [1/10]
+    wdt:P227 xsd:string ? ;
+    # Library of Congress authority ID; frequency: [1/10]
+    wdt:P244 xsd:string ? ;
+    # BnF ID; frequency: [1/10]
+    wdt:P268 xsd:string ? ;
+    # time of discovery or invention; frequency: [1/10]
+    wdt:P575 xsd:dateTime ? ;
+    # Commons gallery; frequency: [1/10]
+    wdt:P935 xsd:string ? ;
+    # Gran Enciclopèdia Catalana ID; frequency: [1/10]
+    wdt:P1296 xsd:string ? ;
+    # elevation above sea level; frequency: [1/10]
+    wdt:P2044 xsd:decimal ? ;
+    # protected heritage site in Brussels ID; frequency: [1/10]
+    wdt:P3600 xsd:string ? ;
+    # archINFORM project ID; frequency: [1/10]
+    wdt:P5383 xsd:string ? ;
+    # located at street address; frequency: [1/10]
+    wdt:P6375 rdf:langString * ;
+    # subclass of; frequency: [1/10]
+    wdt:P279 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # different from; frequency: [1/10]
+    wdt:P1889 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Wiki Loves Monuments ID; frequency: [1/10]
+    wdt:P2186 xsd:string ? ;
+    # architect; frequency: [1/10]
+    wdt:P84 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # owned by; frequency: [1/10]
+    wdt:P127 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # width; frequency: [1/10]
+    wdt:P2049 xsd:decimal ? ;
+    # kulturnoe-nasledie.ru ID; frequency: [1/10]
+    wdt:P1483 xsd:string ? ;
+    # EGROKN ID; frequency: [1/10]
+    wdt:P5381 xsd:string ?
+}

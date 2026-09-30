@@ -1,0 +1,30 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E419>
+PREFIX E419: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E419#>
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q24634210 } limit 5
+
+start = @<#podcast>
+
+<#podcast> {
+  wdt:P31 [wd:Q24634210] ; # instance of podcast
+  wdt:P31 IRI * ; # additional instance types are okay
+  wdt:P437 [wd:Q24633474] ; # distrib format: audio podcast
+  wdt:P437 IRI * ; # additional distrib formats are okay
+  wdt:P407 IRI + ; # at least one language
+  wdt:P371 @ E419:podcastPresenter * ; # at least one presenter
+  wdt:P136 IRI * ; # optionally, one or more genres
+  # wdt:P1113 QUANTITY * ; # optionally, one or more genres
+  wdt:P856 IRI * ; # optionally, official website
+  wdt:P1019 IRI * ; # optionally, web feed URL
+  wdt:P7998 xsd:string ? ; # optionally, Podchaser podcast ID
+  wdt:P5916 xsd:string ? ; # optionally, Spotify show ID
+  wdt:P5842 xsd:string ? ; # optionally, Apple Podcasts podcast ID
+}

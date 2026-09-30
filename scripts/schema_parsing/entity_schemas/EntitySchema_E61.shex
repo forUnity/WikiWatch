@@ -1,0 +1,51 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX eco: <http://purl.obolibrary.org/obo/ECO_>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+
+## SELECT * WHERE {?cellline wdt:P31 wd:Q179959 .}
+start = @<#kakapoSchema>
+
+<#kakapoSchema> {
+      #instance of
+      p:P31 { ps:P31  IRI * };
+
+      #sex or gender
+      p:P21 { ps:P21  [
+                       wd:Q44148 #male organism 
+                       wd:Q43445 #female organism 
+                      ] };
+
+      #image
+      p:P18 { ps:P18  IRI * } ?;
+
+      #place of birth
+      p:P19 { ps:P19  IRI * } ?;
+
+      #named after
+      p:P138 { ps:P138  IRI * } ?;
+
+      #date of birth
+      p:P569 { psv:P569  IRI *; ps:P569  xsd:dateTime *;  } ?;
+
+      #Commons category
+      p:P373 { ps:P373  xsd:string * } ?;
+
+      #child
+      p:P40 { ps:P40  IRI * } ?;
+
+      #father
+      p:P22 { ps:P22  IRI * } ?;
+
+      #Twitter username
+      p:P2002 { ps:P2002  xsd:string * } ?;
+
+      #date of death
+      p:P570 { ps:P570  xsd:dateTime *; psv:P570  IRI *;  } ?;
+
+}

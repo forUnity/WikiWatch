@@ -1,0 +1,449 @@
+entity_schema_id;schema_label
+1;ShExR
+10;human
+100;city
+101;book edition in Libris
+102;operating system
+103;gene variant according to myvariant.info
+104;municipio of Rome
+105;deceased person in Dutch Wikipedia
+106;Lunar crater
+107;chromosome
+108;sequence assembly
+109;human chromosome
+11;film festival
+110;software license
+111;virtual reality headset
+112;data set
+113;Gene Wiki disease terms
+114;trail
+11424;film
+115;Tsunami
+117;newspaper with direct claim properties only
+118;virtual assistant
+119;space probe
+12;film festival edition
+120;red panda
+121;[empty schema]
+122;[empty schema]
+123;Sandbox Schema
+1234;Sandbox Schema
+12345;Sandbox Schema
+124;[empty schema]
+125;museum
+126;Nobel Prize Winners
+127;interstellar object
+128;extrasolar planet
+129;one-of-a-kind computer
+13;natural number
+130;painting
+131;Standard German noun
+132;web comic
+133;adminstrative district in Turkey
+134;Swedish Parliament member
+135;Languages should have an IETF language tag
+136;Malayalam lexeme
+137;privacy policy
+138;patent
+139;competition class items
+14;human (basic properties)
+140;metropolitan statistical area
+141;web service
+142;UNESCO world heritage site
+143;award laureate
+144;poem by Emily Dickinson
+145;file system
+147;submarine communications cable
+148;Nazca lines
+149;cryptographic hash function
+15;Danish Lexeme
+150;Specific event in figure skating
+151;watercraft
+152;Ship
+153;Researcher
+154;Standard German noun full
+155;standard English noun
+156;keyboard layout
+157;endangered language
+158;computer model
+159;sound card
+16;Software Titles
+160;Basque noun
+161;JKT48 member
+162;Southern Resident orca
+163;Chilean Politicians
+164;French standard noun
+165;virus gene
+166;[empty schema]
+167;protein
+168;LGBT related TV series
+169;virus protein
+17;television series
+170;virus strain
+171;Chilean Volcanoes
+172;Chilean Cities
+173;outbreak
+174;strain
+175;[empty schema]
+176;Chilean astronomers
+177;Data Structure
+178;Algorithm
+179;operating system
+18;television series season
+180;[empty schema]
+181;[empty schema]
+182;[empty schema]
+183;Chilean Women  Football Players
+184;pandemic
+185;preprint
+186;Macromolecular complex
+187;hospital
+188;2020 coronavirus pandemic local outbreaks
+189;clinical trial
+19;television series episode
+190;lockdown
+191;lockdown part of the 2019-2020 coronavirus disease pandemic
+192;virus taxon
+193;preprint server
+194;Complex Portal entity
+195;COVID-19 contact tracing app
+196;covid-19 death
+197;morgue
+198;crematorium
+199;Russian noun without paucal
+2;Wikimedia
+20;EastEnders
+200;Russian noun with paucal
+201;Filmmaker
+202;German verb
+203;school unit
+204;sandwich
+205;COVID-19 dashboards, search engines and datasets
+206;Stolpersteine
+207;dataset
+208;SPARQL endpoint
+209;API endpoint
+21;rower
+210;hospital (Malayalam)
+211;hospital
+212;emergency measure
+213;spaceport
+215;same-sex marriage
+216;public artwork
+217;HTML element
+218;Orienteer
+22;screenwriter
+220;member of the Instituto Universitario de Análisis y Aplicaciones Textuales
+223;EuropeanProject
+224;EuropeanReport
+225;EuropeanResearcher
+226;Swedish Academy Chair
+227;Gender
+228;United Kingdom Member of Parliament
+229;decision from the Supreme Court of Sweden
+23;film producer
+230;Swedish Academy introduction speach
+231;Swedish Academy member
+232;lipid
+233;protein family
+234;auto race track
+235;auto racing event
+236;Member of the Oireachtas
+237;File format with identification pattern
+238;racing automobile driver
+239;chemical compound
+24;film director
+240;natural product
+241;stereoisomer
+242;Configured Software Environment
+243;cell type
+244;Legislation of the Oireachtas
+245;Unicode plane
+246;Unicode block
+247;Unicode character
+248;album
+249;embassy
+25;actor
+250;Swedish municipal
+251;non-coding RNA
+252;non-coding RNA gene
+253;Breton verb
+254;Bangla adjectives
+255;Bangla verbs
+256;Bangla adverbs
+257;politician
+258;Genewiki schema
+259;Wikibase property
+26;lightbulb
+260;Epistles of Fredman
+261;
+262;Fredman Epistels person
+263;Type specimens of Oxalis
+264;Breton Lexeme
+265;Gene Wiki SARS-COV2 primary sources
+266;Gene Wiki SARS-COV2 external identifiers
+267;Revue des Deux Mondes article
+268;Building Stockholm
+269;French historic monument
+27;European lightbulb
+270;building
+271;public art in Umeå
+272;video game
+273;Gene Wiki primary sources
+274;Gene Wiki external identifiers
+275;Gene Wiki symptom terms
+276;Runic inscription
+277;group or class of enzymes
+278;transmembrane transport protein class
+279;SVT Play
+28;cinematographer
+280;Outdoor gym
+281;Svenskt kvinnobiografiskt lexikon
+282;literary sign
+283;Swedish Church parish
+284;seat in the Swedish Academy
+29;camera operator
+290;Swedish Literature Bank Runestones
+291;taxon treatment
+292;scholarly article
+293;taxon name
+295;townland
+296;boat manufacturing company
+297;sailboat class
+298;chemical compound with CAS registry number
+299;chemical compound with validated CAS registry number
+3;Wikidata Item
+30;Australian national parks
+300;motor racing season
+301;Brazilian laws and decrees
+302;Bgee - a gene expression database
+303;
+304;Swedish dogbeach
+305;Swedish bathing water
+306;Basque verb
+307;Basque postpositive adjective
+308;Malayalam verb
+309;Malayalam noun
+31;File Format Families
+310;English adjective
+311;English adverb
+312;English preposition
+313;English interjection
+314;French interjection
+315;Wikimedia Category
+316;French adjective
+317;street
+318;Open Science & Scholarship Community
+319;European Bathing waters
+32;sovereign state
+321;Moth species
+323;Gene Wiki bot for the Disease Ontology
+325;Research Expedition
+326;Accepted NFDI consortium
+327;English Noun with Genitive
+328;Gene Wiki bot for the Gene Ontology
+329;Standard English Verb with Simple Form Conjugation
+33;Kakapo
+330;Government agency
+332;cloud
+333;rocket
+334;Instance of
+335;German lexeme
+336;Graduate degree program
+337;Research institute
+339;mountain/hill
+34;Danish noun
+340;ChemicalCompoundsWithMass
+341;surfer
+342;Building University of Washington
+343;Dissertation and Theses University of Washington
+344;gene-disease associations
+345;bird sounds
+347;J-pop figures
+348;tornado
+349;Faculty and Staff University of Washington
+35;written work
+350;image of pathway diagram
+351;pharmaceutical product
+352;Text editor schema
+36;edition of a written work
+360;Identifiers
+363;tarea1
+364;Event
+365;HaveEnglishWebsite
+366;coin hoard
+367;Research Software
+368;obo ontology in wikidata
+369;glacier
+37;human gene
+371;Researcher (test)
+375;hiking path
+376;campsite
+378;ICH national inventory
+379;ICH item
+38;human protein
+380;Swedish Cemeteries
+382;taxon2wikipedia
+383;taxon2wikipedia variant 2
+384;taxon2wikipedia variant 3
+385;taxon2wikipedia variant 4
+386;taxon2wikipedia variant 5
+387;taxon2wikipedia variant 6
+388;taxon2wikipedia variant 7
+389;Multilingual GeneTaxon
+39;Reactome Pathway
+390;Gene or Variant with references
+391;taxon birds
+392;invasive taxon
+394;Pokémon species
+395;RiksdagenCorpusMember
+396;ethics committee
+397;anatomical structure
+398;
+399;RiksdagenCorpusMember party
+4;Labels/Descriptions
+40;European route
+400;IDEA Dura-Europos archival photo
+401;
+402;
+403;church cemetery
+404;Swedish soccer player
+405;blog planet
+406;type of a chemical entity
+408;Swedish barbecue areas
+41;biological pathway sourced from WikiPathways in Wikidata
+412;manga series
+413;IDEA artifact with inscription
+414;IDEA review article
+415;IDEA archeological graffito
+417;Bus stop
+418;podcast
+419;podcast presenter
+42;author
+420;podcast episode
+421;podcast series season
+422;'Golden age of illustration' book
+423;IDEA building
+424;language
+425;Apple Podcast
+426;Tamkang University location
+428;IDEA papyrus
+429;CJK character
+43;poem
+431;Irish Local Election
+432;political party
+433;taxon
+434;large language model
+435;parable of Jesus
+436;church building
+437;Example Closed Schema
+438;Wikimedia Disambiguation Page
+439;Wikimedia template
+44;University Teacher
+440;Star
+441;galaxy
+442;Chinese village
+443;Human settlement
+444;Encyclopedia article
+445;editorial
+446;collection
+447;Member of the european parliament
+448;theorem
+449;Papyrus fragment
+45;university
+450;Wikimedia list article
+453;island
+454;SEEKCommons Resource
+455;NSF grant
+456;software
+457;hardware
+46;chemical element
+461;attested person
+465;film award
+466;ancient Mediterranean coin
+467;
+468;Minister of State (Ireland)
+469;Gala case study
+47;racemic mixture
+470;Snooker Tournament
+471;individual copy of a book
+472;calendar day of a given year
+473;book edition or translation - Maastricht University Library
+474;curriculum
+476;manuscript
+477;
+48;human
+480;Article in the Internet Journal of Chemistry
+481;country
+485;coin denomination
+487;book edition or translation - Radboud University Library
+488;incunable
+49;Wikidata prefixes
+490;Member of the Parliamentary Council of Europe
+491;
+492;constituency
+495;Exhibition concept
+496;Exhibition manifestation
+498;district electoral division
+5;Statement
+50;national flag
+500;Cultural Heritage Knowledge Graph
+502;federally recognized tribe
+504;Mesocosm Facility
+51;hyperpolyglot
+52;given names in Spain
+53;sportsperson
+54;lexeme
+55;programming language
+56;Danish verb
+57;pride parade
+570;recently deceased humans
+58;LGBT flag
+59;evidence and conclusion ontology term
+6;Language mappings
+60;cellosaurus cell line
+61;kakapo schema
+62;Danish pronouns
+63;ClinGen variant pathogenicity
+64;bacterial genome annotation
+65;Danish numerals
+66;music composition by W.A.Mozart
+67;Award
+68;Danish hyphenation
+69;disease
+7;Citation
+70;Clinical Interpretations of Variants in Cancer
+71;ceremonial county of England
+72;pharmaceutical drug
+73;software companies
+734;family name
+735;given name
+74;pseudogene
+75;gene
+76;Danish adjective
+77;vernacular names according to the BSL
+78;Western Lombard language common taxon names
+79;file format with PRONOM id
+8;External RDF
+80;volcano
+81;lighthouse
+82;cryptocurrency
+83;W3C Recommendation
+84;Scores for a discipline in a figure skating competition
+85;academic conference
+86;native Wikipathways schema
+87;biological pathway in Wikidata
+88;health in region
+89;Public library branch in The Netherlands
+9;Wikidata-Wikibase
+90;Public library organisation in The Netherlands
+91;Emulator
+92;Delftware pottery workshops
+93;FLOSS emulator
+94;Newspaper clippings archives
+95;Newspaper clippings archives (minimal)
+96;dummy
+97;Instance of
+98;organization
+99;statue
+999;Borked

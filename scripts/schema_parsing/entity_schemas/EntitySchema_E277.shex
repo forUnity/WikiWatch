@@ -1,0 +1,39 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example query: select * { ?x wdt:P31 wd:Q67015883 } LIMIT 5
+
+start = @<#enzymeClass>
+
+<#enzymeClass> EXTRA p:P31 p:P279 {
+  p:P31 @<#P31_instance_of_enzyme_class> ;
+  p:P680 @<#P680_molecular_function>+ ;          # one or more molecular function stmts
+  p:P279 @<#P279_subclass_of_enzyme_class>+ ;    # one or more subclass stmts
+
+  wdt:P3519 LITERAL* ;                           # zero or more EC numbers
+}
+
+## Statement details
+<#P31_instance_of_enzyme_class> {
+  ps:P31 [ wd:Q67015883 ] ;                      # group or class of enzymes
+  prov:wasDerivedFrom IRI+ ;
+}
+
+<#P279_subclass_of_enzyme_class> {
+  ( ps:P279 wd:Q8047 ;                    # subclass of [P279] enzyme [Q8047]
+    |
+    ps:P279 { wdt:P31 wd:Q67015883 } );   # or any enzyme class
+  prov:wasDerivedFrom IRI+ ;
+}
+
+<#P680_molecular_function> {
+  ps:P680  { wdt:P31 [wd:Q14860489] } ; # mol. function value is a Gene Ontology function item
+  pq:P4390 { wdt:P31 [wd:Q60817979] } ; # qualifier: mapping type with any SKOS generic mapping relation
+  prov:wasDerivedFrom IRI+ ;
+}

@@ -1,0 +1,42 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# SELECT ?item ?itemLabel WHERE {?item (wdt:P31/(wdt:P279*)) wd:Q832778}
+
+start = @<campsite>
+
+<campsite> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q832778 wd:Q96620652 wd:Q96650551]{1}; # campsite
+  wdt:P17 .+; #  country
+  wdt:P18 xsd:string*; # image
+  wdt:P30 .?; # continent
+  wdt:P131 .+; # admin
+  wdt:P137 .; # operator
+  wdt:P138 .?; # named after
+  wdt:P206 .*; # located in or near water area
+  wdt:P242 .?; # locator map image
+  wdt:P276 .?; # place
+  wdt:P373 xsd:string?; # Commons category
+  wdt:P402 .?; # osm relation-id -> campsites are drawn as a relation of type=site in OSM
+  wdt:P527 .*; # has part
+  wdt:P571 xsd:dateTime?; # inception
+  wdt:P625 xsd:coordinate; # coordinate location
+  wdt:P706 .?; # located on the specified (geo)physical feature. Should not be used when the value is only political/administrative (P131) or a mountain range (P4552).
+  wdt:P856 .?; # official website
+  wdt:P912 .*; # equipped with
+  wdt:P973 . * ; # described at url
+  wdt:P1448 xsd:string?; # official name 
+  wdt:P2561 xsd:string?; # name
+  wdt:P2670 .*; #  has part(s) of the class
+  wdt:P3018 .?; # located in protected area
+  wdt:P3173 .*; # offers view on
+  wdt:P4552 .?; # mountain range
+  # This does not make sense on a campsite so we don't want it. It can be added as a qualifier on the shelter instead:
+  wdt:P5775 xsd:string {0} ; # image of interior
+  wdt:P7418 .*; # front image 
+  wdt:P8517 xsd:string* ; # image of view 
+  wdt:P9676 .? ; # vindskyddskartan id
+  wdt:P10467 xsd:string?; # naturkartan id 
+  wdt:P11177 xsd:string?; # camp wild id 
+}

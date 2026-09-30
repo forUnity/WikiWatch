@@ -1,0 +1,12 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+start = @<chilean-cities>
+ 
+
+<chilean-cities> {
+ wdt:P571 LITERAL;
+ wdt:P1082 LITERAL;
+ wdt:P2044 LITERAL;
+ wdt:P281 LITERAL;
+ wdt:P1376 IRI+   
+}

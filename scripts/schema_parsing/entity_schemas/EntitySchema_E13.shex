@@ -1,0 +1,16 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Example items: SELECT ?number { ?number wdt:P31  wd:Q21199 } LIMIT 100
+# Should pass: SELECT ?number { ?number wdt:P31  wd:Q21199 ; wdt:P5176 []  ; wdt:P1181 [] } LIMIT 20
+
+start = @<wikidata-number>
+
+<wikidata-number> EXTRA p:P31 {    
+	wdt:P31 [wd:Q21199] ;
+	wdt:P31 [wd:Q13366129 wd:Q13366104] ;
+        wdt:P5176 .  ;
+        wdt:P1181 .  ;
+}

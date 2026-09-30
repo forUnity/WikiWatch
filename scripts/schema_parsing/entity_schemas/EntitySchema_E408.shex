@@ -1,0 +1,61 @@
+# https://www.wikidata.org/wiki/Wikidata:WikiProject_Svenska_Grillplatser
+# https://github.com/dpriskorn/svenska-grillplatser/issues/3
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query: 
+# SELECT ?g WHERE { ?g wdt:P31 wd:Q119621476; wdt:P17 wd:Q34} limit 5
+
+start = @<grillplats>
+
+<grillplats>  EXTRA wdt:P31 {
+ wdt:P31 [ wd:Q119621476 ] ; # instance of "grillplats"
+ wdt:P17   [ wd:Q34 ]  ; # country Sweden
+ wdt:P131  .          + ; # located in the administrative territorial entity              
+ wdt:P625  .          + ; # coordinates              
+ wdt:P276  .          * ; # location              
+ wdt:P856  .          + ; # official website   
+ wdt:P706  .          * ; # located on terrain feature            
+ wdt:P206  .          * ; # located in or next to body of water              
+ wdt:P973  .          * ; # described by source              
+ wdt:P4173  .          * ; # Instagram location id              
+ wdt:P1997  .          * ; # Facebook location id              
+ wdt:P2572  .          * ; # hashtag              
+ wdt:P6375  .          * ; # street address
+ wdt:P2789  .          * ; # connects with
+ wdt:P3134  .          * ; # Trip Advisory id
+ wdt:P4238  .          * ; # webcam page URL
+ wdt:P3018  .          * ; # located in protected area
+ wdt:P10467          .*;  # Naturkartan
+ wdt:P10689           .*; #Open Street Map way
+ wdt:P11693           .*; # Open Street Map node
+ wdt:P3749             .*; # Google Map id
+ wdt:P1947             .*; # Mapillary
+ wdt:P4640             .*; # spherical panorama image 
+
+
+ wdt:P912              .*; # has facility
+ wdt:P1401         .+; # issue tracker URL
+ wdt:P3171         .*; # offers view on
+ wdt:P2846         .+; # wheelchair accessibility
+
+ wdt:P9660 .*; # not found in - indicate that a site we expect should have this item dont have it
+ wdt:P1889 .* ; # different from - indicate when we have a name conflict or twp objects are next to each other
+ wdt:P2789 .* ; # connect with - indicate 2 objects are next to each other
+
+ wdt:P6104  [wd:Q121313211 wd:Q118372392] } # part of Wikiproject Svenska Grillplatser
+
+  # At least one reference must appear in either P1343 or P9660
+#  ( wdt:P1343 [ wd:Q115100632 wd:Q120778083 wd:Q12013 wd:Q936 wd:Q26757498 ] |
+ #   wdt:P9660 [ wd:Q115100632 wd:Q120778083 wd:Q12013 wd:Q936 wd:Q26757498 ] 
+  # Q115100632 Naturkartan
+  # Q120778083 grillplatser.nu
+  # Q12013 Google Maps
+  # Q936 OpenStreetMap
+  # Q26757498 Mapillary databas
+#  )+ ; # One or more of these sources or exclusions must be present

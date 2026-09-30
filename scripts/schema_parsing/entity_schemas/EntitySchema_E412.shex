@@ -1,0 +1,32 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<manga>
+
+<manga>  {
+	wdt:P31 [ wd:Q21198342 wd:Q21202185] ;
+	wdt:P495 @<manga-P495> ;
+	wdt:P136 @<manga-P136> * ;
+	wdt:P407 @<manga-P407> ;
+	wdt:P2360 @<manga-P2360> ;
+	wdt:P10589 . ? ;
+	wdt:P11149 . ? ;
+	wdt:P8731 . ? ;
+	wdt:P11348 . ? ;
+}
+
+<manga-P495> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q6256] ;
+}
+
+<manga-P136> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q4178140] ;
+}
+
+<manga-P407> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q34770] ;
+}
+
+<manga-P2360> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q28468127] ;
+}

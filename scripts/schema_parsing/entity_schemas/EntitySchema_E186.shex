@@ -1,0 +1,65 @@
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX xml: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example SPARQL query: SELECT ?complex WHERE {  ?complex wdt:P279+ wd:Q22325163 . } limit 5
+# Another one: SELECT DISTINCT ?v WHERE { VALUES ?v {  wd:Q412405  } }
+# Another one: SELECT ?complex WHERE {  ?complex wdt:P7718 [] . } limit 5
+
+start = @<Macromolecular-Complex>
+
+<Macromolecular-Complex> {
+
+ # Direct properties
+ wdt:P31  [ wd:Q5058355 ] ; # instance-of
+ wdt:P232 . ? ; # EC number	4
+ wdt:P279 IRI ; # subClass-of
+ wdt:P352 . ? ; # UniProt protein ID	1
+ wdt:P686 xsd:string  ; # Gene-ontology-ID
+ wdt:P527  IRI {2,}   ; # has-part
+ wdt:P2888 IRI        ; # exact-match
+ wdt:P7718 xsd:string        ; # Complex Portal accession ID
+ 
+ # References and qualifiers (needs more work) 
+ p:P686    { 
+     ps:P686 @<Gene-ontology-ID> ;
+     prov:wasDerivedFrom {
+       pr:P813 xsd:dateTime ;
+       pr:P686 xsd:string ;
+       prv:P813 IRI ;
+       pr:P248  [ wd:Q70472376 ] 
+     } 
+   } ; 
+
+
+ # MeSH annotations
+ wdt:P486 . ? ; # MeSH descriptor ID	104
+ wdt:P6680 . ? ; # MeSH term ID	1
+ wdt:P6694 . ? ; # MeSH concept ID
+   
+}
+
+<Gene-ontology-ID> {}

@@ -1,0 +1,36 @@
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix p:   <http://www.wikidata.org/prop/>
+
+# SPARQL query (example: selection of sculptures):
+# SELECT ?item WHERE { ?item wdt:P31 wd:Q860861; wdt:P136 wd:Q557141. } LIMIT 10
+
+start = @<publicartwork>
+
+<publicartwork> EXTRA wdt:P136 {
+  # primary condition: at least one genre is public art
+  wdt:P136 [wd:Q557141] + ;
+
+  # secondary (optional): at least one instance-of is under work of art
+  wdt:P31 @<artwork-class> * ;
+
+  # other statements
+  wdt:P170 IRI * ;      # creator
+  wdt:P18  IRI * ;      # image
+  wdt:P571 xsd:dateTime * ;  # inception
+  wdt:P17  IRI * ;      # country
+  wdt:P131 IRI * ;      # located in admin unit
+  wdt:P669 IRI * ;      # street
+  wdt:P186 IRI * ;      # material
+
+  # coordinates
+  wdt:P625 . * ;
+  p:P625   . * ;
+}
+
+# subclass of  work of art (Q838948)
+<artwork-class> (
+  [wd:Q838948]                                  # allow direct "work of art"
+  | { wdt:P279 [wd:Q838948] | wdt:P279 @<artwork-class> }  # or any subclass
+)

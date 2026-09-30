@@ -1,0 +1,13 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<schoolunit>
+
+<schoolunit> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q88965416 ] ;# instance of school unit
+  wdt:P7894 xsd:string ;# identifier
+  wdt:P137 .{1} ;# operator
+  wdt:P131 .{1} ;# administrative area
+  wdt:P17 .{1} ;# country
+}

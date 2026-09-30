@@ -1,0 +1,17 @@
+# NOTICE: This schema requires help from someone who is more technically knowledgeable about schemas. When the schema performs as described in [[Wikidata_talk:WikiProject_Schemas#Help_in_creating_Schema_for_Pokémon_species]], you may remove this message and consider the schema done. Until then, it is unfinished.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<pokémon>
+
+<pokémon> EXTRA wdt:P31 {
+    wdt:P1080 [wd:Q17562848];    # From narrative universe, Pokémon universe
+    wdt:P8345 [wd:Q864];    # From franchise, Pokémon
+    wdt:P2067 . ?;    # Mass
+    wdt:P2048 . ?;    # Height
+    wdt:P462 [wd:Q3142 wd:Q1088 wd:Q943 wd:Q3133 wd:Q23445 wd:Q47071 wd:Q3257809 wd:Q42519 wd:Q23444 wd:Q429220]?;    # Color, set to the mon's official color from the Pokédex
+    wdt:P1419 [wd:Q116751754 wd:Q116751757 wd:Q116751758 wd:Q116751759 wd:Q116751762 wd:Q116751765 wd:Q116751768 wd:Q116751771 wd:Q116751775 wd:Q116751779 wd:Q116751784 wd:Q116751788 wd:Q116751792 wd:Q116751796] ?;    # Shape, set to the mon's official shape from the Pokédex
+}

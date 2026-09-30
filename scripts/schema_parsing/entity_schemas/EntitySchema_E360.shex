@@ -1,0 +1,19 @@
+#work in progress
+#intended to be imported by other schemas
+
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+<identifier> {
+#Library if Congress Authority ID
+p:P244 @<LCAuthority>
+}
+
+<LCAuthority> {
+    ps:P244 [ "sh" ] ;
+    psn:P244 IRI * ;
+    pq:P1810 Literal ;
+    pq:P4970 Literal *
+}

@@ -1,0 +1,18 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<#datastructure>
+
+<#datastructure> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q175263  ] ;#instance of a data structure
+  wdt:P138 .* ;#named after
+  wdt:P61 .* ;#discoverer or inventor
+  wdt:P3752 .+ ;#worst case time complexity
+  wdt:P3753 .+ ;#best case time complexity
+  wdt:P3754 .+ ;#average time complexity
+  wdt:P3755 .+ ;#worst case space complexity
+  wdt:P3756 .+ ;#best case space complexity 
+  wdt:P3757 .+ ;#average space complexity 
+  wdt:P575 .{1} ;#time of discovery or invention
+}

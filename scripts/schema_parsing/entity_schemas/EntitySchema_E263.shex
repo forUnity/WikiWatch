@@ -1,0 +1,441 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX data: <https://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX ref: <http://www.wikidata.org/reference/>
+PREFIX s: <http://www.wikidata.org/entity/statement/>
+PREFIX v: <http://www.wikidata.org/value/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX : <http://weso.es/shapes/>
+
+:Q16521 # taxon
+{
+   schema:description  rdf:langString  +;                      # 100.0 %
+            # 82.37179487179486 % obj: rdf:langString. Cardinality: {18}
+            # 3.8461538461538463 % obj: rdf:langString. Cardinality: {20}
+            # 3.8461538461538463 % obj: rdf:langString. Cardinality: {19}
+            # 3.205128205128205 % obj: rdf:langString. Cardinality: {6}
+            # 1.6025641025641024 % obj: rdf:langString. Cardinality: {2}
+            # 1.282051282051282 % obj: rdf:langString. Cardinality: {3}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {22}
+            # 0.641025641025641 % obj: rdf:langString. Cardinality: {26}
+            # 0.641025641025641 % obj: rdf:langString. Cardinality: {21}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {25}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {16}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {10}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {5}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {4}
+   skos:prefLabel  rdf:langString  +;                          # 100.0 %
+            # 63.141025641025635 % obj: rdf:langString. Cardinality: {20}
+            # 22.756410256410255 % obj: rdf:langString. Cardinality: {21}
+            # 6.41025641025641 % obj: rdf:langString. Cardinality: {19}
+            # 2.2435897435897436 % obj: rdf:langString. Cardinality: {22}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {23}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {25}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {24}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {66}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {82}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {60}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {34}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {55}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {50}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {33}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {27}
+   schema:name  rdf:langString  +;                             # 100.0 %
+            # 63.141025641025635 % obj: rdf:langString. Cardinality: {20}
+            # 22.756410256410255 % obj: rdf:langString. Cardinality: {21}
+            # 6.41025641025641 % obj: rdf:langString. Cardinality: {19}
+            # 2.2435897435897436 % obj: rdf:langString. Cardinality: {22}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {23}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {25}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {24}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {66}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {82}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {60}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {34}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {55}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {50}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {33}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {27}
+   rdfs:label  rdf:langString  +;                              # 100.0 %
+            # 63.141025641025635 % obj: rdf:langString. Cardinality: {20}
+            # 22.756410256410255 % obj: rdf:langString. Cardinality: {21}
+            # 6.41025641025641 % obj: rdf:langString. Cardinality: {19}
+            # 2.2435897435897436 % obj: rdf:langString. Cardinality: {22}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {23}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {25}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {24}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {66}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {82}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {60}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {34}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {55}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {50}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {33}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {27}
+   skos:altLabel  rdf:langString  *;
+            # 6.089743589743589 % obj: rdf:langString. Cardinality: +
+            # 1.6025641025641024 % obj: rdf:langString. Cardinality: {1}
+            # 0.641025641025641 % obj: rdf:langString. Cardinality: {2}
+            # 0.641025641025641 % obj: rdf:langString. Cardinality: {5}
+            # 0.641025641025641 % obj: rdf:langString. Cardinality: {3}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {36}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {85}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {52}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {34}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {63}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {32}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {13}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {28}
+
+   ## Statements
+   wdt:P225  xsd:string  ;                                     # 100.0 %
+   wdt:P105  IRI  ;                                            # 100.0 %
+   wdt:P31  [wd:Q16521]  ;                                     # 100.0 %
+   wdt:P31  [wd:Q183368]  *;
+            # 0.3205128205128205 % obj: wd:Q183368. Cardinality: {1}
+   (
+   wdt:P171  IRI
+      |
+   wdt:P171  @:Q16521
+   )  +;                                                       # 100.0 %
+            # 99.03846153846155 % obj: @:Q16521. Cardinality: {1}
+   wdt:P373  xsd:string  *;
+            # 18.269230769230766 % obj: xsd:string. Cardinality: {1}
+   wdt:P18  IRI  *;
+            # 17.628205128205128 % obj: IRI. Cardinality: +
+            # 16.025641025641026 % obj: IRI. Cardinality: {1}
+            # 1.282051282051282 % obj: IRI. Cardinality: {2}
+            # 0.3205128205128205 % obj: IRI. Cardinality: {3}
+   wdt:P1843  rdf:langString  *;
+            # 11.858974358974358 % obj: rdf:langString. Cardinality: +
+            # 6.41025641025641 % obj: rdf:langString. Cardinality: {1}
+            # 2.2435897435897436 % obj: rdf:langString. Cardinality: {2}
+            # 0.9615384615384616 % obj: rdf:langString. Cardinality: {3}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {40}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {20}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {4}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {92}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {5}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {31}
+            # 0.3205128205128205 % obj: rdf:langString. Cardinality: {6}
+  wdt:P935  xsd:string  *;
+            # 10.256410256410255 % obj: xsd:string. Cardinality: {1}
+  wdt:P910  IRI  *;
+            # 6.089743589743589 % obj: IRI. Cardinality: {1}
+  wdt:P4000  IRI  *;
+            # 1.282051282051282 % obj: IRI. Cardinality: {1}
+  wdt:P138  IRI  *;
+            # 0.641025641025641 % obj: IRI. Cardinality: {1}
+  wdt:P2283  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+  wdt:P1343  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+  wdt:P1672  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+  wdt:P279  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+  wdt:P1889  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+  wdt:P4839  xsd:string * ;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+
+   ## identifiers
+   wdt:P685  xsd:string  ;                                     # 100.0 %  
+   wdtn:P685  IRI  ;                                           # 100.0 %
+   wdt:P846  xsd:string  ;                                     # 100.0 %  
+   wdt:P961  xsd:string  *;
+            # 99.67948717948718 % obj: xsd:string. Cardinality: {1}
+   wdtn:P961  IRI  *;
+            # 99.67948717948718 % obj: IRI. Cardinality: {1}
+   wdt:P5037  xsd:string  *;
+            # 98.3974358974359 % obj: xsd:string. Cardinality: {1}
+   wdtn:P5037  IRI  *;
+            # 98.3974358974359 % obj: IRI. Cardinality: {1}
+   wdt:P7715  xsd:string  *;
+            # 96.15384615384616 % obj: xsd:string. Cardinality: {1}
+   wdt:P960  xsd:string  *;
+            # 95.51282051282051 % obj: xsd:string. Cardinality: {1}
+   wdt:P1070  xsd:string  *;
+            # 91.66666666666666 % obj: xsd:string. Cardinality: {1}
+   wdt:P3151  xsd:string  *;
+            # 66.98717948717949 % obj: xsd:string. Cardinality: +
+            # 65.38461538461539 % obj: xsd:string. Cardinality: {1}
+            # 0.9615384615384616 % obj: xsd:string. Cardinality: {2}
+            # 0.641025641025641 % obj: xsd:string. Cardinality: {3}
+   wdt:P830  xsd:string  *;
+            # 45.19230769230769 % obj: xsd:string. Cardinality: {1}
+   wdt:P6056  xsd:string  *;
+            # 38.46153846153847 % obj: xsd:string. Cardinality: {1} 
+   wdt:P6864  xsd:string  *;
+            # 15.384615384615385 % obj: xsd:string. Cardinality: {1}
+   wdt:P815  xsd:string  *;
+            # 12.5 % obj: xsd:string. Cardinality: {1}
+   wdt:P1421  IRI  *;
+            # 12.5 % obj: IRI. Cardinality: {1}
+   wdt:P3031  xsd:string  *;
+            # 12.5 % obj: xsd:string. Cardinality: {1}
+   wdt:P5055  xsd:string  *;
+            # 10.256410256410255 % obj: xsd:string. Cardinality: {1} 
+   wdt:P5984  xsd:string  *;
+            # 10.256410256410255 % obj: xsd:string. Cardinality: {1}
+   wdt:P6105  xsd:string  *;
+            # 9.935897435897436 % obj: xsd:string. Cardinality: {1}
+   wdt:P1772  xsd:string  *;
+            # 9.294871794871796 % obj: xsd:string. Cardinality: {1}
+   wdt:P2752  xsd:string  *;
+            # 8.974358974358974 % obj: xsd:string. Cardinality: {1}
+   wdt:P1727  xsd:string  *;
+            # 7.371794871794872 % obj: xsd:string. Cardinality: {1}
+   wdtn:P3186  IRI  *;
+            # 7.371794871794872 % obj: IRI. Cardinality: {1}
+   wdt:P3186  xsd:string  *;
+            # 7.371794871794872 % obj: xsd:string. Cardinality: {1}
+   wdt:P3240  xsd:string  *;
+            # 6.41025641025641 % obj: xsd:string. Cardinality: {1}
+   wdt:P2036  xsd:string  *;
+            # 6.089743589743589 % obj: xsd:string. Cardinality: {1}
+   wdt:P5945  xsd:string  *;
+            # 5.769230769230769 % obj: xsd:string. Cardinality: {1}
+   wdt:P3101  xsd:string  *;
+            # 5.128205128205128 % obj: xsd:string. Cardinality: {1}
+   wdt:P7496  xsd:string  *;
+            # 5.128205128205128 % obj: xsd:string. Cardinality: {1}
+   wdt:P5698  xsd:string  *;
+            # 4.807692307692308 % obj: xsd:string. Cardinality: {1}
+   wdt:P1939  xsd:string  *;
+            # 4.487179487179487 % obj: xsd:string. Cardinality: {1}
+   wdtn:P6177  IRI  *;
+            # 4.487179487179487 % obj: IRI. Cardinality: {1}
+   wdt:P6177  xsd:string  *;
+            # 4.487179487179487 % obj: xsd:string. Cardinality: {1}
+   wdtn:P6366  IRI  *;
+            # 3.8461538461538463 % obj: IRI. Cardinality: +
+            # 3.5256410256410255 % obj: IRI. Cardinality: {1}
+            # 0.3205128205128205 % obj: IRI. Cardinality: {2}
+   wdt:P6366  xsd:string  *;
+            # 3.8461538461538463 % obj: xsd:string. Cardinality: +
+            # 3.5256410256410255 % obj: xsd:string. Cardinality: {1}
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {2}
+   wdt:P3130  xsd:string  *;
+            # 3.8461538461538463 % obj: xsd:string. Cardinality: {1}
+   wdt:P6933  xsd:string  *;
+            # 3.8461538461538463 % obj: xsd:string. Cardinality: {1}
+   wdt:P6142  xsd:string  *;
+            # 3.8461538461538463 % obj: xsd:string. Cardinality: {1}
+   wdt:P3405  xsd:string  *;
+            # 3.5256410256410255 % obj: xsd:string. Cardinality: {1}
+   wdt:P3420  xsd:string  *;
+            # 3.205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P1747  xsd:string  *;
+            # 3.205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdtn:P646  IRI  *;
+            # 3.205128205128205 % obj: IRI. Cardinality: {1}
+   wdt:P646  xsd:string  *;
+            # 3.205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P838  xsd:string  *;
+            # 2.8846153846153846 % obj: xsd:string. Cardinality: {1}
+   wdt:P6137  xsd:string  *;
+            # 2.8846153846153846 % obj: xsd:string. Cardinality: {1}
+   wdt:P2868  IRI  *;
+            # 2.564102564102564 % obj: IRI. Cardinality: {1}
+   wdt:P8072  xsd:string  *;
+            # 2.564102564102564 % obj: xsd:string. Cardinality: {1}
+   wdt:P627  xsd:string  *;
+            # 2.2435897435897436 % obj: xsd:string. Cardinality: {1}
+   wdt:P141  IRI  *;
+            # 2.2435897435897436 % obj: IRI. Cardinality: {1}
+   wdt:P7546  xsd:string  *;
+            # 2.2435897435897436 % obj: xsd:string. Cardinality: {1}
+   wdt:P566  IRI  *;
+            # 2.2435897435897436 % obj: IRI. Cardinality: {1}
+   wdt:P5263  xsd:string  *;
+            # 2.2435897435897436 % obj: xsd:string. Cardinality: {1}
+   wdt:P1417  xsd:string  *;
+            # 1.9230769230769231 % obj: xsd:string. Cardinality: +
+            # 1.282051282051282 % obj: xsd:string. Cardinality: {1}
+            # 0.641025641025641 % obj: xsd:string. Cardinality: {2}
+   wdt:P1745  xsd:string  *;
+            # 1.9230769230769231 % obj: xsd:string. Cardinality: {1}
+   wdt:P3105  xsd:string  *;
+            # 1.9230769230769231 % obj: xsd:string. Cardinality: {1}
+   wdt:P4122  xsd:string  *;
+            # 1.9230769230769231 % obj: xsd:string. Cardinality: {1}
+   wdt:P5179  xsd:string  *;
+            # 1.9230769230769231 % obj: xsd:string. Cardinality: {1}
+   wdt:P7202  xsd:string  *;
+            # 1.6025641025641024 % obj: xsd:string. Cardinality: {1}
+   wdt:P8707  xsd:string  *;
+            # 1.6025641025641024 % obj: xsd:string. Cardinality: {1}
+   wdt:P6159  xsd:string  *;
+            # 1.6025641025641024 % obj: xsd:string. Cardinality: {1}
+   wdt:P6034  xsd:string  *;
+            # 1.282051282051282 % obj: xsd:string. Cardinality: {1}
+   wdt:P4753  xsd:string  *;
+            # 1.282051282051282 % obj: xsd:string. Cardinality: {1}
+   wdt:P4728  xsd:string  *;
+            # 1.282051282051282 % obj: xsd:string. Cardinality: {1}
+   wdt:P3088  xsd:string  *;
+            # 0.9615384615384616 % obj: xsd:string. Cardinality: {1}
+   wdt:P7552  xsd:string  *;
+            # 0.9615384615384616 % obj: xsd:string. Cardinality: {1}
+   wdt:P6103  xsd:string  *;
+            # 0.9615384615384616 % obj: xsd:string. Cardinality: {1}
+   wdt:P6094  xsd:string  *;
+            # 0.9615384615384616 % obj: xsd:string. Cardinality: {1}
+   wdt:P6227  xsd:string  *;
+            # 0.9615384615384616 % obj: xsd:string. Cardinality: {1}
+   wdt:P427  @:Q16521  *;
+            # 0.641025641025641 % obj: @:Q16521. Cardinality: {1}
+   wdt:P2924  xsd:string  *;
+            # 0.641025641025641 % obj: xsd:string. Cardinality: {1}
+   wdt:P1296  xsd:string  *;
+            # 0.641025641025641 % obj: xsd:string. Cardinality: {1}
+   wdt:P5019  xsd:string  *;
+            # 0.641025641025641 % obj: xsd:string. Cardinality: {1}
+   wdt:P3795  xsd:string  *;
+            # 0.641025641025641 % obj: xsd:string. Cardinality: {1}
+   wdt:P842  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6756  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P5063  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1} 
+   wdtn:P5063  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+   wdtn:P486  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+   wdt:P486  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P4746  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6904  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P1761  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P7818  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P3417  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P227  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdtn:P227  IRI  *;
+            # 0.3205128205128205 % obj: IRI. Cardinality: {1}
+   wdt:P8408  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P8469  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6176  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6161  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P3746  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6139  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P3222  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6706  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P7982  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P6044  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+   wdt:P5456  xsd:string  *;
+            # 0.3205128205128205 % obj: xsd:string. Cardinality: {1}
+}
+
+
+:Q183368 # invasive species
+{
+   # Header
+   rdfs:label  rdf:langString  {34};                           # 100.0 %
+   skos:altLabel  rdf:langString  {34};                        # 100.0 %
+   skos:prefLabel  rdf:langString  {34};                       # 100.0 %
+   schema:description  rdf:langString  {22};                   # 100.0 %
+   schema:name  rdf:langString  {34};                          # 100.0 %
+   
+  
+   #Statements
+   wdt:P18  IRI  ;                                             # 100.0 % image (P18)
+   wdt:P31  [wd:Q183368 wd:Q16521]  ;                          # 100.0 % # instance of (P31), invasive species (Q183368), taxon (Q16521) 
+   wdt:P105  IRI  ;                                            # 100.0 % # taxon rank (P105)
+   wdt:P171  @:Q16521  ;                                       # 100.0 % # parent taxon (P171)
+   wdt:P225  xsd:string  ;                                     # 100.0 % taxon name (P225)
+   wdt:P373  xsd:string  ;                                     # 100.0 % # Commons category (P373)
+   wdt:P935  xsd:string  ;                                     # 100.0 % Commons gallery (P935)
+  
+   #Identfiers
+   wdt:P646  xsd:string  ;                                     # 100.0 % # Freebase ID
+   wdtn:P646  IRI  ;                                           # 100.0 % # Freebase Normelised ID
+   wdt:P910  IRI  ;                                            # 100.0 % # Topic's main category
+   wdt:P961  xsd:string  ;                                     # 100.0 % # IPNI plant ID (P961)
+   wdt:P1070  xsd:string  ;                                    # 100.0 % # PlantList-ID (P1070)
+   wdt:P1727  xsd:string  ;                                    # 100.0 % # Flora of North America Taxon ID
+   wdt:P1843  rdf:langString  {4};                             # 100.0 % # Taxon Common ID
+   wdt:P2752  xsd:string  ;                                    # 100.0 % # New Zealand Organisms Register ID (P2752)
+   wdt:P3031  xsd:string  ;                                    # 100.0 % # EPPO Code (P3031)
+   wdt:P3101  xsd:string  ;                                    # 100.0 % # FloraBase ID (P3101)
+   wdt:P3151  xsd:string  ;                                    # 100.0 % # iNaturalist taxon ID
+   wdt:P5055  xsd:string  ;                                    # 100.0 % # IRMNG ID (P5055)
+   wdt:P5179  xsd:string  ;                                    # 100.0 % # FloraCatalana ID (P5179)
+   wdt:P5698  xsd:string  ;                                    # 100.0 % # Invasive Species Compendium Datasheet ID
+   wdt:P5945  xsd:string  ;                                    # 100.0 % # Vic Flora ID
+   wdt:P5984  xsd:string  ;                                    # 100.0 % # ARNI ID
+   wdt:P6366  xsd:string  ;                                    # 100.0 % # Microsoft Academic ID
+   wdtn:P6366  IRI  ;                                          # 100.0 % # Microsoft Academic ID (P6366)
+   wdt:P7546  xsd:string  ;                                    # 100.0 % # Flowers of India ID
+   wdt:P8469  xsd:string  ;                                    # 100.0 % # Australian Weed ID
+   wdt:P8707  xsd:string  ;                                    # 100.0 % # NBIC Taxon ID
+   
+   wdt:P3420  xsd:string  ;                                    # 100.0 % # Calflora ID (P3420)
+   wdt:P685  xsd:string  ;                                     # 100.0 % # NCBI taxonomy ID (P685)
+   wdt:P2036  xsd:string  ;                                    # 100.0 % # African Plant Database ID (P2036)
+   wdt:P5037  xsd:string  ;                                    # 100.0 % # Plants of the World online ID (P5037)
+   wdt:P6933  xsd:string  ;                                    # 100.0 % # SA Flora ID (P6933)
+   wdt:P1747  xsd:string  ;                                    # 100.0 % # Flora of China ID (P1747)
+   wdt:P3240  xsd:string  ;                                    # 100.0 % # NBN System Key (P3240)
+   wdt:P1421  IRI  ;                                           # 100.0 % # GRIN URL (P1421)
+   wdt:P1772  xsd:string  ;                                    # 100.0 % # USDA PLANTS ID (P1772)
+   wdt:P4122  xsd:string  ;                                    # 100.0 % # PalDat plant ID (P4122)
+   wdt:P830  xsd:string  ;                                     # 100.0 % # Encyclopedia of Life ID (P830)
+   wdt:P1939  xsd:string  ;                                    # 100.0 % Dyntaxa ID (P1939)
+   wdt:P3186  xsd:string  ;                                    # 100.0 % TAXREF ID (P3186)
+   wdt:P846  xsd:string  ;                                     # 100.0 % Global Biodiversity Information Facility ID (P846)
+   wdtn:P685  IRI  ;                                           # 100.0 % NCBI taxonomy ID (P685)
+   wdtn:P5037  IRI  ;                                          # 100.0 % Plants of the World online ID (P5037)
+   wdt:P3795  xsd:string  ;                                    # 100.0 % Flora of Israel Online plant ID (P3795)
+   wdtn:P3186  IRI  ;                                          # 100.0 % TAXREF ID (P3186)
+   wdt:P815  xsd:string  ;                                     # 100.0 % ITIS TSN (P815)
+   wdt:P6177  xsd:string  ;                                    # 100.0 % EUNIS ID for species (P6177)
+   wdt:P6176  xsd:string  ;                                    # 100.0 % Cal-IPC ID (P6176)
+   wdt:P838  xsd:string  ;                                     # 100.0 % BioLib taxon ID (P838)
+   wdt:P960  xsd:string  ;                                     # 100.0 % Tropicos ID (P960)
+   wdt:P3105  xsd:string  ;                                    # 100.0 % Tela Botanica ID (P3105)
+   wdt:P5263  xsd:string  ;                                    # 100.0 % Czech NDOP taxon ID (P5263)
+   wdt:P7715  xsd:string  ;                                    # 100.0 % World Flora Online ID (P7715)
+   wdtn:P961  IRI  ;                                           # 100.0 % IPNI plant ID (P961)
+   wdtn:P6177  IRI  ;                                          # 100.0 % EUNIS ID for species (P6177)
+   wdt:P6161  xsd:string  ;                                    # 100.0 % Invasive Plant Atlas of the United States ID (P6161)
+   wdt:P3746  xsd:string                                       # 100.0 % Wildflowers of Israel ID (P3746)
+}

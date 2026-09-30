@@ -1,0 +1,65 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<Orienteer>
+
+<Orienteer> EXTRA wdt:P31 wdt:P106 {
+
+      # instance of
+      wdt:P31 [ wd:Q5 ] ;
+
+      # given name
+      wdt:P735 @<GivenName> * ;
+
+      # sex or gender
+      wdt:P21 IRI ?;
+
+      # family name
+      # wdt:P734 IRI ?;
+
+      # occupation
+      wdt:P106 [ wd:Q13581129 ] ;
+
+      # Commons category
+      wdt:P373 . ?;
+
+      # date of birth
+      wdt:P569 xsd:dateTime *;
+
+      #place of birth
+      wdt:P19 IRI ?;
+
+      # date of death
+      wdt:P570 xsd:dateTime * ;
+
+      # country of citizenship
+      wdt:P27 IRI ;
+
+      # country for sport
+      wdt:P1532 . ?;
+      
+      # sport orienteering
+      wdt:P641 [ wd:Q29358 ] ;
+     
+     # member of sports team
+     wdt:P54 IRI ;
+
+     wdt:P166 . ?;
+     wdt:P1344 . ?; 
+
+      ## External Identifiers
+
+      # IOF athlete ID
+      wdt:P3672 . ?;
+
+      # World of O athlete ID
+      wdt:P4542 . ?;
+
+      # International World Games Association athlete ID
+      wdt:P4588 . ?;
+}
+
+<GivenName> { 
+  wdt:P31 [ wd:Q202444 wd:Q12308941 wd:Q11879590] 
+}

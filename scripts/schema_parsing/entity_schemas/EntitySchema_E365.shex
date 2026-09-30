@@ -1,0 +1,16 @@
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example SPARQL Query:
+# select ?x where { ?x p:P856 [ ps:P856 ?v ;  pq:P407 wd:Q1860 ] } limit 10
+
+start = @<HaveEnglishWebsite>
+
+<HaveEnglishWebsite> EXTRA p:P856 {
+  p:P856 EXTRA pq:P407 {
+    ps:P856 . +;
+    pq:P407 [ wd:Q1860 ] ;
+  } +
+}

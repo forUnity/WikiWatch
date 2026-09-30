@@ -1,0 +1,177 @@
+import os
+import time
+import bz2
+from argparse import ArgumentParser
+from pathlib import Path
+import concurrent.futures
+import json
+import sys
+
+from dotenv import load_dotenv
+import psycopg2
+
+from dump_parsing_scripts import load_external_data
+from dump_parsing_scripts.utils import human_readable_size, create_db_schema, print_exception_details
+from dump_parsing_scripts.dump_parser import DumpParser
+from dump_parsing_scripts.const import PROCESSED_FILES_PATH, PARSER_LOG_FILES_PATH
+from schema_parsing import parse_and_load_schemas
+
+def log_file_process(process_time, num_entities, file_path, size):
+    if not isinstance(file_path, Path):
+        file_path = Path(file_path) 
+    print(f"Finished processing {file_path} ({size}, {num_entities} entities) in {process_time} seconds") 
+    with open(PROCESSED_FILES_PATH, "a") as f: 
+        f.write(f"{file_path.resolve()}\n") 
+
+def process_file(file_path, config):
+    """
+    Process a single .xml.bz2 file, parse it, and log the results.
+    """
+    input_bz2 = os.path.basename(file_path)
+
+    parser = DumpParser(file_name=input_bz2, config=config)
+    
+    print(f"Processing: {file_path}")
+    sys.stdout.flush()
+    start_process = time.time()
+    with bz2.open(file_path, 'rb') as in_f:
+        try:
+            parser.parse_dump(in_f)
+        except Exception as e:
+            print(f"Parsing error in DumpParser: {e}")
+            print_exception_details(e, file_path)
+            return 0, 0, file_path, "0"
+            
+    end_process = time.time()
+    process_time = end_process - start_process
+    size = os.path.getsize(file_path)
+
+    size_hr = human_readable_size(size)
+
+    print(f"Processed {input_bz2} in {process_time:.2f} seconds, {human_readable_size(size)}, {parser.num_entities} entities")
+    sys.stdout.flush()
+    
+    log_dir = os.path.dirname(PARSER_LOG_FILES_PATH)
+    os.makedirs(log_dir, exist_ok=True)
+    with open(PARSER_LOG_FILES_PATH, "a", encoding="utf-8") as f:
+        json_line = {
+            "file": input_bz2,
+            "size": size_hr,
+            "num_entities": parser.num_entities,
+            "process_time_sec": f"{process_time:.2f}"
+        }
+        f.write(json.dumps(json_line) + "\n")
+
+    return process_time, parser.num_entities, file_path, size_hr
+
+
+if  __name__ == "__main__":
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument("-f", "--file", help="xml.bz2 file to process", metavar="FILE")
+    args = arg_parser.parse_args()
+
+    # Load config
+    with open("config.json", "r", encoding="utf-8") as f:
+        config: dict = json.load(f) 
+
+    dump_dir = Path(config.get('files_directory', '.'))
+    if not dump_dir.exists():
+        print("The dump directory doesn't exist")
+        raise SystemExit(1)
+    
+    processed_log = Path(PROCESSED_FILES_PATH)
+
+    # Read already processed files
+    processed_files = set()
+    if processed_log.exists():
+        with processed_log.open() as f:
+            processed_files = set(line.strip() for line in f)
+        print(f'Found {len(processed_files)} files that have already been processed')
+
+    # create db and tables if they don't exist
+    create_db_schema()
+
+    if args.file:
+        # Process a single file
+        input_bz2 = args.file
+        if input_bz2 in processed_files:
+            print(f"{input_bz2} has already been processed.")
+        else:
+            workers_per_file = config.get('pages_in_parallel', 6)
+            
+            process_time, num_entities, file_path, size = process_file(os.path.join(dump_dir, input_bz2), config)
+            log_file_process(process_time, num_entities, file_path, size)
+    else:
+        # Process all .bz2 files in the specified directory
+        # files_in_parallel at a time and at most max_files total
+        
+        # List all .bz2 files in dump_dir
+        all_files = [f.resolve() for f in dump_dir.iterdir() if f.is_file() and f.suffix == '.bz2']
+
+        # Sort by modification time (oldest first) -> Initial entities = more revisions
+        files_sorted = sorted(all_files, key=lambda f: f.stat().st_mtime)
+
+        # Only keep files that haven't been processed
+        files_to_parse = [f for f in files_sorted if str(f) not in processed_files]
+
+        files_in_parallel = config.get('files_in_parallel', 5)
+        max_files = config.get('max_files', 5)
+        
+        sys.stdout.flush()
+        if max_files == 1:
+            process_time, num_entities, file_path, size = process_file(files_to_parse[0], config)
+            log_file_process(process_time, num_entities, file_path, size)
+        else:
+            if max_files < files_in_parallel:
+                files_in_parallel = max_files
+
+            print(f"Found {len(files_to_parse)} unprocessed .bz2 files in {dump_dir}, processing up to {max_files} files with {files_in_parallel} workers in parallel.")
+
+            files_to_parse = files_to_parse[:max_files]
+            executor = concurrent.futures.ProcessPoolExecutor(max_workers=files_in_parallel)
+            try:
+                configs = [config] * len(files_to_parse) # has to be an iterable
+                for process_time, num_entities, file_path, size in executor.map(process_file, files_to_parse, configs):
+                    if process_time == 0:
+                        print(f"Error processing {file_path}, skipping logging.")
+                    else:
+                        log_file_process(process_time, num_entities, file_path, size)
+            except Exception as e:
+                print("Error in executor:", e)
+                raise e
+            finally:
+                executor.shutdown(wait=True)
+    
+    print("Creating indexes...", end="", flush=True)
+    load_dotenv(".env")
+    DB_USER = os.environ.get("DB_USER")
+    DB_PASS = os.environ.get("DB_PASS")
+    DB_NAME = os.environ.get("DB_NAME")
+    DB_HOST = os.environ.get("DB_HOST")
+    DB_PORT = os.environ.get("DB_PORT")
+    
+    conn = psycopg2.connect(
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASS,
+        host=DB_HOST,
+        port=DB_PORT,
+        connect_timeout=30,
+        gssencmode='disable'
+    )
+
+    with conn.cursor() as cur:
+        with open("create_indexes.sql", "r") as f:
+            create_indexes_sql = f.read()
+            cur.execute(create_indexes_sql)
+    conn.commit()
+    
+    print(" Done")
+
+    print("Importing external data...")
+    load_external_data.main()
+    print(" Done")
+
+    print("Importing entity schemas...", end="", flush=True)
+    parse_and_load_schemas.main()
+    print(" Done")

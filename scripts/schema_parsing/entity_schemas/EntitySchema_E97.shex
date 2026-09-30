@@ -1,0 +1,9 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# query: select ?item where { ?item wdt:P4293 ?pm20Id . filter(regex(?pm20Id, '^co/')) }
+
+start = @<wikidata-instanceof>
+ 
+<wikidata-instanceof> {
+  wdt:P31 IRI +; 
+}

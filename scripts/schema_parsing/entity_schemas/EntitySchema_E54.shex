@@ -1,0 +1,38 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# SELECT ?item { ?item a ontolex:LexicalEntry } LIMIT 1000
+
+start = @<lexeme>
+
+<lexeme> {
+  wikibase:lexicalCategory IRI ;
+
+
+  wdt:P1343 IRI *
+    // rdf:label "described in"
+    // rdf:command "zero or more described in" ;
+
+  wdt:P5323 IRI *
+    // rdf:label "attested in"
+    // rdf:command "zero or more attested in" ;
+
+  wdt:P5238 IRI {0,4}
+    // rdf:label "compound parts"
+    // rdf:comment "zero or up to four compound parts" ;
+
+  wdt:P5187 . *
+    // rdf:label "word stem"
+    // rdf:comment "lexeme may have zero or more word stems" ;
+
+  wdt:P5191 IRI *
+    // rdf:label "derivation"
+    // rdf:comment "lexeme can be derived from zero or more other lexemes" ;
+
+  wdt:P5279 . {0}
+    // rdf:label "hyphenation"
+    // rdf:comment "no hyphenation on the lexeme level" ;
+
+}

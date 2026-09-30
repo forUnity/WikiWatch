@@ -1,0 +1,12 @@
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# query map: SELECT * WHERE {?award wdt:P166 []} LIMIT 100
+
+start = @<award_laureate>
+
+<award_laureate> {
+      p:P31 {ps:P31 [wd:Q5] ;} ;
+      p:P166 . ;
+}

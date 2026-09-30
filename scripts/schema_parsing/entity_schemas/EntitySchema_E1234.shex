@@ -1,0 +1,11 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+START = @<#Habanero>
+
+# SELECT ?habanero { ?habanero wdt:P1182 ?val } LIMIT 5
+
+<#Habanero> { 
+wdt:P31 wd:Q3331189 ;
+}

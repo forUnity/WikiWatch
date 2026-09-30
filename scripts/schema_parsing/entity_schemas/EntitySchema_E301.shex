@@ -1,0 +1,19 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# select ?id where { ?id wdt:P31 wd:Q820655. ?id wdt:P17 wd:Q155 }
+
+start = @<brazilian-law-and-decree>
+
+<brazilian-law-and-decree> {
+	wdt:P31 [wd:Q820655 wd:Q6453643] ;
+	wdt:P17 [wd:Q155] ;
+	wdt:P1001 . * ;
+	wdt:P577 . * ;
+	wdt:P407 . * ;
+	wdt:P1476 . * ;
+	wdt:P1476 . * ;
+	wdt:P790 . * ;
+	wdt:P291 . * ;
+	wdt:P1031 . * ;
+}

@@ -1,0 +1,41 @@
+# E113: Disease Ontology
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E113>
+PREFIX E113: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E113#>
+
+## E265 collects references to primary sources being described here
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+## E266 collects describes the shapes that cover the external identifiers in this EntitySchema
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+PREFIX do: <http://purl.obolibrary.org/obo/DOID_>
+PREFIX doio: <http://identifiers.org/doid/>
+PREFIX mir: <http://www.ebi.ac.uk/miriam/main/collections/>
+
+# Data: SELECT * WHERE {?item wdt:P31 wd:Q12136 .} LIMIT 10
+
+start = @<#disease>
+
+<#disease> E113:disease_ontology and EXTRA p:P31 {
+  # Statements 
+  p:P31  @<#P31_disease-class>+ ;
+} 
+
+## Statements 
+
+<#P31_disease-class> {
+  ps:P31 [wd:Q12136] ;
+  prov:wasDerivedFrom E265:reference+ ;
+}

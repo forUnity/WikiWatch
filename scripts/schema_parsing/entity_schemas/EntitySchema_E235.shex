@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<auto-racing-event>
+
+<auto-racing-event> EXTRA wdt:P31 {
+  wdt:P31 @<auto-race>; # Instance of shape <auto race>
+  wdt:P361 . + ; # 1 or more part of with any value 
+  wdt:P17 @<country> ; # 1 country with shape <country>
+  wdt:P276 . ; # 1 location with any value
+  wdt:P641 . ; # 1 sport with any value
+  wdt:P585 . ; # 1 point in time with any value
+  wdt:P1346 . * ; # 0 or more winner with any value
+  wdt:P3764 . * ; # 0 or more pole position with any value
+  wdt:P5053 . * ; # 0 or more fastest lap with any value
+  wdt:P3157 . ? ; # 0 or 1 event distance with any value
+  # Identifiers
+  wdt:P6806 . ? ; # 0 or 1 racing reference race id
+  wdt:P8284 . ? ; # 0 or 1 motorsportsstats.com event id
+  # Labels
+  rdfs:label rdf:langString + ; # 1 or more labels with a langstring
+}
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3024240 wd:Q3624078] +;
+}
+
+<auto-race> {
+  wdt:P31 [wd:Q18608583]; # instance of recurring sporting event
+}

@@ -1,0 +1,18 @@
+{
+    "type": "Schema",
+    "start": "#Habanero",
+    "shapes": [
+        {
+            "type": "Shape",
+            "id": "#Habanero",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/direct/P31",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "datatype": "http://www.wikidata.org/entity/Q3331189"
+                }
+            }
+        }
+    ]
+}

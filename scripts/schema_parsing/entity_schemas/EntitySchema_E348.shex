@@ -1,0 +1,23 @@
+prefix wd:  <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix ui:  <http://www.w3.org/ns/ui#>
+
+# Example SPARQL query: select ?tornado where { ?tornado wdt:P31 wd:Q8081 }
+
+start = @<Tornado>
+
+<Tornado> EXTRA wdt:P31 {
+  wdt:P31   [ wd:Q8081 ]                 // ui:label "instance of"   ;
+  wdt:P585  @<PointInTime>        ?      // ui:label "Point in time" ;
+  wdt:P625  @<CoordinateLocation> ?      // ui:label "Coordinate location" ;
+  wdt:P276  @<Location>           *      // ui:label "Location" ;
+  wdt:P1339 xsd:decimal           ?      // ui:label "Number of injured" ;
+  wdt:P1120 xsd:decimal           *      // ui:label "Number of deaths" ;
+  wdt:P1542 @<Effect>             *      // ui:label "has Effect" ;
+}
+
+<Effect> {}
+<PointInTime> {}
+<CoordinateLocation> {}
+<Location> {}

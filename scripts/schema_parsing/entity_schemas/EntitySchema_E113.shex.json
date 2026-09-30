@@ -1,0 +1,219 @@
+{
+    "type": "Schema",
+    "imports": [
+        "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273",
+        "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274"
+    ],
+    "start": "#gene-wiki-disease-item",
+    "shapes": [
+        {
+            "type": "Shape",
+            "id": "#gene-wiki-disease-item",
+            "extra": [
+                "http://www.wikidata.org/prop/P279",
+                "http://www.wikidata.org/prop/P2888"
+            ],
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P279",
+                        "valueExpr": "#P279_subclassof",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P2888",
+                        "valueExpr": "#P2888_exactmatch"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P780",
+                        "valueExpr": "#P780_symptoms",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P699",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P699_disease_ontology"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P5270",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P5270_mondo_id"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P492",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P492_omim_id",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P1550",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P1550_orphanet_id",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P1748",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P1748_nci_theraurus_id",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P2892",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P2892_umls_cui",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P4229",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P4229_icd10-cm",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P5806",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#P5806-snomed-ct",
+                        "min": 0,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P279_subclassof",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P279",
+                "valueExpr": {
+                    "type": "ShapeOr",
+                    "shapeExprs": [
+                        "#gene-wiki-disease-item",
+                        {
+                            "type": "Shape",
+                            "expression": {
+                                "type": "EachOf",
+                                "expressions": [
+                                    {
+                                        "type": "TripleConstraint",
+                                        "predicate": "http://www.wikidata.org/prop/statement/P279",
+                                        "valueExpr": {
+                                            "type": "NodeConstraint",
+                                            "values": [
+                                                "http://www.wikidata.org/entity/Q12136"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "type": "TripleConstraint",
+                                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                                        "valueExpr": {
+                                            "type": "ShapeOr",
+                                            "shapeExprs": [
+                                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#disease-ontology-reference",
+                                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#mondo-disease-reference"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P492_omim_id",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P492",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#disease-ontology-reference",
+                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#mondo-disease-reference"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P780_symptoms",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P780",
+                        "valueExpr": {
+                            "type": "Shape"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#symptom-ontology-reference"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P2888_exactmatch",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P2888",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                {
+                                    "type": "IriStem",
+                                    "stem": "http://purl.obolibrary.org/obo/"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#disease-ontology-reference",
+                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#mondo-disease-reference"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

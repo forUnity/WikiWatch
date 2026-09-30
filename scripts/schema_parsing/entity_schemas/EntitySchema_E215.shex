@@ -1,0 +1,13 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+#SPARQL query: SELECT ?item { ?item wdt:P279 wd:Q17422 }
+
+start = @<samesexmarriage>
+
+<samesexmarriage> {
+  wdt:P279 [ wd:Q17422  ] ; #instance of same-sex marriage
+  wdt:P17 .{1} ; #country
+  wdt:P580 .{1} ; #start time
+  wdt:P18 .* ; #image
+}

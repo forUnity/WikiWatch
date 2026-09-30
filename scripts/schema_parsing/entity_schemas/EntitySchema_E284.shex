@@ -1,0 +1,46 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX p: 	 <http://www.wikidata.org/prop/> 
+PREFIX ps:   <http://www.wikidata.org/prop/statement/>
+# Project see https://www.wikidata.org/wiki/Wikidata:WikiProject_Sweden/Swedish_Academy
+# https://www.wikidata.org/wiki/Q97576700
+
+# Example SPARQL query: https://w.wiki/rp3
+# SELECT ?item WHERE { ?item wdt:P361 wd:Q207360 }
+
+start = @<#seat>
+<#seat> EXTRA p:P31 {
+    ## Statements where references/provenance are needed
+ 	p:P31 @<#P31_instance_of> ;
+  	p:P361 @<#P361_part_of> ;
+ 	p:P1545    @<#P1545_series_ordinal>+ ; # series ordinal 
+ 	p:P571    @<#P571_inception>+ ; # inception 
+  
+    ## Statements where provenance is implicit
+    wdt:P1424  .+ ; # topic's main template
+ 	wdt:P6104 [ wd:Q97576700]   * ; # maintained by WikiProject 
+}
+
+<#P31_instance_of> {
+    ps:P31  [ wd:Q4164871 ] ;
+    prov:wasDerivedFrom @<reference> ;
+}
+
+<#P361_part_of> {
+    ps:P361 [ wd:Q207360] ;
+    prov:wasDerivedFrom @<reference> ;
+}
+
+<#P571_inception> {
+    prov:wasDerivedFrom @<reference> ;
+}
+
+<#P1545_series_ordinal> {
+    prov:wasDerivedFrom @<reference> ;
+}
+  
+  
+<reference> { 
+# empty to indicate that any referene suffice  
+}

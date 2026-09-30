@@ -1,0 +1,1 @@
+{"type": "Schema", "start": "privacy_policy", "shapes": [{"type": "Shape", "id": "privacy_policy", "expression": {"type": "TripleConstraint", "predicate": "http://www.wikidata.org/prop/direct/P7101", "valueExpr": {"type": "NodeConstraint", "nodeKind": "iri"}}}]}

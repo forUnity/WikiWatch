@@ -1,0 +1,38 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# Standard Basque Verb
+
+# SELECT ?focus {?focus dct:language wd:Q8752;wikibase:lexicalCategory wd:Q24905}
+
+start = @<eu-n>
+
+<eu-n> {
+  dct:language [ wd:Q8752 ] ;
+  wikibase:lexicalCategory [ wd:Q24905 ] ;
+  wikibase:lemma [ @eu ] ;
+  ontolex:lexicalForm {
+    wikibase:grammaticalFeature [ wd:Q814722 ];
+    ontolex:representation [ @eu ];
+  };
+  ontolex:lexicalForm {
+    wikibase:grammaticalFeature [ wd:Q74674702 ];
+    ontolex:representation [ @eu ];
+  };
+  ontolex:lexicalForm {
+    wikibase:grammaticalFeature [ wd:Q74674960 ];
+    ontolex:representation [ @eu ];
+  };
+  ontolex:lexicalForm {
+    wikibase:grammaticalFeature [ wd:Q54556033 ];
+    wikibase:grammaticalFeature [ wd:Q1923028 ];
+    ontolex:representation [ @eu ];
+  };
+  ontolex:lexicalForm {
+    wikibase:grammaticalFeature [ wd:Q501405 ];
+    ontolex:representation [ @eu ];
+  };
+}

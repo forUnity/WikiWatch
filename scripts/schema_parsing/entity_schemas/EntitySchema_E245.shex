@@ -1,0 +1,14 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# select ?item { ?item wdt:P31/wdt:P279* wd:Q10853148 }
+
+start = @<unicode-plane>
+
+<unicode-plane> EXTRA wdt:P31 {
+  wdt:P31 @<#plane> ;
+  wdt:P361 [ wd:Q8819 ];
+  wdt:P5949 . ;
+}
+
+<#plane> [ wd:Q10853148 ] or { wdt:P279 @<#plane> }

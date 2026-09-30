@@ -1,0 +1,33 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P4152 ?value. }
+
+start=@<#file_format_with_identification_pattern>
+
+<#file_format_with_identification_pattern> EXTRA p:P31 {
+	# instance of
+	p:P31 { ps:P31  [wd:Q235557] }* ;
+
+	# subclass of
+        p:P279 { ps:P279 IRI }* ;
+
+	# publication date or inception date 
+	(  p:P577 { ps:P577 xsd:dateTime } ; p:P571 { ps:P571 xsd:dateTime } ?
+	 | p:P571 { ps:P571 xsd:dateTime } ) *;
+
+	# file format identification pattern
+	p:P4152 @<#id_pattern> + ;
+}	
+<#id_pattern> {
+	ps:P4152 LITERAL +;
+        pq:P4153 LITERAL +;
+	pq:P2210 [wd:Q1148480 wd:Q35436009] +;
+        pq:P3294 IRI +;
+        prov:wasDerivedFrom IRI;
+	}

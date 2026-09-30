@@ -1,0 +1,17 @@
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# test: SELECT * {?item wdt:P50 wd:Q4441; wdt:P31 wd:Q5185279} LIMIT 10
+
+start = @<poemED>
+
+<poemED> {
+      wdt:P31 [wd:Q5185279] ;
+      wdt:P50 [wd:Q4441] ;
+      wdt:P407 [wd:Q1860] ;
+      p:P1922 . ;
+      p:P577 .+ ;
+      p:P528 . ;
+}

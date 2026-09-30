@@ -1,0 +1,21 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: 
+# SELECT ?entity WHERE { ?entity wdt:P31 wd:Q113145171 } LIMIT 5
+
+start = @<#type-of-a-chemical-entity>
+
+<#type-of-a-chemical-entity> EXTRA wdt:P31 {
+ wdt:P31 [ wd:Q113145171 ] ; # type of a chemical entity
+ wdt:P279 .;
+ wdt:P274 .;
+ wdt:P662 .;
+ wdt:P235 .;
+ wdt:P2067 .;
+ wdt:P233 .;
+ wdt:P234 .;
+}

@@ -1,0 +1,7 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<lang>
+
+<lang> {
+  wdt:P305 IRI +;
+}

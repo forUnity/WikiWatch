@@ -1,0 +1,85 @@
+# Issue https://github.com/salgo60/ifkdb/issues/11
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query that retrieve objects connected to IFKDB
+# SELECT ?player WHERE { ?player wdt: P11905 ?sss } limit 5
+
+start = @<SwedishSoccerP>
+
+<SwedishSoccerP> EXTRA wdt:P106 {
+ wdt:P11905   .+ ; # ifkdb
+
+ wdt:P31 [wd:Q5] ; # instance of human
+ wdt:P18  .+; #image
+ wdt:P1343 [ wd:Q120783610 ] ; #described by source ifkdb
+
+ wdt:P8687 .*; #social media followers
+
+ wdt:P19 .+; # place of birth
+ wdt:P569 .+; # date birth
+ wdt:P21 [wd:Q6581097 wd:Q6581072 ]; # gender
+ wdt:P27 .*; # country of citizenship
+ wdt:P735 .*; # given name
+ wdt:P734 .*; # surname
+ wdt:P1449 .*; # nickname
+
+ wdt:P106  [ wd:Q937857 ]; # occupation association football player
+ wdt:P413 .+; # position played on team / speciality
+ wdt:P2031 .+; # work period (start)
+ wdt:P2032 .*; # work period (end)
+ wdt:P54 .*; # member of sports team
+ wdt:P6087 .*; # coach of sports team
+ wdt:P1344 .*; # participant in e.g. 1990 FIFA World Cup
+ wdt:P1618 .*; # number worn on a player's (competitor's) uniform, equipment, etc
+
+ wdt:P641 [ wd:Q2736]; # sport soccer
+ wdt:P166 .*; # award received e.g. Ballon d'Or / Guldbollen / Årets ärkeängel...
+ wdt:P6509 .+; # total goals in career
+ wdt:P1350 .+; # number of matches played/races/starts
+
+ wdt:P2048 .*; # height
+ wdt:P2067 .*; # weight
+
+ wdt:P40 .*; #children
+ wdt:P22 .*; #father
+ wdt:P25 .*; #mother
+ wdt:P3373 .*; #siblings
+ wdt:P451 .*; # unmarried partner
+ wdt:P26 .*; # spouse
+
+# dead player
+ wdt:P20 .*; # Date dead
+ wdt:P570 .*; # Place dead
+ wdt:P535 .*; # Find A Grave ID
+ wdt:P5259 .*; #Gravstensinventeringen
+
+ wdt:P3726 .*; # EU-Football.info spelar-ID
+ wdt:P5750 .*; # FBref player ID
+ wdt:P3537 .*; # FootballDatabase.eu player ID
+ wdt:P2574 .*; # National-Football-Teams.com player ID
+ wdt:P5471 .*; # Trading Card Database person ID
+ wdt:P2447 .*; # transfermarkt.com tränar-ID 
+ wdt:P2446 .*; # Transfermarkt player ID
+ wdt:P2276 .*; # UEFA player ID
+ wdt:P118 .+; # league in which team or player plays or has played in
+ wdt:P1238 .*; # Swedish Football Association player ID
+ wdt:P1532 .*; # country a person or a team represents when playing a sport
+ wdt:P2193 .*; # player ID on the Soccerbase.com website
+ wdt:P5421 .*; # identifier for a person in the Trading Card Database (TCDb)
+ wdt:P2369 .*; # player id on the Soccerway website
+ wdt:P4830 .*; # identifier for a Swedish international association football (soccer) player's page
+ wdt:P2020 .*; # identifier for an association football (soccer) player at WorldFootball.net
+ wdt:P6168 .*; # player ID on the Argentine Football Database website
+ wdt:P2398 .*; # identifier for soccer player profile on MLSsoccer.com
+
+wdt:P2002 .*; #Twitter account
+wdt:P2013 .*; #Facebook account
+wdt:P2003 .*; #Instagram
+wdt:P6634 .*; #Linked in
+}

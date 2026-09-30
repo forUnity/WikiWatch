@@ -1,0 +1,16 @@
+PREFIX schema: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+<taxon2wp> {
+     wdt:P225 xsd:string ;
+}
+
+<wikipediaEN> {
+  schema:about @<taxon2wp> ;
+  schema:isPartOf [<https://en.wikipedia.org>] ;
+}

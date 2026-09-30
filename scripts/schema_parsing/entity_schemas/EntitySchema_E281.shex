@@ -1,0 +1,36 @@
+# https://www.wikidata.org/wiki/Wikidata:WikiProject_Sweden/Svenskt_kvinnobiografiskt_lexikon
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Example SPARQL query: https://w.wiki/r4b
+# SELECT ?item ?itemLabel WHERE {
+#  ?item wdt:P4963 ?SKBL;    wdt:P31 wd:Q5.
+#  SERVICE wikibase:label { bd:serviceParam wikibase:language "sv,en". }}
+
+START = @<SKBL>
+
+<SKBL> {
+wdt:P31   [ wd:Q5 ] ;
+wdt:P21   [ wd:Q6581072 ] ;
+wdt:P4963 . + ;# Svenskt kvinnobiografiskt lexikon ID
+wdt:P569 . + ;# date of birth
+wdt:P570 . + ;# date of death
+wdt:P19 . + ;# place of birth
+wdt:P20 . + ;# place of death
+wdt:P106 . + ;# occupation
+wdt:P119 . + ;# place of burial
+wdt:P1412 . + ;# languages spoken, written or signed
+wdt:P1442 . + ;# image of grave
+wdt:P1559 . + ;# name in native language
+wdt:P166 . + ;# award received
+wdt:P18 . + ;# image
+wdt:P22 . + ;# father
+wdt:P27 . + ;# country of citizenship
+wdt:P4819 . + ;# Swedish Portrait Archive ID
+wdt:P5259 . + ;# Swedish Gravestone ID
+wdt:P535 . + ;# Find A Grave memorial ID
+wdt:P8899 . + ;# Arken ID
+wdt:P3342 . + ;# significant person
+
+}

@@ -1,0 +1,56 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E165>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E167>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E170>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+
+PREFIX E165: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E165#>
+PREFIX E167: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E167#>
+PREFIX E170: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E170#>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q8054 } limit 5
+
+start = @<#wikidata-virus-protein>
+
+<#wikidata-virus-protein> @E167:wikidata-protein AND {
+  p:P703 				@<#P703_found_in_taxon> ;
+  prov:wasDerivedFrom 	@E265:reference+ ;
+}
+
+<#P703_found_in_taxon> {
+   ps:P703 				@E170:corona-virus ; # the gene is found in taxon [P703] 'some virus' 
+  prov:wasDerivedFrom 	@E265:reference+ ;
+}
+
+<#P702_encoded_by> {
+  ps:P702				@E165:wikidata-virus-gene ; 
+  prov:wasDerivedFrom 	@E265:uniprot-reference;
+}
+
+<#P703_found_in_taxon_virus> {    
+  ps:P703 				@E170:corona-virus ; 
+  prov:wasDerivedFrom 	@E265:ncbi-gene-reference ;
+}
+
+## Lists with Wikidata items
+<#gene_types> [
+  wd:Q20747295 # protein-coding gene
+  wd:Q284578 # snRNA
+  wd:Q284416 # snoRNA
+  wd:Q215980 # rRNA
+  wd:Q201448 # tRNA
+  wd:Q277338 # pseudo
+  wd:Q11053 # miscRNA
+  wd:Q25323710 # scRNA
+]

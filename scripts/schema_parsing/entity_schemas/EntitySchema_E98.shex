@@ -1,0 +1,164 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+
+# query for entities-organizations: SELECT ?i WHERE { ?i wdt:P31 wd:Q43229 } LIMIT 10
+# query for entities-organizations & its subclasses: SELECT ?i WHERE { ?i wdt:P31/wdt:P279* wd:Q43229. } LIMIT 10
+# Note that a few deleted lexemes can appear in those queries (need for "rdf:type wikibase:Item")
+
+start = @<wikidata-organization>
+
+<wikidata-organization> {
+	( wdt:P31 [wd:Q43229]; wdt:P31 .* ) |
+	( wdt:P31 @<subclass_of_organization>; wdt:P31 .* ) ;
+
+## STATEMENTS
+
+# NAMES
+	p:P1813 {		# short name
+		ps:P1813  rdf:langString ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+        } +;
+	p:P138 {		# named after
+		ps:P138 IRI ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P1559 {		# name in native language
+		ps:P1559 LITERAL + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P1448 {		# official name
+		ps:P1448 LITERAL ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+# CONTACT INFO
+	p:P856 {		# official website
+		ps:P856 IRI ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P968 {		# e-mail address
+		ps:P968 IRI ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P1581 {		# official blog
+		ps:P1581 LITERAL ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} ?;
+	p:P1329 {		# phone number
+		ps:P1329 LITERAL ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P2900 {		# fax number
+		ps:P2900 IRI ?;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+# GEOGRAPHIC INFO
+	p:P17 {			# country
+		ps:P17 IRI + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P740 {		# location of formation
+		ps:P740 IRI + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P159 {		# headquarters location
+		ps:P159 IRI + ;
+		pq:P281	LITERAL + ; 		# qualifier 'postal code'
+		pq:P625 LITERAL + ; 		# qualifier 'coordinate location'
+		pq:P6375 LITERAL + ; 		# street address 
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P131 {		# located in the administrative territorial entity
+		ps:P131 IRI + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+# DATES
+	p:P571 {		# inception
+		ps:P571 xsd:dateTime + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P576 {		# dissolved, abolished or demolished date
+		ps:P576 xsd:dateTime ? ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+# IMAGES
+	p:P154 {		# logo image
+		ps:P154 IRI + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P18 {		# image
+		ps:P18 IRI + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P5775 {		# image of interior
+		ps:P5775 IRI + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+# RELATIONS TO OTHER ORGANIZATIONS AND PEOPLE
+	p:P749 {		# parent organization
+		ps:P749 IRI ?;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P355 {		# subsidiary
+		ps:P355 IRI ?;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P1830 {		# owner of
+		ps:P1830 IRI ?;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P127 {		# owned by
+		ps:P127 IRI ?;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P112 {		# founded by
+		ps:P112 IRI +;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P1037 {		# director / manager
+		ps:P1037 IRI +;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P463 {		# member of
+		ps:P463 IRI ?;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+## IDENTIFIERS
+	p:P213 {		# ISNI
+		ps:P213 xsd:string + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P214 {		# VIAF ID
+		ps:P214 xsd:string + ; 
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+	p:P2671 { 		# Google Knowledge Graph ID
+		ps:P2671 xsd:string + ;
+		prov:wasDerivedFrom @<provenance>+ ;
+	} +;
+
+}
+
+## REFERENCES
+<provenance> {
+	pr:P813	xsd:dateTime ;		# retrieved
+	( pr:P854 IRI ) |			# reference URL
+	( pr:P248 IRI )				# stated in
+}
+
+<subclass_of_organization> {
+	( wdt:P279 [wd:Q43229]; wdt:P279 .* ) |
+ 	( wdt:P279 @<subclass_of_organization>; wdt:P279 .* )
+}

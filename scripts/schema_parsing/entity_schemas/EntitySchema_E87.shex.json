@@ -1,0 +1,1 @@
+{"type": "Schema", "imports": ["https://www.wikidata.org/wiki/Special:EntitySchemaText/E39", "https://www.wikidata.org/wiki/Special:EntitySchemaText/E41"], "shapes": [{"type": "NodeConstraint", "id": "#biological_pathway", "values": ["#wikidata-reactome-pathway", "#wikidata-wp-pathway"]}]}

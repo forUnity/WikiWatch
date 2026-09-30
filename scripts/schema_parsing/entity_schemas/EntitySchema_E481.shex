@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+start = @<country>
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3624078 wd:Q3024240];       # instance de: pays, État souverain, entité géopolitique
+  wdt:P297 xsd:string;                              # code ISO 3166-1 alpha-2
+  wdt:P298 xsd:string?;                             # code ISO 3166-1 alpha-3
+  wdt:P1082 xsd:integer?;                           # population
+  wdt:P2046 xsd:decimal?;                           # superficie
+  wdt:P2131 xsd:decimal?;                           # produit intérieur brut (PIB)
+  wdt:P2132 xsd:decimal?;                           # PIB par habitant
+  wdt:P571 xsd:dateTime?;                           # date de création / fondation / indépendance
+  wdt:P41 IRI?;                                      # drapeau
+  wdt:P94 IRI?;                                      # blason
+  wdt:P625 geo:wktLiteral?;                         # coordonnées géographiques (point)
+  wdt:P463 [wd:Q1065 wd:Q324143 wd:Q27513]*;        # membre de (ONU, UA, CEDEAO)
+  rdfs:label rdf:langString+;                       # libellé multilingue
+}

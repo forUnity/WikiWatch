@@ -1,0 +1,43 @@
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX dct: <http://purl.org/dc/terms/>
+start = @<fradjective>
+<fradjective> {
+  dct:language [ wd:Q150  ] ;#French lexeme
+  wikibase:lexicalCategory [ wd:Q34698  ] ;#adjective lexical category
+  ontolex:lexicalSense @<lexicalsense>* ;#senses
+  ontolex:lexicalForm @<lexicalform1>? ;#masculine singular
+  ontolex:lexicalForm @<lexicalform2>? ;#feminine singular
+  ontolex:lexicalForm @<lexicalform3>? ;#masculine plural
+  ontolex:lexicalForm @<lexicalform4>? ;#feminine plural
+  ontolex:lexicalForm @<lexicalform5>* ;#singular,plural, feminine, masculine
+  ontolex:lexicalForm .* ;#other forms
+}
+<lexicalform1> {
+  wikibase:grammaticalFeature [ wd:Q47088290  ] ;#masculine singular
+}
+<lexicalform2> {
+  wikibase:grammaticalFeature [ wd:Q47088293  ] ;#feminine singular
+}
+<lexicalform3> {
+  wikibase:grammaticalFeature [ wd:Q47088292  ] ;#masculine plural
+}
+<lexicalform4> {
+  wikibase:grammaticalFeature [ wd:Q47088295  ] ;#feminine plural
+}
+<lexicalform5> {
+  wikibase:grammaticalFeature [ wd:Q110786  ] ;#singular
+  wikibase:grammaticalFeature [ wd:Q146786  ] ;#plural
+  wikibase:grammaticalFeature [ wd:Q499327  ] ;#masculine
+  wikibase:grammaticalFeature [ wd:Q1775415  ] ;#feminine
+}
+<lexicalsense> {
+  rdfs:label .{1} ;#label
+  skos:definition .{1} ;#label
+  wdt:5137 .? ;#label
+  wdt:5972 .? ;#label
+}

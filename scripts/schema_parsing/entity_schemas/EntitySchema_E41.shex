@@ -1,0 +1,76 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E86>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+PREFIX E86: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E86#>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX wikicite: <http://micel.io/wikicite/>
+PREFIX wpidorg: <http://identifiers.org/wikipathways/>
+
+start = @<#wikidata-wp-pathway>
+
+<#wikidata-wp-pathway> {
+	# Statements 
+    p:P31 				@<#P31_pathway_ontology_term> ;
+    p:P527 				@<#P527_has_part>* ;
+    p:P2860 			@<#P2860_cites>* ;
+    p:P2888 			@<#P2888_exact_match>* ;
+
+    # Identifiers
+    p:P2410 			@E266:P2410_wikipathways-identifier ;
+}
+
+<#P31_pathway_ontology_term> {
+	ps:P31 				[wd:Q4915012 wd:Q90012262 wd:Q22325163] ;
+	prov:wasDerivedFrom @E265:wikipathways_reference ;
+}
+
+<#P527_has_part> {
+	ps:P527   			@<#pathway_part>* ;
+	prov:wasDerivedFrom @E265:complex_portal_reference OR @E265:wikipathways_reference  ;
+}
+
+<#pathway_part> EXTRA p:P31 {
+     p:P31  {
+         		ps:P31 [
+                    	wd:Q7187   # gene
+                    	wd:Q8054   # protein
+                    	wd:Q11173  # chemical compound
+                    	wd:Q12140  # drug
+                        wd:Q22325163 # macromolecular complex
+                        wd:Q78782478 # protein fragment
+                ]
+    }+
+}
+
+<#P2860_cites> {
+	ps:P2860  			@<#wikicite_entry> ;
+	prov:wasDerivedFrom @E265:wikipathways_reference ;
+}
+<#wikicite_entry> {
+     p:P31 {
+        ps:P31 [
+                 		wd:Q13442814 # scientific article
+               ]  
+        } ;
+}   
+
+<#P2888_exact_match> {
+	ps:P2888   [ 
+                        wpidorg:~
+         ] ;
+	prov:wasDerivedFrom @E265:wikipathways_reference ;
+}

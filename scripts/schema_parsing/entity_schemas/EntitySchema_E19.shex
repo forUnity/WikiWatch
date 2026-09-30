@@ -1,0 +1,21 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+
+#recent samples:
+# SELECT?item {?item wdt:P31 wd:Q21191270} ORDER BY DESC(xsd:integer(SUBSTR(STR(?item),33))) LIMIT 20
+
+#old samples:
+# SELECT?item {?item wdt:P31 wd:Q21191270} ORDER BY (xsd:integer(SUBSTR(STR(?item),33))) LIMIT 50
+
+start = @<wikidata-tvseriesepisode>
+
+<wikidata-tvseriesepisode> EXTRA p:P31 {    
+	wdt:P31 [wd:Q21191270];
+        wdt:P179 { wdt:P31 [wd:Q5398426] } ;
+        wdt:P4908 { wdt:P31 [wd:Q3464665] } ;
+        wdt:P577 . + ;
+        wdt:P1476 . + ;
+        wdt:P57 . + ;
+}

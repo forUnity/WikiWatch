@@ -1,0 +1,159 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+
+#SELECT ?item ?itemLabel WHERE {}
+
+START = @<facultyAndStaff>
+
+<facultyAndStaff> {
+wdt:P31 [wd:Q5] ;
+wdt:P5008 [ wd:Q98970039 ] ;  
+wdt:P21 [wd:Q6581097 wd:Q6581072 wd:Q1097630 wd:Q1052281 wd:Q2449503 wd:Q48270 wd:Q505371] + ; 
+wdt:P106 LITERAL + ;
+wdt:P101 IRI + ;
+wdt:P463 IRI + ;
+wdt:P735 IRI + ;
+wdt:P734 IRI + ;
+wdt:P1559 LITERAL * ;
+wdt:P1477 LITERAL * ;
+wdt:P2562 LITERAL * ;
+wdt:P742 LITERAL * ;
+wdt:P1449 LITERAL * ;
+wdt:P803 IRI * ;
+wdt:P737 IRI + ;
+wdt:P800 IRI + ;
+wdt:P1411 IRI * ;
+wdt:P1412 IRI ? ;
+wdt:P172 IRI ? ;
+wdt:P91 IRI ? ; 
+wdt:P27 IRI ? ;
+wdt:P6553 IRI ? ; 
+wdt:P214 . * ;
+wdt:P213 . ? ;
+wdt:P496 . ? ;
+wdt:P2163 . ? ;
+wdt:P245 . ? ;
+wdt:P5745 . ? ;
+wdt:P5508 . ? ;
+wdt:P2381 . ? ;
+wdt:P2037 . ? ;
+wdt:P1960 . ? ;
+wdt:P4012 . ? ;
+wdt:P1153 . ? ;
+wdt:P2798 LITERAL ? ;
+wdt:P2013 LITERAL ? ;
+wdt:P2003 LITERAL ? ;
+wdt:P6634 LITERAL ? ;
+wdt:P6023 . ? ;
+wdt:P2038 . ? ;
+wdt:P3040 LITERAL ? ;
+wdt:P4015 LITERAL ? ;
+wdt:P2397 . ? ;
+wdt:P434 . ? ;
+wdt:P1953 . ? ;
+wdt:P8688 . ? ;
+wdt:P1026 IRI * ;
+wdt:P166 @<awardReceived> IRI * ;
+wdt:P244 @<LoCID> ? ;
+
+#REQUIRED
+    p:P108 @<employer> + ;
+    p:P8413 @<academicAppointment> + ;
+    p:P69 @<educatedAt> + ;
+    p:P6937 @<workLocation> * ;
+    p:P856 @<officialWebsite> * ;
+    p:P8214 @<cv> * ;
+    p:P2048 @<academicDegree> + ;
+    p:P1416 @<affiliation> ? ;
+    p:P185 @<doctoralStudent> + ;
+    p:P184 @<doctoralAdvisor> + ;
+    p:P551 @<residence> * ;
+    p:P968 @<email> * ;
+    p:1329 @<phoneNumber> * ; 
+    p:P2900 @<faxNumber> * ;
+    p:P973 @<describedAtURL> * ;
+   p:P2002 @<Twitter>  ? ;
+   p:P569 @<dateOfBirth> ? ; 
+   p:P570 @<dateOfDeath> ?  ;
+}
+<employer> {
+ps:P108 .+ ;
+pq:P580 xsd:dateTime + ;
+pq:P582 xsd:dateTime + ;
+pq:P39 IRI + ;
+prov:wasDerivedFrom @<reference> +   
+}
+<academicAppointment> {
+pq:P580 xsd:dateTime + ;
+pq:P582 xsd:dateTime + ;
+pq:P39 IRI + ;
+ prov:wasDerivedFrom @<reference> +   
+}
+<educatedAt> {
+pq:P580 xsd:dateTime + ;
+pq:P582 xsd:dateTime + ;
+pq:P39 IRI + ;
+ prov:wasDerivedFrom @<reference> +   
+}
+<workLocation> {
+ps:P637 IRI ? ;
+prov:wasDerivedFrom @<reference> +   
+}
+<officialWebsite> {
+pq:P856 IRI * ;
+pq:P813 xsd:dateTime
+}
+<cv> {
+pq:8214 IRI * ;
+pq:P813 xsd:dateTime;
+prov:wasDerivedFrom @<reference> +  ;
+}
+<academicDegree> {
+ps:P512 IRI * ;
+ps:P1027 IRI * ;
+pq:P585 xsd:dateTime
+}
+<describedAtURL> {
+ps:P973 LITERAL * ;
+pq:P407 IRI * ;
+pq:P813 xsd:dateTime
+}
+<Twitter> {
+ps:P6552 xsd:string + ;
+pq:P580 xsd:dateTime +;
+pq:P1810 xsd:string *;
+}
+<dateOfBirth>{
+ps:P569 xsd:dateTime ? ;
+prov:wasDerivedFrom @<reference> +   
+}
+<dateOfDeath>{
+ps:P570 xsd:dateTime ? ;
+prov:wasDerivedFrom @<reference> +   
+}
+<reference> {
+    pr:P248 IRI + ;
+    pr:P854 IRI + ;
+    pr:P143 IRI + ;
+    prv:P813 IRI ? ;
+}

@@ -1,0 +1,32 @@
+PREFIX  schema: <http://schema.org/>
+PREFIX  p:     <http://www.wikidata.org/prop/>
+PREFIX  s:     <http://www.wikidata.org/entity/statement/> 
+PREFIX  rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX  wdt:   <http://www.wikidata.org/prop/direct/> 
+PREFIX  wikibase: <http://wikiba.se/ontology#> 
+PREFIX  xsd:   <http://www.w3.org/2001/XMLSchema#> 
+PREFIX  skos:  <http://www.w3.org/2004/02/skos/core#> 
+PREFIX  rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX  wd:    <http://www.wikidata.org/entity/> 
+
+# Example SPARQL query: select ?project  where {  ?project wdt:P3400 ?cordisid .  ?project wdt:P580 ?startDate .  ?project wdt:P582 ?endDate .  ?project wdt:P17 wd:Q29 .  ?project wdt:P2769 ?budget .  FILTER (?budget > 1000000)  SERVICE wikibase:label { bd:serviceParam wikibase:language [AUTO_LANGUAGE],en". }}ORDER BY ?startDate
+
+start = @<EuropeanProject>
+
+<EuropeanProject>{
+        rdfs:label   .* ;
+        schema:description  .* ;
+        schema:name         .* ;
+        skos:altLabel       .* ;
+        skos:prefLabel      .* ;
+        p:P2130             .* ;
+        p:P3400            .* ;
+        p:P5755             .* ;
+        p:P580              .* ;
+        p:P582             .* ;
+        wdt:P2130          .* ;
+        wdt:P3400          .* ;
+        wdt:P5755          .* ;
+        wdt:P580           .* ;
+        wdt:P582            .* ;
+}

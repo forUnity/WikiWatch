@@ -1,0 +1,18 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+start = @<racing-automobile-driver>
+
+<racing-automobile-driver> EXTRA wdt:P106 {
+  wdt:P31 [wd:Q5]; # 1 instance of human
+  wdt:P18 .+; # 1 or more image with any value
+  wdt:P27 .+; # 1 or more country of citizenship with any value
+  wdt:P19 .; # 1 place of birth with any value
+  wdt:P3048 .; # 1 racing reference id with any value
+  wdt:P3684 .; # 1 driver db id with any value
+  wdt:P8140 .; # 1 motorsportsstats.com id with any value
+  wdt:P734 .+; # 1 or more given name with any value
+  wdt:P735 .+; # 1 or more surname with any value
+  wdt:P21 [wd:Q6581097 wd:Q6581072 wd:Q1097630 wd:Q1052281 wd:Q2449503 wd:Q48270]; # 1 gender with one of these values
+  wdt:P106 [wd:Q10349745]; # 1 occupation with value racing automobile driver
+  wdt:P569 .; # 1 date of birth with any value
+}

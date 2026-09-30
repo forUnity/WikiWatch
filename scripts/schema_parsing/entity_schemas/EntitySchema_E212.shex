@@ -1,0 +1,11 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+START = @<E212#emergencymeasure>
+
+<E212#emergencymeasure> {
+wdt:P31  IRI * ; 
+wdt:P828  IRI * ; 
+wdt:P580  . ?; 
+wdt:P6949 . ?;
+wdt:P1001  IRI * ; 
+}

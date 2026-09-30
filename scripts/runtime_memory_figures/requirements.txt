@@ -1,0 +1,4 @@
+# parse_logs.py is stdlib-only; these are for plot_runtime_memory.py.
+# The repo's top-level .venv already satisfies both, so a separate venv is optional.
+matplotlib>=3.8
+pandas>=2.0

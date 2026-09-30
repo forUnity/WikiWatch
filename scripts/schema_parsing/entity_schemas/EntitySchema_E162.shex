@@ -1,0 +1,35 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q26843. } LIMIT 10
+
+start =@<#southern_resident>
+<#southern_resident> {
+
+    # instance of
+    wdt:P31 [ wd:Q26843 ] ;
+    # sex or gender
+    wdt:P21 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # date of birth
+    wdt:P569 xsd:dateTime ? ;
+    # date of death
+    wdt:P570 xsd:dateTime ? ;
+    # image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+    # member of
+    wdt:P463 [wd:Q65547089 wd:Q65547162 wd:Q65547144] ;
+    # Commons category
+    wdt:P373 xsd:string ? ;
+    # medical condition
+    wdt:P1050 [ <http://www.wikidata.org/entity>~ ] * ;
+    # location
+    wdt:P276 [ <http://www.wikidata.org/entity>~ ] * ;
+    # cause of death
+    wdt:P509 [ <http://www.wikidata.org/entity>~ ] * ;
+}

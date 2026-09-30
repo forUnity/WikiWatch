@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# query map: SELECT * WHERE { ?item wdt:P31 wd:Q18618819 .}
+
+start = @<park>
+
+<park> EXTRA wdt:P31 wdt:P131 {
+ #instance of "national park of Australia"
+  wdt:P31 [wd:Q18618819]; 
+ #country is Australia
+  wdt:P17 [wd:Q408]; 
+  #has valid state or territory
+  wdt:P131 EXTRA wdt:P31 { wdt:P31 [
+                                                               wd:Q5852411 # state of Australia (Q5852411)
+                                                               wd:Q14192234 # mainland territory of Australia (Q14192234)
+                                                               wd:Q11687019 # external territory of Australia (Q11687019)
+                                                             ] }; 
+  wdt:P625 LITERAL +; #has coordinate location
+  wdt:P571 LITERAL +; #has inception
+  wdt:P2046 LITERAL +; #has area
+  wdt:P814 { wdt:P31 [wd:Q3679744] }; #has a valid IUCN management category
+  wdt:P856 IRI *; #has official website
+  wdt:P92 { wdt:P31 [wd:Q45736416 wd:Q61776889] }*; #has at least one management plan or statement of intent
+  wdt:P137 IRI +; #has operator
+  wdt:P373 LITERAL *; #has Wikimedia Commons category
+  wdt:P402 LITERAL +; #has OSM relation ID
+  wdt:P809 LITERAL *; #has WDPA ID
+  wdt:P6803 IRI +; #taxons found in national park
+}

@@ -1,0 +1,23 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E107>
+PREFIX E107: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E107#>
+
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# querymap: SELECT * WHERE { ?cromosome wdt:P31 wd:Q37748 ; wdt:P361 wd:Q720988 .}
+
+start = @<#humanChromosome>
+
+<#humanChromosome> @E107:chromosome AND {
+   p:P361 @<#human_genome> ;
+   p:P703 @<#found_in_taxon_homo_sapiens> ;
+}
+
+<#human_genome> {
+   ps:P361 [wd:Q720988] ; # human genome
+}
+
+<#found_in_taxon_homo_sapiens> {
+   ps:P703 [wd:Q15978631] ; # homo sapiens
+}

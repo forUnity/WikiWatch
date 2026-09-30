@@ -1,0 +1,15 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# PREFIX wd: <http://www.wikidata.org/entity/>
+# PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+# SELECT ?item WHERE{?item wdt:P31 wd:Q953806} LIMIT 10
+
+start = @<busStop> 
+
+<busStop> EXTRA wdt:P31 {
+    wdt:P31 [wd:Q953806] ; # P31 is instance of: Q953806: busstop
+    wdt:P625 . +  ;   # P625 = coordinate location
+    wdt:P1671 . ?  ;  # P1671 = Route number
+    wdt:P137 . ?       # P137 = operator 
+}

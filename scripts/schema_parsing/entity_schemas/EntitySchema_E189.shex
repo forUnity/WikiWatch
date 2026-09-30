@@ -1,0 +1,62 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example SPARQL query: 
+# SELECT ?x WHERE {SERVICE bd:sample {?x wdt:P31 wd:Q30612. bd:serviceParam bd:sample.limit 5 . } }
+
+start = @<#wikidata-clinical-trial>
+
+<#wikidata-clinical-trial> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of_clinical_trial> + ;
+  p:P6099	. * ;	# clinical trial phase
+  p:P1476	.{1};	# title
+  p:P1813	. * ;	# short name
+  p:P924	. * ;	# possible treatment
+  p:P4844	. + ;	# research intervention
+  p:P1050	. * ;	# medical condition
+  p:P2175	. * ;	# medical condition treated
+  p:P859	. * ;	# sponsor
+  p:P580	. + ;	# start time
+  p:P582	. * ;	# end time
+  p:P1132	. * ;	# number of participants
+  p:P2899	. * ;	# minimum age
+  p:P4135	. * ;	# maximum age
+  p:P921	. * ;	# main subject
+  p:P856	. * ;	# official website
+  p:P973	. * ;	# described at URL
+  p:P8005	. * ;	# research subject recruitment status
+
+  p:P137	. * ;	# operator
+  p:P1840	. * ;	# investigated by
+  p:P767	. * ;	# contributor to the creative work or subject
+  p:P710	. * ;	# participant
+
+  p:P17		. * ;	# country
+  p:P131	. * ;	# located in the administrative territorial entity
+  p:P6153	. * ;	# research site
+
+  p:P577	. * ;	# publication date
+  p:P1433	. * ;	# published in
+
+  p:P373	. * ;	# Commons category
+  p:P18		. * ;	# image
+  p:P527	. * ;	# has part
+
+  # Identifiers
+  p:P3098	. ? ;	# ClinicalTrials.gov ID
+  p:P6366	. * ;	# Microsoft Academic ID
+  p:P6220	. * ;	# OpenTrials ID
+  p:P7019	. * ;	# ANZCTR ID
+  p:P8064	. * ;	# Chinese Clinical Trial Registry ID
+
+}
+
+<#P31_instance_of_clinical_trial> {
+	ps:P31 [ wd:Q30612 ] ; # instances of clinical trial
+}

@@ -1,0 +1,20 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<pride>
+
+<pride> {
+	wdt:P31 [wd:Q51404 wd:Q27968055] ;
+        wdt:P17 @<nation> ;
+        wdt:P106 .  ;
+        wdt:P361 .  ; # part of an element with Q15275719 or a subclass of it
+        wdt:P585 .; # post Stonewall riot 1969-06-29
+        wdt:P155 .; # either novalue or an element
+        # by now, no elements have P15 but they should
+        wdt:P106 [ wd:Q33999 ]
+}
+
+<nation> {
+	wdt:P31 wd:Q6256 ;
+}

@@ -1,0 +1,29 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E418>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E419>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E421>
+PREFIX E418: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E418#>
+PREFIX E419: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E419#>
+PREFIX E421: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E421#>
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q61855877 } limit 5
+
+start = @<#podcastEpisode>
+
+<#podcastEpisode> {
+  wdt:P31 [wd:Q61855877] ; # instance of podcast
+  wdt:P31 IRI * ; # additional instance types are okay
+  wdt:P437 [wd:Q24633474] ; # distrib format: audio podcast
+  wdt:P437 IRI * ; # additional distrib formats are okay
+  wdt:P407 IRI + ; # at least one language
+  wdt:P179 @ E418:podcast {1} ; # at least one podcast
+  wdt:P371 @ E419:podcastPresenter * ; # at least one presenter
+  wdt:P4908 @ E421:podcastSeriesSeason ? ; # optionally, the season the episode belongs too
+}

@@ -1,0 +1,35 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# QUERY MAP: SELECT ?item WHERE { ?item wdt:P31 wd:Q2661442}  LIMIT 10
+
+start = @<#w3c_recommendation>
+
+<#w3c_recommendation> EXTRA p:P31 {
+	# instance of
+	p:P31 { ps:P31  [wd:Q2661442] } ;
+
+	# subclass of
+        p:P279 { ps:P279 IRI }? ;
+
+	# publication date or inception date 
+	(  p:P577 { ps:P577 xsd:dateTime } ; p:P571 { ps:P571 xsd:dateTime } ?
+	 | p:P571 { ps:P571 xsd:dateTime } ) ;
+
+	# standards body
+	p:P1462 { ps:P1462 [wd:Q37033] } ;
+
+	# full work available at
+	p:P953 {ps:P953 LITERAL} ? ;
+
+
+
+	## Identifiers
+
+	# GND ID
+	wdt:P227  . * ;
+}

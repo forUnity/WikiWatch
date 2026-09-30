@@ -1,0 +1,80 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# Query Map: SELECT ?item WHERE {?item wdt:P31 wd:Q44559. } LIMIT 10
+
+start = @ <#extrasolar_planet>
+
+<#extrasolar_planet> EXTRA wdt:P31 {
+
+ # instance of
+  wdt:P31 [ wd:Q44559 ] ;
+  
+ # constellation
+    wdt:P59 [ <http://www.wikidata.org/entity>~ ] ;
+
+ # parent astronomical body
+    wdt:P397 [ <http://www.wikidata.org/entity>~ ] ;
+
+ # right ascension
+    wdt:P6257 xsd:decimal ;
+
+ # declination
+    wdt:P6258 xsd:decimal ;
+
+ # epoch
+    wdt:P6259 [ <http://www.wikidata.org/entity>~ ] ;
+
+ # time of discovery or invention
+    wdt:P575 xsd:dateTime * ;
+
+ # discovery method
+    wdt:P1046 [ <http://www.wikidata.org/entity>~ ] * ;
+
+ # proper motion
+    wdt:P2215 xsd:decimal * ;
+
+ # image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+
+ # discoverer or inventor
+    wdt:P61 [ <http://www.wikidata.org/entity>~ ] * ;
+
+ # diameter
+    wdt:P2386 xsd:decimal * ;
+
+ # apparent magnitude
+    wdt:P1215 xsd:decimal * ;
+
+ # site of astronomical discovery
+    wdt:P65 [ <http://www.wikidata.org/entity>~ ] ? ;
+
+ # named after
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] *;
+
+ # Commons category
+    wdt:P373 xsd:string ? ;
+
+# External IDs
+
+# SIMBAD ID
+    wdt:P3083 xsd:string ;
+
+# Freebase ID
+    wdt:P646 xsd:string ? ;
+
+# Wolfram Language entity code
+    wdt:P4839 xsd:string ? ;
+
+# Extrasolar Planets Encyclopaedia exoplanet ID
+    wdt:P5653 xsd:string ? ;
+
+# Encyclopædia Britannica Online ID
+    wdt:P1417 xsd:string ? ;
+}

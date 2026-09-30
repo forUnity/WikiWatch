@@ -1,0 +1,37 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example query: select * { ?x wdt:P31 wd:Q67101749 } LIMIT 5
+
+start = @<#membraneTransporterClass>
+
+<#membraneTransporterClass> EXTRA p:P31 p:P279 {
+  p:P31 @<#P31_instance_of_membrane_transporter_class> ;
+  p:P7260 @<#P7260_TCDB_id>+ ;                                 # one or more molecular function stmts
+  p:P279 @<#P279_subclass_of_membrane_transporter_class>+ ;    # one or more subclass stmts
+}
+
+## Statement details
+<#P31_instance_of_membrane_transporter_class> {
+  ps:P31 [ wd:Q67101749 ] ;                     # group or class of transmembrane transport proteins
+  prov:wasDerivedFrom IRI+ ;
+}
+
+<#P279_subclass_of_membrane_transporter_class> {
+  ( ps:P279 wd:Q142943 ;                # subclass of [P279] transmembrane transport protein [Q142943]
+    |
+    ps:P279 { wdt:P31 wd:Q67101749 } ); # or any transmembrane transporter class
+  prov:wasDerivedFrom IRI+ ;
+}
+
+<#P7260_TCDB_id> {
+  ps:P7260 LITERAL ;
+  pq:P4390 { wdt:P31 [wd:Q60817979] } ; # qualifier: mapping type with any SKOS generic mapping relation
+  prov:wasDerivedFrom { wdt:P813 xsd:date } ; # reference has date retrieved [P813]
+}

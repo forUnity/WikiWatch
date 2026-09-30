@@ -1,0 +1,83 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# QUERY MAP: SELECT ?item ?itemLabel WHERE { ?item wdt:P31 ?type . VALUES ?type { wd:Q1640824 wd:Q3567529 } SERVICE wikibase:label { bd:serviceParam wikibase:language"[AUTO_LANGUAGE],mul,en". }}
+
+start = @<inscription>
+
+<inscription> {
+  # instance of
+	wdt:P31 [wd:Q1640824 wd:Q3567529] + ;
+  # inception
+  p:P571 {
+	ps:P571 . ;
+	pq:P1319 . ? ;
+	pq:P1326 . ? ;
+  } + ;
+  # depicts
+  wdt:P180 . + ;
+  # language
+  wdt:P407 . + ;
+  # script
+  wdt:P282 . + ;
+  # image
+  wdt:P18 . ? ;
+  # dimensions
+  wdt:P2048 xsd:decimal + ;
+  wdt:P2049 xsd:decimal + ;
+  wdt:P5524 xsd:decimal + ;
+  # material
+  wdt:P186 . + ;
+  # period
+  wdt:P2348 . * ;
+  # findspot
+  wdt:P189 . + ;
+  # excavation date
+  wdt:P575 . + ;
+  # significant event (dig)
+  wdt:P793 . * ;
+  # current location of the inscription
+  wdt:P276 . + ;
+  # collection
+  p:P195 {
+  ps:P195 . ;
+	pq:P217 . ? ;
+  } * ;
+  # state of conservation
+  wdt:P5816 [wd:Q56557591 wd:Q75505084 wd:Q106379705 wd:Q107531416 wd:Q61962974 wd:Q66890153] + ;
+  # commissioned by
+  wdt:P88 . * ;
+  # created by
+  wdt:P170 . * ;
+  # location of creation
+  wdt:1071 . * ;
+  # text of inscription
+  p:P1684 {
+  ps:P1684 . ;
+	pq:P2441 . * ;
+	pq:P7008 . ? ;
+  } + ;
+  # bibliography
+  wdt:P1343 . + ;
+  # US Epigraphy Project ID
+  wdt:P11708 . ? ;
+  # Packhard Humanities Institute (PHI) ID
+  wdt:P11299 . ? ;
+  # Epigraphic Database Heidelberg ID
+  wdt:P11273 . ? ;
+  # Epigraphik-Datenbank Clauss / Slaby  ID
+  wdt:P11656 . ? ;
+  # Trismegistos text ID
+  wdt:P8532 . ? ;
+  # Epigraphic Database Roma ID
+  wdt:P12495 . ? ;
+}

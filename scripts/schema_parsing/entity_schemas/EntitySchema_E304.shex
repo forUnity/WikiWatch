@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# see GITHUB https://github.com/salgo60/SvenskaBadstrander and video https://youtu.be/ZHdjwbLgzvE
+# Example SPARQL query: 
+# SELECT * WHERE { ?person wdt:P31 wd:Q35101126; wdt:P17 wd:Q34  } limit 5
+
+start = @<SwedishDogBeach>
+
+<SwedishDogBeach> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q35101126 ]  ; # instance of dogbeach
+ wdt:P17   [ wd:Q34 ]  ; # country Sweden
+ wdt:P131  .          + ; # located in the administrative territorial entity              
+ wdt:P625  .          + ; # coordinates              
+ wdt:P276  .          * ; # location              
+ wdt:P856  .          + ; # official website   
+ wdt:P706  .          * ; # located on terrain feature            
+ wdt:P206  .          * ; # located in or next to body of water              
+ wdt:P973  .          * ; # described by source              
+ wdt:P4173  .          * ; # Instagram location id              
+ wdt:P1997  .          * ; # Facebook location id              
+ wdt:P2572  .          * ; # hashtag              
+}

@@ -1,0 +1,25 @@
+# This schema is for items about Delftware pottery workshops
+# technically items with P31:Q69908907 (instance of:Delftware pottery workshop)
+
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+#samples:
+#   SELECT ?item { ?item wdt:P31 wd:Q69908907 }
+
+start = @<delftware-pottery-workshop>
+
+<delftware-pottery-workshop> {
+        wdt:P31 [wd:Q69908907] ;
+        wdt:P17 [wd:Q170072]  ;
+        wdt:P131 [wd:690]  ;
+        wdt:P571 .  ;
+        wdt:P576 .  ;
+        wdt:P112 .  ;
+        wdt:P1056 [wd:Q2086138]  ;
+        wdt:P154 .  ; 
+        wdt:P625 .  ;
+        wdt:P373 .  ;
+        wdt:P6379 .  ;
+        }

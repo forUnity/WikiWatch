@@ -1,0 +1,27 @@
+# Issue https://github.com/salgo60/Wikidata_riksdagen-corpus/issues/129
+# Wikidata <-> Välfärdsstaten analyserad/Welfare State Analytic
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+
+# Example SPARQL query: 
+# SELECT ?person WHERE { ?person wdt:P31 wd:Q5; wdt:P39 wd:Q33071890,wd:Q81531912 } limit 5
+
+start = @<SwedishMP>
+
+<SwedishMP> EXTRA wdt:P106 {
+ wdt:P31   [ wd:Q5 ]  ; # instance of human
+ wdt:P21   [ wd:Q6581097 wd:Q6581072 ] ; # gender
+ wdt:P106  [ wd:Q82955 ]  ; # occupation
+ p:P102  @<#parti-statement-novalue> +; #party
+}
+
+<#parti-statement-novalue> EXTRA a {
+# Either novalue or a party
+a [ wdno:P102 ps:P102 ] ;
+}

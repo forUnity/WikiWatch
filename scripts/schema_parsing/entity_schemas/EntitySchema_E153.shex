@@ -1,0 +1,19 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wd: <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+
+# Example SPARQL query: select ?researcher where { ?researcher wdt:P106 wd:Q1650915 } limit 5
+
+START = @<Researcher>
+
+<Researcher> EXTRA wdt:P31 wdt:P106 {
+  wdt:P31  [ wd:Q5 ]          ; # Instance of = human
+  wdt:P106 [ wd:Q1650915 ]    ; # Occupation = researcher 
+  wdt:P101 @<Discipline>    *  ; # Field of work
+  wdt:P496 xsd:string      ?  ; # ORCID-ID
+  wdt:P1153 xsd:string    ?  ; # Scopus-Author ID
+}
+
+<Discipline> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q11862829 ] ?
+}

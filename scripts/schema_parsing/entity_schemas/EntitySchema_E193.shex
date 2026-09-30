@@ -1,0 +1,27 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example SELECT ?item WHERE { ?item wdt:P31 wd:Q45787211 . } LIMIT 10
+
+start = @<#preprint_server>
+
+<#preprint_server>  EXTRA wdt:P31  {
+ wdt:P31    [ wd:Q45787211  ] ; # instance of a preprint_server
+ wdt:P856 IRI ? ; # official website
+ wdt:P571 xsd:dateTime OR xsd:date * ; # inception date
+ wdt:P101 @<field> * ; # field of work
+ wdt:P98 @<editor> * ; # editor
+ wdt:P123 IRI * ; # publisher
+} 
+
+# Preprint servers do not seem to follow a uniform pattern. As preprint_server gets used in a more standarized way, this shape should be improved. The required fields are those used by all (18) but 1 preprint_server on the date of addition of this shape (2020.04.10).
+
+<field> {
+}
+
+<editor> {
+}
+
+<publisher> {
+}

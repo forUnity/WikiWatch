@@ -1,0 +1,198 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX s: <http://www.wikidata.org/entity/statement/> 
+
+#select ?item where { ?item p:P31 [ ps:P31 wd:Q19844914; pq:P642 wd:Q219563 ] }
+
+START = @<building>
+
+<building> {
+    wdt:P17 [ wd:Q30 ]  ;                                  #REQUIRED
+    wdt:P5008 [ wd:Q98970039 ] ;                           #REQUIRED
+    wdt:P18 [ <http://commons.wikimedia.org>~ ] * ;
+    wdt:P281 /[0-9]{5}|[0-9]{9}|[0-9]{5}-[0-9]{4}/ ? ;
+    wdt:P590 /[0-9]{1,20}/ ? ;
+    wdt:P1101 /[1-100]/ ? ;
+    wdt:P1139 /[1-100]/ ? ;
+    wdt:P1566 /[0-9]{1,20}/ ? ;
+    wdt:P6486 /[0-9]{1,10}/ ? ;
+    wdt:P8733 /[1-1000]/ ? ;
+    wdt:P88 IRI * ;
+    wdt:P127 IRI + ;
+    wdt:P131 IRI ? ;
+    wdt:P276 IRI + ;
+    wdt:P361 IRI * ;
+    wdt:P373 Literal * ;
+    wdt:P454 . ? ;
+    wdt:P646 . ? ;
+    wdt:P1435 IRI * ;
+    wdt:P2270 . ? ;
+    wdt:P7859 Literal  ? ;
+    wdt:P9601 IRI * ;
+    p:P31 @<buildingInstanceOf> ;                          #REQUIRED
+    p:P31 (Not(@<buildingInstanceOf>)) * ;
+    p:P84 @<buildingArchitect> * ;
+    p:P138 @<buildingNamedAfter> * ;
+    p:P149 @<buildingArchitecturalStyle> * ;
+    p:P186 @<buildingMaterial> * ;
+    p:P193 @<buildingContractor> * ;
+    p:P214 @<buildingViafId> ? ;
+    p:P244 @<buildingLCAuthority> ;
+    p:P455 @<buildingEmporisId> ? ;
+    p:P466 @<buildingOccupant> * ;                         #REQUIRED
+    p:P571 @<buildingInception> * ; 
+    p:P576 @<buildingDemolished> *  ;
+    p:P625 @<buildingCoordinateLocation> ;
+    p:P856 @<buildingWebsite> * ;
+    p:P973 @<buildingDescriptionUrl> * ;
+    p:P1448 @<buildingOfficialName> * ;
+    p:P1619 @<buildingDateOpening> * ;
+    p:P2046 @<buildingArea> * ;
+    p:P2048 @<buildingHeight> * ;
+    p:P2130 @<buildingCost> ? ;
+    p:P2163 @<buildingFastId> ? ;
+    p:P2561 @<buildingName> *  ;
+    p:P5383 @<buildingArchInformId> ? ; 
+    p:P6375 @<buildingAddress> *  
+}   
+<buildingInstanceOf> {
+    ps:P31 [ wd:Q19844914 ] ;
+    pq:P642 [ wd:Q219563 ] 
+}
+<buildingArchitect>{
+    ps:P84  IRI ;
+    prov:wasDerivedFrom @<reference>
+}
+<buildingNamedAfter> {
+    ps:P138 IRI ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingArchitecturalStyle> {
+    ps:P149 IRI ;
+    prov:wasDerivedFrom @<reference>
+}
+<buildingMaterial> {
+    ps:P186 IRI + ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingContractor> {
+    ps:P193 IRI  ;
+    prov:wasDerivedFrom @<reference>
+}
+<buildingViafId> {
+    ps:P214 /[0-9]{1,15}/ ;
+    psn:P214 IRI *
+}
+<buildingLCAuthority> {
+    ps:P244 [ "sh"~ ] ;
+    psn:P244 IRI * ;
+    pq:P1810 Literal ;
+    pq:P4970 Literal *
+}
+<buildingEmporisId> {
+    ps:P455 /[0-9]{1,15}/ ;
+    psn:P455 IRI * ;
+    pq:P1810 Literal * ;
+    pq:P4970 Literal *
+}
+<buildingOccupant> {
+    ps:P466 IRI ;
+    prov:wasDerivedFrom @<reference>
+}
+<buildingInception> {
+    ps:P571 xsd:dateTime ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingDemolished> {
+    ps:P576 xsd:dateTime ;
+    prov:wasDerivedFrom @<reference>
+}
+<buildingCoordinateLocation> {
+    ps:P625 geo:wktLiteral ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingWebsite> {
+    ps:P856 IRI ;
+    pq:P407 IRI *
+}
+<buildingDescriptionUrl> {
+    # REMOVED: why postal code?? ps:P281 IRI ;
+    pq:P407 IRI * ;
+    pq:P813 xsd:dateTime
+}
+<buildingOfficialName> {
+    ps:P1448 Literal ;
+    pq:P580 xsd:dateTime ? ;
+    pq:P582 xsd:dateTime ? ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingDateOpening> {
+    ps:P1619 xsd:dateTime ;
+    prov:wasDerivedFrom @<reference> +  
+}
+<buildingArea> {
+    psv:P2046 @<deepValue> ;
+    prov:wasDerivedFrom @<reference> +    
+}
+<buildingHeight> {
+    psv:P2048 @<deepValue> * ;
+    prov:wasDeriveFrom @<reference> + 
+}
+<buildingCost> {
+    psv:P2130 @<deepValue> ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingFastId> {
+    ps:P2163 /[0-9]{1,15}/ ;
+    psn:P2163 IRI * ;
+    pq:P1810 Literal *
+}
+<buildingName> {
+    ps:P2561 Literal ;
+    pq:P580 xsd:dateTime ?;
+    pq:P582 xsd:dateTime ?
+}
+<buildingArchInformId> {
+    ps:P5383 Literal ;
+    prov:wasDerivedFrom @<reference> +
+}
+<buildingAddress> {
+    ps:P6375 rdf:langString ;
+    prov:wasDerivedFrom @<reference>
+}
+<reference> {
+#    a wikibase:Reference REMOVED ;
+# another problem: could not validate using CHOICE:
+# ( pr:P248 + | pr:P854 + | pr:P143 + )
+# PyShex rejects multiple attepmts with different quantifiers
+    pr:P248 IRI * ;
+    pr:P854 IRI * ;
+    pr:P143 IRI * ;
+    prv:P813 IRI ?
+}
+<deepValue> {
+    wikibase:quantityAmount xsd:decimal ;
+    wikibase:quantityUnit IRI
+}

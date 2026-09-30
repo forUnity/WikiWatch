@@ -1,0 +1,5 @@
+# example for a schema that currently doesn't parse but exits with an error
+
+<Test> { 
+ wdt:P1 
+}

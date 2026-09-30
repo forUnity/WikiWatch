@@ -1,0 +1,69 @@
+# Based on https://www.wikidata.org/wiki/EntitySchema:E134
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL queries:
+# SELECT ?person WHERE { ?person wdt:P31 wd:Q5; wdt:P39 [ wdt:P279 wd:Q16707842 ] } limit 5
+# SELECT DISTINCT ?id WHERE { VALUES ?id { wd:Q180589 wd:Q6383803 wd:Q269322 } }
+
+start = @<UnitedKingdomMP>
+
+<UnitedKingdomMP> EXTRA wdt:P106 p:P39 {
+  wdt:P31   [ wd:Q5 ] ;          # instance of human
+  wdt:P106  [ wd:Q82955 ] ;      # occupation politician
+  p:P39     @<PositionHeld> +;   # position held subclass of Member of Parliament
+}
+
+<PositionHeld> {
+   ps:P39  @<subclass-of-mp> ;
+   pq:P580 xsd:dateTime ;
+   pq:P4100 @<parliamentary-group> ;
+   pq:P768 @<electoral-district> ;
+   pq:P2715 @<elected-in> ;
+   pq:P2937 @<parliamentary-term> ;
+   (
+      pq:P1534 @<end-cause> +;   # if there is an end cause there
+      pq:P582 xsd:dateTime +;    # must be an end date, and vice versa
+   )* ;
+}
+
+<subclass-of-mp> {
+    wdt:P279 [ wd:Q16707842 ]; # subclass of "Member of Parliament"
+}
+
+<end-cause> {
+    # Instance of an "end cause" or "Wikidata end cause"
+    # These should probably be harmonised, but for now accept either.
+    wdt:P31 [ wd:Q22087155 wd:Q66593009  ]; 
+}
+
+<electoral-district>  {
+   wdt:P31 [ wd:Q27971968 ]; # Commons constituency
+}
+
+<elected-in> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q15283424 wd:Q7864918 ]; # election or by-election
+}
+
+<parliamentary-term> {
+  wdt:P31 [ wd:Q21094819 ]; # UK Parliament term
+}
+
+<parliamentary-group> EXTRA wdt:P31 wdt:P17 {
+    wdt:P31 @<subclass_of_political_organization>+;
+    wdt:P17 [ wd:Q145 ]     # country = UK
+}
+
+# This seems to be needed for a P31/P279* equivalent?
+#   https://lists.w3.org/Archives/Public/public-shex/2018Jun/0004.html
+<subclass_of_political_organization> {
+  (
+    (wdt:P279 [wd:Q7210356]; wdt:P279 .*) |
+    (wdt:P279 @<subclass_of_political_organization>; wdt:P279 .*)
+  )
+}

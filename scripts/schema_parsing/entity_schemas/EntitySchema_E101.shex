@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Example: SELECT ?i { ?i wdt:P1182 ?val } LIMIT 5
+
+start = @<edition>
+
+<edition> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q3331189]; # Must be instance of: edition
+  wdt:P1182 LITERAL; # Must have Libris edition ID
+  wdt:P5587 LITERAL; # Must have Libris URI
+  wdt:P1476 LITERAL; # Must have title
+  wdt:P577 xsd:dateTime; # Must have publication date
+  wdt:P291 IRI+; # Must have place of publication
+  wdt:P123 IRI+; # Must have publisher
+# Or? See e.g. https://libris.kb.se/katalogisering/xf7s18682fm4qlj
+  wdt:P407 IRI+; # Must have language(s)
+  rdfs:label rdf:langString+; # Must have label
+}
+# Must have either author or editor
+AND (
+  {wdt:P50 @<person>+;}
+OR
+  {wdt:P98 @<person>+;}
+)
+
+<person> {
+  wdt:P31 [wd:Q5];
+}

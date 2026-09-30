@@ -1,0 +1,25 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<ICH_item>
+
+<ICH_item> EXTRA  wdt:P3259 {
+	wdt:P31 @<ICH_item-P31> + ;     # instance of <ICH_item-P31>
+	wdt:P3259 @<ICH_item-P3259> + ; # Intangible Cultural Heritage status
+	wdt:P973 . + ;                  # described at URL
+	wdt:P10221 . ? ;                # UNESCO ICH ID
+	wdt:P6104 [ wd:Q112898263] ;    # maintained by WikiProject
+	wdt:P1705 . * ;                 # native label
+	wdt:P495 . * ;                  # country of origin
+	wdt:P17 . * ;                   # country
+	wdt:P2341 . * ;                 # indigenous to
+	wdt:P2596 . * ;                 # culture
+}
+
+<ICH_item-P31> EXTRA wdt:279 {      # subclass of craft (Q2207288), party (Q200538), tradition (Q82821), activity (Q1914636), rite (Q628455), musical work (Q2188189), song (Q7366), music tradition (Q60733114), festival (Q132241), theatrical genre (Q7777573), food (Q2095), or musical instrument (Q34379) 
+	wdt:P279 [ wd:Q2207288 wd:Q200538 wd:Q82821 wd:Q1914636 wd:Q628455 wd:Q2188189 wd:Q7366 wd:Q60733114 wd:Q132241 wd:Q7777573 wd:Q2095 wd:Q34379] ;
+}
+
+<ICH_item-P3259> EXTRA wdt:P31 {    # instance of UNESCO Intangible Cultural Heritage designation or 
+	wdt:P31 [ wd:Q110320060 wd:Q113128961] ;
+}

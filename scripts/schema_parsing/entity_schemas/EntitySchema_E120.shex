@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<red-panda>
+
+<red-panda> {
+    wdt:P31 [wd:Q41960 wd:Q57812611] {1,};
+    wdt:P21 [wd:Q44148 wd:Q43445];
+    wdt:P19 .;
+    wdt:P569 .;
+    wdt:P18 .+;
+}

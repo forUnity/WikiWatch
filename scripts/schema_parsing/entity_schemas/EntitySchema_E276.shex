@@ -1,0 +1,64 @@
+# Early draft see https://phabricator.wikimedia.org/T269813
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: https://w.wiki/qAV
+# SELECT ?item ?itemLabel WHERE { ?item wdt:P31/wdt:P279* wd:Q7379880. }
+# Project see https://phabricator.wikimedia.org/T268381
+# Description of metadata see https://www.raa.se/hitta-information/runor/begrepp-och-principer-for-translitterering/
+
+start = @<RunicInscription>
+<RunicInscription> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q7379880 ] ;
+ wdt:P18 .      + ; # picture 
+ wdt:P17 . + ; # country 
+ wdt:P131 . + ; # located in the administrative territorial entity
+ wdt:P625 .      + ; # coordinate location 
+ wdt:P10 .      * ; # video 
+ wdt:P6104 [ wd:Q104118700]   + ; # maintained by Wikipedia:Project Runic inscription
+ wdt:P1435 .      * ; # heritage designation 
+ wdt:P3596 .      * ; # Danish ancient monument ID
+ wdt:P1261 .      * ; # Scandinavian Runic-text Database
+ wdt:P276 .      * ; # location
+ wdt:P706 .      * ; # located on terrain feature
+ wdt:P170 .      * ; # creator = carver
+ wdt:P186 .      * ; # material used
+ wdt:P1260 .      * ; # Swedish Open Cultural Heritage URI
+
+#Missing
+#* Signum
+#* naming schemas
+#* crossform
+#* profile style
+#* artefact
+#* Rune row maybe title or wdt:P1922 first line
+#' Completeness
+# Measurements = P2048  height , P2049 width, P4511 vertical depth
+# Method of dating
+# age estimated by a dating method P7584
+# time of discovery or invention P575 
+# discoverer or inventor P61
+# time of earliest written record P1249
+# theorised by P8403
+# described by source P1343
+# stated as P1932 use as qualifier to indicate how the value was given in the source
+# Completeness = The state of completeness of the inscription / runic entry. P????
+# Brakteattyp
+# Method of dating see also https://www.academia.edu/6107509/Dating_the_Swedish_Viking_Age_rune_stones_on_stylistic_grounds
+## arch. archaeological
+## arch./typ. archaeological typological
+## arch./dendro. archaeological dendrochronological
+## arch./strat. archaeological stratigraphical
+## numismat. numismatical (for coins)
+## palaeograph.  palaeographical (for manuscripts)
+## iconograph. iconographical (for bracteates and objects with iconographic elements)
+## hist.    historical
+## ling.  linguistic
+## self-dating
+# Runtyp
+
+
+}

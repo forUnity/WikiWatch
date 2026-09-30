@@ -1,0 +1,98 @@
+# Work in progress comments user:salgo60 or contact me Sweden 0705937579, Telegram salgo60
+# see worksheet https://docs.google.com/spreadsheets/d/1TraXcbQwSsysCfsTK5i0zECVFIw2OoIjRZ0nv64GX-M/edit#gid=1674185292
+# GITHUB https://github.com/salgo60/Litteraturbanken_wd_runes
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: https://w.wiki/yba
+start = @<Rune>
+
+<Rune> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q7379880 wd:Q24566025]  ; # instance of
+ wdt:P18 .      * ; # picture 
+ wdt:P131 .    + ; # located in the administrative territorial entity 
+ wdt:P276 .    + ; # location
+ wdt:P155  @<Rune> + ; # follows see https://github.com/salgo60/Litteraturbanken_wd_runes/issues/13#issuecomment-800648741
+ wdt:P156  @<Rune> + ; # followed by
+ wdt:P17 [ wd:Q34] ; # country
+ wdt:P625 .    + ; # coordinate location
+ wdt:P1684 .    * ; # inscription
+ wdt:P575 . +; # time of discovery
+ wdt:P5816  [wd:Q62077203]   * ; # 	state of conservation
+# ?!?!?
+# Q62077203 Unknown location
+
+ wdt:P1343 [ wd:Q10567910 wd:Q4162197 wd:Q61707459 wd:Q10500549 wd:Q59341385]    +; # described by source
+# Alvin Q59341385
+# Futhark: International Journal of Runic Studies Q10500549
+# Fornvännen Q4162197
+# Järvafältets Runristningar Q105981623
+# Skansens runstenar / skrifter från Skansen Q61707459
+# Swedish Literature Bank Q10567910
+ wdt:P195  [ wd:Q3182302 wd:Q1726607 wd:Q4162197 wd:Q10727479 wd:Q20751277 wd:Q725108 wd:Q10712301 wd:Q10718178 wd:Q489175 wd:Q1142142 wd:Q10542121 wd:Q105593085 wd:Q1632115
+wd:Q10667705 wd:Q636400 wd:Q5095323 wd:Q105950647 wd:Q61803667 wd:Q10572802]    *;  # collection
+# Ashmolean Museum Q636400
+# Gotlands museum Q3182302
+# Gotlands fornsal Q20751277
+# Jönköping läns museum Q10542121
+# Lunds historiska museum Q105593085
+# Lödöse museum Q10572802  
+# Museum of Medieval Stockholm Q1632115
+# Nordiska museet Q1142142
+# Sigtuna museum Q10667705
+# Skansen Q725108
+# Sundbybergs hembygdsförening Museum Q61803667
+# Swedish History Museum Q1726607
+# Söderby-Karls museum Q105950647
+# Sörmland Museum Q5095323
+# Upplandsmuseet Q7899155
+# Valby Friluftsmuseum Q10712301
+# Västerås Länsmuseet Q10718178
+# Västergötlands museum Q489175
+# Örebro läns museum Q10727479
+
+# wdt:P6104 [ wd:Q105978945]   + ; # maintained by Wikipedia:Projekt runstenar TBD
+
+ wdt:P1261 . +; # Scandinavian Runic-text Database
+ wdt:P1260 . *; # Swedish Open Cultural Heritage URI
+ wdt:P7068 . *; # Gotlands museum
+ wdt:P1435 . *; # heritage designation
+ wdt:P407 . *; # language of work or name
+ wdt:P282 [wd:Q1937113 wd:Q11981875] *; # writing system 
+# Futhark Q1937113
+# kortkvistrunor Q11981875
+# langkvistruner Q11983176
+# stavlösa runor Q105981720
+# ??!??
+ wdt:P2348 . *; # time period
+ wdt:P1639 . *; # pendant of - other work in a pair 
+ wdt:P443 . *; # soundfile 
+ wdt:P571 . *; # date or point in time when the subject came into existence as defined
+ wdt:P706 . *; # located on terrain feature
+ wdt:P361 [wd:Q3903602 wd:Q1770639 wd:Q2022046]; # part of
+# Baltic area runestones Q3903602
+# Ingvar runestones Q1770639
+# Strängnäs domkyrka - Runestones Q21582240  -  maybe should be location?!?!
+# Sigtrygg Runestones  Q2022046
+ wdt:P136 [wd:Q3481604 ]*;  # genre
+# Q3481604 	Fornyrðislag
+ wdt:P189 . *;  # location of discovery
+
+
+#TODO
+# soundfiles (using P443) e.g. https://commons.wikimedia.org/wiki/File:G-134-runsvenska.opus
+# location in a church etc...
+# connect with more museums than Gotlands
+# The inscription is lost
+# get a property for Evighetsrunor see https://www.wikidata.org/wiki/Wikidata:Property_proposal/Evighetsrunor --> we get easier for people understand how to
+# connect e.g. Litteraturbanken with the app Evighetsrunor so we dont get another SILO
+# How to define
+## Varangian_runestones - https://en.wikipedia.org/wiki/Varangian_runestones
+## Baltic_area_runestones - https://en.wikipedia.org/wiki/Baltic_area_runestones
+## Greece runestones - https://en.wikipedia.org/wiki/Greece_runestones
+## Italy runestones - https://en.wikipedia.org/wiki/Italy_runestones
+## Ingvar runestones - https://en.wikipedia.org/wiki/Ingvar_runestones
+}

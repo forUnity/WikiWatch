@@ -1,0 +1,48 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query: 
+# SELECT ?person WHERE { ?person wdt:P31 wd:Q5; wdt:P39 wd:Q10655178 } limit 5
+
+start = @<SwedishMP>
+
+<SwedishMP> EXTRA wdt:P106 {
+ wdt:P31   [ wd:Q5 ]  ; # instance of human
+ wdt:P21   [ wd:Q6581097 wd:Q6581072 ] ; # gender
+ wdt:P19   @<Place>   ? ; # place of birth
+ wdt:P106  [ wd:Q82955 ]  ; # occupation
+ wdt:P569  .          + ; # birthdate                  
+ wdt:P735  @<GivenName> + ; # given name                   
+ wdt:P734  .          * ; # surname              
+ wdt:P39   [ wd:Q10655178 ] + ; # position held 
+ wdt:P39   . * ;
+ p:P39     @<SwedishMemberParliamentPosition> + ; 
+ p:P39     @<OtherPosition> * ;                
+ wdt:P1214 .          ? ; # RiksdagenID
+ wdt:P2002 .          ? ; # twittername          
+}
+
+<SwedishMemberParliamentPosition> {
+   ps:P39  [ wd:Q10655178 ] ;  # Value of position held = Member of Swedish Riksdag
+   pq:P580 xsd:dateTime ; # start time
+   pq:P582 xsd:dateTime # end time
+}
+
+<OtherPosition> NOT {
+ ps:P39  [ wd:Q10655178 ] * ;  # Value of position held = Member of Swedish Riksdag
+}
+
+<Place> { 
+ wdt:P31 [ wd:Q515 wd:Q12813115 ] ;
+ wdt:P31 . *
+} OR {
+ wdt:P17 [ wd:Q34 ]
+}
+
+<GivenName> {
+ wdt:P31 [ wd:Q11879590 wd:Q12308941]
+}

@@ -1,0 +1,18 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+#SPARQL: SELECT ?item WHERE { ?item wdt:P31 wd:Q179551 }
+
+#Reference URL: https://www.wikidata.org/wiki/Wikidata:WikiProject_Informatics/Programming_Language/HTML/List_of_elements
+
+start = @<htmlelement>
+
+<htmlelement> {
+  wdt:P31 [ wd:Q179551  ] ;# instance of an HTML element 
+  wdt:P973 .+ ;# described at URL
+  wdt:P8205 .{1} ;# Mozilla Developer Network article 
+  wdt:P1813 .{1} ;# short name
+  wdt:P2670 .* ;# has parts of the class
+  wdt:P527 .* ;# has part
+  wdt:P3113 .* ;# does not have part
+}

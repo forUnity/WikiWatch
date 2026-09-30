@@ -1,0 +1,44 @@
+# see also:
+# [[Property:P2094]] and [[Property talk:P2094]]
+# [[Help:P2094]]
+# [[Wikidata:WikiProject Sports/reports/competition class/competition class items]]
+
+# query map:
+# SELECT ?item WHERE { ?item wdt:P31/wdt:P279* wd:Q1744559; wdt:P2094 [] }
+
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+BASE <http://www.wikidata.org/wiki/Special:EntitySchemaText/> # we do not have a generic base URL yet; see [[:phab:T225778]] for details
+START = @<E139#competition-class-item>
+
+<E139#competition-class-item> EXTRA wdt:P31 {
+  (
+    (wdt:P31 [ wd:Q1744559 ]; wdt:P31 IRI *) |
+    (wdt:P31 @<E139#subclass-of-cc>; wdt:P31 IRI *)
+  );
+  wdt:P641 @<E139#subclass-of-sport>;
+  p:P2094 @<E139#cc-statement> +
+}
+
+<E139#subclass-of-cc> {
+  (
+    (wdt:P279 [ wd:Q1744559 ]; wdt:P279 IRI *) |
+    (wdt:P279 @<E139#subclass-of-cc>; wdt:P279 IRI *)
+  )
+}
+
+<E139#subclass-of-sport> { # should be done in a separate schema for "sport" or "type of sport", as we use it with P641
+  (
+    (wdt:P279 [ wd:Q349 ]; wdt:P279 IRI *) |
+    (wdt:P279 @<E139#subclass-of-sport>; wdt:P279 IRI *)
+  )
+}
+
+<E139#cc-statement> {
+  ps:P2094 IRI; # needs work
+  pq:P1013 IRI # needs work
+}

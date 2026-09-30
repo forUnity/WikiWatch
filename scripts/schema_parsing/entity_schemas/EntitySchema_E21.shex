@@ -1,0 +1,68 @@
+# This schema is for items about rowers
+# technically items with P106: Q13382576 (occupation: rower or a subclass thereof) 
+# see also: [[Wikidata:WikiProject Rowing/people]]
+# property statistics for current rower items: https://w.wiki/4Ut
+
+# as a Query Map, one could use something like 
+# SELECT ?id WHERE { ?id p:P106/ps:P106/wdt:P279* wd:Q13382576 }
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+BASE <http://www.wikidata.org/entity/>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E53> # sportsperson
+START = @<E21#rower>
+
+<E21#rower> {
+  wdt:P31 [ wd:Q5 ]; # EntitySchema:E10
+
+# basic person data (might be better to check this in E10)
+  wdt:P21 [ wd:Q6581072 wd:Q6581097 ]; # sex or gender
+  wdt:P569 xsd:dateTime ?; # date of birth
+  wdt:P570 xsd:dateTime ?; # date of death
+  wdt:P19 IRI ?; # place of birth
+  wdt:P20 IRI ?; # place of death
+  wdt:P27 IRI +; # country of citizenship
+
+# names (might be better to check this elsewhere)
+  wdt:P1559 rdf:langString *; # name in native language
+  wdt:P735 IRI *; # given name
+  wdt:P734 IRI *; # family name
+
+# defining as rower
+  (
+    ( wdt:P106 [ wd:Q13382576 ]; wdt:P106 .* ) |
+    ( wdt:P106 @<E21#subclass_of_rower>; wdt:P106 .* )
+  );
+
+# body properties (rather unusual properties for persons otherwise)
+  wdt:P2067 xsd:decimal ?; # mass
+  wdt:P2048 xsd:decimal ?; # height
+
+# participation data
+  wdt:P1344 IRI *; # participant of
+  wdt:P1416 IRI *; # affiliation
+
+# identifiers
+  wdt:P2091 xsd:string *; # FISA rower ID
+  wdt:P1447 xsd:string *; # Sports-Reference.com Olympic athlete ID
+  wdt:P3171 xsd:string *; # Olympic.org ID
+  wdt:P5815 xsd:string *; # Olympic Channel ID
+
+# what we do not want to have (deactivated)
+# wdt:P641 . {0}; # sport (use P106/occupation instead)
+# wdt:P2416 . {0}; # sports discipline competed in (use P106/occupation, and P1344/participant of for participation data)
+# wdt:P2094 . {0}; # competition class (use P1344/participant of for participation data)
+# wdt:P1532 . {0}; # country for sport (use this property as qualifiers in P1344/participant of claims instead)
+# wdt:P463 . {0}; # member of (use P1416/affiliation instead for club memberships)
+# wdt:P54 . {0}; # member of sports team (use P1344/participant of for participation data, and P1416/affiliation for rowing club affiliations)
+}
+
+<E21#subclass_of_rower> {
+  (
+    ( wdt:P279 [ wd:Q13382576 ]; wdt:P279 .* ) |
+    ( wdt:P279 @<E21#subclass_of_rower>; wdt:P279 .* )
+  )
+}

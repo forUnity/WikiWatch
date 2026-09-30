@@ -1,0 +1,54 @@
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# References
+
+# The first reference pattern is to express that any reference is acceptable.
+
+<#reference> { } # Any reference will suffice. 
+
+<#ensembl-gene-reference> {
+  pr:P248    { # P248 = stated in
+    wdt:P31 [wd:Q3331189] ; # P31 = instance of  wd:Q3331189 = version, edition, or translation
+    wdt:P629 [wd:Q1344256] ; # P629 = edition  Q1344256 = Ensembl genome database project
+  };
+  pr:P594    xsd:string ; # Ensembl Gene ID [P594]
+}
+
+<#ncbi-gene-reference> { # reference to a NCBI gene record
+  pr:P248   [ wd:Q20641742 ] ; # stated in [P248] NCBI gene [Q20641742]
+  pr:P351    xsd:string ; # NCBI gene identifier
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}
+
+<#complex-portal-reference> { #reference to the complex portal
+
+} 
+
+<#ncbi-taxon-reference> { # reference to a NCBI gene record
+  pr:P248    [ wd:Q13711410 ] ; # stated in Taxonomy database of the U.S. National Center for Biotechnology Information
+  pr:P685 	  xsd:string ; # NCBI Taxonomy ID 
+  pr:P813     xsd:dateTime ; # Date of retrieval
+}
+
+<#uniprot-reference> {
+  pr:P248    [wd:Q905695] ; # P248 = stated in Q905695 = Uniprot
+  pr:P352    xsd:string ; # P352 = Uniprot ID
+  pr:P813    xsd:dateTime ; #P318 = retrieved
+}
+
+<#wikipathways_reference> {
+	pr:P248  [wd:Q7999828] ;
+	pr:P813	xsd:dateTime ;
+	pr:P2410  LITERAL  /^WP[0-9]+$/;
+}
+
+<#complex_portal_reference> {
+  pr:P248 	[wd:Q47196990] ;
+  pr:P7718 	xsd:string ;
+  pr:P813 	xsd:dateTime ;
+  pr:P854	IRI ;
+}

@@ -1,0 +1,120 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+#QUERY MAP: SELECT ?item WHERE{?item wdt:P1886 ?value } LIMIT 10
+
+start=@<#vulkaan>
+
+<#vulkaan> {
+ # Data indications
+
+      #instance of something that is a subclass of a vulcano
+      p:P31 { ps:P31   { p:P279 {ps:P279 [wd:Q8072 wd:Q8502]}+} };
+
+      #coordinate location
+      p:P625 { psv:P625  IRI *; ps:P625  geo:wktLiteral *;  } +;
+
+      #country
+      p:P17 { ps:P17  IRI * };
+
+      #located in the administrative territorial entity
+      p:P131 { ps:P131  IRI * } *;
+
+      #elevation above sea level
+      p:P2044 { psn:P2044  IRI *; psv:P2044  IRI *; ps:P2044  xsd:decimal *;  } *;
+
+      #Commons category
+      p:P373 { ps:P373  xsd:string * } ?;
+
+      #image
+      p:P18 { ps:P18  IRI * } ?;
+
+           #continent
+      p:P30 { ps:P30  IRI * } ?;
+
+      #material used
+      p:P186 { ps:P186  IRI * } ?;
+
+      #volcano observatory
+      p:P3815 { ps:P3815  IRI * } ?;
+
+      #topographic prominence
+      p:P2660 { psv:P2660  IRI *; psn:P2660  IRI *; ps:P2660  xsd:decimal *;  } *;
+
+      #mountain range
+      p:P4552 { ps:P4552  IRI * } ?;
+
+      #located on terrain feature
+      p:P706 { ps:P706  IRI * } ?;
+
+      #part of
+      p:P361 { ps:P361  IRI * } ?;
+
+     ## IDENTIFIERS
+
+      #GeoNames ID
+      p:P1566 { psn:P1566  IRI *; ps:P1566  xsd:string *;  } ?;
+
+      #GNS Unique Feature ID
+      p:P2326 { ps:P2326  xsd:string * } ?;
+
+      #Smithsonian volcano ID
+      p:P1886 { ps:P1886  xsd:string * } ?;
+
+      #VOGRIPA ID
+      p:P4708 { ps:P4708  xsd:string * } ?;
+
+      #Peakbagger mountain ID
+      p:P3109 { ps:P3109  xsd:string * } ?;
+
+      #National Natural Landmarks site ID
+      p:P4182 { ps:P4182  xsd:string * } ?;
+
+      #Library of Congress authority ID
+      p:P244 { ps:P244  xsd:string *; psn:P244  IRI *;  } ?;
+
+      #BabelNet ID
+      p:P2581 { psn:P2581  IRI *; ps:P2581  xsd:string *;  } ?;
+
+      #VIAF ID
+      p:P214 { ps:P214  xsd:string *; psn:P214  IRI *;  } ?;
+
+      #IUCN protected areas category
+      p:P814 { ps:P814  IRI * } ?;
+
+      #GNIS ID
+      p:P590 { ps:P590  xsd:string * } ?;
+
+      #Freebase ID
+      p:P646 { psn:P646  IRI *; ps:P646  xsd:string *;  } ?;
+
+}

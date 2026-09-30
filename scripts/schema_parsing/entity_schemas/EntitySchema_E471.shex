@@ -1,0 +1,80 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Find items using this schema with the following SPARQL query:
+# Example SPARQL query: select * where { ?s wdt:P31 wd:Q53731850 }
+# This will return all items that are instance of (P31) individual copy of a book (Q53731850)
+
+start = @<#individual_copy_of_a_book>
+
+# Main shape definition for an individual copy of a book
+# The EXTRA keyword allows properties not mentioned in this schema to also be present
+<#individual_copy_of_a_book> EXTRA wdt:P31 {
+
+# Basic classification - required property
+wdt:P31 [wd:Q53731850] + ;       # Must be instance of (P31) individual copy of a book (Q53731850). The plus (+) means at least one such statement must exist
+  
+# A maximum of one image
+wdt:P18 IRI? ;                  # Image (P18) - optional (? means zero or one)
+  
+# Physical location information
+wdt:P276 IRI* ;                  # Location (P276) - optional (* means zero or more). IRI indicates the value must be another Wikidata item
+  
+# Bibliographic information - core book properties
+wdt:P1476 rdf:langString* ;      # Title (P1476) - can have multiple for different languages. rdf:langString means it's text with language tags
+wdt:P1680 rdf:langString? ;      # Subtitle (P1680) - optional with language tag
+  
+# Contributors to the book - all optional
+wdt:P50 IRI* ;                   # Author (P50) - can have multiple authors
+wdt:P98 IRI* ;                   # Editor (P98) - can have multiple editors
+wdt:P110 IRI* ;                  # Illustrator (P110) - can have multiple illustrators
+wdt:P655 IRI* ;                  # Translator (P655) - can have multiple translators
+wdt:P767 IRI* ;                  # Contributor (P767) - can have multiple contributors
+wdt:P2093 xsd:string* ;          # Author name string (P2093) - can have multiple authors for whom no Wikidata item exists and who are thus described with a string
+  
+# Publication information
+wdt:P577 xsd:dateTime* ;         # Publication date (P577) - can have multiple dates. xsd:dateTime format like "2023-05-07T00:00:00Z"
+wdt:P123 IRI* ;                  # Publisher (P123) - can have multiple publishers
+wdt:P291 IRI* ;                  # Place of publication (P291)
+wdt:P407 IRI* ;                  # Language of work (P407) - can have multiple languages
+  
+# Collection and inventory information - these use complex statements with qualifiers
+p:P195 @<CollectionStatement>* ; # Collection (P195) statements - references shape defined below. Each collection statement can have its own inventory numbers
+p:P217 @<InventoryNumberStatement>* ; # Inventory number (P217) statements with qualifiers. Each inventory statement can specify its collection
+  
+# Digital access and references
+wdt:P953 IRI* ;                  # Full work available at URL (P953) - digital access points
+wdt:P973 IRI* ;                  # Described at URL (P973) - references on other websites
+wdt:P996 IRI* ;                  # Scan file on Wikimedia Commons (P996)
+wdt:P373 xsd:string? ;       # Commons category (P373) - name of the Wikimedia Commons category 
+  
+# Rights information
+wdt:P6216 IRI* ;                 # Copyright status (P6216) e.g. public domain, copyrighted
+wdt:P275 IRI* ;                  # License (P275) e.g. CC BY-SA 4.0
+  
+# Technical and cataloging information
+wdt:P6108 IRI* ;                 # IIIF manifest URL (P6108) - for digital viewing; International Image Interoperability Framework
+wdt:P243 xsd:string* ;        # OCLC control number (P243) - library cataloging ID
+}
+
+# Definition for a Collection statement with inventory number qualifiers
+# This shape enforces the relationship between collections and inventory numbers
+
+<CollectionStatement> {
+ps:P195 IRI* ;                   # Main value: the collection (must be an IRI/Wikidata item). Examples: British Library, Bibliothèque nationale de France
+pq:P217 xsd:string* ;            # Qualifier: inventory number within that collection. String format allows for alphanumeric IDs like "MS Add. 12345"
+}
+
+# Definition for an Inventory Number statement with collection qualifiers
+# This is the inverse relationship of the above - starting from the inventory number
+
+<InventoryNumberStatement> {
+ps:P217 xsd:string* ;            # Main value: inventory number as a string. Examples: "Cod. Sang. 857", "Add MS 12345"
+pq:P195 IRI* ;                   # Qualifier: the collection this inventory number belongs to. Must link to a Wikidata item representing the collection
+}

@@ -1,0 +1,13 @@
+# try with SELECT ?s { ?s wdt:P31 wd:Q65943 } LIMIT 50
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+start=@<theorem>
+
+<theorem> EXTRA wdt:P31 {
+  #must be an instance of theorem
+  wdt:P31 [wd:Q65943];
+}

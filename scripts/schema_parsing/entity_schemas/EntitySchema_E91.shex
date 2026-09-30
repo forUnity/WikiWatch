@@ -1,0 +1,35 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# QUERY MAP: SELECT ?item WHERE { ?item wdt:P31 wd:Q202871}  LIMIT 10
+
+start=@<E91#emulator>
+
+<E91#emulator> EXTRA p:P31 {
+	# instance of
+	p:P31 { ps:P31  [wd:Q202871] } ;
+
+	 # official website
+    	 p:P856 { ps:P856 IRI } * ;
+
+	 # license
+    	 p:P275 { ps:P275 IRI } * ;
+
+ 	 # operating system
+    	 p:P306 { ps:P306 IRI } * ;
+
+	 # software version identifier
+   	 p:P348 {ps:P348 xsd:string} * ;
+
+	 # developer
+   	 p:P178 { ps:P178 IRI} * ;
+
+	 # emulates
+    	 p:P4043 { ps:P4043 IRI } * ;
+
+
+}

@@ -1,0 +1,71 @@
+# E10: human
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E10>
+PREFIX E10: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E10#>
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+start = @<wikidata-politician>
+
+<wikidata-politician> EXTRA wdt:P106 {    
+  ## STATEMENTS
+  wdt:P31 [wd:Q5];
+  wdt:P21 [wd:Q6581097 wd:Q6581072];   # gender
+  wdt:P19 IRI +;                          # place of birth
+  wdt:P569 xsd:dateTime + ;                        # date of birth
+  wdt:P1477 . *;                        # birth name
+  wdt:P570 xsd:dateTime * ;       # date of death
+  wdt:P20 IRI * ;                      # place of death
+  wdt:P735 @<given_name> * ;            # given name
+  wdt:P734 @<family_name> * ;           # family name
+  wdt:P106 [wd:Q82955] ;               # occupation
+  wdt:P27 @<country> *;                 # country of citizenship
+  wdt:P39 @<position_held> +;           # position held
+  wdt:P102 @<political_party> +;        # political party
+  wdt:P3602 . *;                        # candidacy in election
+  wdt:P22 @<human> *;                   # father
+  wdt:P25 @<human> *;                   # mother
+  wdt:P3373 @<human> *;                 # sibling
+  wdt:P3448 @<human> *;                 # stepparent
+  wdt:P26 @<human> *;                   # spouse
+  wdt:P40 @<human> *;                   # children
+  wdt:P1038 @<human> *;                 # relatives
+  wdt:P103 @<language> *;               # native language
+  wdt:P1559 rdf:langString *;                        # name in native language
+  wdt:P1412 @<language> *;              # languages spoken, written or signed
+  wdt:P6886  @<language> *;             # writing language
+  rdfs:label rdf:langString+;
+}
+
+<human> {
+  wdt:P31 [wd:Q5];
+  wdt:P21 [wd:Q6581097 wd:Q6581072];   # gender
+}
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3024240 wd:Q3624078] +;
+}
+
+<language> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q34770 wd:Q1288568] +;
+}
+
+<given_name> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q202444 wd:Q12308941 wd:Q11879590] +;
+}
+
+<family_name> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q101352] +;
+}
+
+<position_held> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q4164871] +;
+}
+
+<political_party> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q7278] +;
+}

@@ -1,0 +1,28 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<consitituency>
+
+<consitituency>  {
+	wdt:P31 @<consitituency-P31> ;
+	wdt:P571 . ;
+	wdt:P17 . ? ;
+	wdt:P131 . * ;
+	wdt:P3896 . ? ;
+	wdt:P402 . ? ;
+	wdt:P576 . ? ;
+	wdt:P1366 @<consitituency-P1366> ? ;
+	wdt:P1365 @<consitituency-P1365> ? ;
+}
+
+<consitituency-P31> EXTRA wdt:279 {
+	wdt:P279 [ wd:Q192611] ;
+}
+
+<consitituency-P1366> EXTRA wdt:279 {
+	wdt:P279 [ wd:Q192611] ;
+}
+
+<consitituency-P1365> EXTRA wdt:279 {
+	wdt:P279 [ wd:Q192611] ;
+}

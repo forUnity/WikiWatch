@@ -1,0 +1,382 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# Query to get basque nouns (there are many, adjust limit accordingly)
+# SELECT ?focus ?lemma {?focus dct:language wd:Q8752;wikibase:lexicalCategory wd:Q1084; wikibase:lemma ?lemma} order by asc(?lemma) limit 5 offset 0
+# Numbering of form based on L52233
+# SELECT ?focus {?focus dct:language wd:Q8752;wikibase:lexicalCategory wd:Q1084; wdt:P6838 "Heu077884_0"}
+
+start = @<eu-n>
+
+<eu-n> {
+  dct:language [ wd:Q8752 ] ;
+  wikibase:lexicalCategory [ wd:Q1084 ] ;
+  wikibase:lemma [ @eu ] ;
+  ontolex:lexicalForm {  # F1 absolutive indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q332734 ];
+  };
+  ontolex:lexicalForm {  # F2 absolutive singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q332734 ];
+  };
+  ontolex:lexicalForm {  # F3 absolutive plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q332734 ];
+  };
+  ontolex:lexicalForm {  # F4 ergative indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q324305 ];
+  };
+  ontolex:lexicalForm {  # F5 ergative singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q324305 ];
+  };
+  ontolex:lexicalForm {  # F6 ergative plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q324305 ];
+  };
+  ontolex:lexicalForm {  # F7 dative indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q145599 ];
+  };
+  ontolex:lexicalForm {  # F8 dative singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q145599 ];
+  };
+  ontolex:lexicalForm {  # F9 dative plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q145599 ];
+  };
+  ontolex:lexicalForm {  # F10 genitive indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q146233 ];
+  };
+  ontolex:lexicalForm {  # F11 genitive singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q146233 ];
+  };
+  ontolex:lexicalForm {  # F12 genitive plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q146233 ];
+  };
+  ontolex:lexicalForm {  # F13 instrumental indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q192997 ];
+  };
+  ontolex:lexicalForm {  # F14 instrumental singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q192997 ];
+  };
+  ontolex:lexicalForm {  # F15 instrumental plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q192997 ];
+  };
+  ontolex:lexicalForm {  # F16 sociative indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q3773161 ];
+  };
+  ontolex:lexicalForm {  # F17 sociative singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q3773161 ];
+  };
+  ontolex:lexicalForm {  # F18 sociative plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q3773161 ];
+  };
+  ontolex:lexicalForm {  # F19 motivative indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q1949687 ];
+  };
+  ontolex:lexicalForm {  # F20 motivative singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q1949687 ];
+  };
+  ontolex:lexicalForm {  # F21 motivative plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q1949687 ];
+  };
+  ontolex:lexicalForm {  # F22 benefactive indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q664905 ];
+  };
+  ontolex:lexicalForm {  # F23 benefactive singular
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q664905 ];
+  };
+  ontolex:lexicalForm {  # F24 benefactive plural
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q664905 ];
+  };
+  ontolex:lexicalForm {  # F25 prolative indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q952933 ];
+  };
+  ontolex:lexicalForm {  # F26 inessive indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q282031 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F27 inessive singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q282031 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F28 inessive plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q282031 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F29 ablative indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q156986 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F30 ablative singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q156986 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F31 ablative plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q156986 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F32 allative indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q655020 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F33 allative singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q655020 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F34 allative plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q655020 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F35 terminative indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q55862800 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F36 terminative singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q55862800 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F37 terminative plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q55862800 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F38 directive allative indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q55862884 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F39 directive allative singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q55862884 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F40 directive allative plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q55862884 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F41 destinative allative indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q55862897 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F42 destinative allative singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q55862897 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F43 destinative allative plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q55862897 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F44 locative indefinite inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q202142 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F45 locative singular inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q202142 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F46 locative plural inanimate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q202142 ];
+      wikibase:grammaticalFeature [ wd:Q51927539 ];
+  };
+  ontolex:lexicalForm {  # F47 inessive indefinite animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q282031 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F48 inessive singular animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q282031 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F49 inessive plural animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q282031 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F50 ablative indefinite animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q156986 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F51 ablative singular animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q156986 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F52 ablative plural animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q156986 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F53 allative indefinite animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q655020 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F54 allative singular animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q655020 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F55 allative plural animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q655020 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F56 terminative indefinite animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q55862800 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F57 terminative singular animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q55862800 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F58 terminative plural animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q55862800 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F59 directive allative indefinite animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q55862884 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F60 directive allative singular animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q55862884 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F61 directive allative plural animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q55862884 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F62 destinative allative indefinite animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q55862897 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F63 destinative allative singular animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q110786 ];
+      wikibase:grammaticalFeature [ wd:Q55862897 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F64 destinative allative plural animate
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q146786 ];
+      wikibase:grammaticalFeature [ wd:Q55862897 ];
+      wikibase:grammaticalFeature [ wd:Q51927507 ];
+  };
+  ontolex:lexicalForm {  # F65 partitive indefinite
+      ontolex:representation [ @eu ];
+      wikibase:grammaticalFeature [ wd:Q53998049 ];
+      wikibase:grammaticalFeature [ wd:Q857325 ];
+  };
+}

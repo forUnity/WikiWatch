@@ -1,0 +1,96 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E485>
+PREFIX E485: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E485#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q41207. ?item wdt:P5008 wd:Q114241199. } LIMIT 10
+
+start = @<ancientMediterraneancoin>
+
+<ancientMediterraneancoin> EXTRA p:P31 {
+   	# instance of
+    p:P31 { ps:P31 [ wd:Q41207 ] };
+
+	# inception (checked a small test group, need to verify validation error resolved for whole dataset; validator is flagging errors when one half of this statement fails, but according to the code below a valid entry only needs to satisfy one OR the other half to be in conformance)
+    p:P571 { ps:P571 [ xsd:dateTime   ] } ?; 
+     | p:P571 { 
+       ps:P571 [ ] ; 
+       psv:P571 [ <http://www.wikidata.org/.well-known/genid>~ ] ; 
+       pq:P1319 xsd:dateTime ? ; 
+       pq:P1326 xsd:dateTime ? ; } + ;
+
+	# Denomination 
+  	p:P12949 { ps:P12949 E485:coin_denomination } ? ; 
+
+	# Fabrication Method
+	p:P2079 { ps:P2079 [ <http://www.wikidata.org/entity>~ ] }?;
+
+	# image
+	p:P18 { ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] } ? ;
+
+	# Mass
+  p:P2067 {
+        # mass
+        ps:P2067 xsd:decimal;        
+        # mass
+        psv:P2067 [ <http://www.wikidata.org/value>~ ] ;
+        # mass
+        psn:P2067 [ <http://www.wikidata.org/value>~ ]
+    } ?;
+
+	# validation error corrected for a small test set, need to verify no errors for complete group 
+    p:P8751 {
+        # Die axis
+        ps:P8751 xsd:decimal;        
+        # Die axis
+        psv:P8751 [ <http://www.wikidata.org/value>~ ] ;
+        # Die axis
+        psn:P8751 [ <http://www.wikidata.org/value>~ ]
+    } ?;
+
+	# Diameter 
+	p:P2386 {
+        # diameter
+        ps:P2386 xsd:decimal;
+        # diameter
+        psv:P2386 [ <http://www.wikidata.org/value>~ ] ;
+        # diameter
+        psn:P2386 [ <http://www.wikidata.org/value>~ ]
+    } ?;
+
+	# Collection
+	p:P195 { ps:P195 [ <http://www.wikidata.org/entity>~ ] } ;
+
+	# Inventory Number
+	p:P217 { ps:P217 xsd:string } +;
+
+	# IIIF manifest (corrected validation error for small test group; verify no errors in remaining group)
+        p:P6108 { ps:P6108 IRI } ? ; 
+
+	# Creator (validator is flagging errors when one half of this statement fails, but according to the code below a valid entry only needs to satisfy one OR the other half to be in conformance)
+	p:P170 { ps:P170 [ <http://www.wikidata.org/entity>~ ] }? ;
+        | p:P170 { 
+       ps:P170 [ ] ; 
+       psv:P170 [ <http://www.wikidata.org/.well-known/genid>~ ] } ; 
+
+	# Made from material
+	p:P186 { ps:P186 [ <http://www.wikidata.org/entity>~ ] } ;
+
+	# Location
+	p:P276 { ps:P276 [ <http://www.wikidata.org/entity>~ ] }? ;
+
+	# Location of Creation
+	p:P1071 { ps:P1071  [ <http://www.wikidata.org/entity>~ ]}?;
+
+	# Location of Discovery
+	p:P189 { ps:P189 [ <http://www.wikidata.org/entity>~ ] }? ;
+}

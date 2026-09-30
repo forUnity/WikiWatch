@@ -1,0 +1,107 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E69>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+
+PREFIX E69: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E69#>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+#Reference: https://www.wikidata.org/wiki/Wikidata:WikiProject_COVID-19/Data_models/Virus_strains
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q87756246 } limit 5
+
+start = @<#virustaxon>
+
+<#virustaxon>  EXTRA p:P31  {
+  	p:P31 			@<#P31_instance_of_taxon>; # instance of a virus taxon or a taxon
+  	p:P225 			@<#P225_taxon_name> * ; # Zero or more taxon names taxon name
+  	p:P105 			@<#P105_taxon_rank> ;
+  	p:P171 			@<#P171_parent_taxon>? ;
+  	p:P4628 		@<#P4628_ICTV_virus_genome_composition>* ;
+  	p:P1843 		@<#P1843_taxon_common_name> * ; #taxon common name
+
+  	p:P1542 		@<#P1542_has_effect>* ;#has effect
+  	p:P2975 		@<#P2975_host>* ;#host
+  	p:P1605 		@<#P1605_has_natural_reservoir>* ;#has natural reservoir
+  	p:P2143 		@<#P2143_genome_size>* ;#genome size
+  	p:P575 			@<#P575_time_of_discovery_or_invention> ;#time of discovery or invention
+
+  	# statement without the need for references
+  	wdt:P18 		 .* ;#image
+  	wdt:P373          .*  ;#Commons category
+}
+  
+<#P31_instance_of_taxon> {
+   	ps:P31 [ 
+     	wd:Q87756246 # Q87756246 = virus taxon 
+     	wd:Q16521 # Q16521 = taxon
+   	] ;
+   	prov:wasDerivedFrom @E265:reference+
+}
+
+<#P105_taxon_rank> {
+  	ps:P105 {
+    	wdt:P31 [wd:Q34740] ; # the value should point to a QID that is an instance of Q34740 (Taxonomic rank) ;
+  	} ;
+  	prov:wasDerivedFrom @E265:ncbi-taxon-reference ;
+}
+
+<#P171_parent_taxon> {
+  	ps:P171 @<#virustaxon> ; 
+  	prov:wasDerivedFrom @E265:ncbi-taxon-reference ;
+} 
+
+<#P225_taxon_name> {
+  	ps:P225 xsd:string ;
+  	prov:wasDerivedFrom @E265:ncbi-taxon-reference ;
+}
+
+<#P575_time_of_discovery_or_invention> {
+  	ps:P575 xsd:time ;
+  	prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#P1542_has_effect> {
+    ps:P1542 			@E69:disease ;
+	prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#P1605_has_natural_reservoir> {
+    ps:P1605 			{ 
+    						wdt:P31 wd:Q16521 ;
+  			 			} ;
+    prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#P1843_taxon_common_name> {
+    ps:P1843			rdf:langLabel ;
+  	prov:wasDerivedFrom @E265:ncbi-taxon-reference+ ;
+} 
+
+<#P2143_genome_size> {
+  	ps:P2143	xsd:int ;
+  	prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#P2975_host> {
+  	ps:P2975 { 
+    			wdt:P31 wd:Q16521 ;
+  			 } ;
+  	prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#P4628_ICTV_virus_genome_composition> { # TODO
+  	ps:P4628  [
+      wd:~ 
+];
+  prov:wasDerivedFrom  @E265:reference+ ;
+}

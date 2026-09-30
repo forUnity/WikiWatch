@@ -1,0 +1,38 @@
+#
+# Sample queries for use with the schema checker:
+# - SELECT ?item WHERE { ?item wdt:P31 wd:Q464980. } LIMIT 100
+# - SELECT DISTINCT ?item WHERE { { SELECT DISTINCT ?item WHERE { ?item p:P31 ?statement0. ?statement0 (ps:P31/(wdt:P279*)) wd:Q667276.} } } LIMIT 100
+#
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<exhibition_manifestation>
+
+<exhibition_manifestation> EXTRA  wdt:P31 {
+	wdt:P31 [ wd:Q464980 wd:Q667276 wd:Q936821] ; # 1 instance of Q464980, Q667276 or Q936821. Other values are allowed
+	wdt:P1476  .   ;                              # 1 title
+	wdt:P17    .   ;                              # 1 country
+	wdt:P131   .   ;                              # 1 located in administrative territorial entity
+	wdt:P276   .   ;                              # 1 location
+	wdt:P580   . ? ;                              # 0 or 1 start time
+	wdt:P1619  . ? ;                              # 0 or 1 date of official opening
+	wdt:P582   . ? ;                              # 0 or 1 end time
+	wdt:P3999  . ? ;                              # 0 or 1 date of official closure
+	wdt:P664   . * ;                              # 0 or more organiser
+	wdt:P1640  . * ;                              # 0 or more curator
+	wdt:P179   . ? ;                              # 0 or 1 part of the series
+	wdt:P13360 . * ;                              # 0 or more presented works
+	wdt:P10661 . * ;                              # 0 or more exhibited creator
+	wdt:P1705  . * ;                              # 0 or more native label
+	wdt:P859   . * ;                              # 0 or more sponsor
+    wdt:P973   . * ;                              # 0 or more described at url
+    wdt:P856   . * ;                              # 0 or more official website
+    wdt:P7778  . * ;                              # 0 or more Museum  of Modern Art online exhibition ID
+    wdt:P8923   . * ;                             # 0 or more SMB-digital ID
+    wdt:P18    . * ;                              # 0 or more image
+    wdt:P154   . * ;                              # 0 or more logo image
+    wdt:P1110  . * ;                              # 0 or more attendance
+    wdt:P921   . * ;                              # 0 or more main subject
+    wdt:P972   . * ;                              # 0 or more catalog
+}

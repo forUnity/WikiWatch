@@ -1,0 +1,40 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+# Ejemplo consulta SPARQL: SELECT * WHERE { ?astronomo wdt:P31 wd:Q5 . ?astronomo wdt:P106 wd:Q11063. ?astronomo wdt:P19 ?lugar. ?lugar wdt:P31 wd:Q25412763. }limit 20
+
+
+start = @<astronomoschilenos>
+<astronomoschilenos>
+{
+
+# Instancia de (humano en este caso)
+wdt:P31 [ wd:Q5 ] ;
+
+#Ocupación
+wdt:P106 . * ;
+wdt:P106 [wd:Q11063];
+
+#Genero
+wdt:P21 IRI ?;
+wdt:P21 [wd:Q6581097 wd:Q6581072 wd:Q1097630 wd:Q1052281 wd:Q2449503 wd:Q48270]?;
+
+#Fecha de nacimiento
+wdt:P569 . ? ; #? --> cero o una entidad
+wdt:P569 LITERAL;
+
+#Nombre
+wdt:P735 @<nombre> *;
+
+#Nacionalidad
+wdt:P27 [wd:Q298];
+
+#Pais de nacimiento
+wdt:P19 . ?;
+}
+
+<nombre> {
+  wdt:P31 [wd:Q202444 wd:Q3409032 wd:Q12308941 wd:Q1243157 wd:Q11879590];
+}

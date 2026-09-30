@@ -1,0 +1,39 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX p: <http://www.wikidata.org/prop/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# This schema describes the variant items on Wikidata that are being enriched 
+# through myvariant.info. 
+
+# It currently sources dbSNP and citation mentioned in dbSNP records, but can 
+# gradually be extended with other properties form myvariant.info
+
+# query_map: SELECT * WHERE {?variant wdt:P3329 ?civicid}
+
+<variant> {
+	#dbSNP variant id
+	p:P6861 {
+		ps:P6861 xsd:string ;
+		pq:P383 xsd:string ;	
+	};
+
+       #described by source
+	p:P1343 {
+		ps:P1343 @<pubmed_reference> ;
+		prov:wasDerivedFrom @<dbSNP_reference> ;
+	}* # Contains zero or more reference describing this variant. 
+}
+
+# references 
+<dbSNP_reference> {
+	pr:P248 [wd:Q5243761] ;
+	pr:P813 xsd:dateTime ;
+	pr:P6861 xsd:string ;
+}
+
+<pubmed_reference> {
+}

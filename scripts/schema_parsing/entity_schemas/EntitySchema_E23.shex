@@ -1,0 +1,11 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<filmproducer>
+
+<filmproducer> EXTRA wdt:P106 {
+	wdt:P31 [wd:Q5] ;
+        wdt:P21 .  ;
+        wdt:P106 [ wd:Q3282637 ]
+}

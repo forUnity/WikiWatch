@@ -1,0 +1,32 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+#https://w.wiki/r2j
+#Notebook  https://github.com/salgo60/open-data-examples/blob/de99fe8deacdc3d941e7f1dfe30ee63224c800dc/Utegym%20Stockholm%20.ipynb
+# Project https://www.wikidata.org/wiki/Wikidata:WikiProject_Outdoor_Gyms
+
+START = @<outdoorgym>
+
+<outdoorgym> {
+wdt:P31   [ wd:Q692630 ] ;
+#Compulsory
+wdt:P131 . + ;# located in the administrative territorial entity
+wdt:P17 . + ;#  country
+wdt:P625 . + ;#  coordinate location
+wdt:P856 . * ;#  official website
+
+#Nice to have
+wdt:P126 . * ;# maintained by
+wdt:P1766 . * ;#  place name
+wdt:P18 . * ;#  image
+wdt:P217 . * ;#  inventory number - unique number of outdoor gym 
+wdt:P137  .* ; # operator
+wdt:P580  .* ; # start time
+wdt:P582  .* ; # end time
+wdt:P1651 .*; # video on Youtube
+wdt:P1343 .*; # described by source
+wdt:P1947  .* ; # Mapillary-ID
+
+
+wdt:P6104  [wd:Q107186275] ; # maintained by WikiProject Outdoor gyms 
+}

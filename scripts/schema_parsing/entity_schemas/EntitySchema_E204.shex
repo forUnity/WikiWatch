@@ -1,0 +1,41 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+
+# Example queries: 
+# 5 sandwiches: SELECT * WHERE { ?sandwich wdt:P31|wdt:P279 wd:Q28803 } LIMIT 5
+# Specific sandwich (peanut butter and jelly, Q1369093): SELECT DISTINCT ?sandwich WHERE {   VALUES ?sandwich {  wd:Q1369093  }  }
+
+start = @<SandwichShape>
+
+<SandwichShape> EXTRA wdt:P31 {
+
+      # instance of
+      wdt:P31 [ wd:Q28803 ] ;
+
+     # ( wdt:P31 [ wd:Q28803 ]          #   instance of
+     # ; P279 [ wd:Q28803 ]               #  subclass of
+     # )?;
+
+      # has part
+      wdt:P527 [ wd:Q7802 wd:Q1472481 wd:Q1427887 wd:Q20134 wd:Q178359 wd:Q74048276 wd:Q11004] ; 
+
+      # country of origin
+      wdt:P495 IRI ? ;
+
+      # inventor
+      wdt:P61 IRI ? ;
+
+      # named after
+      wdt:P138 IRI ? ;
+
+      ## External Identifiers ;
+
+      # taste atlas ID
+      wdt:P5456 xsd:string *
+
+
+}

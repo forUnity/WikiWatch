@@ -1,0 +1,29 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q107143326 . } limit 5
+
+start = @<#ossc>
+
+<#ossc> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of_ossc> ;
+  p:P159 @<#P159_hq_location> ;
+  p:P1344 @<#P1344_participant_of_inossc> ;
+}
+
+<#P31_instance_of_ossc> {
+  ps:P31 [wd:Q107143326] ;
+}
+
+<#P159_hq_location> {
+  ps:P159 IRI ;
+}
+
+<#P1344_participant_of_inossc> {
+  ps:P1344 [wd:Q104785223] ;
+}

@@ -1,0 +1,14 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<lockdown>
+
+<lockdown>  EXTRA wdt:P31  {
+  wdt:P31 [ wd:Q6665312  ] ;# instance of a lockdown
+  wdt:P17 .{1} ;#country
+  wdt:P1269 .? ;#reason or facet of
+  wdt:P828 .+ ;#has cause
+  wdt:P580 .{1} ;#start time
+  wdt:P1846 .* ;#distribution map
+}

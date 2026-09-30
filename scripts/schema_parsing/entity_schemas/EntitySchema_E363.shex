@@ -1,0 +1,21 @@
+prefix <http://example.org>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:tornado1 a :Event ;
+ :scale :EF4 ;
+ :lengthInMiles 18.17 ;
+ :widthInYards 1050 ;
+ :state :Ohio ;
+ :country :Montgomery ;
+ :source :NWSStormSurvey ;
+ :beginDate "2019-05-27T21:41:00"^^xsd:dateTime ;
+ :endDate "2019-05-27T22:13:00"^^xsd:dateTime ;
+ :reportSource :nwsStormSurvey ;
+ :beginLocation :2NEMETAMORA ;
+ :endLocation :2NEMETAMORA ;
+ :beginLatLong "40.8/-89.33333"^^xsd:string;
+ :endLatLong "40.8/-89.33333"^^xsd:string;
+ :deaths false;
+ :injuries false;
+ :numberOfDeaths 0;
+ :numberOfInjuries 3 .

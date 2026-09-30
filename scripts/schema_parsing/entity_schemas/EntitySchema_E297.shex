@@ -1,0 +1,56 @@
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<sailboatclass>
+
+<sailboatclass> {
+  # Defining properties
+  wdt:P31 [wd:Q106179098];
+  wdt:P279 @<subclass> +;
+  # Required properties
+  wdt:P18 .+;
+  wdt:P176 .;
+  wdt:P287 .;
+  p:P2048 @<height>;
+  p:P2049 @<width>;
+  p:P2043 @<length1>;
+  p:P2043 @<length2>;
+  p:P2067 @<mass1>;
+  p:P2067 @<mass2>;
+  # Optional properties
+  wdt:P5962 .*;
+  wdt:P2079 .*;
+  wdt:P516 .*;
+  wdt:P5869 .*;
+}
+  
+<subclass> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q16103215];
+}
+
+<length1> {
+  pq:P642 [wd:Q2358152];
+}
+
+<length2> {
+  pq:P642 [wd:Q1817392];
+}
+
+<width> {
+  pq:P642 [wd:Q2376482];
+}
+
+<height> {
+  pq:P642 [wd:Q244777 wd:Q2446632]
+}
+
+<mass1> {
+  pq:P642 [wd:Q5636358]
+}
+
+<mass2> {
+  pq:P642 [wd:Q5461048]
+}

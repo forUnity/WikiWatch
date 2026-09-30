@@ -1,0 +1,27 @@
+# as in Q2066131
+# test with:
+# SELECT DISTINCT ?item WHERE { ?item wdt:P106/wdt:P279* wd:Q2066131; wdt:P22 [] } LIMIT 10
+
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+BASE <http://www.wikidata.org/entity/>
+START = @<E53#sportsperson>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E48>
+
+<E53#sportsperson> EXTRA wdt:P106 {
+  (
+    (wdt:P106 [ wd:Q2066131 ]; wdt:P106 IRI *) |
+    (wdt:P106 @<E53#subclass-of-sportsperson>; wdt:P106 IRI *)
+  );
+  wdt:P22 @<E48#human>; # this is to test whether in import function works; P22=father
+}
+
+<E53#subclass-of-sportsperson> {
+  (
+    (wdt:P279 [ wd:Q2066131 ]; wdt:P279 IRI *) |
+    (wdt:P279 @<E53#subclass-of-sportsperson>; wdt:P279 IRI *)
+  )
+}

@@ -1,0 +1,21 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# sample:
+# SELECT ?item { ?item wdt:P31 wd:Q64027457 } LIMIT 50
+
+start = @<wikidata-healthin>
+
+<wikidata-healthin> EXTRA p:P31 {    
+	wdt:P31 [wd:Q64027457] ;
+	rdfs:label rdf:langString+;
+        wdt:P17 .  ;
+        wdt:P910 . ;
+        wdt:P527 . * ;
+        wdt:P373 .  ;
+} 
+
+#use a different scheme for more detailed or different definitions

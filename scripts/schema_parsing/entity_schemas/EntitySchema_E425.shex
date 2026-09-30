@@ -1,0 +1,16 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E418>
+PREFIX E418: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E418#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Example SPARQL query: select * where { ?x wdt:P5842 [] } limit 5
+
+start = @<#applePodcast>
+
+<#applePodcast> @ E418:podcast AND {
+  wdt:P5842 LITERAL + ; # one or more genres
+  wdt:P136 IRI + ; # one or more genres
+  wdt:P12341  wdt:P1113 + ; # one or more 'number of episodes' statements
+}

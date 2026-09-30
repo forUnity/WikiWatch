@@ -1,0 +1,82 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E169>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E170>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+
+PREFIX E108: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108#>
+PREFIX E169: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E169#>
+PREFIX E170: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E170#>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example query: select * { ?x wdt:P31 wd:Q7187 . ?x wdt:P703 wd:Q8351095  } LIMIT 5
+
+start = @<#wikidata-virus-gene>
+
+<#wikidata-virus-gene> {
+  p:P31 				@<#P31_instance_of_gene> ;
+  p:P279 				@<#P279_subclass_of_gene>? ;
+  p:P688 				@<#P688_encodes>? ; # Zero or one geneproducts.
+  p:P703 				@<#P703_found_in_taxon_virus> ; # In which taxonomy and where in that taxonomy this gene is found
+
+  # Identifiers
+  p:P351 				@E266:P351_ncbi_gene_id ; # Exactly one ncbi gene identifier
+  p:P594 				@E266:P594_ensembl_gene_id* ; # Zero or more Ensembl gene identifier
+
+  p:P2393 				@E266:P2393_ncbi_locus_tag?; # NCBI Locus tag
+}
+
+## Statement details
+<#P31_instance_of_gene> {
+  ps:P31 				[wd:Q7187] ; 	# Instance of [P31] gene
+  prov:wasDerivedFrom 	@E265:ncbi-gene-reference OR @E265:ensembl-gene-reference ;
+}
+
+<#P279_subclass_of_gene> {
+  ps:P279 				@<#gene_types> ; # Subclass of [P279] gene types <gene_types>
+  prov:wasDerivedFrom 	@E265:ncbi-gene-reference OR @E265:ensembl-gene-reference ;
+}
+
+<#P644_genomic_start> {
+  ps:P644 				xsd:string ;  # genomic start [P644] value
+  pq:P659    			@E108:sequence_assembly+ ;  # Qualifier indicating the applicable genomic assembly versions.
+  prov:wasDerivedFrom 	@E265:ensembl-gene-reference ;
+}
+
+<#P645_genomic_end> {
+  ps:P645 				xsd:string ; # genomic start [P645] value
+  pq:P659    			@E108:sequence_assembly+ ; # Qualifier indicating the applicable genomic assembly versions.
+  prov:wasDerivedFrom 	@E265:ensembl-gene-reference ;
+}
+
+<#P688_encodes> {
+  ps:P688 				@E169:wikidata-virus-protein ; # gene encodes [688] for a gene product.
+  prov:wasDerivedFrom 	@E265:uniprot-reference;
+}
+
+<#P703_found_in_taxon_virus> {    
+  ps:P703 				@E170:corona-virus ; 
+  prov:wasDerivedFrom 	@E265:ncbi-gene-reference ;
+}
+
+## Lists with Wikidata items
+<#gene_types> [
+  wd:Q20747295 # protein-coding gene
+  wd:Q284578 # snRNA
+  wd:Q284416 # snoRNA
+  wd:Q215980 # rRNA
+  wd:Q201448 # tRNA
+  wd:Q277338 # pseudo
+  wd:Q11053 # miscRNA
+  wd:Q25323710 # scRNA
+]

@@ -1,0 +1,57 @@
+## This schema describes the shapes of a subgraph in Wikidata on taxon treatments
+## sourced from plazi (http://plazi.org/).
+## This schema is drafted from wd:Q105626708
+
+## Work in progress
+
+# Import/linked schema's
+## Plazi scholarly article
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E292>
+PREFIX E292: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E292#>
+
+## Prefixes
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+start=@<#taxon_treatment>
+
+<#taxon_treatment> {
+  ## Statements
+   p:P31 				@<#P31_instance_of> ;
+   p:P361 				@<#P361_part_of> ;
+  
+  ## External identifiers
+  p:P356				@<#P356_DOI> ;
+  p:P1992				@<#P1992_Plazi_ID> ;
+}
+
+<#P31_instance_of> {
+  ps:P31 				[wd:Q32945461] ;
+  prov:wasDerivedFrom 	@<#plazi_reference> ;
+}
+
+<#P356_DOI> {
+  ps:P356				xsd:string ;
+  prov:wasDerivedFrom 	@<#plazi_reference> ;
+}
+  
+<#P361_part_of> {
+  ps:P361				@E292:plazi_scholarly_article ;
+  prov:wasDerivedFrom 	@<#plazi_reference> ;
+}
+
+<#P1992_Plazi_ID> {
+  ps:P1992				xsd:string ; 
+  prov:wasDerivedFrom 	@<#plazi_reference> ;
+}
+
+<#plazi_reference> { # TODO contempleate on using regular expressions to check the correctness of the DOI
+  pr:P248				[wd:Q7203726] ;
+  pr:P356				xsd:string ;
+  pr:P1992				xsd:string ;
+}

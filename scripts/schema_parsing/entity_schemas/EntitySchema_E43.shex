@@ -1,0 +1,54 @@
+# try with SELECT ?s { ?s wdt:P31 wd:Q5185279 } LIMIT 20
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/statement/qualifier/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+
+start = @<#poem>
+
+# A good poem item should have one or more authors (even if linked to Anonymous),
+# and exactly one publication date (means when it was first published or released).
+<#poem> EXTRA p:P50 p:P31 p:P577 {
+  wdt:P31 [wd:Q5185279]; # instance of poem
+  p:P50 @<#author>+;
+  p:P577 @<#publicationDate>?;  # made optional for more results (get's us going)
+}
+
+# An author statement should point to a Wikidata item or “unknown value”,
+# and optionally has references (good ones or other ones).
+<#author> EXTRA prov:wasDerivedFrom {
+  wikibase:rank [wikibase:NormalRank wikibase:PreferredRank];
+#  (ps:P21 [wd:~] | ps:P21 BNode );  -- disabled to get some results
+  prov:wasDerivedFrom @<#reference>*;
+}
+
+# A publication date statement should have a dateTime value or “unknown value”
+# and at least one good reference (plus any other references).
+<#publicationDate> EXTRA prov:wasDerivedFrom {
+  a [wikibase:BestRank];
+#  (ps:P569 xsd:dateTime | ps:P569 BNode); -- disabled to get some results
+  prov:wasDerivedFrom @<#reference>+;
+}
+
+# A good reference should have been “stated in” some work (optionally with a “retrieved” date),
+# or have a reference URL with a “retrieved” date (not optional here),
+# or both.
+<#reference> {
+}
+<#reference999> {
+  pr:P248 [wd:~]; # stated in
+  pr:P813 xsd:dateTime?; # retrieved
+  |
+  pr:P854 IRI; # reference URL
+  pr:P813 xsd:dateTime; # retrieved
+  |
+  pr:P248 [wd:~]; # stated in
+  pr:P854 IRI; # reference URL
+  pr:P813 xsd:dateTime; # retrieved
+}

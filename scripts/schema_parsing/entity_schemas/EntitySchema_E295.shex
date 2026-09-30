@@ -1,0 +1,18 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+start = @<townland>
+
+<townland> {
+  wdt:P31 [wd:Q2151232];
+  wdt:P17 [wd:Q27 wd:Q145];
+  wdt:P625 .;
+  wdt:P131 .*;
+  wdt:P7959 @<county>;
+  wdt:P5097 .;
+  wdt:P402 . ;
+  wdt:P361 . {0};
+}
+
+<county> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q179872 wd:Q1317848];
+}

@@ -1,0 +1,56 @@
+prefix sx: <http://weso.es/ns/shex/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wdp: <http://www.wikidata.org/prop/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix wikibase: <http://wikiba.se/ontology#>
+prefix schema: <http://schema.org/>
+start=@<Shape>
+<Shape> {
+rdfs:label  rdf:langString* // sx:maxNumber 20; 
+schema:dateModified  xsd:dateTime; 
+schema:description  rdf:langString* // sx:maxNumber 9; 
+schema:version  xsd:integer; 
+skos:altLabel  rdf:langString* // sx:maxNumber 4; 
+wdp:P1082  IRI * // sx:maxNumber 18; 
+wdp:P131  IRI ; 
+wdp:P1464  IRI ; 
+wdp:P17  IRI ; 
+wdp:P18  IRI ; 
+wdp:P2044  IRI ; 
+wdp:P2046  IRI ; 
+wdp:P242  IRI ; 
+wdp:P281  IRI ; 
+wdp:P31  IRI ; 
+wdp:P373  IRI ; 
+wdp:P421  IRI * // sx:maxNumber 2; 
+wdp:P47  IRI * // sx:maxNumber 6; 
+wdp:P6  IRI * // sx:maxNumber 2; 
+wdp:P625  IRI ; 
+wdp:P856  IRI ; 
+wdp:P910  IRI ; 
+wdt:P1082  xsd:decimal // rdfs:label "population"@en; 
+wdt:P131  IRI  // rdfs:label "located in the administrative territorial entity"@en; 
+wdt:P1464  IRI  // rdfs:label "category for people born here"@en; 
+wdt:P17  IRI  // rdfs:label "country"@en; 
+wdt:P18  IRI  // rdfs:label "image"@en; 
+wdt:P2044  xsd:decimal // rdfs:label "elevation above sea level"@en; 
+wdt:P2046  xsd:decimal // rdfs:label "area"@en;  
+wdt:P242  IRI  // rdfs:label "locator map image"@en; 
+wdt:P281  xsd:string // rdfs:label "postal code"@en; 
+wdt:P31  IRI  // rdfs:label "instance of"@en; 
+wdt:P373  xsd:string // rdfs:label "Commons category"@en; 
+wdt:P421  IRI *  // rdfs:label "located in time zone"@en  // sx:maxNumber 2; 
+wdt:P47  IRI *  // rdfs:label "shares border with"@en  // sx:maxNumber 6; 
+wdt:P6  IRI  // rdfs:label "head of government"@en; 
+wdt:P625  <http://www.opengis.net/ont/geosparql#wktLiteral> // rdfs:label "coordinate location"@en; 
+wdt:P856  IRI  // rdfs:label "official website"@en; 
+wdt:P910  IRI  // rdfs:label "topic's main category"@en; 
+wikibase:identifiers  xsd:integer; 
+wikibase:sitelinks  xsd:integer; 
+wikibase:statements  xsd:integer; 
+wikibase:timestamp  xsd:dateTime
+}

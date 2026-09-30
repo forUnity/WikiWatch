@@ -1,0 +1,14 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<#Gender>
+
+<#Gender> [
+    wd:Q6581097 # male
+    wd:Q6581072 # female
+    wd:Q1097630 # intersex
+    wd:Q1052281 # transgender female
+    wd:Q2449503 # transgender male
+    wd:Q48270     # non-binary
+    wd:Q48279     # third gender
+]

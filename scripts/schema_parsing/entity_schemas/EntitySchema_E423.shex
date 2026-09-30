@@ -1,0 +1,37 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q814254. ?item wdt:P5008 wd:Q114241199. } LIMIT 10
+
+start = @<DuraEuroposRuin>
+
+<DuraEuroposRuin> EXTRA p:P31{
+
+   wdt:P31  [wd:Q109607]                      // rdfs:comment "Q109607  -->  ruins ; P31  -->  instance of";
+   wdt:P31  [wd:Q210272]                      // rdfs:comment "Q210272  -->  cultural heritage ; P31  -->  instance of";
+   wdt:P31  [wd:Q814254]                      // rdfs:comment "Q814254  -->  feature ; P31  -->  instance of";
+   wdt:P131  IRI                              // rdfs:comment "P131  -->  located in the administrative territorial entity";
+   wdt:P17  IRI                               // rdfs:comment "P17  -->  country";
+   wdt:P18  IRI                               // rdfs:comment "P18  -->  image";
+   wdt:P214  xsd:integer                      // rdfs:comment "P214  -->  VIAF ID";
+   wdt:P276  IRI                              // rdfs:comment "P276  -->  location";
+   wdt:P361  IRI                              // rdfs:comment "P361  -->  part of";
+   wdt:P373  xsd:string                       // rdfs:comment "P373  -->  Commons category";
+   wdt:P527  IRI                              // rdfs:comment "P527  -->  has part(s)";
+   wdt:P571  xsd:string                       // rdfs:comment "P571  -->  inception";
+   wdt:P576  xsd:string                       // rdfs:comment "P576  -->  dissolved, abolished or demolished date";
+   wdt:P625  xsd:string                       // rdfs:comment "P625  -->  coordinate location";
+   wdt:P1481  xsd:integer                     // rdfs:comment "P1481  -->  vici.org ID";
+   wdt:P1584  xsd:integer                     // rdfs:comment "P1584  -->  Pleiades ID";
+   wdt:P3896  IRI                             // rdfs:comment "P3896  -->  geoshape";
+   wdt:P5008  [wd:Q114241199]                 // rdfs:comment "P5008  -->  on focus list of Wikimedia project";
+   wdt:P6787  xsd:integer                     // rdfs:comment "P6787  -->  Arachne building ID";
+
+}

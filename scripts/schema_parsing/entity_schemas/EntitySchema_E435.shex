@@ -1,0 +1,23 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Created using https://huggingface.co/spaces/b289zhan/ESGen
+
+start = @<parable_of_Jesus>
+
+<parable_of_Jesus> {
+	 wdt:P31 . + ;  # instance of
+	 wdt:P140 . + ;  # religion or worldview
+	 wdt:P674 . + ;  # characters
+	 wdt:P1433 . + ;  # published in
+	 wdt:P361 . * ;  # part of
+	 wdt:P4969 . * ;  # derivative work 
+	 wdt:P921 . * ;  # main subject 
+	 wdt:P527 . * ;  # has part(s) 
+	 wdt:P841 . * ;  # feast day
+	 wdt:P1343 . * ;  # described by source 
+	 wdt:P910 . * ;  # topic's main category 
+	 wdt:P1441 . * ;  # present in work 
+	 wdt:P138 . * ;  # named after
+}

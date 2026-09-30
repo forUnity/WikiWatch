@@ -1,0 +1,175 @@
+Timesteps:   0%|          | 0/156 [00:00<?, ?it/s]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 23990.30it/s]
+Timesteps:   1%|          | 1/156 [00:35<1:30:31, 35.04s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26915.32it/s]
+Timesteps:   1%|▏         | 2/156 [01:50<2:31:24, 58.99s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 30066.70it/s]
+Timesteps:   2%|▏         | 3/156 [02:53<2:34:36, 60.63s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 29468.18it/s]
+Timesteps:   3%|▎         | 4/156 [03:44<2:24:10, 56.91s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 29746.84it/s]
+Timesteps:   3%|▎         | 5/156 [05:29<3:07:13, 74.39s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 29296.65it/s]
+Timesteps:   4%|▍         | 6/156 [07:25<3:40:57, 88.38s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28308.01it/s]
+Timesteps:   4%|▍         | 7/156 [09:58<4:32:03, 109.55s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27294.82it/s]
+Timesteps:   5%|▌         | 8/156 [10:52<3:46:24, 91.79s/it] 
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26829.24it/s]
+Timesteps:   6%|▌         | 9/156 [12:13<3:36:54, 88.53s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24648.21it/s]
+Timesteps:   6%|▋         | 10/156 [13:15<3:14:54, 80.10s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 29127.11it/s]
+Timesteps:   7%|▋         | 11/156 [14:02<2:49:20, 70.07s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28244.47it/s]
+Timesteps:   8%|▊         | 12/156 [15:31<3:02:08, 75.89s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26324.08it/s]
+Timesteps:   8%|▊         | 13/156 [16:38<2:54:05, 73.05s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27473.61it/s]
+Timesteps:   9%|▉         | 14/156 [17:52<2:53:56, 73.49s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28695.35it/s]
+Timesteps:  10%|▉         | 15/156 [18:41<2:35:05, 66.00s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28992.88it/s]
+Timesteps:  10%|█         | 16/156 [19:34<2:24:44, 62.03s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26630.50it/s]
+Timesteps:  11%|█         | 17/156 [20:56<2:37:50, 68.13s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27443.65it/s]
+Timesteps:  12%|█▏        | 18/156 [21:52<2:28:44, 64.67s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24990.89it/s]
+Timesteps:  12%|█▏        | 19/156 [23:08<2:34:48, 67.80s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26886.56it/s]
+Timesteps:  13%|█▎        | 20/156 [24:28<2:41:58, 71.46s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 29093.44it/s]
+Timesteps:  13%|█▎        | 21/156 [25:09<2:20:29, 62.44s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27563.88it/s]
+Timesteps:  14%|█▍        | 22/156 [25:48<2:03:58, 55.51s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28212.81it/s]
+Timesteps:  15%|█▍        | 23/156 [26:38<1:59:10, 53.76s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27563.88it/s]
+Timesteps:  15%|█▌        | 24/156 [27:52<2:11:33, 59.80s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26379.27it/s]
+Timesteps:  16%|█▌        | 25/156 [29:27<2:33:54, 70.50s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26658.71it/s]
+Timesteps:  17%|█▋        | 26/156 [30:40<2:34:15, 71.20s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25679.41it/s]
+Timesteps:  17%|█▋        | 27/156 [31:44<2:28:36, 69.12s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26915.32it/s]
+Timesteps:  18%|█▊        | 28/156 [33:07<2:35:47, 73.02s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24720.85it/s]
+Timesteps:  19%|█▊        | 29/156 [34:03<2:24:01, 68.04s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 22192.08it/s]
+Timesteps:  19%|█▉        | 30/156 [34:55<2:12:54, 63.29s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27594.11it/s]
+Timesteps:  20%|█▉        | 31/156 [35:59<2:12:29, 63.60s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26214.40it/s]
+Timesteps:  21%|██        | 32/156 [37:37<2:32:45, 73.92s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27443.65it/s]
+Timesteps:  21%|██        | 33/156 [38:45<2:27:28, 71.94s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25705.64it/s]
+Timesteps:  22%|██▏       | 34/156 [40:26<2:44:00, 80.66s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24504.21it/s]
+Timesteps:  22%|██▏       | 35/156 [41:48<2:43:49, 81.24s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27533.72it/s]
+Timesteps:  23%|██▎       | 36/156 [45:09<3:53:57, 116.98s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26546.23it/s]
+Timesteps:  24%|██▎       | 37/156 [49:43<5:25:42, 164.22s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27807.54it/s]
+Timesteps:  24%|██▍       | 38/156 [53:15<5:50:58, 178.46s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 22733.36it/s]
+Timesteps:  25%|██▌       | 39/156 [57:20<6:26:54, 198.41s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25216.26it/s]
+Timesteps:  26%|██▌       | 40/156 [1:00:16<6:10:42, 191.74s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26078.57it/s]
+Timesteps:  26%|██▋       | 41/156 [1:03:02<5:52:42, 184.03s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27624.40it/s]
+Timesteps:  27%|██▋       | 42/156 [1:07:26<6:35:13, 208.01s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27089.15it/s]
+Timesteps:  28%|██▊       | 43/156 [1:10:20<6:12:37, 197.85s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25731.93it/s]
+Timesteps:  28%|██▊       | 44/156 [1:14:44<6:46:21, 217.69s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 22857.24it/s]
+Timesteps:  29%|██▉       | 45/156 [1:16:37<5:44:31, 186.23s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26686.98it/s]
+Timesteps:  29%|██▉       | 46/156 [1:17:49<4:38:38, 151.98s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 22114.08it/s]
+Timesteps:  30%|███       | 47/156 [1:20:33<4:42:47, 155.67s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25191.02it/s]
+Timesteps:  31%|███       | 48/156 [1:24:52<5:35:34, 186.43s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 21509.25it/s]
+Timesteps:  31%|███▏      | 49/156 [1:32:58<8:12:53, 276.39s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25997.75it/s]
+Timesteps:  32%|███▏      | 50/156 [1:41:56<10:26:56, 354.87s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24867.42it/s]
+Timesteps:  33%|███▎      | 51/156 [1:48:51<10:52:56, 373.11s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25165.82it/s]
+Timesteps:  33%|███▎      | 52/156 [2:00:34<13:38:09, 472.01s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25997.75it/s]
+Timesteps:  34%|███▍      | 53/156 [2:05:47<12:08:24, 424.32s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27930.99it/s]
+Timesteps:  35%|███▍      | 54/156 [2:08:50<9:58:00, 351.77s/it] 
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26490.34it/s]
+Timesteps:  35%|███▌      | 55/156 [2:13:22<9:12:03, 327.96s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24990.89it/s]
+Timesteps:  36%|███▌      | 56/156 [2:18:22<8:52:44, 319.65s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25758.26it/s]
+Timesteps:  37%|███▋      | 57/156 [2:27:49<10:49:47, 393.82s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26105.63it/s]
+Timesteps:  37%|███▋      | 58/156 [2:41:59<14:26:32, 530.54s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27294.82it/s]
+Timesteps:  38%|███▊      | 59/156 [3:07:48<22:31:54, 836.23s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24672.38it/s]
+Timesteps:  38%|███▊      | 60/156 [3:48:13<35:00:34, 1312.86s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27563.88it/s]
+Timesteps:  39%|███▉      | 61/156 [3:57:49<28:48:32, 1091.71s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24151.46it/s]
+Timesteps:  40%|███▉      | 62/156 [4:07:32<24:31:22, 939.18s/it] 
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26051.58it/s]
+Timesteps:  40%|████      | 63/156 [4:23:27<24:22:46, 943.72s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28532.68it/s]
+Timesteps:  41%|████      | 64/156 [4:28:24<19:09:52, 749.92s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26772.15it/s]
+Timesteps:  42%|████▏     | 65/156 [4:43:38<20:11:42, 798.93s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25115.59it/s]
+Timesteps:  42%|████▏     | 66/156 [4:54:34<18:54:08, 756.09s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26296.58it/s]
+Timesteps:  43%|████▎     | 67/156 [5:01:39<16:14:24, 656.90s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26686.98it/s]
+Timesteps:  44%|████▎     | 68/156 [5:18:09<18:29:45, 756.65s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28212.81it/s]
+Timesteps:  44%|████▍     | 69/156 [5:31:12<18:28:55, 764.77s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 22857.24it/s]
+Timesteps:  45%|████▍     | 70/156 [5:49:13<20:32:06, 859.61s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26490.34it/s]
+Timesteps:  46%|████▌     | 71/156 [6:02:47<19:58:14, 845.82s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26051.58it/s]
+Timesteps:  46%|████▌     | 72/156 [6:19:14<20:43:33, 888.26s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 28024.30it/s]
+Timesteps:  47%|████▋     | 73/156 [6:47:52<26:13:04, 1137.16s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26715.31it/s]
+Timesteps:  47%|████▋     | 74/156 [7:02:13<24:00:55, 1054.33s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25420.02it/s]
+Timesteps:  48%|████▊     | 75/156 [7:14:30<21:34:33, 958.93s/it] 
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 23497.50it/s]
+Timesteps:  49%|████▊     | 76/156 [7:23:10<18:23:06, 827.34s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25523.15it/s]
+Timesteps:  49%|████▉     | 77/156 [7:29:04<15:02:30, 685.45s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 24197.91it/s]
+Timesteps:  50%|█████     | 78/156 [7:40:40<14:55:00, 688.47s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27533.72it/s]
+Timesteps:  51%|█████     | 79/156 [7:49:23<13:39:52, 638.86s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27324.46it/s]
+Timesteps:  51%|█████▏    | 80/156 [7:58:40<12:58:01, 614.23s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26269.13it/s]
+Timesteps:  52%|█████▏    | 81/156 [8:02:48<10:30:29, 504.39s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26024.64it/s]
+Timesteps:  53%|█████▎    | 82/156 [8:09:54<9:53:18, 481.06s/it] 
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26715.31it/s]
+Timesteps:  53%|█████▎    | 83/156 [8:13:35<8:10:15, 402.95s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27624.40it/s]
+Timesteps:  54%|█████▍    | 84/156 [8:23:46<9:18:26, 465.36s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 26602.35it/s]
+Timesteps:  54%|█████▍    | 85/156 [8:49:00<15:23:03, 780.05s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 25811.10it/s]
+Timesteps:  55%|█████▌    | 86/156 [9:09:44<17:52:24, 919.21s/it]
+(QuickWrite) Writing:   0%|          | 0/6 [00:00<?, ?it/s][A(QuickWrite) Writing: 100%|██████████| 6/6 [00:00<00:00, 27746.22it/s]
+Timesteps:  56%|█████▌    | 87/156 [9:26:23<18:04:23, 942.95s/it]

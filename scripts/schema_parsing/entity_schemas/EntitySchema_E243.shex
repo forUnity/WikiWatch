@@ -1,0 +1,16 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# query-map: SELECT * WHERE { ?item wdt:P31 wd:Q189118 .}
+
+
+start = @<#wikidata-celltype>
+
+<#wikidata-celltype> {
+  wdt:P31 [wd:Q189118] ;
+  wdt:P7963 xsd:string ;
+}

@@ -1,0 +1,28 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Example SPARQL query: SELECT ?p { VALUES ?p { wd:Q126037881 }}
+
+start = @<Artifact>
+
+<Artifact> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q838948      # Instance of: Work of art
+            wd:Q1791627     # Cultural artifact
+            wd:Q59138870    # Digital object
+            wd:Q1172284     # Data set
+            wd:Q15706459    # Research article
+            wd:Q16686448    # Artificial object
+           ] ;
+
+  wdt:P170  IRI? ;          # Creator (optional, links to a person, institution, or unknown creator)
+  wdt:P571  xsd:dateTime? ; # Date of inception (optional)
+  wdt:P276  IRI? ;          # Location (optional, links to a physical location or repository)  
+  wdt:P195  IRI? ;          # Collection (optional, identifies the collection housing the artifact)  
+  wdt:P1476 xsd:string? ;   # Title or name (optional, title in string format)  
+  wdt:P136  IRI? ;          # Genre or type (optional, e.g., artistic, scientific, cultural)  
+  wdt:P186  IRI? ;          # Material (optional, e.g., bronze, clay, digital medium)  
+  wdt:P921  IRI+ ;          # Main subject (optional, identifies thematic context)  
+  wdt:P18   IRI? ;          # Image (optional, links to a visual representation of the artifact)  
+  wdt:P973  xsd:anyURI? ;   # Described at URL (optional, links to an external description)
+}

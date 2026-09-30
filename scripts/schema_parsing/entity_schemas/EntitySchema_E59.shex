@@ -1,0 +1,46 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX eco: <http://purl.obolibrary.org/obo/ECO_>
+
+
+## schema proposal for a term from the evidence and conclusion ontology ECO in Wikidata
+## manual example to use while working towards batch loading of eco terms creation: https://www.wikidata.org/wiki/Q32040241
+
+start = @<#wd_eco_term>
+
+<#wd_eco_term> {
+	p:P31 @<#P31_instance_of> ;
+	p:P279 @<#P279_subclass_of>? ;
+	p:P2888 @<#P2888_exact_match> ;
+	p:P361 @<#P361_part_of> ;
+
+	## Identifiers
+	p:P3811 @<#P3811_eco_id> ;
+}
+
+<#P31_instance_of> {
+	ps:P31 [wd:Q1969448] ; # Q1969448 = term
+	prov:wasDerivedFrom @<#eco_reference> ;
+}
+
+<#P279_subclass_of> {
+	ps:P279 @<#wd_eco_term> ;
+	prov:wasDerivedFrom @<#eco_reference> ;
+}
+
+<#P361_part_of> {
+	ps:P361 [wd:Q28445410] ; # Q28445410 = Evidence & Conclusion Ontology
+	prov:wasDerivedFrom @<#eco_reference> ;
+}
+
+<#P2888_exact_match> {
+	ps:P2888 [eco:~] ;
+	prov:wasDerivedFrom @<#eco_reference> ;
+}
+
+<#P3811_eco_id> {
+	ps:P3811  xsd:string ;
+}

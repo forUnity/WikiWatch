@@ -1,0 +1,21 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+## SPARQL query for French interjections
+# SELECT ?item {?item wdt:P31 wd:Q4167836} LIMIT 10
+
+start = @<wikimediacategory>
+<wikimediacategory> {
+  p:P31 @<category>+ ;#instance of a wikimediacategory
+  wdt:P301 .* ;#category's main topic
+  wdt:P1753 .* ;#list related to category
+  wdt:P971 .* ;#category combines topics
+  wdt:P4224 .* ;#category contains
+}
+<category> {
+  ps:P279 [ wd:Q4167836  ]* ;#category
+  ps:P279 @<category>* ;#category
+}

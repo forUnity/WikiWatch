@@ -1,0 +1,30 @@
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+
+
+# SELECT ?lexeme { ?lexeme dct:language wd:Q9035 } LIMIT 100
+
+
+START = @<#danish-lexeme-for-hyphenation>
+
+
+<#danish-lexeme-for-hyphenation> {
+  ontolex:lexicalForm @<#danish-form-for-hyphenation> + ;
+}
+
+
+<#danish-form-for-hyphenation> {
+
+  # One or more hyphenations
+  p:P5279 @<#danish-hyphenation-statement> + ; 
+
+}
+
+
+<#danish-hyphenation-statement> EXTRA a {
+  # Either novalue or a specification with hyphenation
+  # character and vowels on either side.
+  a [ wdno:P5279 ] | ps:P5279 /.*[aáeiouyæøå].*‧.*[aáeiouyæøå].*/ ;
+}

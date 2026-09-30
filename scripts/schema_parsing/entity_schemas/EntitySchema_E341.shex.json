@@ -1,0 +1,1 @@
+{"type": "Schema", "start": "surfer", "shapes": [{"type": "Shape", "id": "surfer", "expression": {"type": "TripleConstraint", "predicate": "http://www.wikidata.org/prop/direct/P31", "valueExpr": {"type": "NodeConstraint", "datatype": "http://www.wikidata.org/entity/Q5"}}}]}

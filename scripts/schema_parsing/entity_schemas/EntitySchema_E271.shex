@@ -1,0 +1,35 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# see also https://www.wikidata.org/wiki/EntitySchema:E216
+#
+# Example SPARQL query: https://w.wiki/ofN
+# SELECT ?item ?itemLabel WHERE {
+#  ?item wdt:P1343 wd:Q102343039.
+#  SERVICE wikibase:label { bd:serviceParam wikibase:language "sv". }}
+# Project see https://phabricator.wikimedia.org/T268797
+
+start = @<art>
+<art> EXTRA wdt:P31 {
+ wdt:P31 [wd:Q860861]; # sculpture
+ wdt:P17       [ wd:Q34]; # country 
+ wdt:P571   .+ ; # wdt:P571   .+ ; # inception   
+ wdt:P131    [ wd:Q507709]; #Administrative unit Umeå
+ wdt:P625  .+ ; # coordinates
+ wdt:P170 .+ ; # creator
+ wdt:P186  .+ ; # material
+ wdt:P18  .* ; # picture
+ wdt:P127 .* ; # owned by
+ wdt:P276 .* ; # location
+ wdt:P1343    [ wd:Q102343039] ; # described by source
+ wdt:P2048 .* ; # height
+ wdt:P6375 .+ ; # address
+ wdt:P580 .+ ; # date when available
+ wdt:P582 .* ; # end date 
+ wdt:P856 .* ; # www
+
+ wdt:P3749 .+; # Google Maps Customer-ID
+ wdt:P11693 .+; # OpenStreetMap node-ID   
+
+ wdt:P136    [ wd:Q557141] ; # genre Public art
+}

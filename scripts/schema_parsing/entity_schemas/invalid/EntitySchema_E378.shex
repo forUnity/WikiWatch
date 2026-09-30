@@ -1,0 +1,18 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+start = @<ICH_national_inventory>
+
+<ICH_national_inventory> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q113040113 wd:Q113124635 wd:Q113136488] + ; # instance of national inventory of intangible cultural heritage, national register of best safeguarding practices for intangible heritage, or national network of intangible cultural heritage
+	wdt:P126 [] ;                   # maintained by
+	wdt:P17 . ;                     # country
+	wdt:P856 . * ;                  # official website
+	wdt:P4876 . ? ;                 # number of records
+	wdt:P2354 . ? ;                 # has list
+    wdt:P6104 wd:Q112898263 ;       # maintained in WikiProject
+}

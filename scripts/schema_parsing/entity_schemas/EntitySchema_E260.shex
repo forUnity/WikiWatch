@@ -1,0 +1,61 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: https://w.wiki/kzK 
+# SELECT ?item ?itemLabel WHERE { ?item wdt:P361 wd:Q5383621. }
+# Project see Wikidata:WikiProject_Sweden/Epistles_of_Fredman
+
+start = @<Epistel>
+<Epistel> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q3482281 ]  ; # instance of
+# p:P361   @<partof>+  ; # instance of
+ wdt:P361   [ wd:Q5383621 ]  ; # part of
+ wdt:P138 [ wd:Q5741633] ;
+ wdt:P123 .      +  ; # genre  
+ wdt:P18 .      + ; # picture 
+ wdt:P407 .      + ; # language 
+ wdt:P51 .      + ; # soundfile 
+ wdt:P155  @<Epistel> + ; # follows
+ wdt:P156  @<Epistel> + ; # followed by
+ #wdt:P1545 .      + ; # series ordinal TODO as parameter
+ wdt:P495 [ wd:Q34] ; # country of origin
+ wdt:P5123 .      + ; # Swedish Litteraturbank
+ wdt:P1476 .      + ; # Titel
+ wdt:P291 .      + ; # place of publication
+ wdt:P495 .      + ; # country of origin
+ wdt:P3030 .      + ; # sheet music 
+ wdt:P10 .      + ; # video 
+ wdt:P676 .      + ; # lyrics by
+ wdt:P1680 .      + ; # subtitle
+ wdt:P1922 .      + ; # first line
+ wdt:P3132 .      + ; # last line
+ wdt:P3155 .      + ; # Runeberg
+
+ wdt:P6216 [ wd:Q19652] ;  # copyright status
+ wdt:P86  [ wd:Q312498] ;    # 
+
+ wdt:P435 .      * ; # Music Brainz
+ wdt:P840 .      * ; # narrative location
+ wdt:P8411 .      * ; # set in environment
+ wdt:P577 .      * ; # published date 
+ wdt:P3155 .    * ; # Runeberg 
+ wdt:P825 .    * ; # dedicated
+ wdt:P937 .    * ; # work location
+ wdt:P2336 .    * ; # Swedish Film Database soundtrack ID
+ wdt:P674 .    * ; # characters
+ wdt:P1625 .    * ; # has melody
+ wdt:P6104 [ wd:Q101515582]   + ; # maintained by WikiProject
+
+
+
+}
+<partof> {
+        ps:P123 @<partofValue>;
+	pq:P1545 .; # P1545 series ordinal as qualifier
+}
+
+<partofValue> EXTRA wdt:P361 {
+    wdt:P361 [wd:Q1075]; # Epistles of Fredman
+}

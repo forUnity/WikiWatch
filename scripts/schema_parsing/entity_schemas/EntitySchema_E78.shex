@@ -1,0 +1,21 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+start = @<WL-vernacular-names>
+
+<WL-vernacular-names> EXTRA p:P1843 {
+	p:P1843 {
+		ps:P1843 [@it] ;
+		pq:P4913 [
+			wd:Q1564620 # Lombardian Alps and Prealps
+                      ];
+		prov:wasDerivedFrom {
+			# What would be the reference pattern here?
+		}
+	}
+}

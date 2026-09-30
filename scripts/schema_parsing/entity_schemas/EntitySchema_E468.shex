@@ -1,0 +1,17 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<minister>
+
+<minister> {
+  wdt:P31 [wd:Q294414];
+  wdt:P279 [wd:Q2325081];
+  wdt:P361 [wd:Q1672817];
+  wdt:P17 [wd:Q27];
+  wdt:P1001 [wd:Q27];
+  wdt:P2389 @<department>
+}
+
+<department> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5260540]; 
+}

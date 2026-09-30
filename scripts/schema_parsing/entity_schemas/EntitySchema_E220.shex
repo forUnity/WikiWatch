@@ -1,0 +1,27 @@
+# Query: SELECT ?item WHERE { ?item wdt:P463 wd:Q27639076 }
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<iatextmember>
+
+<iatextmember> EXTRA wdt:P31 {
+  # instance of
+  wdt:P31 [wd:Q5] ;
+  # gender
+  wdt:P21 [wd:Q6581097 wd:Q6581072 wd:Q1097630 wd:Q1052281 wd:Q2449503 wd:Q48270]? ;
+  # member of IATEXT
+  wdt:P463 [wd:Q27639076] ;
+  # educated in
+  wdt:P69 @<EducationalCenter> *;
+  # occupation
+  wdt:P106 @<Occupation> + ;
+  # field of work
+  wdt:P101 @<FieldWork> * ;
+  # employer
+  wdt:P108 @<Employer> + ;
+}
+
+<EducationalCenter> {}
+<Occupation> {}
+<FieldWork> {}
+<Employer> {}

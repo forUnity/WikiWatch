@@ -1,0 +1,28 @@
+PREFIX  schema: <http://schema.org/>
+PREFIX  p:     <http://www.wikidata.org/prop/>
+PREFIX  s:     <http://www.wikidata.org/entity/statement/> 
+PREFIX  rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX  wdt:   <http://www.wikidata.org/prop/direct/> 
+PREFIX  wikibase: <http://wikiba.se/ontology#> 
+PREFIX  xsd:   <http://www.w3.org/2001/XMLSchema#> 
+PREFIX  skos:  <http://www.w3.org/2004/02/skos/core#> 
+PREFIX  rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX  wd:    <http://www.wikidata.org/entity/>
+
+# Example SPARQL query:  select ?report ?reportLabel ?rcn ?cordis ?lastUpdated ?publicationDate   where {  ?report wdt:P31 wd:Q10870555  .  ?report wdt:P3400 ?publicationDate .  ?report wdt:P5755 ?rcn .  ?report wdt:P3400 ?cordis .  ?report wdt:P5017 ?lastUpdated  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}ORDER BY ?lastUpdated
+
+
+start = @<EuropeanReport>
+
+<EuropeanReport>{
+ rdfs:label  .* ;
+        schema:description  .* ;
+        schema:name         .* ;
+        skos:altLabel       .* ;
+        skos:prefLabel     .* ;
+        p:P5755             .* ;
+        wdt:P3400           .* ;
+        wdt:P5017           .* ;
+        wdt:P5755           .* ;
+        wdt:P854            .* ;
+}

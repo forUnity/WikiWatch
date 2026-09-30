@@ -1,0 +1,56 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example query: select * { ?x wdt:P31 wd:Q417841 } LIMIT 5
+
+start = @<#proteinFamily>
+
+<#proteinFamily> EXTRA p:P31 p:P279 {
+  p:P31 @<#P31_instance_of_protein_family> ;
+
+  p:P2926 @<#P2926_interpro_id> ;                # exactly one InterPro ID
+  wdt:P3519 LITERAL? ;                               # optionally one Pfam ID
+  p:P279 @<#P279_subclass_of_protein_family>+ ;  # one or more subclass stmts
+  p:P680 @<#P680_molecular_function>* ;          # zero or more molecular function stmts
+}
+
+## Statement details
+<#P31_instance_of_protein_family> {
+  ps:P31 [ wd:Q417841 ] ; # protein family
+  prov:wasDerivedFrom @<#interpro-reference-id> ;
+}
+
+<#P2926_interpro_id> {
+  ps:P2926 xsd:string;
+  prov:wasDerivedFrom @<#interpro-reference-name> ;
+}
+
+<#P279_subclass_of_protein_family> {
+  ( ps:P279 wd:Q8054 ;                    # subclass of [P279] protein [Q80548]
+    |
+    ps:P279 { wdt:P31 wd:Q417841 } );     # or any protein family
+  prov:wasDerivedFrom IRI+ ;
+}
+
+<#P680_molecular_function> {
+  ps:P680  { wdt:P31 [wd:Q14860489] } ; # mol. function value is a Gene Ontology function item
+  pq:P4390 { wdt:P31 [wd:Q60817979] } ; # qualifier: mapping type with any SKOS generic mapping relation
+  prov:wasDerivedFrom IRI+ ;
+}
+
+## REFERENCES
+<#interpro-reference-id> {               # reference to an InterPro release, and an ID in that release
+  pr:P248   { wdt:P629 [wd:Q3047275] } ; # stated in [P248] edition of [P629] InterPro [Q3047275]
+  pr:P2926  xsd:string ;                 # InterPro identifier
+}
+
+<#interpro-reference-name> {             # reference to an InterPro release, and the entity name used
+  pr:P248   { wdt:P629 [wd:Q3047275] } ; # stated in [P248] edition of [P629] InterPro [Q3047275]
+  pr:P1810  xsd:string ;                 # entity name in InterPro release
+}

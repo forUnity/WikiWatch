@@ -1,0 +1,69 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX erepo: <https://erepo.genome.network/evrepo/ui/classification/>
+
+## UNDER DEVELOPMENT ##
+## Schema proposal for Wikidata items on ClinGen variant pathogenicity data
+## Wikidata Model: Q6440126
+## source: https://erepo.genome.network/evrepo/ui/classification/CA114360/MONDO:0009861/006 
+## Github: https://github.com/SuLab/GeneWikiCentral/issues/117
+start=@<#ClinGen_item>
+
+<#ClinGen_item> {
+	p:P31  @<#P31_instance_of> ;
+	p:P1050 @<#P1050_medical_condition> ;
+	p:P1199 @<#P1199_mode_of_inheritance> ;
+	p:P1343 @<#P1343_described_by_source>+ ;
+	p:P3433 @<#P3433_biological_variant_of> ;
+	
+	## Identifiers
+	p:P1929 @<#P1929_ClinVar_Variation_ID> ;
+	p:P3331 @<#P3331_HGVS_nomenclature>+ ;
+}
+
+<#P31_instance_of> {
+	ps:P31 [wd:Q15304597] ;
+	prov:wasDerivedFrom @<#clingen_reference> ;
+}
+
+<#P1050_medical_condition> {
+	ps:P1050 {wdt:P5270 .} ; # associated with medical condition that has a MonDO id
+	prov:wasDerivedFrom @<#clingen_reference> ; 
+}
+
+<#P1199_mode_of_inheritance> {
+	ps:P1199 {wdt:P31 [wd:Q1348351] ;} ; # mode of inheritance which is an instance of (P31) of mode of inheritance (Q1348351)
+	prov:wasDerivedFrom @<#clingen_reference> ; 
+}
+
+<#P1343_described_by_source> {
+	ps:P1343 {wdt:P698 xsd:string ;} ; # Described by source that also has a PubMed Id (P698)
+	prov:wasDerivedFrom @<#clingen_reference> ; 
+}
+
+<#P1929_ClinVar_Variation_ID> {
+	ps:P1929 xsd:string ;
+	prov:wasDerivedFrom @<#clingen_reference> ;
+}
+
+<#P3331_HGVS_nomenclature> {
+	ps:P3331 xsd:string ;
+	prov:wasDerivedFrom @<#clingen_reference> ;
+}
+
+<#P3433_biological_variant_of> {
+	ps:P1343 {wdt:P31 [wd:Q7187] ;} ; # Biological variant of a gene (wd:Q7187)
+	prov:wasDerivedFrom @<#clingen_reference> ;
+}
+
+<#clingen_reference> {
+	pr:P248 [wd:Q64403342] ; # Stated in ClinGen
+	pr:P813 xsd:dateTime ;
+	pr:P854 [erepo:~]
+}

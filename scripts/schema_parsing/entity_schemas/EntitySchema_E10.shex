@@ -1,0 +1,41 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<human>
+
+<human> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5];
+  wdt:P18 . * ;               # image (portrait)
+  wdt:P21 [wd:Q48270 wd:Q48279 wd:Q179294 wd:Q189125 wd:Q207959 wd:Q301702 wd:Q350374 wd:Q505371 wd:Q660882 wd:Q746411 wd:Q859614 wd:Q1052281 wd:Q1097630 wd:Q1289754 wd:Q1399232 wd:Q2449503 wd:Q3177577 wd:Q3277905 wd:Q6581072 wd:Q6581097 wd:Q7130936 wd:Q12964198 wd:Q15145778 wd:Q15145779 wd:Q18116794 wd:Q27679684 wd:Q27679766 wd:Q52261234 wd:Q93954933 wd:Q93955709 wd:Q96000630 wd:Q25388691 wd:Q56315990]?;   # gender
+  wdt:P19 . ?;                      # place of birth
+  wdt:P20 . ?;                      # place of death
+  wdt:P119 . ?;                    # place of burial
+  wdt:P1442 . ?;                  # image of grave
+  wdt:P569 . ? ;                   # date of birth
+  wdt:P570 . ? ;                   # date of death
+  wdt:P735 . * ;                    # given name
+  wdt:P734 . * ;                    # family name
+  wdt:P106 . * ;                    # occupation
+  wdt:P1559 . ? ;              #name in native language
+  wdt:P27 @<country> *;           # country of citizenship
+  wdt:P22 @<human> *;             # father
+  wdt:P25 @<human> *;             # mother
+  wdt:P3373 @<human> *;           # sibling
+  wdt:P26 @<human> *;             # spouse
+  wdt:P40 @<human> *;             # children
+  wdt:P1038 @<human> *;           # relatives
+  wdt:P103 @<language> *;         # native language
+  wdt:P1412 @<language> *;        # languages spoken, written or signed
+  wdt:P6886  @<language> *;       # writing language
+  rdfs:label rdf:langString+;
+}
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3024240 wd:Q3624078] +;
+}
+
+<language> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q34770 wd:Q1288568] +;
+}

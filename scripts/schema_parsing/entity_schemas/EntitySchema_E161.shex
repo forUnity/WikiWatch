@@ -1,0 +1,40 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<human>
+
+<human> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5] + ;
+  wdt:P463 [wd:Q182032] + ; # member of: JKT48
+  wdt:P136 [wd:Q37073] + ; # genre: pop music
+  wdt:P6336 . + ; # JKT48 ID on the website
+  wdt:P2003 . ? ; # Instagram username
+  wdt:P2002 . ? ; # Twitter username
+  wdt:P21 [wd:Q6581072] + ; # gender
+  wdt:P19 . ? ; # place of birth
+  wdt:P569 . + ;# date of birth
+  wdt:P735 . * ; # given name
+  wdt:P734 . * ; # family name
+  wdt:P2048 . ? ; # height
+  wdt:P373 . ? ; # Commons category
+  wdt:P18 . ? ; # image
+  wdt:P106 [wd:Q177220] + ; # occupation
+  wdt:P27 @<country> + ; # country of citizenship
+  wdt:P3373 @<human> * ; # sibling
+  wdt:P1853 [wd:Q19831453 wd:Q19831454 wd:Q19831455 wd:Q19831451] ? ;
+  wdt:P1303 [wd:Q17172850] ;
+  wdt:P103 @<language> * ;
+  wdt:P1412 @<language> * ;
+  wdt:P6886  @<language> * ;
+  rdfs:label rdf:langString +;
+}
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3024240 wd:Q3624078] +;
+}
+
+<language> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q34770 wd:Q1288568] +;
+}

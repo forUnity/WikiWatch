@@ -1,0 +1,34 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E298>
+PREFIX E298: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E298#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q11173 ; p:P231 ?casStatement .   ?casStatement ps:P231 ?cas ; prov:wasDerivedFrom ?reference . ?reference pr:P248 wd:Q18907859 ; pr:P813 ?date . } limit 5
+
+# Example reference: 
+#
+# stated in [P248]: CAS Common Chemistry [Q18907859]
+# retrieved [P813]: 2021-04-01
+# reference URL [P854]: "https://commonchemistry.cas.org/detail?cas_rn=133-99-3"
+# InChIKey [P235]: "GUBGYTABKSRVRQ-QUYVBRFLSA-N"
+
+start = @<#wikidata-with-validated-cas>
+
+<#wikidata-with-validated-cas> @ E298:wikidata-with-cas AND {
+  wdt:P231 .{1} ; # CAS registry number
+
+  p:P231 {
+    prov:wasDerivedFrom .* ;
+    prov:wasDerivedFrom {
+      pr:P248 .+ ; # stated in
+      pr:P813 .+ ; # retrieved
+      pr:P854 .+ ; # reference URL
+      pr:P235 .+ ; # InChIKey (on which the match is based)
+    }+;
+  }+;
+}

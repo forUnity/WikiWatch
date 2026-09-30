@@ -1,0 +1,446 @@
+# WIP
+#
+# @see https://www.wikidata.org/wiki/Q5952880
+# @see https://www.wikidata.org/wiki/Q125469362
+# @see https://www.wikidata.org/wiki/EntitySchema:E342
+
+# @see https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Full_list_of_prefixes
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX hint: <http://www.bigdata.com/queryHints#> 
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# Example queries:
+# 10 items:
+# SELECT DISTINCT ?item WHERE {
+#     ?item wdt:P31 wd:Q125469362
+# } LIMIT 10
+# Specific item (Q124661987):
+# SELECT DISTINCT ?item WHERE {
+#     VALUES ?item { wd:Q124661987 }
+# }
+
+start = @<locationTKU>
+
+<locationTKU> {
+    # @see https://www.wikidata.org/wiki/MediaWiki:Wikibase-SortedProperties
+
+    # Statements
+
+    # REQUIRED
+    # property: instance of
+    # value: Q125469362
+    p:P31 {
+        ps:P31 [ wd:Q125469362 ] ;
+    } ;
+
+    # REQUIRED
+    # property: instance of
+    # value: single or multuple items, excluding Q125469362
+    p:P31 {
+        ps:P31 [ wd:~ - wd:Q125469362 ] ;
+    } + ;
+
+    # REQUIRED
+    # property: part of
+    # value: single or multuple items
+    p:P361 {
+        ps:P361 [ wd:~ ] ;
+    } + ;
+
+    # OPTIONAL
+    # property: inception
+    p:P571 {
+        ps:P571 xsd:dateTime ;
+    } ? ;
+
+    # OPTIONAL
+    # property: has use
+    # value: none, single or multuple items
+    p:P366 {
+        ps:P366 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: logo image
+    # value: none, single or multuple Wikimedia Commons image
+    p:P154 {
+        ps:P154 [ <http://commons.wikimedia.org>~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: image
+    # value: none, single or multuple Wikimedia Commons image
+    p:P18 {
+        ps:P18 [ <http://commons.wikimedia.org>~ ] ;
+    } * ;
+
+    # REQUIRED
+    # property: official name
+    # value: multuple values
+    # - REQUIRED
+    #   language: zh-hant
+    #   value: single text
+    #   - qualifier: P1721 pinyin transliteration
+    #     value: single text
+    # - REQUIRED
+    #   language: zh-tw
+    #   value: single text
+    #   - qualifier: P1721 pinyin transliteration
+    #     value: single text
+    # - REQUIRED
+    #   language: en
+    #   value: single text
+    # - OPTIONAL
+    #   language: any
+    #   value: single text
+    #
+    # OPTIONAL
+    # qualifier: P1814 name in kana
+    # value: none, single or multuple items
+    #
+    # OPTIONAL
+    # qualifier: P2440 transliteration or transcription
+    # value: none, single or multuple items
+    #
+    # OPTIONAL
+    # qualifier: P2125 Revised Hepburn romanization
+    # value: none, single or multuple items
+    #
+    # OPTIONAL
+    # qualifier: P898 IPA transcription
+    # value: none, single or multuple items
+    p:P1448 {
+        ps:P1448 [ @zh-hant ] ;
+        pq:P1721 xsd:string ;
+    } ;
+
+    p:P1448 {
+        ps:P1448 [ @zh-tw ] ;
+        pq:P1721 xsd:string ;
+    } ;
+
+    p:P1448 {
+        ps:P1448 [ @en ] ;
+    } ;
+
+    p:P1448 {
+        ps:P1448 rdf:langString ;
+    } * ;
+
+    # REQUIRED
+    # property: native label
+    # value: single value
+    # - REQUIRED
+    #   language: zh-tw
+    #   value: single text
+    #   - qualifier: P1721 pinyin transliteration
+    #     value: single text
+    p:P1705 {
+        ps:P1705 [ @zh-tw ] ;
+        pq:P1721 xsd:string ;
+    } ;
+
+    # OPTIONAL
+    # property: short name
+    # value: none, single or multuple items
+    p:P1813 {
+        ps:P1813 . ;
+    } * ;
+
+    # OPTIONAL
+    # property: named after
+    # value: none, single or multuple items
+    p:P138 {
+        ps:P138 IRI ;
+    } * ;
+
+    # OPTIONAL
+    # property: named by
+    # value: none, single or multuple items
+    p:P3938 {
+        ps:P3938 IRI ;
+    } * ;
+
+    # REQUIRED
+    # property: country
+    # value: single item
+    # - Taiwan
+    p:P17 {
+        ps:P17 [ wd:Q865 ] ;
+    } ;
+
+    # REQUIRED
+    # property: located in the administrative territorial entity
+    # value: one of item
+    # - Zhongxing Village, Tamsui OR
+    # - Linmei Village, Jiaoxi OR
+    # - Yongkang Village, Da'an
+    p:P131 {
+        ps:P131 [ wd:Q96974362 wd:Q97021146 wd:Q32136139 ] ;
+    } ;
+
+    # REQUIRED
+    # property: located in time zone
+    # value: single item
+    # - Taiwan time
+    p:P421 {
+        ps:P421 [ wd:Q712168 ] ;
+    } ;
+
+    # OPTIONAL
+    # property: located on street
+    # value: none, single or multuple items
+    p:P669 {
+        ps:P669 [ wd:~ ] ;
+    } * ;
+
+    # REQUIRED
+    # property: coordinate location
+    # value: single coordinate
+    # @see https://www.wikidata.org/wiki/EntitySchema:E342
+    p:P625 {
+        ps:P625 geo:wktLiteral ;
+    } ;
+
+    # OPTIONAL
+    # property: coordinates of geographic center
+    # value: none or single coordinate
+    p:P5140 {
+        ps:P5140 geo:wktLiteral ;
+    } ? ;
+
+    # OPTIONAL
+    # property: coordinates of easternmost point
+    # value: none or single coordinate
+    p:P1334 {
+        ps:P1334 geo:wktLiteral ;
+    } ? ;
+
+    # OPTIONAL
+    # property: coordinates of northernmost point
+    # value: none or single coordinate
+    p:P1332 {
+        ps:P1332 geo:wktLiteral ;
+    } ? ;
+
+    # OPTIONAL
+    # property: coordinates of southernmost point
+    # value: none or single coordinate
+    p:P1333 {
+        ps:P1333 geo:wktLiteral ;
+    } ? ;
+
+    # OPTIONAL
+    # property: coordinates of westernmost point
+    # value: none or single coordinate
+    p:P1335 {
+        ps:P1335 geo:wktLiteral ;
+    } ? ;
+
+    # OPTIONAL
+    # property: made from material
+    # value: none, single or multuple items
+    p:P186 {
+        ps:P186 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: architect
+    # value: none, single or multuple items
+    p:P84 {
+        ps:P84 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: architectural style
+    # value: none, single or multuple items
+    p:P149 {
+        ps:P149 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: date of official opening
+    # value: none or single time
+    p:P1619 {
+        ps:P1619 xsd:dateTime ;
+    } ? ;
+
+    # OPTIONAL
+    # property: date of official closure
+    # value: none or single time
+    p:P3999 {
+        ps:P3999 xsd:dateTime ;
+    } ? ;
+
+    # OPTIONAL
+    # property: structure replaces
+    # value: none, single or multiple item
+    p:P1398 {
+        ps:P1398 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: structure replaced by
+    # value: none, single or multiple item
+    p:P167 {
+        ps:P167 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: main building contractor
+    # value: none, single or multuple items
+    p:P193 {
+        ps:P193 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: structural engineer
+    # value: none, single or multuple items
+    p:P631 {
+        ps:P631 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: occupant
+    # value: none, single or multuple items
+    p:P466 {
+        ps:P466 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: adjacent building
+    # value: none, single or multuple items
+    p:P3032 {
+        ps:P3032 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: floors above ground
+    # value: none or single integer
+    p:P1101 {
+        ps:P3032 xsd:decimal ;
+    } ? ;
+
+    # OPTIONAL
+    # property: floors below ground
+    # value: none or single integer
+    p:P1139 {
+        ps:P1139 xsd:decimal ;
+    } ? ;
+
+    # OPTIONAL
+    # property: number of elevators
+    # value: none, single or multiple integers
+    p:P1301 {
+        ps:P1301 xsd:decimal ;
+    } * ;
+
+    # OPTIONAL
+    # property: has facility
+    # value: none, single or multiple values
+    p:P912 {
+        ps:P912 . ;
+    } * ;
+
+    # OPTIONAL
+    # property: Wi-Fi access
+    # value: none, single or multiple values
+    p:P2848 {
+        ps:P2848 . ;
+    } * ;
+
+    # OPTIONAL
+    # property: disabled accessibility
+    # value: none, single or multiple values
+    p:P2846 {
+        ps:P2846 . ;
+    } * ;
+
+    # OPTIONAL
+    # property: connects with
+    # value: none, single or multiple items
+    p:P2789 {
+        ps:P2789 . ;
+    } * ;
+
+    # OPTIONAL
+    # property: street address
+    # value: none or single value
+    p:P6375 {
+        ps:P6375 . ;
+    } ? ;
+
+    # OPTIONAL
+    # property: house number
+    # value: none or single value
+    p:P670 {
+        ps:P670 . ;
+    } ? ;
+
+    # OPTIONAL
+    # property: postal code
+    # value: none or single value
+    p:P281 {
+        ps:P281 . ;
+    } ? ;
+
+    # OPTIONAL
+    # property: has part(s)
+    # value: none, single or multuple items
+    p:P527 {
+        ps:P527 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: different from
+    # value: none, single or multuple items
+    p:P1889 {
+        ps:P1889 [ wd:~ ] ;
+    } * ;
+
+    # OPTIONAL
+    # property: Commons category
+    # value: none or single item
+    p:P373 {
+        ps:P373 . ;
+    } ? ;
+
+    # Identifiers
+
+    # OPTIONAL
+    # property: OpenStreetMap way ID
+    # value: none or single ID
+    wdt:P10689 {
+        ps:P10689 . ;
+    } ? ;
+}

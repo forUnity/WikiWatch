@@ -1,0 +1,35 @@
+# Early draft see https://phabricator.wikimedia.org/T225394
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL https://w.wiki/qex
+#SELECT ?program ?programLabel WHERE {
+#  VALUES ?SVT {wd:Q292996 wd:Q741376 wd:Q215363  }
+#  ?program wdt:P449 ?SVT.
+#  SERVICE wikibase:label { bd:serviceParam wikibase:language "sv,en". }}
+# Project see https://phabricator.wikimedia.org/T225394
+
+start = @<SVTPlay>
+<SVTPlay> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q15416 wd:Q21191270 wd:Q1259759 wd:Q5398426] ;
+ #wdt:P6104 [ wd:????]   + ; # maintained by Wikipedia:SVTplay
+ wdt:P921 .      * ; # main subject
+ wdt:P371 .      * ; # presenter
+ wdt:P449 .      + ; # original broadcaster SVT
+ wdt:P495 .      + ; # country of origin 
+ wdt:P364 .      + ; # original language of film or TV show 
+ wdt:P577 .      + ; # publication date 
+ wdt:P2047 .      + ; #  duration 
+ wdt:P710 .      * ; #   participant
+ wdt:P8546 .      * ; #  recording location
+ wdt:P5030 .      * ; #  Talk show guest
+ wdt:P57 .      * ; #  director
+ wdt:P345 .      * ; #  IMDb ID
+ wdt:P856 .      * ; #  official website
+#Missing
+#* we need a new property for SVTplayid
+#https://www.wikidata.org/wiki/Wikidata:Property_proposal/SVTplay_identifier 
+}

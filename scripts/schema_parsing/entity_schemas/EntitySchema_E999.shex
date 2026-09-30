@@ -1,0 +1,12 @@
+# This is a scratchpad for broke schemas. here's an example:
+
+BASE <http://a.example/schemas/bad>
+start=@<Schema>
+
+<#circular> {
+  <p1> .
+} AND @<#circular>
+
+<#badreference> {
+  <p1> @<#doesnotexist>
+}

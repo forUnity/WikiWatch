@@ -1,0 +1,44 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q11173 } limit 5
+# Example SPARQL query: select * where { ?x wdt:P279 / wdt:P31 wd:Q11173 } limit 5
+
+start = @<#wikidata-chemical-compound>
+
+<#wikidata-chemical-compound> @<CCType> AND {
+ wdt:P117  @<ChemicalStructure> * ;
+ wdt:P18   . ? ;                    # Picture
+ wdt:P8224 @<MolecularModel> ? ;
+ wdt:P2067 xsd:decimal ;
+ p:P2067 { 
+   psv:P2067 @<MassDalton> ;
+   prov:wasDerivedFrom @<MassReference>
+ } 
+}
+
+<CCType> { 
+  wdt:P31 [ wd:Q11173] ;
+  wdt:P31 . *
+} OR {
+ wdt:P279 @<CCType> + ;
+ wdt:P279 . *
+}
+
+<MassDalton> {
+ wikibase:quantityAmount xsd:decimal ;
+ wikibase:quantityUnit   [ wd:Q483261 ]
+}
+
+<ChemicalStructure> {}
+<MolecularModel> { }
+<MassReference> {
+ pr:P248 [ wd:Q278487 wd:Q6120337 ]
+}

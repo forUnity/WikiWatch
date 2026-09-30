@@ -1,0 +1,128 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q33506. } LIMIT 10
+
+
+
+start = @<#museum>
+
+<#museum> EXTRA wdt:P31 {
+
+# instance of
+    wdt:P31 [ wd:Q33506 ] ;
+
+# country
+    wdt:P17 IRI ;
+
+# image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]? ;
+
+# located in the administrative territorial entity
+    wdt:P131 IRI + ;
+
+# Commons category
+    wdt:P373 xsd:string ? ;
+
+# Commons gallery
+    wdt:P935 xsd:string ? ;
+
+# Commons Institution page
+    wdt:P1612 xsd:string ? ;
+
+# coordinate location
+    wdt:P625 geo:wktLiteral ;
+
+# official website
+    wdt:P856 IRI ? ;
+
+# inception
+    wdt:P571 xsd:dateTime * ;
+
+ # visitors per year
+    wdt:P1174 xsd:decimal ? ;
+
+# fee
+    wdt:P2555 xsd:decimal ? ;
+
+# open days
+    p:P3025 [ <http://www.wikidata.org/entity>~ ] ? ;
+    pq:P3026 [ <http://www.wikidata.org/entity>~ ] ? ;
+    pq:P3028 [ <http://www.wikidata.org/entity>~ ] ? ;
+    pq:P8626 [ <http://www.wikidata.org/entity>~ ] ? ;
+    pq:P8627 [ <http://www.wikidata.org/entity>~ ] ? ;
+    
+
+# logo image
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+
+# activity policy in this place
+    wdt:P5023 [ <http://www.wikidata.org/entity>~ ] ?;
+
+# locator map image
+    wdt:P242 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+
+# native label
+    wdt:P1705 rdf:langString * ;
+
+# heritage designation
+    wdt:P1435 [ <http://www.wikidata.org/entity>~ ] ? ;
+
+# named after
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] ? ;
+
+# director/manager
+    wdt:P1037 [ <http://www.wikidata.org/entity>~ ] ? ;
+
+# located at street address
+    wdt:P6375 rdf:langString ? ;
+
+# External IDs
+# VIAF ID
+    wdt:P214 xsd:string ? ;
+
+# Library of Congress authority ID
+    wdt:P244 xsd:string ? ;
+
+# Bibliothèque nationale de France ID
+    wdt:P268 xsd:string ? ;
+    
+# ISNI
+    wdt:P213 xsd:string * ;
+
+# SUDOC authorities ID
+    wdt:P269 xsd:string * ;
+
+# GND ID
+    wdt:P227 xsd:string ? ;
+
+# NKCR AUT ID
+    wdt:P691 xsd:string ? ;
+
+ # Twitter username
+    wdt:P2002 xsd:string ? ;
+
+# YouTube channel ID
+    wdt:P2397 xsd:string ? ;
+
+# Athenaeum museum ID
+    wdt:P4146 xsd:string ? ;
+
+# Instagram username
+    wdt:P2003 xsd:string ? ;
+
+# GitHub username
+    wdt:P2037 xsd:string ? ;
+
+# Art UK venue ID
+    wdt:P1602 xsd:string ? ;
+
+# Museofile
+    wdt:P539 xsd:string ? ;
+}

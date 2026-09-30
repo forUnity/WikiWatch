@@ -1,0 +1,35 @@
+prefix sx: <http://weso.es/ns/shex/>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix wdp: <http://www.wikidata.org/prop/>
+prefix wd: <http://www.wikidata.org/entity/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix wikibase: <http://wikiba.se/ontology#>
+prefix schema: <http://schema.org/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+
+<ComicStrip> {
+  rdfs:label  rdf:langString* ; 
+  schema:dateModified  xsd:dateTime; 
+  schema:description  rdf:langString*; 
+  schema:version  xsd:integer; 
+  skos:altLabel  rdf:langString*; 
+
+  wdt:P1476  [ @en] ; 
+wdt:P2699  IRI  ; 
+wdt:P275  IRI ; 
+wdt:P31 [ wd:Q838795 ] ; 
+wdt:P361  IRI  ; 
+wdt:P407  IRI ; 
+wdt:P433  xsd:string ; 
+wdt:P50  IRI  ; 
+wdt:P577 xsd:dateTime ; 
+    wdp:P179 {
+    	pq:P1545 xsd:integer ;
+    	pq:P155 { wdt:P31 [ wd:Q838795 ] } ;
+    	pq:P156 { wdt:P31 [ wd:Q838795 ] } ;
+	}
+}

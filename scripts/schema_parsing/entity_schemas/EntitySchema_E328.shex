@@ -1,0 +1,64 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX go: <http://purl.obolibrary.org/obo/GO_>
+
+BASE <http://www.wikidata.org/entity/> 
+
+# Example query: SELECT DISTINCT ?go WHERE {?go wdt:P686 ?goid .} LIMIT 5
+
+start = @<gene-ontology-term>
+
+<gene-ontology-term> EXTRA p:P31 p:P279  p:P361 {
+   p:P31 @<P31_instance_of> ;
+   p:P279 @<P279_subclass_of>* ;
+   p:P361 @<P361_part_of>* ;
+   p:P2888 @<P2888_exact_match>+ ;
+
+   # identifiers
+   p:P686 @<P686_gene_ontology_id> ;
+}
+
+<P31_instance_of> {
+   ps:P31 [
+     wd:Q2996394  # biological process
+     wd:Q14860489	# molecular function
+     wd:Q5058355  # cellular component
+     ] ;
+   prov:wasDerivedFrom @<gene_ontology_reference>
+}
+
+<P279_subclass_of> {
+   ps:P279 [wd:~] ;
+   prov:wasDerivedFrom @<gene_ontology_reference> ;
+}
+
+<P361_part_of> {
+   ps:P361 [wd:~]  ;
+   prov:wasDerivedFrom @<gene_ontology_reference> ;
+}
+
+<P686_gene_ontology_id> {
+   ps:P686 /GO:[0-9]+/ ;
+   prov:wasDerivedFrom @<gene_ontology_reference> ;
+}
+
+<P2888_exact_match> {
+   ps:P2888 [go:~] ;
+   prov:wasDerivedFrom @<gene_ontology_reference> ;
+}
+
+<go_parent> {
+   wdt:P686 /GO:[0-9]+/ ;
+} 
+
+# references
+<gene_ontology_reference> {
+   pr:P248 [wd:~] ;
+   pr:P813 xsd:dateTime ;
+   pr:P686 /GO:[0-9]+/ ;
+}

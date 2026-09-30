@@ -1,0 +1,79 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Find items using this schema with the following SPARQL query:
+# Example SPARQL query: SELECT ?item WHERE { ?item (wdt:P31/(wdt:P279*)) wd:Q87167. } LIMIT 5
+# This will return a sample of 5 items that are instance of (P31) any subclass of (P279) manuscript (Q87167)
+
+start = @<#manuscript>
+
+# Main shape definition for a manuscript
+# The EXTRA keyword allows properties not mentioned in this schema to also be present
+<#manuscript> EXTRA wdt:P31 {
+
+# Basic classification - required property
+wdt:P31 [wd:Q87167 wd:Q48498] + ;       # Must be instance of (P31) manuscript (Q87167) or illuminated manuscript (Q48498). The plus (+) means at least one such statement must exist
+  
+# A maximum of one image
+wdt:P18 IRI? ;                  # Image (P18) - optional, 0 or 1
+  
+# Physical location information
+wdt:P276 IRI* ;                  # Location (P276) - e.g. the library building - optional
+  
+# Title information
+wdt:P1476 rdf:langString* ;      # Title (P1476) - can have multiple for different languages. rdf:langString means it's text with language tags
+wdt:P1680 rdf:langString? ;      # Subtitle (P1680) - optional with language tag
+  
+# Contributors
+wdt:P50 IRI* ;                   # Author (P50) - can have multiple authors
+wdt:P98 IRI* ;                   # Editor (P98) - can have multiple editors
+wdt:P110 IRI* ;                  # Illustrator (P110) - can have multiple illustrators or illuminators
+wdt:P767 IRI* ;                  # Contributor (P767) - can have multiple contributors
+wdt:P2093 xsd:string* ;          # Author name string (P2093) - can have multiple authors for whom no Wikidata item exists and who are thus described with a string
+  
+# Other manuscript information
+wdt:P571 xsd:dateTime* ;         # Inception (P571) - can have multiple dates. xsd:dateTime format like "2023-05-07T00:00:00Z"
+wdt:P407 IRI* ;                  # Language of work (P407) - can have multiple languages
+wdt:P1071 IRI* ;                 # Location of creation (P1071) - can have multiple values
+wdt:P186 IRI* ;                # Made from material (P186) - can have multiple values
+  
+# Collection and inventory information - these use complex statements with qualifiers
+p:P195 @<CollectionStatement>* ; # Collection (P195) statements
+p:P217 @<InventoryNumberStatement>* ; # Inventory number (P217) statements with qualifiers
+  
+# Digital access and references
+wdt:P953 IRI* ;                  # Full work available at URL (P953) - digital access points
+wdt:P973 IRI* ;                  # Described at URL (P973) - references on other websites
+wdt:P996 IRI* ;                  # Scan file on Wikimedia Commons (P996)
+wdt:P373 xsd:string? ;       # Commons category (P373) - name of the Wikimedia Commons category 
+  
+# Rights information
+wdt:P6216 IRI* ;                 # Copyright status (P6216) e.g. public domain, copyrighted
+wdt:P275 IRI* ;                  # License (P275) e.g. CC BY-SA 4.0
+  
+# Technical and cataloging information
+wdt:P6108 IRI* ;                 # IIIF manifest URL (P6108) - for digital viewing; International Image Interoperability Framework
+wdt:P243 xsd:string* ;        # OCLC control number (P243) - library cataloging ID
+}
+
+# Definition for a Collection statement with inventory number qualifiers
+# This shape enforces the relationship between collections and inventory numbers
+
+<CollectionStatement> {
+ps:P195 IRI* ;                   # Main value: the collection
+pq:P217 xsd:string* ;            # Qualifier: inventory number within that collection
+}
+
+# Definition for an Inventory Number statement with collection qualifiers
+# This is the inverse relationship of the above - starting from the inventory number
+
+<InventoryNumberStatement> {
+ps:P217 xsd:string* ;            # Main value: inventory number
+pq:P195 IRI* ;                   # Qualifier: the collection this inventory number belongs to
+}

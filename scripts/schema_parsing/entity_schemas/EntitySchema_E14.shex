@@ -1,0 +1,27 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# sample items (recent Q5 items):
+# SELECT ?item { ?item wdt:P106 wd:Q33999; wdt:P31 wd:Q5. FILTER(xsd:integer(substr(str(?item), 33)) > 63000000) } ORDER BY DESC(substr(str(?item), 33)) LIMIT 50
+
+# should pass: 
+# SELECT ?item { ?item wdt:P31  wd:Q5; wdt:P106 []; wdt:P21 []; wdt:P735 []; wdt:P569 []; wdt:P734 [] } LIMIT 20
+
+# should fail: 
+# SELECT ?item { ?item wdt:P31 wd:Q5; wdt:P106 []; wdt:P21 []; wdt:P735 []; wdt:P569 [] . MINUS { ?item wdt:P734 [] }   } LIMIT 20
+
+
+start = @<wikidata-Q5>
+
+<wikidata-Q5> EXTRA p:P31 {    
+	## STATEMENTS
+	wdt:P31 [wd:Q5] ;
+        wdt:P21 .  ;
+        wdt:P106 . + ;
+        wdt:P569 . + ;
+        wdt:P735 . + ;
+        wdt:P734 . + ;
+} 
+
+#use different scheme for more detailed or different definitions

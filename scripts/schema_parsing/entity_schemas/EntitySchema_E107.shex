@@ -1,0 +1,69 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX mesh: <http://id.nlm.nih.gov/mesh> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108>
+PREFIX E108: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108#>
+
+start = @<#chromosome>
+
+ # Result for pattern { p:P~ {ps:~ __; psn:~ __ ; a[__];  } }; and query SELECT DISTINCT ?x WHERE {?x wdt:P31 wd:Q37748. } LIMIT 10
+
+<#chromosome>  EXTRA p:P279 {
+    # instance of; 
+    p:P31 {
+        ps:P31 [ wd:Q37748 ] # wd:Q37748 = chromosome
+    } ;
+
+    # subclass of; 
+    p:P279 {
+        ps:P279 [ wd:Q186380 ] # subclass of autosome
+    } ? ;
+
+    # follows; 
+    #p:P155 {
+     #   ps:P155 [ <http://www.wikidata.org/entity>~ ]
+    #} ;
+
+    # followed by; 
+    p:P156 {
+        ps:P156 [ <http://www.wikidata.org/entity>~ ]
+    } ;
+
+    # short name; 
+    p:P1813 {
+        ps:P1813 rdf:langString
+    } ;
+    
+    # length; 
+    p:P2043 {
+        psv:P2043 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P2043 xsd:decimal ;
+        pq:P659 @E108:sequence_assembly ; # according to a genomic assembly
+    } ;
+   
+    # Commons category; 
+    p:P373 {
+        ps:P373 xsd:string
+    } ;
+    
+    ## Identifiers
+    # MeSH descriptor ID; 
+    p:P486 {
+        psn:P486 [ mesh:~ ] ;
+        ps:P486 xsd:string
+    } ;
+
+    # Refseq Genome ID; 
+    p:P2249 {
+        ps:P2249 xsd:string
+    } ;
+}

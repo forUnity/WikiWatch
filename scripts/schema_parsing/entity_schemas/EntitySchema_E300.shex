@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<auto-racing-season>
+
+<auto-racing-season> {
+  wdt:P31 [ wd:Q27020041 ]; # 1 instance of with value sports season
+  p:P3450 @<season>; # 1 property sports season of league or competition with shape season
+  wdt:P641 @<sport>; # 1 sport with any value
+  wdt:P585 .; # 1 point in time with any value
+  wdt:P1346 .*; # 0 or more winner with any value
+  wdt:P1132 .?; # 0 or 1 value no of participants with any value
+  wdt:P1350 .?; # 0 or 1 value number of matches played/races/starts with any value
+  # Labels
+  rdfs:label [@en] + ; # 1 or more labels with a langstring
+}
+
+<season> {
+  ps:P3450 @<season_type>; # 1 statement sports season of league or competition with any value
+  pq:P155 .?; # 1 qualifier follows with any value
+  pq:P156 .?; # 1 qualifier followed by with any value
+}
+
+<season_type> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q60147807 ]; # 1 instance of with value value automobile racing series
+} 
+
+<sport> {
+  wdt:P279 [ wd:Q5386 ] ; # 1 subclass of with value auto racing
+}

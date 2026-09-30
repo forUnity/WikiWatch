@@ -1,0 +1,17 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# SELECT ?item WHERE { { ?item wdt:P1435 wd:Q10387684 } UNION { ?item wdt:P1435 wd:Q10387575 } }
+
+START = @<mh>
+
+<mh>{
+ wdt:P31 . + ; #nature
+ wdt:P1435 [wd:Q9259 wd:Q498842 wd:Q1019352 wd:Q1154112 wd:Q1459900 wd:Q1568567 wd:Q2290523 wd:Q2864343 wd:Q2986426 wd:Q3153865 wd:Q3214312 wd:Q3280355 wd:Q3477434 wd:Q3485446 wd:Q6979599 wd:Q10387575 wd:Q10387684 wd:Q16040909 wd:Q16739336 wd:Q18965125 wd:Q21153160 wd:Q26971668 wd:Q30282398 wd:Q40461605 wd:Q43113623 wd:Q54556283 wd:Q61058403 wd:Q61058419 wd:Q62018102 wd:Q86830939 wd:Q96755602 wd:Q117191197 ] + ; #statut
+ wdt:P380 . + ; #id Mérimée
+ wdt:P17 [ wd:Q142 wd:Q29 wd:Q38 ] + ; #pays = France, sauf Q1146645 et Q756816
+ wdt:P131 . + ; #localisation
+ wdt:P625 . + ; #coordonnées
+ wdt:P18 . ; #image
+ wdt:P373 . * ; #categorie Commons
+}

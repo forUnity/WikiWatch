@@ -1,0 +1,156 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E15>
+PREFIX E15: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E15#>
+
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+
+# Bengali lexeme:
+# SELECT ?lexeme { ?lexeme dct:language wd:Q9610 ; wikibase:lexicalCategory wd:Q24905 } LIMIT 5
+
+START = @<bengali-verb>
+
+<bengali-verb> {
+
+  dct:language [ wd:Q9610 ]
+    // rdfs:label "Language"
+    // rdfs:comment "Language must be Bengali" ;
+
+  wikibase:lexicalCategory [ wd:Q24905 ]
+    // rdfs:label "Lexical category"
+    // rdfs:comment "Lexical category must be verb" ;
+
+  wikibase:lemma [ @bn ]
+    // rdfs:label "Lemma"
+    // rdfs:comment "Lemma must must have one Bengali value" ; 
+
+# F1 verbal noun
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q1350145 ];
+  };
+
+# F2 first person, simple present
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q21714344 ];
+      wikibase:grammaticalFeature [ wd:Q3910936 ];
+  };
+
+# F3 second person familiar, simple present
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650487 ];
+      wikibase:grammaticalFeature [ wd:Q3910936 ];
+  };
+
+# F4 second-person informal, simple present
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650485 ];
+      wikibase:grammaticalFeature [ wd:Q3910936 ];
+  };
+
+# F5 third person, simple present
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q51929074 ];
+      wikibase:grammaticalFeature [ wd:Q3910936 ];
+  };
+
+# F6 Bengali polite form, simple present
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650512 ];
+      wikibase:grammaticalFeature [ wd:Q3910936 ];
+  };
+
+# F7 first person, present continuous, Chalit bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q21714344 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q75242466 ];
+  };
+
+# F8 first person, present continuous, Sadhu bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q21714344 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q20613396 ];
+  };
+
+# F9 second-person familiar, present continuous, Chalit bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650487 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q75242466 ];
+  };
+
+# F10 second-person familiar, present continuous, Sadhu bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650487 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q20613396 ];
+  };
+
+# F11 second-person informal, present continuous, Chalit bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650485 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q75242466 ];
+  };
+
+# F12 second-person informal, present continuous, Sadhu bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650485 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q20613396 ];
+  };
+
+# F13 third person, present continuous, Chalit bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q51929074 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q75242466 ];
+  };
+
+# F14 third person, present continuous, Sadhu bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q51929074 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q20613396 ];
+  };
+
+# F15 Bengali polite form, present continuous, Chalit bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650512 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q75242466 ];
+  };
+
+# F16 Bengali polite form, present continuous, Sadhu bhasha
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q56650512 ];
+      wikibase:grammaticalFeature [ wd:Q7240943 ];
+      wikibase:grammaticalFeature [ wd:Q20613396 ];
+  };
+
+}

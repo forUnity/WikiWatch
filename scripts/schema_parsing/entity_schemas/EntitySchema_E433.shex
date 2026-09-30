@@ -1,0 +1,31 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<taxon>
+
+<taxon> EXTRA wdt:P31 {
+  #must be an instance of at least taxon
+  wdt:P31 [wd:Q16521];
+
+  #must have a single taxonomic rank
+  wdt:P105 @<taxonomic_rank>;
+
+  #must have a single parent taxon
+  wdt:P171 @<parent_taxon>;
+
+  #must have a single taxon name
+  wdt:P225 LITERAL+;
+
+  #may have one or more common names
+  wdt:P1843 LITERAL+;
+}
+
+<taxonomic_rank> EXTRA wdt:P31 {
+  #must be an instance of at least taxonomic rank
+  wdt:P31 [wd:Q427626];
+}
+
+<parent_taxon> EXTRA wdt:P31 {
+  #must be an instance of at least taxon
+  wdt:P31 [wd:Q16521];
+}

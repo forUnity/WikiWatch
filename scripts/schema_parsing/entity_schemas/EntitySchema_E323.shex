@@ -1,0 +1,107 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX obo: <http://purl.obolibrary.org/obo/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX identorg: <http://identifiers.org/doid/>
+PREFIX orphanet: <http://www.orpha.net/ORDO/Orphanet>
+PREFIX icd: <https://icd.who.int/>
+PREFIX umls: <http://linkedlifedata.com/resource/umls>
+start=@<#gene-wiki-disease-item>
+
+<#gene-wiki-disease-item>
+   {
+    p:P279 @<#P279_subclassof>+ ;
+    p:P279 . * ;
+    p:P2888 @<#P2888_exactmatch>+ ;
+    p:P780 @<#P780_symptoms>* ;
+  
+    # Identifiers
+    p:P699       @<#P699_disease_ontology> ;
+    p:P492      @<#P492_omim_id>* ;
+   p:P1550     @<#P1550_orphanet_id>* ;
+   p:P1748     @<#P1748_nci_theraurus_id>* ;
+    p:P4229     @<#P4229_icd10-cm>* ;
+    p:P5806		@<#P5806-snomed-ct>* ;
+} 
+
+## Shapes describing statements in detail.
+<#P279_subclassof> {
+   ps:P279 [wd:~] ;
+       prov:wasDerivedFrom 	@<#disease-ontology-reference> OR 
+                            @<#mondo-disease-reference> OR @<#reference> + ;
+}
+    
+<#P492_omim_id> {
+   ps:P492 xsd:string ;    
+}
+
+<#P699_disease_ontology> {
+   ps:P699 xsd:string ;
+   prov:wasDerivedFrom @<#disease-ontology-reference> 
+                       OR @<#mondo-disease-reference> OR @<#reference>  + ;   
+}
+      
+<#P780_symptoms>  {
+   ps:P780 {} ; # TODO create and import EntitySchema for the Symptom Ontology  
+}
+
+<#P1550_orphanet_id> {
+   ps:P1550 xsd:string ;  
+}
+
+<#P1748_nci_theraurus_id> {
+   ps:P1748 xsd:string ;
+}
+            
+<#P2888_exactmatch>   {
+  ps:P2888 [obo:~ identorg:~ orphanet:~ icd:~ umls:~ ]  ;
+}
+
+<#P4229_icd10-cm>  {
+  ps:P4229 xsd:string ; 
+  prov:wasDerivedFrom 	@<#disease-ontology-reference>
+  			OR @<#mondo-disease-reference> OR @<#reference> + ;
+}
+
+<#P5270_mondo_id> {
+   ps:P5270 xsd:string ;
+   prov:wasDerivedFrom @<#disease-ontology-reference> 
+                       OR @<#mondo-disease-reference> OR @<#reference> + ;   
+}
+
+<#P5806-snomed-ct> {
+   ps:P5806 xsd:string ;
+   prov:wasDerivedFrom @<#disease-ontology-reference> 
+                       OR @<#mondo-disease-reference> OR @<#reference> + ;
+}
+
+## References
+<#reference> {}
+
+<#disease-ontology-reference> { # reference to a term from the disease ontology term
+  pr:P248   [ wd:Q5282129 ] ; # stated in [P248] Disease ontology
+  pr:P699   xsd:string ; # Disease Ontology ID
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}
+
+
+<#identifiers-org-reference> { # reference to a identifiers.org
+  pr:P248   [ wd:Q16335166 ] ; # stated in [P248] identifiers.org [Q16335166] ;
+  pr:P854   [<https://registry.identifiers.org/registry/doid>] ;
+}
+
+<#mondo-disease-reference> { # reference to a term from the MonDo ontology
+  pr:P248   [ wd:Q27468140 wd:Q55345445 ] ; # stated in [P248] Mondo disease ontology [Q27468140]
+  pr:P5270  xsd:string ; # Mondo ID
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}
+
+<#symptom-ontology-reference> { # reference to a term from the Symptom Ontology
+  pr:P248   [ wd:Q5282129 ] ; # stated in [P248] Symptom ontology [Q27468140]
+  pr:P8656   xsd:string ; # Symptom Ontology ID
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}

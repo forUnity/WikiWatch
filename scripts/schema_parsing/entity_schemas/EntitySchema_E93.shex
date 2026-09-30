@@ -1,0 +1,47 @@
+BASE <https://www.wikidata.org/wiki/EntitySchema:E91>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q202871. } LIMIT 10
+
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E91>
+
+start=@<E93#FLOSSemulator>
+<E93#FLOSSemulator> EXTENDS @<https://www.wikidata.org/wiki/Special:EntitySchemaText/E91#emulator> EXTRA p:P31  {
+# copyright license
+    p:P275 @<license> +;
+# source code repository;
+    p:P1324 { ps:P1324 IRI } ?  ;
+# Framalibre ID;
+    wdt:P4107 xsd:string ? ;
+# Pro-Linux.de DBApp ID; 
+    wdt:P6665 xsd:string ? ;
+# SWH Release ID; 
+    wdt:P6138 xsd:string ? ;
+# LGDB emulator ID; 
+    wdt:P5117 xsd:string ? ;
+# Flathub ID; 
+    wdt:P4655 xsd:string ? ;
+# Debian stable package; 
+    wdt:P3442 xsd:string ? ;
+# Ubuntu package; 
+    wdt:P3473 xsd:string ? ;
+# Gentoo package; 
+    wdt:P3499 xsd:string ? ;
+# Repology project name;
+    wdt:P6931 xsd:string ? ;
+# SourceForge project; 
+    wdt:P2209 xsd:string ? ;
+# Free Software Directory entry;
+    wdt:P2537 xsd:string ? ;
+# Arch Linux package; 
+    wdt:P3454 xsd:string ? ;
+}
+
+<license> {
+     p:P31 [wd:Q3943414]
+}

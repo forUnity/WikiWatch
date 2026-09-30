@@ -1,0 +1,35 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Example SPARQL query: https://w.wiki/njr 
+# map https://w.wiki/nju
+# SELECT ?item ?itemLabel ?itemDescription WHERE {
+#  ?item wdt:P31 wd:Q41176;
+#   wdt:P131 wd:Q506250.
+#  SERVICE wikibase:label { bd:serviceParam wikibase:language "sv,en". }
+#} ORDER BY (?itemLabel)}
+# Project see https://phabricator.wikimedia.org/T268374
+
+start = @<building>
+
+<building> EXTRA wdt:P31 {
+ wdt:P31 [wd:Q41176]; # building
+ wdt:P17       [ wd:Q34]; # country 
+ wdt:P571   .+ ; # inception 
+ wdt:P131    [ wd:Q506250]; #Administrative unit
+ wdt:P625  .+ ; # coordinates
+ wdt:P84  .+ ; # architect
+ wdt:P18  .+ ; # picture
+ wdt:P5775  .* ; # interior picture
+ wdt:P6375 .* ; # street address
+ wdt:P127 .* ; # owned by
+ wdt:P366 .* ; # use
+
+ wdt:P149  .* ; # architectural style
+ wdt:P138  .* ; # named after
+ wdt:P1260  .* ; # Ksamsök
+ wdt:P1435 .* ; # heritage designation
+ wdt:P5555 .* ; # schematic
+ wdt:P3311 .* ; # plan view image
+
+}

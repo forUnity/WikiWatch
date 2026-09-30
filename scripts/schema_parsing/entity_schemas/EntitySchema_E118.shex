@@ -1,0 +1,58 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# Query Map: SELECT ?item WHERE {?item wdt:P31 wd:Q3467906. } LIMIT 10
+
+start = @ <#virtual_assistant>
+
+<#virtual_assistant> EXTRA wdt:P31 {
+
+ # instance of
+  wdt:P31 [ wd:Q3467906 ] ;
+
+ # official website
+    wdt:P856 IRI * ;
+
+ # operating system
+    wdt:P306 IRI * ;
+
+# developer
+    wdt:P178 IRI  * ;
+
+# logo image
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    
+# publication date or inception date 
+	(  p:P577 { ps:P577 xsd:dateTime } ; p:P571 { ps:P571 xsd:dateTime } ?
+	 | p:P571 { ps:P571 xsd:dateTime } ) ;
+
+# Commons category
+    wdt:P373 xsd:string ? ;
+
+# Freebase ID
+    wdt:P646 xsd:string ? ;
+
+# YouTube channel ID
+    wdt:P2397 xsd:string ? ;
+
+# named after
+    wdt:P138 IRI ? ;
+
+# voice actor
+    wdt:P725 IRI ? ;
+    
+# nickname
+    wdt:P1449 rdf:langString ? ;
+
+# Know Your Meme ID
+    wdt:P6760 xsd:string ? ;
+
+# subreddit
+    wdt:P3984 xsd:string ? ;
+}

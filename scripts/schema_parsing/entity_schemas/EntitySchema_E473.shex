@@ -1,0 +1,77 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:  <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps:  <http://www.wikidata.org/prop/statement/>
+PREFIX p:   <http://www.wikidata.org/prop/>
+PREFIX pq:  <http://www.wikidata.org/prop/qualifier/>
+
+# Find items using this schema with the following SPARQL query:
+# A sample of 5 editions and books in the Maastricht University Library collection
+# SELECT ?s WHERE { ?s wdt:P195 wd:Q15734302 ; wdt:P31 wd:Q3331189 . } LIMIT 5
+
+start = @<#um_edition_or_book>
+
+# Main shape definition for UM-held book editions
+# EXTRA allows additional P31/P195/etc. statements beyond the ones matched here
+<#um_edition_or_book> EXTRA wdt:P31 p:P195 {
+
+  # Require at least one P31 that is an edition/version/translation
+  wdt:P31 [ wd:Q3331189  ] + ; # edition, version or translation
+
+  # Allow other P31 values to coexist thanks to EXTRA wdt:P31
+
+  p:P195 @<CollectionStatementUM> + ;       # Require at least one collection statement specifically to UM
+
+  ############################
+  # Descriptive and bibliographic data (all optional)
+  ############################
+  wdt:P1476 rdf:langString* ;      # title (monolingual text with language tags)
+  wdt:P1680 rdf:langString* ;      # subtitle (monolingual text)
+  wdt:P50   IRI* ;                 # author
+  wdt:P2093 xsd:string* ;          # author name string (unlinked)
+  wdt:P98   IRI* ;                 # editor
+  wdt:P655  IRI* ;                 # translator
+  wdt:P110  IRI* ;                 # illustrator
+  wdt:P123  IRI* ;                 # publisher
+  wdt:P872  IRI* ;                 # printer
+  wdt:P291  IRI* ;                 # place of publication
+  wdt:P407  IRI* ;                 # language of work or name
+  wdt:P577  xsd:dateTime* ;        # publication date(s)
+  wdt:P629  IRI* ;                 # edition or translation of (work)
+  wdt:P1104 xsd:decimal* ;         # number of pages 
+  wdt:P2635 xsd:decimal* ;         # number of volumes 
+  wdt:P212  xsd:string* ;          # ISBN-13
+  wdt:P957  xsd:string* ;          # ISBN-10
+  wdt:P136  IRI* ;                 # genre
+  wdt:P921  IRI* ;                 # main subject
+  wdt:P840  IRI* ;                 # narrative location
+  wdt:P276  IRI* ;                 # item location, such as a library building
+
+  ############################
+  # Media, access, rights (all optional)
+  ############################
+  wdt:P18   IRI? ;                 # image
+  wdt:P996  IRI* ;                 # file (e.g., Commons file)
+  wdt:P973  IRI* ;                 # described at URL
+  wdt:P953  IRI* ;                 # full work available at URL
+  wdt:P373  xsd:string? ;          # Commons category
+  wdt:P6216 IRI* ;                 # copyright status
+  wdt:P275  IRI* ;                 # license
+  wdt:P6108 IRI* ;                 # IIIF manifest
+  wdt:P243  xsd:string* ;          # OCLC control number
+}
+
+#########################################
+# required UM collection statement
+#########################################
+<CollectionStatementUM> {
+  ps:P195 [ wd:Q15734302 ] ;   # Maastricht University Library
+  pq:P217 xsd:string* ;        # inventory number (optional qualifier)
+}
+
+<InventoryNumberStatement> {
+  ps:P217 xsd:string* ;
+  pq:P195 IRI* ;
+}

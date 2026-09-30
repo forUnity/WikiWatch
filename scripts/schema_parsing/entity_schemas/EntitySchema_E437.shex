@@ -1,0 +1,73 @@
+# This is an example of a CLOSED entityschema.
+#
+# A closed entityschema will only validate if the entity contains all the mentioned triples and
+# nothing else (although this can be got around by making statements optional using * or ?)  A
+# normal entityschema will validate if the entity has any other triples as long as it also has those  
+# mentioned in the entityschema.  This means that in a closed entityschema, you have to account for
+# some background wikidata information like date modified or version as well as labels and descriptions
+# in addition to all the statements expected.
+#
+# You can use the following SPARQL query to validate Q66438354 (Silverstone Arena Grand Prix Circuit) 
+# against it.
+# SELECT * { VALUES ?id { wd:Q66438354}}
+#
+# The <race_track_layout> shape has 4 major sections:
+# - The general information section, which covers labels, descriptions and alt labels
+#   as well as rdf information regarding number of statements, identifiers and sitelinks
+#   and the version of the entity and its last modified date. 
+# - the direct property (wdt:) section, which directly links to a statement value.  This must
+#   include all the properties in the entity.  If missing, validation will fail.  However, it
+#   can include other properties as long as they are optional (* or ?)
+# - The property (p:) section, which allows access to statement qualifiers and references (and the
+#   statement value if you want).  Accessing these generally needs to use subshapes.
+# - The direct normalized property (wdtn:) section, which is the link for an external id (as 
+#   opposed to the direct id that wdt gives, e.g. P402 (Osm relation ID) gives wdt: of 51160, 
+#   but wdtn: of https://www.openstreetmap.org/relation/51160
+
+PREFIX p:        <http://www.wikidata.org/prop/>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema:   <http://schema.org/>
+PREFIX skos:     <http://www.w3.org/2004/02/skos/core#>
+PREFIX wd:       <http://www.wikidata.org/entity/>
+PREFIX wdt:      <http://www.wikidata.org/prop/direct/>
+PREFIX wdtn:     <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+start = @<race-track-layout>
+
+<race-track-layout> CLOSED {
+  rdfs:label           .+; # 1 or more labels
+  schema:dateModified  . ; # 1 date modified 
+  schema:description   .*; # 0 or more descriptions
+  schema:version       . ; # 1 version
+  skos:altLabel        .*; # 0 or more alt labels
+  wikibase:identifiers . ; # 1 number of identifiers
+  wikibase:sitelinks   . ; # 1 number of sitelinks
+  wikibase:statements  . ; # 1 number of statements
+
+  wdt:P17   .;             # 1 Country
+  wdt:P31   .;             # 1 instance of
+  wdt:P361  .;             # 1 part of
+  wdt:P402  .;             # 1 OSM relation ID
+  wdt:P580  .;             # 1 start time
+  wdt:P1350 .;             # 1 number of matches played/races/starts
+  wdt:P1535 .;             # 1 used by
+  wdt:P2043 .;             # 1 length
+  wdt:P3311 .;             # 1 image of design plans
+  wdt:P3896 .;             # 1 geoshape
+  wdt:P5053 .;             # 1 fastest lap
+
+  p:P17   .;               # 1 Country
+  p:P31   .;               # 1 instance of
+  p:P361  .;               # 1 part of
+  p:P402  .;               # 1 OSM relation ID
+  p:P580  .;               # 1 start time
+  p:P1350 .;               # 1 number of matches played/races/starts
+  p:P1535 .;               # 1 used by
+  p:P2043 .;               # 1 length
+  p:P3311 .;               # 1 image of design plans
+  p:P3896 .;               # 1 geoshape
+  p:P5053 .;               # 1 fastest lap
+
+  wdtn:P402 .;             # 1 OSM relation ID
+}

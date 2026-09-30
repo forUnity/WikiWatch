@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+#SELECT ?item WHERE { ?item wdt:P31/wdt:P279* wd:Q41176 . } LIMIT 10
+
+START = @<building>
+
+<building> {
+ wdt:P31 . + ; #instance of
+ wdt:P17 . + ; #country
+ wdt:P131 . + ; #located in the administrative territorial entity
+ wdt:P571 . + ; #inception
+ wdt:P625 . + ; #coordinate location
+ wdt:P186 . * ; #material used
+ wdt:P149 . * ; #architectural style
+ wdt:P84 . * ; #architect
+ wdt:P193 . * ; #main building contractor
+ wdt:P1101 . * ; #floors above ground
+ wdt:P1139 . * ; #floors below ground
+ wdt:P8733 . * ; #number of rooms
+ wdt:P1435 . * ; #heritage designation
+ wdt:P276 . * ; #location (when the building is located in a neighborhood or a unincorporated community)
+ wdt:P669 . * ; #located on street
+ wdt:P6375 . * ; #street address
+ wdt:P18 . * ; #image
+ wdt:P373 . * ; #Commons category
+}

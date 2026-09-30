@@ -1,0 +1,74 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX eco: <http://purl.obolibrary.org/obo/ECO_>
+
+# SELECT * WHERE {?cellline wdt:P3289 ?cellId .} LIMIT 10
+
+start = @<#Cellosaurus_cell_line>
+
+<#Cellosaurus_cell_line> EXTRA p:P31 {
+	p:P31  @<#P31_instanceOf> ;
+	p:P9072 @<#P9072_derived_from_organism_type> ;
+	p:P1343 @<#P1343_described_by_source>+ ;
+	p:P2888 @<#P2888_exact_match>+ ;
+	p:P5166 @<#P5166_established_from_medical_condition>? ;
+
+	## Identifiers
+	p:P3289 @<#P3289_Cellosaurus_ID> ;
+}
+
+<#P31_instanceOf> EXTRA p:P31 {
+	ps:P31 [wd:Q21014462] ;
+	prov:wasDerivedFrom @<#cellosaurus_reference> ;
+}
+
+<#P9072_derived_from_organism_type> {
+	ps:9072 EXTRA p:P31 {
+				p:P31 {ps:P31 [wd:Q16521] ;} ;
+			} ;
+	pq:P21  [
+				wd:Q44148 # male organism
+				wd:Q43445 # female organism
+				wd:Q6581097 # male
+				wd:Q6581072 # female
+			]? ;
+	prov:wasDerivedFrom @<#cellosaurus_reference> ;
+}
+
+<#P1343_described_by_source> {
+	ps:P1343 {
+				p:P31 {ps:P31  [wd:Q13442814] ;};
+			 } ;
+	prov:wasDerivedFrom @<#cellosaurus_reference> ;
+}
+
+<#P2888_exact_match> {
+	ps:P2888 IRI ;
+	prov:wasDerivedFrom @<#cellosaurus_reference> ;
+}
+
+<#P5166_established_from_medical_condition> {
+	ps:P5166 {
+				p:P31 {ps:P31 [
+						wd:Q53709963
+						wd:Q12136
+					          ]}
+			 } ;
+	prov:wasDerivedFrom @<#cellosaurus_reference> ;
+}
+
+<#P3289_Cellosaurus_ID> {
+	ps:P3289 xsd:string ;
+	prov:wasDerivedFrom @<#cellosaurus_reference> ;
+}
+
+<#cellosaurus_reference> {
+	pr:P248 [wd:Q53439980];
+	pr:P813 xsd:dateTime ;
+	pr:P3289 xsd:string ;
+}

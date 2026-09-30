@@ -1,0 +1,12 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<PasLesDeuxGenres>
+
+<PasLesDeuxGenres> {
+  (
+    wdt:P136 [ wd:Q54767 ]  # drame psychologique
+    |
+    wdt:P136 [ wd:Q135193649 ]  # tragédie psychologique
+  )?
+}

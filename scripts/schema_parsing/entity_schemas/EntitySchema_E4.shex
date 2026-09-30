@@ -1,0 +1,42 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Every wikidata item has zero or more label, description and alias combinations.
+
+start = @<wikidata-header>
+
+<wikidata-header> {
+ (   
+   (
+       # A wikidata item has a label, description, set of zero or more aliases
+       rdfs:label rdf:langLabel ;
+       skos:prefLabel rdf:langLabel ;
+       schema:name rdf:langLabel ; 
+       schema:description rdf:langLabel ; 
+       skos:altLabel rdf:langLabel* ; 
+    )
+    | # or
+    # A wikidata item has a label, but no description and a set of zero or more aliases
+    (
+       rdfs:label rdf:langLabel ;
+       skos:prefLabel rdf:langLabel ;
+       schema:name rdf:langLabel ; 
+       schema:description rdf:langLabel ? ; 
+       skos:altLabel rdf:langLabel* ; 
+    )
+    | # or
+    # A wikidata item has no label, but a description and a set of zero or more aliases
+    (
+       (
+          rdfs:label rdf:langLabel ;
+          skos:prefLabel rdf:langLabel ;
+          schema:name rdf:langLabel ;
+       )? ;
+       schema:description rdf:langLabel ; 
+       skos:altLabel rdf:langLabel* ; 
+    )  ; 
+  )*; 
+}  # A wikidata item can have zero or more sets of labels, descriptions and aliases

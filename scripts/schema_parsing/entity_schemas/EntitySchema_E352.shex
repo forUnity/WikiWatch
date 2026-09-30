@@ -1,0 +1,18 @@
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix wd: <http://www.wikidata.org/entity/>
+
+# Example query: select * where { ?editor wdt:P31 wd:Q131212 } limit 10 
+
+start = @<TextEditor> 
+
+<TextEditor> EXTRA wdt:P31 {
+ wdt:P31 [ wd:Q131212 ] ;
+ wdt:P170 @<Creator> ? ;
+ wdt:P348 @<SoftwareVersion> + ; 
+}
+
+<Creator> { 
+  wdt:P31 [ wd:Q5 ] 
+}
+
+<SoftwareVersion> {}

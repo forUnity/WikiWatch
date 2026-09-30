@@ -1,0 +1,35 @@
+name: gt-env-avx2
+channels:
+  - conda-forge
+dependencies:
+  #- python=3.12
+
+  # Avoid x86-64-v4/AVX-512-only solves on AVX2 nodes.
+  - _x86_64-microarch-level=3
+
+  # Core runtime used by metric and parsing scripts.
+  - graph-tool
+  - python-duckdb
+  - pandas
+  - numpy
+  - scipy
+  - sqlalchemy
+  - psycopg2
+  - tqdm
+  - pympler
+  - python-dotenv
+  - requests
+  - lxml
+  - beautifulsoup4
+  # Pinned: reference domains are grouped by public suffix, and the suffix snapshot ships with
+  # the package. A different version can silently regroup domains and change metric values.
+  - tldextract=5.3.2
+  - matplotlib
+  - networkx
+  - jsonschema
+  - psutil
+
+  # pip fallback for packages unavailable on conda-forge.
+  - pip
+  - pip:
+      - -r requirements-pip-only.txt

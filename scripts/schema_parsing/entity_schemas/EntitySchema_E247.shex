@@ -1,0 +1,19 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# select ?item { ?item wdt:P31/wdt:P279* wd:Q29654788 }
+
+start = @<unicode-character>
+
+<unicode-character> EXTRA wdt:P31 {
+  wdt:P31 @<#character> + ;
+  wdt:P487 . ;
+  wdt:P4213 . ;
+  wdt:P4575 .+ ;
+  wdt:P5522 @<#block> ;
+  wdt:P9382 . ;
+}
+
+<#character> [ wd:Q29654788 ] or { wdt:P279 @<#character> }
+<#block> { wdt:P31 @<#block-class> }
+<#block-class> [ wd:Q3512806 ] or { wdt:P279 @<#block-class> }

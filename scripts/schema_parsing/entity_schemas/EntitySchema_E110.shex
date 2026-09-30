@@ -1,0 +1,35 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# query map: SELECT ?item WHERE {?item wdt:P31 wd:Q207621. } LIMIT 10
+
+start = @<#software_license>
+
+<#software_license> EXTRA wdt:P31 {
+
+  # instance of
+  wdt:P31 [ wd:Q207621 ] ;
+
+  # SPDX ID
+  wdt:P2479 xsd:string * ;
+
+  # approved by
+  wdt:P790 IRI  * ;
+
+  # Library of Congress authority ID
+  wdt:P244 xsd:string ? ;
+
+  # JSTOR topic ID
+  wdt:P3827 xsd:string ? ;
+
+  # Elhuyar ZTH ID
+  wdt:P4746 xsd:string ? ;
+
+  # IAB code
+  wdt:P5250 xsd:string ? ;
+
+  # TDKIV term ID
+  wdt:P5398 xsd:string ? ;
+}

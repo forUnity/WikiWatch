@@ -1,0 +1,83 @@
+PREFIX wdt:        <http://www.wikidata.org/prop/direct/>
+PREFIX wd:         <http://www.wikidata.org/entity/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+
+start = @<Discipline>
+
+<Discipline> ({
+   wdt:P31 [ wd:Q16510064 ] ;
+   wdt:P527 . + ;
+   p:P710 (CLOSED {
+     ps:P710 . ;
+     pq:P1351 . ? ;
+     pqv:P1351 . ? ;
+     pq:P1352 . ? ;
+     pqv:P1352 . ? ;
+     pq:P1358 . ? ;
+     pqv:P1358 . ? ;
+     pq:P1532 . ? ;
+     pq:P1706 . ? ;
+     pq:P2443 [ wd:Q2031615 ] ? ;
+     wdt:P31 [ wd:Q688615 ] ? ;
+     wikibase:rank . ;
+     rdf:type . * ;
+     prov:wasDerivedFrom . *
+   } AND (@<ParticipantAbandon> OR @<ParticipantNonAbandon>)) +
+} AND (@<DisciplineDanseOuCouple> OR @<DisciplineAutre>)
+AND (@<DisciplinePointsTournoi> OR @<DisciplineSansTournoi>))
+
+
+<DisciplineDanseOuCouple> {
+  wdt:P641 [ wd:Q926191 wd:Q1682809 ] ;
+  p:P710 {
+        ps:P710 . ;
+        pq:P1706 .
+  } +
+}
+
+<DisciplineAutre> ({
+  wdt:P641 . ;
+  p:P710 ({ ps:P710 . } AND NOT { pq:P1706 . }) +
+} AND NOT {
+  wdt:P641 [ wd:Q926191 wd:Q1682809 ] ;
+})
+
+
+
+<DisciplinePointsTournoi> {
+  wdt:P361 { wdt:P361 { wdt:P31 [ wd:Q57305027 ] } } ;
+  p:P710 {
+    pq:P1358 .
+  } +
+}
+
+<DisciplineSansTournoi> (NOT {
+  p:P710 {
+    pq:P1358 .
+  } +
+} AND NOT {
+  wdt:P361 { wdt:P361 { wdt:P31 [ wd:Q57305027 ] } }
+})
+
+
+<ParticipantAbandon> ({
+  pq:P793 [ wd:Q18595374 wd:Q1229261 ] ;
+} AND NOT {
+  pq:P1352 . ;
+  pq:P1351 .
+})
+
+<ParticipantNonAbandon> ({
+  pq:P1352 . ;
+} AND NOT {
+  pq:P793 . ;
+})

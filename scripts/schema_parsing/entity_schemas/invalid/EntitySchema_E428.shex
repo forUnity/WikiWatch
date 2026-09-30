@@ -1,0 +1,84 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P186 wd:Q125576. } LIMIT 10
+
+start = @<papyrus>
+
+<papyrus> EXTRA p:P31 {
+    # instance of
+    p:P31 {        ps:P31 [ wd:Q87167 wd:Q47461344 wd:Q220659 wd:Q1440453 wd:Q49848 wd:Q133492 wd:Q93288 wd:Q12139612 ]    } + ;
+    # image
+    p:P18 {
+        ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]    } ? ;
+    
+    # inception
+    p:P571 {        ps:P571 [  ] ;
+        psv:P571 [ <http://www.wikidata.org/.well-known/genid>~ ];
+		 pq:P1319  xsd:dateTime ? ;
+		 pq:P1326  xsd:dateTime ? ;     } + ; 
+
+    # location of discovery
+    p:P189 {        ps:P189 [ wd:Q464266 ]    } + ;
+    # collection
+    p:P195 {        ps:P195 [ wd:Q1568434 ]    } ;
+    # inventory number
+    p:P217 {        ps:P217 xsd:string    } ;
+    # location
+    p:P276 {        ps:P276 [ wd:Q49145]    } ;
+
+    # writing surface material
+    p:186  {   	    ps:p186 [ wd:Q125576 wd:Q226697 wd:Q287 wd:Q708 wd:Q45621]   };
+
+    
+    # creator
+    p:P170 {
+        ps:P170 [ <http://www.wikidata.org/.well-known/genid>~ ]   ;  
+        	pq:P3831   wd:Q4233718      } ? ;
+
+    # Yale University Art Gallery ID
+    p:P8583 {        ps:P8583 xsd:string    } ? ;
+
+    # genre;
+    p:P136 {         ps:P136 [ <http://www.wikidata.org/entity>~ ]    } ? ;
+
+    # height
+    p:P2048 {
+        psv:P2048 [ <http://www.wikidata.org/value>~ ] ;
+        # height
+        psn:P2048 [ <http://www.wikidata.org/value>~ ] ;
+        # height
+        ps:P2048 xsd:decimal
+    } ? ;
+
+    # width
+    p:P2049 {
+        psv:P2049 [ <http://www.wikidata.org/value>~ ] ;
+        # width
+        psn:P2049 [ <http://www.wikidata.org/value>~ ] ;
+        # width
+        ps:P2049 xsd:decimal
+    } ? ;
+
+    # depicts
+    p:P180 {        ps:P180 [ <http://www.wikidata.org/entity>~ ]    } * ;
+    
+    # language of work
+    p:P407 {        ps:P407 [ <http://www.wikidata.org/entity>~ ]    } * ;
+
+    # described by source
+    p:P1343 {	    ps:P1343 [ <http://www.wikidata.org/entity>~ ]    } * ;
+
+    # described at URL
+    p:P973  {	    ps:P973  IRI     } * ;
+
+    # Trismegistos text ID
+    p:P8532 {	    ps:P8532 xsd:string    } * ;
+}

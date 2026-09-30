@@ -1,0 +1,30 @@
+## This schema describes the shapes of a subgraph in Wikidata on scholarly articles
+## sourced from the Internet Journal of Chemistry (Q27211732)
+
+## WORK IN PROGRESS!!! NOT WORKING RIGHT NOW
+
+## Stalled, see https://phabricator.wikimedia.org/T400440
+
+PREFIX p:      <http://www.wikidata.org/prop/>
+PREFIX pq:     <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd:     <http://www.wikidata.org/entity/>
+PREFIX pr:     <http://www.wikidata.org/prop/reference/>
+PREFIX prn:    <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX ps:     <http://www.wikidata.org/prop/statement/>
+PREFIX psn:    <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX psv:    <http://www.wikidata.org/prop/statement/value/>
+PREFIX schema: <http://schema.org/>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov:   <http://www.w3.org/ns/prov#>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+
+# Example query: SELECT DISTINCT ?work WHERE { ?work wdt:P1433 wd:Q27211732 . } LIMIT 5
+
+start = @<#ijc_article>
+
+<#ijc_article> {
+    p:P1433 [ wd:Q27211732 ] ;
+    p:P8372 xsd:string {1} ;
+}

@@ -1,0 +1,90 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX cc: <http://creativecommons.org/ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX uniprotTax: <http://purl.uniprot.org/taxonomy/>
+
+## UNDER DEVELOPMENT ##
+## Schema proposal for Wikidata items related to bacterial strains of which its genome is sequenced
+##
+
+# example query: 
+# PREFIX wdno: <http://www.wikidata.org/prop/novalue/> SELECT * WHERE {?string wdt:P31 wd:Q855769 ; rdf:type wdno:P105 .}
+start=@<bacterial_genome> 
+
+<bacterial_genome> EXTRA p:P31 {
+      #instance of
+      p:P31 { ps:P31  [wd:Q855769] };
+
+      #taxon name
+      p:P225 { ps:P225  xsd:string } ;
+
+      #parent taxon
+      p:P171  { ps:P171 EXTRA wdt:P31  {wdt:P31 [wd:Q16521]}} ; 
+
+      #taxon rank
+      rdf:type [wdno:P105] ; # no value
+
+      #NCBI Taxonomy ID
+      p:P685 { ps:P685  xsd:string; psn:P685  [uniprotTax:~];  }; ## TODO add regex to identify identifier
+
+      #Gram staining
+      p:P2597 { ps:P2597  [
+                             wd:Q632006 # Gram-negative (Q632006)
+                             wd:Q857288 # Gram-positive (Q857288)
+                           ] } ?;
+
+      #GenBank Assembly accession
+      p:P4333 { ps:P4333  xsd:string }* ;
+
+      #Genome size
+      p:P2143 { ps:P2143  xsd:decimal }* ; ## should the annotation build not be known as well?
+
+      #habitat
+      p:P2974 { ps:P2974  [wd:~] }*;
+
+      #host
+      p:P2975 { ps:P2975  {wdt:P31 [wd:Q16521]}}* ;
+
+      # minimum viable temperature
+      p:P3251 { psv:P3251 @<#temperature_value> ; } ?;
+
+      # maximum viable temperature
+      p:P3252 { psv:P3252 @<#temperature_value> ; } ?;
+      
+      #optimum viable temperature
+      p:P3253 { psv:P3253 @<#temperature_value> ; } ?;
+}
+
+<#temperature_value> { 
+      wikibase:quantityAmount xsd:decimal ;
+      wikibase:quantityUnit [wd:Q25267] ;
+}

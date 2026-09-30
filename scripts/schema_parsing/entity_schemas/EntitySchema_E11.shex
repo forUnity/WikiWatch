@@ -1,0 +1,21 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# sample items (recent items):
+# SELECT ?item { ?item wdt:P31 wd:Q220505. FILTER(xsd:integer(substr(str(?item), 33)) > 60000000) } ORDER BY DESC(substr(str(?item), 33)) LIMIT 50
+
+# should pass: 
+# SELECT DISTINCT ?item { ?item wdt:P31 wd:Q220505; wdt:P571 []; wdt:P276 []; wdt:P2257 []; wdt:P856 []; wdt:P1705 [] } LIMIT 20
+
+start = @<wikidata-filmfestival>
+
+<wikidata-filmfestival> EXTRA p:P31 {    
+	## STATEMENTS
+	wdt:P31 [wd:Q220505] ;
+        wdt:P571 . + ;
+        wdt:P276 . + ;
+        wdt:P2257 . + ;
+        wdt:P856 . + ;
+        wdt:P1705 . + ;
+}

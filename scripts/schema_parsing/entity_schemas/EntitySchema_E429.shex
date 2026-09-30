@@ -1,0 +1,39 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# select ?item { ?item wdt:P31/wdt:P279* wd:Q53764732 }
+
+start = @<cjk-character>
+
+<cjk-character> EXTRA wdt:P31 {
+  wdt:P31 @<#cjk-character-class> + ;
+  wdt:P5205 xsd:decimal + ;
+  p:P5205 { 
+    psv:P5205 @<StrokeCount>
+  } + ;
+  wdt:P5280 @<#cjk-radical> + ;
+  p:P5280 { 
+    ps:P5280 @<#cjk-radical> ;
+    pqv:P5281 @<StrokeCount>
+  } + ;
+  wdt:P5753 .* ;
+  wdt:P5518 .* ;
+  wdt:P5519 .* ;
+  wdt:P5277 .* ;
+  wdt:P5537 .* ;
+}
+
+<#cjk-character-class> [ wd:Q53764732 ] or { wdt:P279 @<#cjk-character-class> }
+<#cjk-radical> { wdt:P31 [ wd:Q849778 ] }
+
+<StrokeCount> {
+  wikibase:quantityAmount xsd:decimal ;
+  wikibase:quantityUnit [ wd:Q199 ]
+}

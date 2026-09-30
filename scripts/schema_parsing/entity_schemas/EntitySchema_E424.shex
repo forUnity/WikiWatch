@@ -1,0 +1,65 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Example SPARQL query: select * where { ?x wdt:P279* / wdt:P31 wd:Q34770 } limit 5
+
+# Schema
+start = @<#language>
+
+<#alpha2> Literal /^[a-z]{2}$/
+<#alpha3> Literal /^[a-z]{3}$/
+<#qid> Literal /^Q[1-9][0-9]*$/
+
+<#language> EXTRA wdt:P31 {
+  wdt:P31 .*; # instance of - Q34770 (language) or another item with P31 Q28923954 (instance of languoid class)
+  wdt:P279 .*; # subclass of - link to next level in language family hierarchy
+
+# speakers
+  wdt:P17 .*; # country - link to country where spoken
+  wdt:P2341 .*; # indigenous to - link to ethnic groups and other locations
+  wdt:P1098 .*; # number of speakers
+
+# orthography
+  wdt:P282 .*; # writing system
+  wdt:P6106 .*; # uses capitalisation for
+
+# grammar/phonology
+  wdt:P4132 .*; # linguistic typology
+  wdt:P5206 .*; # has conjugation class
+  wdt:P2989 .*; # has grammatical case
+  wdt:P5109 .*; # has grammatical gender
+  wdt:P3161 .*; # has grammatical mood
+  wdt:P5110 .*; # has grammatical person
+  wdt:P2587 .*; # has phoneme
+  wdt:P3103 .*; # has tense
+
+# misc
+  wdt:P1705 .*; # native label
+  wdt:P1018 .*; # language regulatory body
+
+# language codes based on ISO 639
+  wdt:P218 @<#alpha2>?; # ISO 639-1
+  wdt:P219 @<#alpha3>{0,2}; # ISO 639-2
+  wdt:P220 @<#alpha3>?; # ISO 639-3
+
+  wdt:P305 LITERAL /^[a-z]{2,3}(-[A-Z]{2})?$/?; # IETF language tag - based on ISO 639, incomplete
+  wdt:P1627 @<#alpha3>?; # Ethnologue - created based on ISO 639-3 but only for living languages, use novalue if there's an ISO 639-3 code but no Ethnologue page
+    wdt:P3823 .*; # Ethnologue status - site/system has since changed so this can't easily be added for new entries
+  wdt:P1232 LITERAL /^([a-z0-9]{2,3}(-[a-z]{3})?|[a-z]{4})$/?; # Linguist List - site no longer available, but entries for languages were based on ISO 639-3
+  wdt:P424 LITERAL*; # Wikimedia language code - codes used by Wikimedia, mostly based on IETF language tags
+  wdt:P2888 IRI*; # exact match - URI "http://publications.europa.eu/resource/authority/language/" + ISO 639-3 in upper case
+  # LoC and MARC vocabularies ID - three possible values, one starting "languages/", one starting "iso639-1/" and one starting "iso639-2/"
+  wdt:P4801 LITERAL /^languages\/[a-z]{3}$/?; 
+  wdt:P4801 LITERAL /^iso639-1\/[a-z]{2}$/?; 
+  wdt:P4801 LITERAL /^iso639-2\/[a-z]{3}$/?; 
+# language codes not based on ISO 639
+  wdt:P1394 LITERAL /^[0-9a-z]{8}$/ *; # Glottolog code
+  wdt:P1396 LITERAL*; # Linguasphere code
+  wdt:P1466 LITERAL*; # WALS lect code
+  wdt:P2192 LITERAL*; # endangeredlanguages.com
+  wdt:P2355 LITERAL*; # UNESCO Atlas of the World's Languages in Danger - site no longer available
+  wdt:P1999 .*; # UNESCO language status - site no longer available
+  wdt:P10369 @<#qid>*; # Lingua Libre ID - QID
+  wdt:P1251 LITERAL*; # ABS ASCL 2011 code - 2 or 4 digits
+}

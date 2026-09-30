@@ -1,0 +1,13 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<collection>
+
+<collection>  {
+	wdt:P31 [ wd:Q2668072] ;
+	wdt:P361 . ;
+	wdt:P195 . ;
+	wdt:P1476 . ;
+	wdt:P6224 . ;
+	wdt:P1225 . ? ;
+}

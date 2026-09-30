@@ -1,0 +1,29 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# SELECT * WHERE { ?item wdt:P1433 wd:Q1569226 }
+
+START = @<RDDM-article>
+
+<RDDM-article> {
+wdt:P31 [wd:Q191067 wd:Q17518557 wd:Q3331189 wd:Q17586363 wd:Q88392887] ;       #article ou série d'articles
+wdt:P1433 [wd:Q1569226] ;   #paru dans la RDDM
+wdt:P407 [wd:Q150] ;     #langue française
+wdt:P577 . * ;   #date de publication (0 ou plus valeurs)
+wdt:P478 . ? ;    #volume de la revue (0 ou 1 valeur)
+wdt:P304 . ? ;    #pages de la revue
+wdt:P1476 . ? ;    #titre
+wdt:P1680 . ? ;   #sous-titre
+wdt:P50 . + ;  #auteur
+wdt:P655 . ? ;  #traducteur
+
+wdt:P996 . ? ;   #lien vers le fichier Commons
+wdt:P6216 . {1,2} ; #statut dp
+
+}
+
+# <author> {
+#  wdt:P31 [wd:Q5] ;
+#   wdt:P1412 . * ;   #langues
+#   wdt:P6886 . * ;   #langues d'écriture
+# }

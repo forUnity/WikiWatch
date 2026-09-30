@@ -1,0 +1,17 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+<event> {
+wdt:P31 [ wd:Q6823473] ; # instance of: meteorological disaster
+wdt:P17 [ wd:Q19829914 ] ; # country: Wikidata property for items about places
+wdt:P18 [ wd:Q478798 ] ; # image: image
+wdt:P10 [ wd:Q19847637 ] ; # video: Wikidata property for an identifier
+wdt:P2043  . ? ; # length
+wdt:P2049 . ? ; # width
+wdt:P17 [ wd:Q19829914 ] ; # country: Wikidata property for items about places
+wdt:P1880 [ wd:Q380770 ] ; # measurement scale: Fujita scale
+wdt:P625 [ wd:Q104224919 ] ; # coordinate location: geographic coordinate
+wdt:P580 . ? ; # start time
+wdt:P582 . ? ; # end time
+wdt:P2532 [ wd:Q81809 ] ; # lowest atmospheric pressure: atmospheric pressure
+}

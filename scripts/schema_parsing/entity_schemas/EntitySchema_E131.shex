@@ -1,0 +1,24 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# Standard German noun
+# German noun with Gender at the entry level and 8 inflected forms in case and number
+
+# SELECT ?focus {?focus dct:language wd:Q188;wikibase:lexicalCategory wd:Q1084}
+
+start = @<de-n>
+
+<de-n> {
+  dct:language [ wd:Q188 ] ;
+  wikibase:lexicalCategory [ wd:Q1084 ] ;
+  wikibase:lemma [ @de ] ;
+  wdt:P5185 [ wd:Q1775415 wd:Q499327 wd:Q1775461 ] ;
+  ontolex:lexicalForm {
+    wikibase:grammaticalFeature [ wd:Q145599 wd:Q146233 wd:Q131105 wd:Q146078 ] ;
+    wikibase:grammaticalFeature [ wd:Q110786 wd:Q146786 ] ;
+    ontolex:representation [ @de ];
+  } {8};
+}

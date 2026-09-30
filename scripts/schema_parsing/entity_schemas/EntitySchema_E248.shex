@@ -1,0 +1,164 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+# example items: select ?album { ?album wdt:P31 wd:Q482994 } limit 500
+
+start = @<wikidata-album>
+
+<wikidata-album> EXTRA wdt:P31 {    
+  ## STATEMENTS
+  wdt:P31 [wd:Q482994]; 
+  wdt:P361 @<discography> + ; # part of
+  wdt:P18 . * ; # image
+  wdt:P154 . * ;  # logo image
+  wdt:P1476 . ; # title
+  wdt:P136 @<genre> + ; # genre
+  wdt:P175 . + ; # performer
+  wdt:P264 @<record_label> + ; # record label
+  wdt:P264 @<record_label2> + ; # record label
+  wdt:P264 @<record_label3> + ; # record label
+  wdt:P264 @<record_label4> + ; # record label
+  wdt:P264 @<record_label5> + ; # record label
+  wdt:P291 @<country> + ; # place of publication
+  wdt:P495 @<country> + ; # country of origin
+  wdt:P577 xsd:dateTime OR xsd:date ; # publication date
+  wdt:P162 @<human> * ; # producer
+  wdt:P2635 . +; # number of parts of this work
+  wdt:P2047 . ; # duration
+  wdt:P444 . + ; # review score
+  wdt:P658 @<track> + ; # tracklist
+  wdt:P658 @<track2> + ; # tracklist
+  wdt:P658 @<track3> + ; # tracklist
+  wdt:P437 @<distribution> + ; # distribution format
+  wdt:P437 @<distribution2> + ; # distribution format
+  wdt:P1552 . + ; # has quality
+  wdt:P483 @<studio> + ; # recorded at studio or venue
+  wdt:P483 @<studio2> + ; # recorded at studio or venue
+  wdt:P483 @<studio3> + ; # recorded at studio or venue
+  wdt:P7937 . + ; # form of creative work
+  wdt:P750 . + ; # distributed by
+  wdt:P407 @<lang> + ;  # language of work or name
+  wdt:P1889 . * ;  # different from
+  wdt:P1449 . * ;  # nickname
+  wdt:P373 . * ;  # Commons category
+  wdt:P747 . * ;  # has edition or translation
+  wdt:P2291 @<chart>  * ;  # charted in
+  wdt:P2291 @<chart2>  * ;  # charted in
+  wdt:P1343 . * ;  # described by source
+  wdt:P6718 . * ;  # music video
+  wdt:P921 . * ;  # Main subject
+  wdt:P856 . * ;  # Official Website
+  rdfs:label rdf:langString+;
+  ## IDENTIFIERS
+  #wdt:P1417 . * ;  # Encyclopædia Britannica Online ID
+  #wdt:P214 . * ;  # VIAF ID
+  #wdt:P227 . * ;  # GND ID
+  #wdt:P2581 . * ;  # BabelNet ID
+  #wdt:P3417 . * ;  # Quora topic ID
+  #wdt:P7055 . * ;  # Jaxsta release ID
+  #wdt:P5749 . * ;  # Amazon Standard Identification Number
+  #wdt:P646 . * ;  # Freebase ID
+  #wdt:P3962 . * ;  # Global Trade Item Number
+  #wdt:P1712 . * ;  # Metacritic ID
+  #wdt:P2721 . * ;  # Encyclopaedia Metallum release ID
+  #STREAMING
+  #wdt:P2205 . * ; # Spotify album ID
+  #wdt:P2281 . * ;  # Apple Music album ID
+  #wdt:P4300 . * ;  # YouTube playlist ID
+  #wdt:P2723 . * ;  # Deezer album ID
+  #wdt:P4577 . * ;  # Tidal album ID
+  #wdt:P4199 . * ;  # Google Play Music album ID
+  #DATABASE
+  #wdt:P1729 . * ;  # AllMusic album ID
+  #wdt:P1954 . * ;  # Discogs master ID
+  #wdt:P3192 . * ;  # Last.fm ID
+  #wdt:P436 . * ;  # MusicBrainz release group ID
+  #wdt:P6217 . * ;  # Genius album ID
+  #wdt:P2206 . * ;  # Discogs release ID
+  #wdt:P2819 . * ;  # Yandex Music album ID
+  #wdt:P8392 . * ;  # Rate Your Music release ID
+}
+
+<discography> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q59191021] ;
+}
+
+<record_label> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q18127] ;
+} 
+
+<record_label2> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q1542343] ;
+} 
+
+<record_label3> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q2442401] ;
+} 
+
+<record_label4> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q1660312] ;
+} 
+
+<record_label5> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q783794] ;
+} 
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3024240 wd:Q3624078] +;
+}
+
+<distribution> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q81945865];
+} 
+
+<distribution2> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q81941037];
+}
+
+<studio> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q746369] ;
+} 
+
+<studio2> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q67605749] ;
+} 
+
+<studio3> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q67604973] ;
+} 
+
+<track> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q7302866];
+}
+
+<track2> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q55850593];
+}
+
+<track3> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q55850643];
+}
+
+<genre> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q188451] ;
+}
+
+<lang> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q34770] ;
+}
+
+<chart> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q62032401] ;
+} 
+
+<chart2> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q373899] ;
+} 
+
+<human> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5] ;
+}

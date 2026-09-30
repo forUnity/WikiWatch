@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# SELECT * WHERE { ?item wdt:P31 wd:Q3917681 }
+
+start = @<embassy>
+
+<embassy> {
+wdt:P31 [wd:Q3917681 wd:Q18414273 wd:Q620045] ;      #embassy
+wdt:P17 . ? ;                #country
+wdt:P131 . + ;               #location
+wdt:P1001 . + ;              #jurisdiction
+wdt:P137 . + ;               #operator
+wdt:P2388 <ambassador>? ;
+wdt:P1037 . * ;              #director
+wdt:P571 . * ;               #date
+wdt:P18 . * ;                #image
+wdt:P373 . ? ;               #Commons category
+wdt:P856 IRI ? ;             #website
+wdt:P625 . ? ;               #coord
+wdt:P6375 . ? ;               #adress
+}
+
+<ambassador>{
+wdt:P279 [wd:Q121998] ;
+wdt:P2389 <embassy>
+}

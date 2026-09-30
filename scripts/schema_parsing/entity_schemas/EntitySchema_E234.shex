@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<auto-racing-track>
+
+<auto-racing-track> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q2338524 wd:Q926439]; # Instance of auto racing track or street circuit
+  wdt:P17 @<country> ; # 1 country with shape <country>
+  wdt:P625 . ; # 1 Coordinate location with any value
+  wdt:P18 . * ; # 0 or more image with any value
+  wdt:P3311 . ?; # 0 or 1 plan view image with any value
+  # Identifiers
+  wdt:P6807 . ? ; # 0 or 1 racing reference track id
+  wdt:P8142 . ? ; # 0 or 1 motorsportsstats.com venue id
+  # Labels
+  rdfs:label rdf:langString + ; # 1 or more labels with a langstring
+}
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q3024240 wd:Q3624078] +;
+}

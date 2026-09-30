@@ -1,0 +1,20 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example query: SELECT DISTINCT ?items WHERE {VALUES ?items {wd:Q25173} ?items ?p ?o . }
+
+start=@<ship>
+
+<ship> EXTRA ps:P31 {
+p:P31 @<P31_instance_of_some_shiptype>+ ;
+}
+
+<P31_instance_of_some_shiptype> {
+   ps:P31 @<shiptype> ;
+}
+
+<shiptype> {
+    wdt:P31 [wd:Q2235308] # Is a instance of a shiptype
+}

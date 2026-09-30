@@ -1,0 +1,50 @@
+PREFIX p:   <http://www.wikidata.org/prop/>
+PREFIX ps:  <http://www.wikidata.org/prop/statement/>
+PREFIX pq:  <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd:  <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+start = @<street>
+
+<street> EXTRA p:P31 {
+  wdt:P31   [wd:Q34442]                                               * ; # instance of a street
+  wdt:P18   [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ; # picture
+  wdt:P625  geo:wktLiteral                                            ? ; # coordinate location
+  wdt:P17   [ <http://www.wikidata.org/entity>~ ]                       ; # country
+  wdt:P131  @<#administrative>                                        * ; # administrative territorial entity
+  wdt:P571  xsd:dateTime                                              ? ; # inception
+  wdt:P373  xsd:string                                                ? ; # Commons category
+  wdt:P443  [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ; # pronunciation audio
+  wdt:P361  [ <http://www.wikidata.org/entity>~ ]                     * ; # part of
+  wdt:P2789 [ <http://www.wikidata.org/entity>~ ]                     * ; # connects with
+  wdt:P1889 [ <http://www.wikidata.org/entity>~ ]                     * ; # different from
+  wdt:P177  [ <http://www.wikidata.org/entity>~ ]                     * ; # crosses
+  wdt:P206  [ <http://www.wikidata.org/entity>~ ]                     * ; # located in or next to body of water
+  wdt:P8138 @<#statistical>                                           * ; # statistical territorial entity
+  
+  p:P138    @<street-P138>                                              ;
+  p:P276    @<street-P276>                                              ;
+}
+
+<#administrative> {
+  wdt:P31 [ wd:Q56061 ]
+}
+
+<#statistical> {
+  wdt:P31 [ wd:Q15042037 ]
+}
+
+<street-P138> {
+  ps:P138 [ <http://www.wikidata.org/entity>~ ] * ; # named after
+  pq:P805 [ <http://www.wikidata.org/entity>~ ] * ; # statement is subject of
+  pq:P580 xsd:dateTime                          ? ; # start time
+  pq:P582 xsd:dateTime                          ? ; # end time
+  pq:P585 xsd:dateTime                          ? ;  # point in time
+}
+
+<street-P276> {
+    ps:P276 [ <http://www.wikidata.org/entity>~ ] * ; # location
+    pq:P281 xsd:string                            * ; # postal code
+}

@@ -1,0 +1,13 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<editorial>
+
+<editorial> EXTRA  wdt:P31 {
+	wdt:P31 [ wd:Q871232] ;
+	wdt:P2860 . + ;
+	wdt:P2093 . * ;
+	wdt:P50 . * ;
+	wdt:P577 . ;
+	wdt:P1476 . ;
+}

@@ -1,0 +1,21 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<village>
+
+<village>  {
+	wdt:P31 [ wd:Q13100073] ;
+	wdt:P131 . + ;
+	wdt:P17 @<village-P17> ;
+	wdt:P1448 . ;
+	wdt:P421 @<village-P421> ;
+	wdt:P442 . ;
+}
+
+<village-P17> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q6256] ;
+}
+
+<village-P421> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q12143] ;
+}

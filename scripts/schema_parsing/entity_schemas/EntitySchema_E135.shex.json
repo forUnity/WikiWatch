@@ -1,0 +1,1 @@
+{"type": "Schema", "start": "lang", "shapes": [{"type": "Shape", "id": "lang", "expression": {"type": "TripleConstraint", "predicate": "http://www.wikidata.org/prop/direct/P305", "valueExpr": {"type": "NodeConstraint", "nodeKind": "iri"}, "min": 1, "max": -1}}]}

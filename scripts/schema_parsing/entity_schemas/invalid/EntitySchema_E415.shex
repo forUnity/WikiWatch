@@ -1,0 +1,74 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q3567529 . ?item wdt:P5008 wd:Q114241199.} LIMIT 10
+
+start = @<archeological_graffito>
+
+<archeological_graffito> EXTRA p:P31{
+
+
+
+    # instance of
+    p:P31 {        ps:P31 [ wd:Q3567529 ]    } + ;
+    # image
+    p:P18 {
+        ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]    } ? ;
+    # location of discovery
+    p:P189 {        ps:P189 [ wd:Q464266 ]    } + ;
+    # collection
+    p:P195 {        ps:P195 [ wd:Q1568434 ]    } ;
+    # inventory number
+    p:P217 {        ps:P217 xsd:string    } ;
+    # location
+    p:P276 {        ps:P276 [ wd:Q49145]    } ;
+    # inception
+    p:P571 {        ps:P571 [  ] ;
+        psv:P571 [ <http://www.wikidata.org/.well-known/genid>~ ];
+		 pq:P1319  xsd:dateTime ? ;
+		 pq:P1326  xsd:dateTime ? ;     } + ; 
+    
+    # creator
+    p:P170 {        ps:P170 [  ];
+        psv:P170 [ <http://www.wikidata.org/.well-known/genid>~ ];
+	            pq:P3831  [wd:Q4233718]
+    } ? ;
+        
+    # Yale University Art Gallery ID
+    p:P8583 {        ps:P8583 xsd:string    } ? ;
+    # genre;
+    p:P136 {         ps:P136 [ <http://www.wikidata.org/entity>~ ]    } ? ;
+    # height
+    p:P2048 {
+        psv:P2048 [ <http://www.wikidata.org/value>~ ] ;
+        # height
+        psn:P2048 [ <http://www.wikidata.org/value>~ ] ;
+        # height
+        ps:P2048 xsd:decimal
+    } ? ;
+    # width
+    p:P2049 {
+        psv:P2049 [ <http://www.wikidata.org/value>~ ] ;
+        # width
+        psn:P2049 [ <http://www.wikidata.org/value>~ ] ;
+        # width
+        ps:P2049 xsd:decimal
+    } ? ;
+    # depicts
+    p:P180 {        ps:P180 [ <http://www.wikidata.org/entity>~ ]    } * ;
+    # depicted by
+    p:P1299 {       ps:P1299 [ <http://www.wikidata.org/entity>~ ]    } * ;
+    # inscription
+    p:P1684 {       ps:P1684 xsd:string          ;
+                           pq:P7008 xsd:string       ;  
+    	    	    pq:P2441 xsd:string	     } ? ;
+    
+    
+}

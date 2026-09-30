@@ -1,0 +1,252 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+
+# QUERY MAP: SELECT * WHERE { ?item wdt:P31 wd:Q8070 }
+
+start = @<#tsunami>
+
+# Result for pattern { p:P~ {ps:~ __; psn:~ __ ; a[__];  } }; and query SELECT DISTINCT ?x WHERE {?x wdt:P31 wd:Q8070. } LIMIT 20
+<#tsunami> {
+    # instance of; frequency: [20/20]
+    p:P31 {
+        ps:P31 [ wd:Q8070 ]
+    } + ;
+
+    # subclass of; frequency: [1/20]
+    p:P279 {
+        ps:P279 [ wd:~ ]
+    } ? ;
+
+    # point in time; frequency: [18/20]
+    p:P585 {
+        psv:P585 [ wd:~ ] ;
+        ps:P585 xsd:dateTime
+    } ? ;
+
+    # coordinate location; frequency: [15/20]
+    p:P625 {
+        psv:P625 [ wd:~ ] ;
+        ps:P625 geo:wktLiteral
+    } * ;
+
+    # country; frequency: [15/20]
+    p:P17 {
+        ps:P17 [ wd:~ ]
+    } * ;
+
+    # number of deaths; frequency: [8/20]
+    p:P1120 {
+        psv:P1120 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P1120 xsd:decimal ;
+    } * ;
+
+    # Commons category; frequency: [7/20]
+    p:P373 {
+        ps:P373 xsd:string
+    } ? ;
+
+    # image; frequency: [7/20]
+    p:P18 {
+        ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]
+    } ? ;
+
+    # location; frequency: [7/20]
+    p:P276 {
+        ps:P276 [ wd:~ ]
+    } * ;
+ 
+   # located in the administrative territorial entity; frequency: [5/20]
+    p:P131 {
+        ps:P131 [ wd:~ ]
+    } * ;
+
+    # number of injured; frequency: [4/20]
+    p:P1339 {
+        psv:P1339 [ wd:~ ] ;
+        ps:P1339 xsd:decimal ;
+    } * ;
+
+    # vertical depth; frequency: [4/20]
+    p:P4511 {
+        psv:P4511 [ <http://www.wikidata.org/value>~ ] ;
+        psn:P4511 [ <http://www.wikidata.org/value>~ ] ;
+        ps:P4511 xsd:decimal
+    } * ;
+
+    # topic's main category; frequency: [3/20]
+    p:P910 {
+        ps:P910 [ wd:~ ]
+    } ? ;
+    
+    # earthquake magnitude on the Richter magnitude scale; frequency: [3/20]
+    p:P2528 {
+        psv:P2528 [ wd:~ ] ;
+        ps:P2528 xsd:decimal
+    } ? ;
+
+    # earthquake magnitude on the moment magnitude scale; frequency: [3/20]
+    p:P2527 {
+        psv:P2527 [ wd:~ ] ;
+        ps:P2527 xsd:decimal
+    } * ;
+
+   # JMA Seismic Intensity Database ID; frequency: [2/20]
+    p:P5182 {
+        ps:P5182 xsd:string
+    } ? ;
+ 
+    # JMA Seismic Intensity Scale; frequency: [2/20]
+    p:P5386 {
+        ps:P5386 [ wd:~ ]
+    } ? ;
+
+    # JMA Magnitude; frequency: [2/20]
+    p:P5900 {
+        psv:P5900 [ wd:~ ] ;
+        ps:P5900 xsd:decimal
+    } ? ;
+
+    # locator map image; frequency: [2/20]
+    p:P242 {
+        ps:P242 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ;
+    } * ;
+
+    # duration; frequency: [2/20]
+    p:P2047 {
+        psv:P2047 [ wd:~ ] ;
+        psn:P2047 [ wd:~ ] ;
+        ps:P2047 xsd:decimal
+    } ? ;
+    
+    # number of missing; frequency: [2/20]
+    p:P1446 {
+        # number of missing; frequency: [4/4]
+        psv:P1446 [ wd:~ ] ;
+        ps:P1446 xsd:decimal ;
+    } * ;
+
+    # Commons gallery; frequency: [1/20]
+    p:P935 {
+        ps:P935 xsd:string
+    } ? ;
+
+    # has cause; frequency: [1/20]
+    p:P828 {
+        # has cause; frequency: [2/2]
+        ps:P828 [ wd:~ ]
+    } * ;
+    # part of; frequency: [1/20]
+    p:P361 {
+        ps:P361 [ wd:~ ]
+    } ? ;
+
+    # official name; frequency: [1/20]
+    p:P1448 {
+        ps:P1448 rdf:langString
+    } ? ;
+
+    # has effect; frequency: [1/20]
+    p:P1542 {
+        ps:P1542 [ wd:~ ]
+    } * ;
+
+    # aftershocks; frequency: [1/20]
+    p:P2320 {
+        psv:P2320 [ wd:~ ] ;
+        ps:P2320 xsd:decimal
+    } ? ;
+
+    # cost of damage; frequency: [1/20]
+    p:P2630 {
+        psv:P2630 [ wd:~ ] ;
+        ps:P2630 xsd:decimal
+    } * ;
+
+    # Mercalli intensity scale; frequency: [1/20]
+    p:P2784 {
+        ps:P2784 [ wd:~ ]
+    } ? ;
+
+    # damaged; frequency: [1/20]
+    p:P3081 {
+        ps:P3081 [ wd:~ ]
+    } ? ;
+
+    # destroyed; frequency: [1/20]
+    p:P3082 {
+        ps:P3082 [ wd:~ ]
+    } ? ;
+
+## External Identifiers
+
+    # ISC event ID; frequency: [5/20]
+    p:P5092 {
+        ps:P5092 xsd:string
+    } ? ;
+
+    # USGS earthquake ID; frequency: [4/20]
+    p:P3196 {
+        ps:P3196 xsd:string
+    } ? ;
+   
+    # Encyclopædia Britannica Online ID; frequency: [3/20]
+    p:P1417 {
+        ps:P1417 xsd:string
+    } ? ;
+    
+    # Quora topic ID; frequency: [3/20]
+    p:P3417 {
+        ps:P3417 xsd:string
+    } ? ;
+
+    # GEOFON earthquake ID; frequency: [2/20]
+    p:P6419 {
+        ps:P6419 xsd:string
+    } ? ;
+    
+    # Library of Congress authority ID; frequency: [2/20]
+    p:P244 {
+        psn:P244 [ <http://id.loc.gov/authorities/names>~ ] ;
+        ps:P244 xsd:string
+    } ? ;
+
+    # Encyclopædia Universalis ID; frequency: [1/20]
+    p:P3219 {
+        ps:P3219 xsd:string
+    } ? ;
+
+    # RIA Novosti reference; frequency: [1/20]
+    p:P6081 {
+        ps:P6081 xsd:string
+    } ? ;
+
+    # HDS ID; frequency: [1/20]
+    p:P902 {
+        ps:P902 xsd:string
+    } ? ;
+
+    # Digital Atlas of the Roman Empire ID; frequency: [1/20]
+    p:P1936 {
+        psn:P1936 [ <http://dare.ht.lu.se/places>~ ] ;
+        ps:P1936 xsd:string
+    } ? ;
+
+    # BabelNet ID; frequency: [1/20]
+    p:P2581 {
+        psn:P2581 [ <http://babelnet.org/rdf>~ ] ;
+        ps:P2581 xsd:string
+    } ? ;
+
+    # Dagens Nyheter topic ID; frequency: [1/20]
+    p:P3509 {
+        ps:P3509 xsd:string
+    } ? ;
+}

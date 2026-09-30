@@ -1,0 +1,68 @@
+prefix wd: <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+prefix p: <http://www.wikidata.org/prop/>
+prefix ps: <http://www.wikidata.org/prop/statement/>
+prefix pq: <http://www.wikidata.org/prop/qualifier/>
+prefix E: <https://www.wikidata.org/wiki/Special:EntitySchemaText/>
+
+# example items: select ?stolperstein { ?stolperstein wdt:P31 wd:Q26703203 } limit 500
+
+start = @<#stolperstein>
+
+<#stolperstein> EXTRA p:P793 {
+	wdt:P31 [wd:Q26703203 wd:Q43638585]; 	# instance of; required
+	wdt:P131 @<#administrative>; 			# located in the administrative territorial entity; required
+	wdt:P18 . *;							# image; recommended (zero or more occurrences)
+	wdt:P547 @<#dedicatee> ?; 				# commemorates; recommended (optional)
+	wdt:P6568 @<#mentioned> ?;				# inscription mentions; recommended (optional)
+	wdt:P625 .;								# coordinate location; required
+	wdt:P17 @<#country>;					# country; required
+	wdt:P1028 . ?;							# donated by; optional; example: http://www.wikidata.org/entity/Q112129663
+	wdt:P1656 . ?;							# unveiled by; optional
+	wdt:P6375 . ?;							# street address; optional; use P669 if applicable
+	# wdt:P669 @<#street> ?;   				# optional
+	p:P669 {								# optional
+		ps:P669 @<#street>;					# located on street; optional
+		pq:P670 . ?;						# house number; optional
+		pq:P281 . ?							# postal code; optional
+	} *;									# multiple occurrences allowed
+	wdt:P1684 .;							# inscription; required
+	wdt:P170 [wd:Q195796]?;					# creator Gunter Demnig; optional
+	wdt:P186 [wd:Q39782]?;					# made from material brass; optional
+	wdt:P361 [wd:Q314003];					# part of Stolpersteine; required
+	wdt:P1893 . ?;							# Open Plaques plaque ID; optional
+	wdt:P276 . ?;							# location; optional
+	p:P793 {								# significant event; recommended; example: https://www.wikidata.org/wiki/Q130472431
+		ps:P793 [wd:Q3010369];				# opening ceremony; required
+		pq:P585 .							# point in time; required
+	}?;										# optional block
+	wdt:P1619 . {0};						# date of official opening; prohibited
+	wdt:P825 . {0};							# dedicated to; prohibited
+	wdt:P571 . {0};							# inception; prohibited
+	wdt:P11693 . ?;							# OpenStreetMap node ID; recommended (optional)
+	wdt:P5816 @<#conservation_status> ?; 	# state of conservation; optional
+	wdt:P1889 [wd:Q26703203 wd:Q43638585]?; 	# different from; if applicable
+	wdt:P373 . ?;							# Commons Category; recommended (optional)
+}
+
+<#street> EXTRA wdt:P31 {
+	wdt:P31 [wd:Q174782 wd:Q34442]			# example street classes
+}
+
+<#conservation_status> {
+	wdt:P31 [wd:Q55553838]					# conservation state; required
+}
+
+<#mentioned> {
+	wdt:P31 . +								# instance of something; required (one or more occurrences)
+}
+
+<#administrative> {
+	wdt:P17 @<#country>						# country; required
+}
+
+<#dedicatee> {
+	wdt:P31 [wd:Q5]							# instance of human; required
+} OR BNODE								# TODO: blank nodes will be replaced with IRIs for <somevalue>s
+
+<#country> [wd:Q20 wd:Q28 wd:Q29 wd:Q31 wd:Q32 wd:Q33 wd:Q34 wd:Q35 wd:Q36 wd:Q37 wd:Q38 wd:Q39 wd:Q40 wd:Q41 wd:Q55 wd:Q142 wd:Q159 wd:Q183 wd:Q211 wd:Q212 wd:Q213 wd:Q214 wd:Q215 wd:Q217 wd:Q218 wd:Q224 wd:Q414] # required

@@ -1,0 +1,10 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+start = @<chilean-volcanoes>
+ 
+<chilean-volcanoes> {
+ wdt:P30  wd:Q18;
+ wdt:P17 [wd:Q298 wd:Q828];
+ wdt:P4552 wd:Q5456;
+ wdt:P625 IRI +;     
+}

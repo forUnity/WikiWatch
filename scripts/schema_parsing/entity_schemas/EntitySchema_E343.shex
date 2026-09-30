@@ -1,0 +1,86 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+
+#SELECT ?thesis ?thesisLabel WHERE {?thesesClasses (wdt:P279*) wd:Q1266946. ?thesis wdt:P5008 wd:Q98970039; wdt:P31 ?thesesClasses. } 
+
+
+START = @<dissertation_and_theses>
+
+<dissertation_and_theses>  {
+wdt:P5008 [ wd:Q98970039 ] ;
+wdt:P1476 LITERAL + ;
+wdt:P1680 LITERAL + ;
+wdt:P953 IRI * ; 
+wdt:P921 IRI *; 
+wdt:P1104 xsd:integer + ;
+wdt:P6216 . * ;
+wdt:P3931 . * ;
+wdt:P1184 . ? ; 
+wdt:P243 . ? ; 
+
+#REQUIRED
+p:P31 <etdInstanceOf> + ;
+p:P50 @<etdAuthor> + ;
+p:P9161 @<thesisCommitteeMember> + ;
+p:P571 @<inception> + ;
+p:P407 @<languageOfWorkOrName>;
+p:P4101 @<etdSubmittedTo> + ;
+p:P9972 @<illustrativeContent> *
+}
+
+<etdInstanceOf>{
+ps:P31 [wd:Q47461344 wd:Q187947 wd:Q187685 wd:Q1907875] + ;
+prov:wasDerivedFrom @<reference>
+}
+<etdAuthor>{
+ps:P50 IRI + ;
+pq:P1932 LITERAL * 
+}
+<thesisCommitteeMember>{
+ps:P9161 IRI *;
+pq:P3831 [wd:Q140686];
+prov:wasDerivedFrom  @<reference>
+}
+<#languageOfWorkOrName> {
+psv:P407 IRI ;
+prov:wasDerivedFrom  @<reference>
+}
+<etdSubmittedTo> {
+ps:P4101 [wd:Q219563];
+pq:P9945 IRI * ;
+prov:wasDerivedFrom  @<reference>;
+}
+<inception>{
+ps:P571 xsd:dateTime + ;
+prov:wasDerivedFrom  @<reference>;
+}
+<illustrativeContent>{
+ps:P9972 IRI;
+pq:P1114 xsd:string
+}
+<reference> {
+pr:P248 IRI * ;
+pr:P854 IRI * ;
+pr:P143 IRI * ;
+prv:P813 IRI ?
+}

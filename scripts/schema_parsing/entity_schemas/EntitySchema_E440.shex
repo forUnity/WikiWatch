@@ -1,0 +1,28 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<star>
+
+<star>  {
+	wdt:P31 @<star-P31> ;
+	wdt:P528 . + ;
+	wdt:P59 @<star-P59> ;
+	wdt:P2583 . ;
+	wdt:P2214 . ;
+	wdt:P10751 . ;
+	wdt:P10752 . ;
+	wdt:P2216 . ;
+	wdt:P1215 . + ;
+	wdt:P6259 . ;
+	wdt:P6258 . ;
+	wdt:P6257 . ;
+	wdt:P3083 . ;
+}
+
+<star-P31> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q523] ;
+}
+
+<star-P59> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q8928] ;
+}

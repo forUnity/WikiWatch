@@ -1,0 +1,23 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<political_party>
+
+<political_party>  {
+	wdt:P31 [ wd:Q7278] ;
+	wdt:P17 . ;
+	wdt:P1001 . ;
+	wdt:P1387 @<political_party-P1387> + ;
+	wdt:P1142 @<political_party-P1142> + ;
+	wdt:P465 . ;
+	wdt:P856 . * ;
+	wdt:P571 . ;
+}
+
+<political_party-P1387> EXTRA wdt:279 {
+	wdt:P279 [ wd:Q28819924] ;
+}
+
+<political_party-P1142> EXTRA wdt:279 {
+	wdt:P279 [ wd:Q12909644] ;
+}

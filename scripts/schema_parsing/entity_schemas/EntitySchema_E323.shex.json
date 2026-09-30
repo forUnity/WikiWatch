@@ -1,0 +1,461 @@
+{
+    "type": "Schema",
+    "start": "#gene-wiki-disease-item",
+    "shapes": [
+        {
+            "type": "Shape",
+            "id": "#gene-wiki-disease-item",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P279",
+                        "valueExpr": "#P279_subclassof",
+                        "min": 1,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P279",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P2888",
+                        "valueExpr": "#P2888_exactmatch",
+                        "min": 1,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P780",
+                        "valueExpr": "#P780_symptoms",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P699",
+                        "valueExpr": "#P699_disease_ontology"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P492",
+                        "valueExpr": "#P492_omim_id",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P1550",
+                        "valueExpr": "#P1550_orphanet_id",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P1748",
+                        "valueExpr": "#P1748_nci_theraurus_id",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P4229",
+                        "valueExpr": "#P4229_icd10-cm",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P5806",
+                        "valueExpr": "#P5806-snomed-ct",
+                        "min": 0,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P279_subclassof",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P279",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                {
+                                    "type": "IriStem",
+                                    "stem": "http://www.wikidata.org/entity/"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "#disease-ontology-reference",
+                                "#mondo-disease-reference",
+                                "#reference"
+                            ]
+                        },
+                        "min": 1,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P492_omim_id",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P492",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P699_disease_ontology",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P699",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "#disease-ontology-reference",
+                                "#mondo-disease-reference",
+                                "#reference"
+                            ]
+                        },
+                        "min": 1,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P780_symptoms",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P780",
+                "valueExpr": {
+                    "type": "Shape"
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P1550_orphanet_id",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P1550",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P1748_nci_theraurus_id",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P1748",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P2888_exactmatch",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P2888",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "values": [
+                        {
+                            "type": "IriStem",
+                            "stem": "http://purl.obolibrary.org/obo/"
+                        },
+                        {
+                            "type": "IriStem",
+                            "stem": "http://identifiers.org/doid/"
+                        },
+                        {
+                            "type": "IriStem",
+                            "stem": "http://www.orpha.net/ORDO/Orphanet"
+                        },
+                        {
+                            "type": "IriStem",
+                            "stem": "https://icd.who.int/"
+                        },
+                        {
+                            "type": "IriStem",
+                            "stem": "http://linkedlifedata.com/resource/umls"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P4229_icd10-cm",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P4229",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "#disease-ontology-reference",
+                                "#mondo-disease-reference",
+                                "#reference"
+                            ]
+                        },
+                        "min": 1,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P5270_mondo_id",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P5270",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "#disease-ontology-reference",
+                                "#mondo-disease-reference",
+                                "#reference"
+                            ]
+                        },
+                        "min": 1,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P5806-snomed-ct",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P5806",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "#disease-ontology-reference",
+                                "#mondo-disease-reference",
+                                "#reference"
+                            ]
+                        },
+                        "min": 1,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#reference"
+        },
+        {
+            "type": "Shape",
+            "id": "#disease-ontology-reference",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P248",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q5282129"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P699",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P813",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#identifiers-org-reference",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P248",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q16335166"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P854",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "https://registry.identifiers.org/registry/doid"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#mondo-disease-reference",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P248",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q27468140",
+                                "http://www.wikidata.org/entity/Q55345445"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P5270",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P813",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#symptom-ontology-reference",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P248",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q5282129"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P8656",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/reference/P813",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

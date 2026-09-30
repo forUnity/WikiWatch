@@ -1,0 +1,56 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<lexicographical_resource>
+
+<lexicographical_resource> EXTRA wdt:P31 {
+	wdt:P1476 rdf:langString*; # title
+	wdt:P1680 rdf:langString*; # subtitle
+
+	wdt:P577 xsd:datetime*; # publication date
+	wdt:P123 IRI*; # publisher
+	wdt:P291 IRI*; # place of publication
+
+	wdt:P50 IRI*; # author
+	wdt:P2093 LITERAL*; # author name string
+
+	wdt:P407 IRI*; # language
+	wdt:P921 IRI*; # main_subject
+	wdt:P393 LITERAL*; # edition number 
+	wdt:P1104 xsd:integer*; # number of pages
+
+	wdt:P953 LITERAL*; # full work available at 
+	wdt:P996 LITERAL*; # scanned file on Wikimedia Commons 
+	wdt:P973 LITERAL*; # described at URL 
+	wdt:P856 LITERAL*; # official website 
+
+	wdt:P6216 LITERAL*; # copyright status
+	wdt:P275 LITERAL*; # copyright licence
+
+	wdt:P724 LITERAL*; # Internet Archive ID 
+	wdt:P675 LITERAL*; # Google Books ID
+	wdt:P1844 LITERAL*; # HathiTrust ID 
+	wdt:P648 LITERAL*; # Open Library ID
+	wdt:P243 LITERAL*; # OCLC 
+
+	wdt:P212 LITERAL*; # ISBN-13
+	wdt:P957 LITERAL*; # ISBN-10
+
+	wdt:P356 LITERAL*; # DOI 
+	wdt:P1184 LITERAL*; # handle 
+	wdt:P4109 LITERAL*; # URN
+
+	wdt:P6123 LITERAL*; # B3Kat dataset ID
+	wdt:P1739 LITERAL*; # CiNii Books bibliography ID 
+	wdt:P11496 LITERAL*; # CiNii Research ID 
+	wdt:P4948 LITERAL*; # DDB ID 
+	wdt:P7409 LITERAL*; # ERIC publication ID 
+	wdt:P2969 LITERAL*; # Goodreads book ID 
+	wdt:P1085 LITERAL*; # LibraryThing work ID 
+
+	wdt:P7896 LITERAL*; # Academia.edu publication ID
+	wdt:P5875 LITERAL*; # ResearchGate publication ID
+	wdt:P4011 LITERAL*; # Semantic Scholar paper ID 
+}

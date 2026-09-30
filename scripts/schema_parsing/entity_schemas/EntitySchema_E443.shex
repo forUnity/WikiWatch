@@ -1,0 +1,15 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<human_settlement>
+
+<human_settlement>  {
+	wdt:P31 [ wd:Q486972] ;
+	wdt:P17 @<human_settlement-P17> ;
+	wdt:P131 . ;
+	wdt:P625 . ;
+}
+
+<human_settlement-P17> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q6256] ;
+}

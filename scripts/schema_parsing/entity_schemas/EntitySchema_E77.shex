@@ -1,0 +1,28 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX specBE: <http://species.be/>
+
+start = @<BSL-vernacular-names>
+
+<BSL-vernacular-names> EXTRA p:P1843 {
+	p:P1843 {
+		ps:P1843 [@en @de @nl @fr] ;
+		pq:P459 [
+			wd:Q4462303 # Dutch spelling rules
+			wd:Q1309004 # Dutch orthography 
+			wd:Q3491268 # English orthography 
+			wd:Q970597 # French orthography
+			wd:Q350044 # German orthography
+                      ];
+		prov:wasDerivedFrom {
+			pr:P248 [wd:Q64007131]; # Belgian Species List
+			pr:P813 xsd:dateTime ;
+			pr:P854 [specBE:~] ;
+		}
+	}
+}

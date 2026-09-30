@@ -1,0 +1,11 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<MEP>
+
+<MEP> EXTRA  wdt:P39 wdt:P106 {
+	wdt:P31 [ wd:Q5] ;
+	wdt:P1186 . ;
+	wdt:P39 [ wd:Q27169] + ;
+	wdt:P106 [ wd:Q82955] ;
+}

@@ -1,0 +1,122 @@
+PREFIX p:      <http://www.wikidata.org/prop/>
+PREFIX wd:     <http://www.wikidata.org/entity/>
+PREFIX wdref:  <http://www.wikidata.org/reference/>
+PREFIX ps:     <http://www.wikidata.org/prop/statement/>
+PREFIX pq:     <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+ #QUERY MAP: SELECT ?item WHERE {?item wdt:P31/wdt:P279* wd:Q39715} LIMIT 10
+
+start = @<#lighthouse>
+<#lighthouse> EXTRA wdt:P31 {
+ ## STATEMENTS
+ #instance of
+  wdt:P31    [ wd:Q39715 ] ;  # Lighthouse
+ #country
+  wdt:P17    . * ; 
+ #located in the administrative territorial entity
+  wdt:P131   . * ; 
+ #inception
+  wdt:P571   xsd:dateTime ? ; 
+ #coordinate location
+  wdt:P625   . ; 
+ #lighthouse range
+  wdt:P2929  xsd:decimal * ; 
+ #Admiralty number
+  wdt:P3562  xsd:string * ; 
+ #light characteristic of lighthouse
+  wdt:P1030  xsd:string * ; 
+ #focal height
+  wdt:P2923  xsd:decimal * ; 
+ #described by source
+  wdt:P1343  . * ; 
+ #located on terrain feature
+  wdt:P706   . * ; 
+ #image
+  wdt:P18    . * ; 
+ #official name
+  wdt:P1448  rdf:langString * ; 
+ #located in or next to body of water
+  wdt:P206   . * ; 
+ #height
+  wdt:P2048  xsd:decimal * ; 
+#designer
+ wdt:P287 . * ;
+ #color
+ p:P462 {
+  ps:P462 . * ;
+  pq:P518 . * ;
+ } * ; 
+ #type of lens
+ p:P9597 . * ;
+ #material used
+ p:P186 {
+  ps:P186 . * ;
+  pq:P518 . * ;
+ } * ;
+ #shape
+ p:P1419 {
+  ps:P1419 . * ;
+  pq:P518 . * ;
+ } * ;
+ #Commons category
+  wdt:P373   . + ; 
+ #use
+  wdt:P366   . * ; 
+ #location
+  wdt:P276   . * ; 
+ #service retirement
+  wdt:P730   xsd:dateTime * ; 
+ #replaces
+  wdt:P1365  . * ; 
+ #significant event
+  p:P793 {
+    ps:P793  . * ; 
+    pq:P585  xsd:dateTime *  
+  } * ; 
+ #service entry
+  wdt:P729   xsd:dateTime * ; 
+ #source of energy
+  p:P618 {
+    ps:P618  . ; 
+    pq:P580  xsd:dateTime * ; 
+    pq:P582  xsd:dateTime *  
+  } * ; 
+ #dissolved, abolished or demolished
+  wdt:P576   xsd:dateTime * ; 
+#OS grid
+ wdt:P613 . * ;
+#builder/engineer
+ wdt:P193 . * ;
+ wdt:P631 . * ;
+ ## IDENTIFIERS
+ #NGA Lighthouse ID
+  wdt:P3563  xsd:string * ; 
+ #Online List of Lights ID
+  wdt:P3223  xsd:string * ; 
+ #MarineTraffic Lighthouse ID
+  wdt:P3601  xsd:string * ; 
+ #heritage designation
+  p:P1435 {
+    ps:P1435   .  ; 
+    pq:P580    xsd:dateTime * ;
+ } * ;
+ #ARLHS Lighthouse ID
+    wdt:P2980  xsd:string * ; 
+ #National Historic Sites of Canada ID
+    wdt:P2526  xsd:string * ; 
+ #Heritage Lighthouse of Canada ID
+    wdt:P3211  xsd:string * ; 
+ #BabelNet ID
+    wdt:P2581  xsd:string * ; 
+ #Federal Heritage Buildings ID (Canada)
+    wdt:P3197  xsd:string * ; 
+ #Canadian Coastguard Lighthouse ID
+    wdt:P3920  xsd:string * ; 
+ #Canadian Register of Historic Places ID
+    p:P477 {
+      ps:P477  xsd:string * ; 
+      pq:P518  . *  
+    } *   
+}

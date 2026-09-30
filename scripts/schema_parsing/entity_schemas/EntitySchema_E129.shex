@@ -1,0 +1,81 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# Query Map: SELECT ?item WHERE {?item wdt:P31 wd:Q28542014. } LIMIT 10
+
+start = @ <#one_of_a_kind_computer>
+
+<#one_of_a_kind_computer> EXTRA wdt:P31 {
+
+ # instance of
+  wdt:P31 [ wd:Q28542014 ] ;
+
+ # official website
+    wdt:P856 IRI ? ;
+    
+ # Commons category
+    wdt:P373 xsd:string ? ;
+    
+ # country
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ? ;
+    
+ # described at URL
+    wdt:P973 IRI ? ;
+    
+ # image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+
+ # discoverer or inventor
+    wdt:P61 [ <http://www.wikidata.org/entity>~ ] * ;
+    
+ # sponsor
+    wdt:P859 [ <http://www.wikidata.org/entity>~ ] * ;
+    
+ # owned by
+    wdt:P127 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# service entry
+    wdt:P729 xsd:dateTime ? ;
+
+# operator
+    wdt:P137 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# manufacturer
+    wdt:P176 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# developer
+    wdt:P178 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# part of
+    wdt:P361 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# CPU
+    wdt:P880 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# number of processor cores
+    wdt:P1141 xsd:decimal ? ;
+
+# speed
+    wdt:P2052 xsd:decimal ? ;
+
+# GPU
+    wdt:P2560 [ <http://www.wikidata.org/entity>~ ] * ;
+
+# logo image
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+
+# followed by
+    wdt:P156 [ <http://www.wikidata.org/entity>~ ] ? ;
+  
+# TOP500 System ID
+    wdt:P7307 xsd:string ? ;
+    
+# Internet Archive ID
+    wdt:P724 xsd:string ? ;
+}

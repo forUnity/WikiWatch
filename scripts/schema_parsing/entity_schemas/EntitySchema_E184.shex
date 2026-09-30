@@ -1,0 +1,15 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<pandemic>
+
+<pandemic>  EXTRA wdt:P31  {
+  wdt:P31 [ wd:Q12184  ] ;# instance of a pandemic
+  wdt:P580 .{1} ;#start time of the pandemic
+  wdt:P582 .{1} ;#end time of the pandemic
+  wdt:P1120 .* ;# number of deaths
+  wdt:P1603 .* ;# number of cases
+  wdt:P8010 .* ;# number of recoveries
+  wdt:P828 .* ;# has cause
+}

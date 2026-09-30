@@ -1,0 +1,49 @@
+property_id,label
+569,date of birth
+570,date of death
+571,inception
+574,year of publication of scientific name for taxon
+575,time of discovery or invention
+576,"dissolved, abolished or demolished"
+577,publication date
+578,Sandbox-TimeValue
+580,start time
+582,end time
+585,point in time
+606,first flight
+619,UTC date of spacecraft launch
+620,UTC date of spacecraft landing
+621,time of object orbit decay
+622,spacecraft docking/undocking date
+729,service entry
+730,service retirement
+746,date of disappearance
+813,retrieved
+1191,date of first performance
+1317,floruit
+1326,latest date
+1619,date of official opening
+1636,date of baptism
+2031,start of work period
+2032,end of work period
+2285,periapsis date (DEPRECATED)
+2669,discontinuation date
+2754,production date
+2913,date depicted
+2960,archive date
+3893,public domain date
+3999,date of official closure
+4602,date of burial or cremation
+5017,last update
+5204,commercialization date
+6949,announcement date
+7103,start of covered period
+7104,end of covered period
+7588,effective date
+7589,date of promulgation
+8556,extinction date
+9448,introduced on
+9667,date of resignation
+10135,recording date
+10673,debut date
+10786,date of incorporation

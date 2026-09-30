@@ -1,0 +1,30 @@
+# Issue https://github.com/salgo60/Gravstensinventeringen-Wikidata/issues/33
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query: 
+# SELECT ?cemetery WHERE { ?cemetery wdt:P6104 wdt:P39 wd:Q115206846 } limit 5
+
+start = @<SwedishCemetery>
+
+<SwedishCemetery> EXTRA wdt:P106 {
+ wdt:P6104   [ wd:Q115206846 ] ; # project
+ wdt:P17  [ wd:Q34 ] ; # country
+ wdt:P131  .+; # located in the administrative territorial entity
+ wdt:P625 .+; #coordinate
+
+ wdt:P18  .+; #image
+ wdt:P1343 .*; #described by source
+ wdt:P2025 .+; # Find A Grave cemetery ID
+ wdt:P5259 .+; #Gravstensinventeringen
+ wdt:P2789 .*; #connects with
+ wdt:P8592 .*; #aerial view
+ wdt:P10689 .*; # OSM way
+
+ wdt:P9660 .*; # not found in - indicate that a site we expect should have this item dont have it
+}

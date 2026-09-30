@@ -1,0 +1,39 @@
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+## SPARQL query for Malayalam verbs
+# SELECT ?item { ?item dct:language wd:Q36236; wikibase:lexicalCategory wd:Q24905 } LIMIT 10
+
+start = @<mlverb>
+
+<mlverb> {
+  dct:language [ wd:Q36236  ] ;#Malayalam lexeme
+  wikibase:lexicalCategory [ wd:Q24905  ] ;#verb lexical category
+  ontolex:lexicalForm @<lexicalform1>? ;#simple present
+  ontolex:lexicalForm @<lexicalform2>? ;#simple past
+  ontolex:lexicalForm @<lexicalform3>? ;#simple future
+  ontolex:lexicalForm @<lexicalform4>? ;#present infinitive
+  ontolex:lexicalForm @<lexicalform5>? ;#simple future
+  ontolex:lexicalForm @<lexicalform6>? ;#empty form
+}
+<lexicalform1> {
+  wikibase:grammaticalFeature [ wd:Q3910936  ] ;#simple present
+}
+<lexicalform2> {
+  wikibase:grammaticalFeature [ wd:Q1392475  ] ;#simple past
+}
+<lexicalform3> {
+  wikibase:grammaticalFeature [ wd:Q1475560  ] ;#simple future
+}
+<lexicalform4> {
+  wikibase:grammaticalFeature [ wd:Q52434245  ] ;#present infinitive
+}
+<lexicalform5> {
+  wikibase:grammaticalFeature [ wd:Q501405  ] ;#simple future
+}
+<lexicalform6> {
+  wikibase:grammaticalFeature .{0} ;#empty form
+}

@@ -1,0 +1,12 @@
+[package]
+name = "subject_constraint_core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "subject_constraint_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module"] }
+rustc-hash = "1.1"

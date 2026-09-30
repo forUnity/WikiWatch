@@ -1,0 +1,21 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: select * where { ?x wdt:P106 wd:Q15077007 } limit 5
+
+start = @<#podcastPresenter>
+
+<#podcastPresenter> {
+  wdt:P31 [wd:Q5] ; # instance of human
+  wdt:P31 IRI * ; # additional instance types are okay
+  wdt:P106 [wd:Q15077007] ; # occupation: podcaster
+  wdt:P856 IRI * ; # optionally, official website
+  wdt:P106 IRI * ; # additional occupations are okay
+  wdt:P9743 xsd:string ? ; # additional Podchaser creator ID
+  wdt:P345 xsd:string ? ; # additional IMDb ID
+}

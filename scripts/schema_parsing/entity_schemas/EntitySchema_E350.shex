@@ -1,0 +1,45 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <http://schema.org/>
+PREFIX commons: <https://upload.wikimedia.org/wikipedia/commons/>
+PREFIX commonsURI: <http://commons.wikimedia.org/wiki/Special:FilePath/>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E41>
+PREFIX E41: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E41#>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E39>
+PREFIX E39: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E39#>
+
+
+start = @<#sdc_pathway_image>
+ 
+<#sdc_pathway_image> {
+  rdfs:label rdf:langString ;
+  schema:contentUrl [commons:~] ;
+  schema:url [commonsURI:~] ;
+  wdt:P361 @<#scholarly_artcile> ; # P361 = part of
+    wdt:P571 xsd:dateTime ; # P571 = inception
+	wdt:P275 wd:Q20007257 ; # P275 = copyright license
+	wdt:P2410 xsd:string? ; #WikipathwaysID
+	wdt:P180 (
+          @E41:wikidata-wp-pathway 
+           OR
+          @E39:wikidata-reactome-pathway 
+    ) ;
+}
+  
+<#scholarly_artcile> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q13442814] ; 
+}
+  
+<#copyright_license> [
+  wd:Q6938433 # Creative Commons CC0 License Public Domain Dedication
+  wd:Q20007257 # Creative Commons Attribution 4.0 International
+  wd:Q14947546 # Creative Commons Attribution 3.0 Unported 
+  wd:Q18810333 # Creative Commons Attribution 2.5 Generic 
+  wd:Q18199165 # Creative Commons Attribution-ShareAlike 4.0 International
+  wd:Q14946043 # Creative Commons Attribution-ShareAlike 3.0
+  wd:Q19113751 # Creative Commons Attribution-ShareAlike 2.5 Generic 
+]

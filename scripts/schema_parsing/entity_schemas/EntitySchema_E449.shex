@@ -1,0 +1,21 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P186 wd:Q125576. } LIMIT 10
+
+start = @<papyrus> 
+# wd:Q834459 wd:Q1428312 wd:Q1348059 wd:Q1227165
+<papyrus> EXTRA wdt:P31 {
+ # instance of
+    p:P31 {        ps:P31 [wd:Q30103158 wd:Q11086567 ] } + ;
+ # collection, often a museum or library
+    p:P195 {        ps:P195 [ <http://www.wikidata.org/value>~ ]    } ;
+}

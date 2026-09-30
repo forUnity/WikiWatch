@@ -1,0 +1,233 @@
+# Shape Expression for Dutch public library branches in Wikidata. For Dutch public library organisations, see E90 
+# VERY MUCH WORK IN POROGRESS
+
+#==========INPUT & EXAMPLES TO BUILD THIS SCHEMA===============
+# For more textual input to build this schema, see https://www.wikidata.org/wiki/Wikidata:WikiProject_Netherlands_Public_Libraries/Admin#DPL_Branches 
+
+# Inspiration to draw from : 
+#  https://www.wikidata.org/wiki/EntitySchema:E85
+#  https://www.wikidata.org/wiki/EntitySchema:E38
+
+# And see http://shexspec.github.io/primer/#vocabulary
+
+#============= TEST DATA ==========================
+#== 1 - Variable set of Q-numbers ==
+
+# 1.1 Set of 50 Q-numbers, INCluding library bus services and stops: 
+# SELECT * WHERE {?dplbranch (p:P31/ps:P31) wd:Q28564,wd:Q11396180;wdt:P17 wd:Q55.} LIMIT 50
+
+# 1.2 Set of 50 Q-numbers, EXcluding library bus services and stops: 
+# Q720920 = library bus service; Q953806 = library bus stop
+# SELECT DISTINCT ?dplbranch WHERE {?dplbranch (p:P31/ps:P31) wd:Q28564,wd:Q11396180;wdt:P17 wd:Q55. MINUS {?dplbranch (p:P31/ps:P31) wd:Q720920.} MINUS {?dplbranch (p:P31/ps:P31) wd:Q953806.}}
+
+#== 2 - Fixed set of Q-numbers (including lots of abnormal (non-canonical) items) == 
+
+# 2.1 FOR REGULAR LIBRARY BRANCHES
+# wd:Q61764050 (Roermond public library) --> 100% OK (canonical) item
+# wd:Q60290390 (OBA De Hallen) --> 2x PartOf P361
+# wd:Q63385165 (Nieuw-Vennep public library) --> no email P968
+# wd:Q4490011 (Vlissingen public library) --> no image P18
+# wd:Q63890055 (Bibliotheek Alphen Centrum) --> No phone P1329
+# wd:Q61718917 (Bibliotheek Beckum) --> No website P856
+# wd:Q61785984 (Bibliotheek uitleenpunt Kastanjehof Geldrop) --> No GIDS-url P973
+# wd:Q61915775 (Bibliotheek servicepunt Alteveer-Kerkenveld) --> no ISIL P791
+# SELECT * WHERE {VALUES ?item {wd:Q61764050 wd:Q60290390 wd:Q63385165 wd:Q4490011 wd:Q63890055 wd:Q61718917 wd:Q61785984 wd:Q61915775}}  
+
+# 2.2 FOR LIBRARY BUSES
+# wd:wd:Q61915707 (Jeugdbibliobus Arnhem) --> no street (P669), location (P276) and municipality (P131)
+# wd:Q61638482 (Boekenbus Apeldoorn, halte Kerschoten - Winkelcentrum Mercatorplein) --> no postal code (P281) and street number P670
+# wd:Q61638474 (Boekenbus Apeldoorn) --> no geo-coord P625
+#https://www.wikidata.org/wiki/Q62836468
+# SELECT * WHERE {VALUES ?item {wd:Q61915707 Q61638482 Q61638474}}  
+
+#====================PREFIXES============================
+# Probably more prefixes than that are strictly needed
+PREFIX p: <http://www.wikidata.org/prop/>
+
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pqv: <http://www.wikidata.org/prop/qualifier/value/>
+PREFIX pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/>
+
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+#===============THE ACTUAL SCHEMA=========================
+start = @<#dplbranch> #dpl = dutch public library 
+
+<#dplbranch> EXTRA p:P31 { 
+     #EXTRA: 
+       #P31 :the plb can also be an instance of some other subclass (eg. building, headquarters) 
+
+    #LABELS and DESCRIPTIONS	
+      rdfs:label rdf:langString+; #Check if item has a label. TODO: check if they are present both in @EN and @NL 
+      schema:description rdf:langString+; #Check if item has a description. TODO: check if they are present both in @EN and @NL
+      
+    # STATEMENTS
+        # Compulsories
+        p:P31   @<#P31_instance_of> {2,} ; #2 or more Q-values 
+        p:P17   @<#P17_country> {1} ; # exactly 1 occurence #TODO: add reference
+        p:P1705 @<#P1705_native_label> {1} ; # TODO: Must be in Dutch #TODO: add reference
+        p:P131  @<#P131_located_in_administrative_territorial_entity> {1} ; # plb must be located in exactly 1 municipality 
+        p:P361  @<#P361_part_of> + ; # plb must be part of 1 or more things 
+
+
+        # Optionals
+        p:P18  @<#P18_image> ? ; #optional 0 or 1 occurences      
+        p:P856 @<#P856_officialwebsite> ? ; #optional 0 or 1 occurences
+        p:P968 @<#P968_email> * ; #optional 0 or more occurences
+        p:P1329 @<#P1329_phone_number>* ; #optional 0 or more occurences
+
+        # Optional, but if one of them exists, all others should do to. 
+        (
+         p:P276 @<#P276_location>  ; #optional 0 or 1 occurences
+        p:P281 @<#P281_postal_code> ; #optional 0 or 1 occurences
+        p:P625 @<#P625_geocoordinates>  ; #optional 0 or 1 occurences
+        p:P669 @<#P669_located_on_street> ; # , Located on street, single value, ca be unknown for library buses
+        p:P6375 @<#P6375_full_address> ; # must be in Dutch
+        )?
+
+
+
+###p:P973; isil
+
+#p:P2204
+
+
+
+}
+
+#=== Compulsory statements ====
+
+<#P31_instance_of> {
+    ps:P31 [wd:Q28564 wd:Q11396180]; # public library AND library branch
+}
+
+<#P17_country> {
+    ps:P17 [wd:Q55]; # plb must be in The Netherlands 
+    prov:wasDerivedFrom @<#P854-P813-reference>+;
+} 
+
+<#P1705_native_label>{ 
+    ps:P1705 [@nl] ;  # Must be in Dutch 
+    prov:wasDerivedFrom @<#P854-P813-reference>+;
+}
+
+<#P131_located_in_administrative_territorial_entity>  {
+    ps:P131 @<#municipality_of_the_netherlands>; 
+} 
+<#municipality_of_the_netherlands> EXTRA p:P31 { 
+    # territorial_entity must be an instance of 'municipality of the Netherlands' (Q2039348), but....
+    # EXTRA: the territorial_entity can also be an instance of some other subclass (e.g big city, polder, hanzestad..)
+    p:P31 {ps:P31 [wd:Q2039348]}
+}
+
+<#P361_part_of> {
+   ps:P361 [wd:~] +;  
+   #ps:P361 @<#partof> ; # plb can be part of multiple things, but...   
+   #TODO: add reference
+}
+
+#<#partof> EXTRA p:P31 {
+    # ... but the plb MUST be part of a public library organisation (plo = instance of both 'public library (Q28564)' and 'library system (Q28324850)')
+    # EXTRA: the plb can also be part of other things (than a lib org)
+    #p:P31 {ps:P31 [wd:Q28564 wd:Q28324850];}{2,}
+    #TODO: Make this work also for library buses like https://www.wikidata.org/wiki/Q61915708
+#}
+
+
+#=== Optional statements ====
+
+<#P18_image> {
+    # If image is stated, then the URL must start with 'http://commons.wikimedia.org/wiki/Special:FilePath/'
+    ps:P18 IRI /^http:\/\/commons\.wikimedia\.org\/wiki\/Special:FilePath\//  
+} 
+
+<#P276_location>{
+   ps:P276 [wd:~] ;
+   prov:wasDerivedFrom @<#P854-P813-reference>+;
+}
+
+<#P281_postal_code> {
+    ps:P281 xsd:string ;
+    prov:wasDerivedFrom @<#P854-P813-reference>+;
+}
+
+<#P625_geocoordinates>{
+    ps:P625 geo:wktLiteral ;
+}
+
+<#P669_located_on_street> {
+     ps:P669 {
+          wdt:P31 [
+                 wd:Q79007 # street] ;
+                 # Other types of streets when they occur.
+                ]
+      } ;
+      pq:P670  xsd:string ; # Streetnumber as qualifier
+      pq:P281  xsd:string ; # Postalcode as qualifier
+      prov:wasDerivedFrom @<#P854-P813-reference> ;
+
+}
+
+<#P856_officialwebsite> {
+    # If o. w. is stated, then it must have exactly 1 value (clickable IRI), and must have exactly 1 Retrieved timesptamp (P813) as qualifier (ie. NOT as source reference!))
+    ps:P856 IRI {1} ;  # exactly 1 IRI (clickable link)
+    pq:P813 xsd:dateTime {1}; # exactly 1 timestamps (P813) as qualifier
+    pr:P856 . {0} ;   #  it can not have a source reference
+} 
+
+<#P968_email>{
+    #If email is stated, then each mail address must start with 'mailto:' and contain a '@' 
+    ps:P968 IRI /^mailto:/ ;  #IRI starting with 'mailto:'  # TODO: IRI must contain a '@'
+    prov:wasDerivedFrom @<#P854-P813-reference>+;  #reference is compulsory, 1 or more values
+}  
+
+<#P1329_phone_number> {
+    ps:P1329  xsd:string ;
+    prov:wasDerivedFrom @<#P854-P813-reference>+;  #reference is compulsory, 1 or more values
+}
+
+<#P6375_full_address> {
+   ps:P6375 [@nl] ; # Must be in Dutch
+   prov:wasDerivedFrom @<#P854-P813-reference>+;  #reference is compulsory, 1 or more values
+}     
+
+#=== REFERENCES ======
+
+<#P854-P813-reference>{ 
+    #each reference must have exactly 1 URL (P854) and 1 timesamp P813
+    pr:P854 IRI {1} ; # exactly 1 IRI (clickable link)
+    pr:P813 xsd:dateTime {1}; # exactly 1 date
+}
+
+
+# ======================================
+# ====== STILL TO SORT OUT =============
+# ======================================
+
+###Headquarters location P159

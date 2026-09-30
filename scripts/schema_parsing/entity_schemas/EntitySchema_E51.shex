@@ -1,0 +1,13 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# to check:
+# SELECT ?item { ?item wdt:P106 wd:Q323081 }
+
+start = @<wikidata-hyperpolyglot>
+
+<wikidata-hyperpolyglot> EXTRA p:P31 {    
+	wdt:P31 [wd:Q5];
+        wdt:P1412 . {6,};
+}

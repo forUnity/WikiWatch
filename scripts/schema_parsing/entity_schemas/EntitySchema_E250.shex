@@ -1,0 +1,63 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+# Example SPARQL query:  https://w.wiki/jjT
+# SELECT ?item WHERE { ?item wdt:P31 wd:Q127448 } 
+
+start = @<SwedishM>
+
+<SwedishM> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q127448 ]  ; # instance of Swedish Municipal
+ #wdt:P361   @<PartOf>      + ; # part of
+ wdt:P18 .      + ; # picture    
+ wdt:P571 .     + ; # inception
+ wdt:P17       [ wd:Q34]; # country 
+ #wdt:P36     @<CapitalTown>     ?; #capital town    
+ #wdt:P131    @<AdministrativeTerritorialEntity>;
+ wdt:P625     . +; # coordinates
+ wdt:P1082   . +; # population
+ wdt:P190     . *; # twinned administrative body
+ wdt:P1365   . ?; # replaces
+ wdt:P1813   . +; # short name
+ wdt:P47       . +; # shares border with
+
+ wdt:P525    . +; # Swedish municipality code
+ wdt:P242    . ?; # locator map image
+ wdt:P6192  . +; # Hembygdsportalen ID local history communities 
+ wdt:P2046     . +; # Area
+ wdt:P856       . ?; # official website
+ wdt:P8714     . +; # GADM ID
+ wdt:P1313     . *;# office held by head of government
+ wdt:P6           . *;# head of government
+ wdt:P8402           . *;# Open Data portal
+ wdt:P6460           . *;# Swedish Organization Number
+
+ wdt:P2013 .     ?; # Facebook ID
+ wdt:P2002 .      ?; # twittername 
+ wdt:P4173 .      ?; # Instagram location ID         
+ wdt:P2003 .      ?; # Instagram         
+ wdt:P4264 .      ?; # Linked in Company         
+ wdt:P1019 .      ?; # RSS         
+ wdt:P1997 .      ?; # Facebook placeid         
+ wdt:P2572 .      ?; # Hashtag         
+ wdt:P6251 .      ?; # Catch phrase       
+ wdt:P1792 .      ?; # category of associated people
+ wdt:P910 .      ?; # topic's main category
+ wdt:P373 .      ?; # Commons category
+ wdt:P94 .      ?; # coat of arms image
+ wdt:P237 .      ?; # coat of arms
+ wdt:P2044 .      ?; # 	elevation above sea level
+}
+
+<CapitalTown> NOT {
+# ps:P39  [  wd:Q12813115] + ;  #
+}
+
+<PartOf> { 
+ wdt:P31 [ wd:Q193556 wd:Q253836 wd:Q253836 ] ;
+}
+
+<AdministrativeTerritorialEntity>{
+ wdt:P31 [ wd:Q200547]; # instance of county
+}

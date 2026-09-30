@@ -1,0 +1,46 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map: SELECT ?item WHERE {?item wdt:P31 wd:Q1768043. } LIMIT 10
+
+start = @<#metropolitan_statistical_area>
+
+<#metropolitan_statistical_area> {
+
+    # instance of
+    wdt:P31 [ wd:Q1768043 ] ;
+    # located in the administrative territorial entity
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] * ;
+    # country
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # topic's main category
+    wdt:P910 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Commons category
+    wdt:P373 xsd:string ? ;
+    # coordinate location
+    wdt:P625 geo:wktLiteral ? ;
+    # image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+    # locator map image
+    wdt:P242 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # area
+    wdt:P2046 xsd:decimal ? ;
+    # part of
+    wdt:P361 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # population
+    wdt:P1082 xsd:decimal * ;
+    # elevation above sea level
+    wdt:P2044 xsd:decimal ? ;
+    # located in time zone
+    wdt:P421 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # official website
+    wdt:P856  IRI  ? ;
+    # named after
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] * ;
+    # VIAF ID
+    wdt:P214 xsd:string ? ;
+    }

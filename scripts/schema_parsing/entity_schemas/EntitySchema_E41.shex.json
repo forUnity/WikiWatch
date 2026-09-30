@@ -1,0 +1,202 @@
+{
+    "type": "Schema",
+    "imports": [
+        "https://www.wikidata.org/wiki/Special:EntitySchemaText/E86",
+        "https://www.wikidata.org/wiki/Special:EntitySchemaText/E265",
+        "https://www.wikidata.org/wiki/Special:EntitySchemaText/E266"
+    ],
+    "start": "#wikidata-wp-pathway",
+    "shapes": [
+        {
+            "type": "Shape",
+            "id": "#wikidata-wp-pathway",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P31",
+                        "valueExpr": "#P31_pathway_ontology_term"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P527",
+                        "valueExpr": "#P527_has_part",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P2860",
+                        "valueExpr": "#P2860_cites",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P2888",
+                        "valueExpr": "#P2888_exact_match",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P2410",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#P2410_wikipathways-identifier"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P31_pathway_ontology_term",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P31",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q4915012",
+                                "http://www.wikidata.org/entity/Q90012262",
+                                "http://www.wikidata.org/entity/Q22325163"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#wikipathways_reference"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P527_has_part",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P527",
+                        "valueExpr": "#pathway_part",
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "ShapeOr",
+                            "shapeExprs": [
+                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#complex_portal_reference",
+                                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#wikipathways_reference"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#pathway_part",
+            "extra": [
+                "http://www.wikidata.org/prop/P31"
+            ],
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/P31",
+                "valueExpr": {
+                    "type": "Shape",
+                    "expression": {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P31",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q7187",
+                                "http://www.wikidata.org/entity/Q8054",
+                                "http://www.wikidata.org/entity/Q11173",
+                                "http://www.wikidata.org/entity/Q12140",
+                                "http://www.wikidata.org/entity/Q22325163",
+                                "http://www.wikidata.org/entity/Q78782478"
+                            ]
+                        }
+                    }
+                },
+                "min": 1,
+                "max": -1
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P2860_cites",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P2860",
+                        "valueExpr": "#wikicite_entry"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#wikipathways_reference"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#wikicite_entry",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/P31",
+                "valueExpr": {
+                    "type": "Shape",
+                    "expression": {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P31",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/entity/Q13442814"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#P2888_exact_match",
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P2888",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                {
+                                    "type": "IriStem",
+                                    "stem": "http://identifiers.org/wikipathways/"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": "https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#wikipathways_reference"
+                    }
+                ]
+            }
+        }
+    ]
+}

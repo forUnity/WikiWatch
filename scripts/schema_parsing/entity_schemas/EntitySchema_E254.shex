@@ -1,0 +1,52 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E15>
+PREFIX E15: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E15#>
+
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+
+# Bengali lexeme:
+# SELECT ?lexeme { ?lexeme dct:language wd:Q9610 ; wikibase:lexicalCategory wd:Q34698 } LIMIT 5
+
+START = @<bengali-adjective>
+
+<bengali-adjective> {
+
+  dct:language [ wd:Q9610 ]
+    // rdfs:label "Language"
+    // rdfs:comment "Language must be Bengali" ;
+
+  wikibase:lexicalCategory [ wd:Q34698 ]
+    // rdfs:label "Lexical category"
+    // rdfs:comment "Lexical category must be adjective" ;
+
+  wikibase:lemma [ @bn ]
+    // rdfs:label "Lemma"
+    // rdfs:comment "Lemma must must have one Bengali value" ; 
+
+# F1 positive
+  ontolex:lexicalForm {  
+      ontolex:representation [ @bn ];
+      wikibase:grammaticalFeature [ wd:Q3482678 ];
+  };
+
+}
+
+AND (
+  # If the lexeme is a compound 
+  NOT {
+    wdt:P31 wd:Q245423
+  } 
+ # then it must have a 'combines' proper with at least two parts
+  OR {
+    wdt:P5238 IRI {2,}
+  }
+)

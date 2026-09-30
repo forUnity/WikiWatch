@@ -1,0 +1,19 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<wikidata-es-firstnames>
+
+# sample items:
+# SELECT ?item (COUNT(DISTINCT ?a) AS ?count) WHERE {?a wdt:P735 ?item; wdt:P27 wd:Q29; wdt:P21 wd:Q6581097} GROUP BY ?item HAVING (?count > 100)
+
+<wikidata-es-firstnames> EXTRA p:P31 {    
+	## STATEMENTS
+        wdt:P31 [wd:Q202444 wd:Q11879590 wd:Q12308941]; wdt:P31 .*;
+        wdt:P1705 . ;
+        wdt:P282 [wd:Q8229];
+        wdt:P407 [wd:Q1321 wd:Q7026 wd:Q8752 wd:Q9307 wd:Q5146]; wdt:P407 .* ;
+        wdt:P460 .+ ;
+}
+
+# fixme: P31/P407 should allow values in addition to the listed ones

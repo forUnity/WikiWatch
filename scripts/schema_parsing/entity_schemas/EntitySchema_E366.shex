@@ -1,0 +1,33 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q15484785. } LIMIT 10
+
+start = @<coin_hoard>
+
+<coin_hoard> EXTRA p:P31{
+     # instance of
+     p:P31 {ps:P31 [wd:Q15484785] };
+     # image
+     p:P18 {ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ;  } ? ;
+     # location of discovery
+     p:P189 {ps:P189 .} ? ;
+     # time of discovery
+     p:P575 {ps:P575 .} ? ;
+     # collection
+     p:P195 {ps:P195 [ <http://www.wikidata.org/entity>~ ]} ? ;
+     # inception
+     p:P571 {ps:P571 xsd:dateTime } ? ;
+     # made from material
+     p:P186 {ps:P186 [ <http://www.wikidata.org/entity>~ ]} ? ;
+     # has part or parts
+     p:P527 {ps:P527 [ <http://www.wikidata.org/entity>~ ]} ? ;
+     # image
+     p:P18 {ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]} *
+}

@@ -1,0 +1,125 @@
+# based on https://docs.google.com/document/d/1KcHQUrUDWi2m2677nMZ5i7sdrI9pSGs0-yYuYi7yOjo/edit?usp=sharing 
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX commons: <http://commons.wikimedia.org/wiki/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+start = @<moth_species>
+
+<moth_species> {
+  p:P31 @<P31_instance_of_taxon> ; 
+  p:P31 @<P31_instance_of_synonym> ? ;
+  p:P18 @<P18_image> * ;
+  p:P225 @<P225_taxonname> ;
+  p:P105 @<P105_taxon_rank> ;
+  p:P171 @<P171_parent_taxon> ;
+  p:P1420 @<P1420_taxon_synonym> ? ;
+  p:P566 @<P566_basionym> ? ;
+  p:P183 @<P183_endemic_to> * ;
+  p:P2975 @<P2975_host> * ;
+  p:P5304 @<P5304_type_locality> ? ;
+  p:P138 @<P138_named_after> ? ;
+  p:P5326 @<P5326_publication_in_which_this_taxon_name_was_established> ? ;
+  p:P2974 @<P2974_habitat> ? ;
+  p:P373 @<P373_commons_category> ? ;
+  p:P5588 @<P5588_invasive_to> ? ;
+  p:P1343 @<P1343_described_by_source> ? ;
+} 
+<P31_instance_of_taxon> {
+  ps:P31 [wd:Q16521] ;
+}
+
+<P31_instance_of_synonym> {
+  ps:P31 [wd:Q1040689] ;
+  pq:P642 @<taxon> ;
+  pq:P248 {
+    wdt:P31 wd:Q13442814 ; 
+  }
+}
+
+<P18_image> {
+  ps:P18 [commons:~] ; 
+  pq:21 [
+         wd:Q43445 # female organism
+		 wd:Q44148 # male organism
+        ]? ;
+}
+
+<P105_taxon_rank> {
+  ps:P105 [wd:Q7432] ;
+}
+
+<P171_parent_taxon> {
+ ps:P171 @<taxon> ; 
+}
+
+<P138_named_after> {
+  ps:P138 [wd:~] ;
+}
+
+<P183_endemic_to> {
+  ps:P183 [wd:~] ; 
+}
+
+<P225_taxonname> {
+  ps:P225 xsd:string ;
+  pq:P405  [wd:~]+ ;
+  pq:P574 xsd:dateTime ;
+}
+
+<P373_commons_category> {
+  ps:P373 xsd:string ;
+}
+
+<P566_basionym> {
+  ps:P1420 @<taxon> ; 
+}
+
+<P1420_taxon_synonym> {
+  ps:P1420 @<taxon> ; 
+}
+
+<P2974_habitat> {
+  ps:P2974 [wd:~] ;
+}
+
+<P2975_host> {
+  ps:P2975 @<taxon> ;
+  pq:P642 [
+    wd:Q81825 # caterpillar 
+    wd:Q80994 # adult
+  ]? # optional
+}
+
+<P5304_type_locality> {
+  ps:P5304 [wd:~] ; 
+}
+
+<P5326_publication_in_which_this_taxon_name_was_established> {
+ ps:P5326 @<scholarly_article> ; 
+}
+
+<P5588_invasive_to> {
+  ps:P5588 [wd:~] ; 
+}
+
+<P1343_described_by_source> {
+  ps:P1343 @<scholarly_article> ;
+}
+
+<image_reference> {} OR {
+  pr:P248 [wd:Q16958215] ; #iNaturalist
+  pr:P5683 xsd:string ;
+  pr:P831 xsd:dateTime ;
+} 
+
+<scholarly_article> {
+   wdt:P31 wd:Q13442814 ;
+}
+  
+<taxon> { wdt:P31 [wd:Q16521] ; }

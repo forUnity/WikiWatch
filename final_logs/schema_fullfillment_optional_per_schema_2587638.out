@@ -1,0 +1,1574 @@
+Commit at submit time: acf8387441086f997cc7bb064311bbcc0cf4af8f
+Running from snapshot: /tmp/mp2025-wikiwatch-2587638
+DuckDB memory_limit: 267.0 GiB
+2026-09-27 12:41:42.845 INFO starting
+2026-09-27 12:41:42.845 INFO Memory logging: False
+2026-09-27 12:41:42.846 INFO Less entities: False
+2026-09-27 12:41:42.846 INFO Use cache: False
+2026-09-27 12:41:43.116 INFO Start timestep 2012-10-29 00:00:00+00:00 -> 2012-11-28 00:00:00+00:00
+2026-09-27 12:41:52.862 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes     558.0 MiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes     558.0 MiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:41:52.863 INFO Loading data (2012-10-29 00:00:00+00:00 -> 2012-11-28 00:00:00+00:00) done in 9.75s (real) and 8.20s (process)
+2026-09-27 12:41:52.863 INFO Memory usage (start of timestep, peak): 0.68 GiB
+2026-09-27 12:41:52.863 INFO Memory usage (start of timestep, current): 0.68 GiB
+2026-09-27 12:41:52.863 INFO Calculating metrics
+2026-09-27 12:41:52.863 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:42:16.889 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:42:18.154 INFO Memory usage (end of timestep, peak): 4.83 GiB
+2026-09-27 12:42:18.155 INFO Memory usage (end of timestep, current): 2.84 GiB
+2026-09-27 12:42:18.155 INFO (Iteration 0) schema_fulfillment_count: real 24.03s | cpu 57.54s
+2026-09-27 12:42:18.155 INFO (Iteration 0) schema_fulfillment_per_schema_optional: real 1.27s | cpu 1.12s
+2026-09-27 12:42:18.155 INFO Iteration 0 finished in 35.04s (real) and 66.86s (process)
+2026-09-27 12:42:18.155 INFO Start timestep 2012-11-28 00:00:00+00:00 -> 2012-12-28 00:00:00+00:00
+2026-09-27 12:42:59.206 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       1.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       1.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:42:59.207 INFO Loading data (2012-11-28 00:00:00+00:00 -> 2012-12-28 00:00:00+00:00) done in 41.05s (real) and 36.33s (process)
+2026-09-27 12:42:59.207 INFO Memory usage (start of timestep, peak): 4.83 GiB
+2026-09-27 12:42:59.208 INFO Memory usage (start of timestep, current): 2.16 GiB
+2026-09-27 12:42:59.208 INFO Calculating metrics
+2026-09-27 12:42:59.208 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:43:24.707 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:43:33.913 INFO Memory usage (end of timestep, peak): 4.83 GiB
+2026-09-27 12:43:33.913 INFO Memory usage (end of timestep, current): 3.25 GiB
+2026-09-27 12:43:33.913 INFO (Iteration 1) schema_fulfillment_count: real 25.50s | cpu 52.34s
+2026-09-27 12:43:33.913 INFO (Iteration 1) schema_fulfillment_per_schema_optional: real 9.21s | cpu 9.08s
+2026-09-27 12:43:33.913 INFO Iteration 1 finished in 75.76s (real) and 97.75s (process)
+2026-09-27 12:43:33.914 INFO Start timestep 2012-12-28 00:00:00+00:00 -> 2013-01-27 00:00:00+00:00
+2026-09-27 12:44:01.581 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       1.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       1.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:44:01.582 INFO Loading data (2012-12-28 00:00:00+00:00 -> 2013-01-27 00:00:00+00:00) done in 27.67s (real) and 11.00s (process)
+2026-09-27 12:44:01.582 INFO Memory usage (start of timestep, peak): 4.83 GiB
+2026-09-27 12:44:01.582 INFO Memory usage (start of timestep, current): 2.45 GiB
+2026-09-27 12:44:01.582 INFO Calculating metrics
+2026-09-27 12:44:01.582 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:44:28.627 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:44:36.491 INFO Memory usage (end of timestep, peak): 4.83 GiB
+2026-09-27 12:44:36.491 INFO Memory usage (end of timestep, current): 3.32 GiB
+2026-09-27 12:44:36.491 INFO (Iteration 2) schema_fulfillment_count: real 27.04s | cpu 50.63s
+2026-09-27 12:44:36.491 INFO (Iteration 2) schema_fulfillment_per_schema_optional: real 7.86s | cpu 7.75s
+2026-09-27 12:44:36.491 INFO Iteration 2 finished in 62.58s (real) and 69.39s (process)
+2026-09-27 12:44:36.492 INFO Start timestep 2013-01-27 00:00:00+00:00 -> 2013-02-26 00:00:00+00:00
+2026-09-27 12:44:52.765 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes    1011.7 MiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes    1011.7 MiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:44:52.765 INFO Loading data (2013-01-27 00:00:00+00:00 -> 2013-02-26 00:00:00+00:00) done in 16.27s (real) and 14.45s (process)
+2026-09-27 12:44:52.766 INFO Memory usage (start of timestep, peak): 4.83 GiB
+2026-09-27 12:44:52.766 INFO Memory usage (start of timestep, current): 3.01 GiB
+2026-09-27 12:44:52.766 INFO Calculating metrics
+2026-09-27 12:44:52.766 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:45:20.201 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:45:27.697 INFO Memory usage (end of timestep, peak): 4.83 GiB
+2026-09-27 12:45:27.698 INFO Memory usage (end of timestep, current): 3.70 GiB
+2026-09-27 12:45:27.698 INFO (Iteration 3) schema_fulfillment_count: real 27.44s | cpu 51.16s
+2026-09-27 12:45:27.698 INFO (Iteration 3) schema_fulfillment_per_schema_optional: real 7.50s | cpu 7.39s
+2026-09-27 12:45:27.698 INFO Iteration 3 finished in 51.21s (real) and 72.99s (process)
+2026-09-27 12:45:27.698 INFO Start timestep 2013-02-26 00:00:00+00:00 -> 2013-03-28 00:00:00+00:00
+2026-09-27 12:46:26.681 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:46:26.682 INFO Loading data (2013-02-26 00:00:00+00:00 -> 2013-03-28 00:00:00+00:00) done in 58.98s (real) and 31.44s (process)
+2026-09-27 12:46:26.682 INFO Memory usage (start of timestep, peak): 5.80 GiB
+2026-09-27 12:46:26.682 INFO Memory usage (start of timestep, current): 5.80 GiB
+2026-09-27 12:46:26.682 INFO Calculating metrics
+2026-09-27 12:46:26.683 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:46:59.146 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:47:13.090 INFO Memory usage (end of timestep, peak): 8.12 GiB
+2026-09-27 12:47:13.090 INFO Memory usage (end of timestep, current): 8.12 GiB
+2026-09-27 12:47:13.090 INFO (Iteration 4) schema_fulfillment_count: real 32.46s | cpu 59.44s
+2026-09-27 12:47:13.090 INFO (Iteration 4) schema_fulfillment_per_schema_optional: real 13.94s | cpu 13.83s
+2026-09-27 12:47:13.090 INFO Iteration 4 finished in 105.39s (real) and 104.72s (process)
+2026-09-27 12:47:13.090 INFO Start timestep 2013-03-28 00:00:00+00:00 -> 2013-04-27 00:00:00+00:00
+2026-09-27 12:48:34.632 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       4.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       4.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:48:34.632 INFO Loading data (2013-03-28 00:00:00+00:00 -> 2013-04-27 00:00:00+00:00) done in 81.54s (real) and 42.69s (process)
+2026-09-27 12:48:34.632 INFO Memory usage (start of timestep, peak): 8.32 GiB
+2026-09-27 12:48:34.633 INFO Memory usage (start of timestep, current): 8.33 GiB
+2026-09-27 12:48:34.633 INFO Calculating metrics
+2026-09-27 12:48:34.633 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:48:59.869 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:49:08.636 INFO Memory usage (end of timestep, peak): 9.19 GiB
+2026-09-27 12:49:08.636 INFO Memory usage (end of timestep, current): 9.11 GiB
+2026-09-27 12:49:08.636 INFO (Iteration 5) schema_fulfillment_count: real 25.24s | cpu 51.09s
+2026-09-27 12:49:08.636 INFO (Iteration 5) schema_fulfillment_per_schema_optional: real 8.77s | cpu 8.59s
+2026-09-27 12:49:08.636 INFO Iteration 5 finished in 115.55s (real) and 102.38s (process)
+2026-09-27 12:49:08.637 INFO Start timestep 2013-04-27 00:00:00+00:00 -> 2013-05-27 00:00:00+00:00
+2026-09-27 12:51:10.330 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       5.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       5.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:51:10.331 INFO Loading data (2013-04-27 00:00:00+00:00 -> 2013-05-27 00:00:00+00:00) done in 121.69s (real) and 86.56s (process)
+2026-09-27 12:51:10.331 INFO Memory usage (start of timestep, peak): 10.03 GiB
+2026-09-27 12:51:10.332 INFO Memory usage (start of timestep, current): 10.03 GiB
+2026-09-27 12:51:10.332 INFO Calculating metrics
+2026-09-27 12:51:10.332 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:51:36.645 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:51:41.775 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:51:41.776 INFO Memory usage (end of timestep, current): 10.42 GiB
+2026-09-27 12:51:41.776 INFO (Iteration 6) schema_fulfillment_count: real 26.31s | cpu 50.59s
+2026-09-27 12:51:41.776 INFO (Iteration 6) schema_fulfillment_per_schema_optional: real 5.13s | cpu 5.03s
+2026-09-27 12:51:41.776 INFO Iteration 6 finished in 153.14s (real) and 142.18s (process)
+2026-09-27 12:51:41.776 INFO Start timestep 2013-05-27 00:00:00+00:00 -> 2013-06-26 00:00:00+00:00
+2026-09-27 12:52:14.280 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       1.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       1.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:52:14.280 INFO Loading data (2013-05-27 00:00:00+00:00 -> 2013-06-26 00:00:00+00:00) done in 32.50s (real) and 31.98s (process)
+2026-09-27 12:52:14.281 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:52:14.281 INFO Memory usage (start of timestep, current): 6.60 GiB
+2026-09-27 12:52:14.281 INFO Calculating metrics
+2026-09-27 12:52:14.281 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:52:33.830 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:52:35.528 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:52:35.529 INFO Memory usage (end of timestep, current): 6.79 GiB
+2026-09-27 12:52:35.529 INFO (Iteration 7) schema_fulfillment_count: real 19.55s | cpu 44.35s
+2026-09-27 12:52:35.529 INFO (Iteration 7) schema_fulfillment_per_schema_optional: real 1.70s | cpu 1.59s
+2026-09-27 12:52:35.529 INFO Iteration 7 finished in 53.75s (real) and 77.93s (process)
+2026-09-27 12:52:35.529 INFO Start timestep 2013-06-26 00:00:00+00:00 -> 2013-07-26 00:00:00+00:00
+2026-09-27 12:53:35.892 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:53:35.892 INFO Loading data (2013-06-26 00:00:00+00:00 -> 2013-07-26 00:00:00+00:00) done in 60.36s (real) and 28.04s (process)
+2026-09-27 12:53:35.892 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:53:35.892 INFO Memory usage (start of timestep, current): 7.90 GiB
+2026-09-27 12:53:35.893 INFO Calculating metrics
+2026-09-27 12:53:35.893 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:53:55.761 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:53:56.903 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:53:56.903 INFO Memory usage (end of timestep, current): 8.29 GiB
+2026-09-27 12:53:56.903 INFO (Iteration 8) schema_fulfillment_count: real 19.87s | cpu 44.42s
+2026-09-27 12:53:56.903 INFO (Iteration 8) schema_fulfillment_per_schema_optional: real 1.14s | cpu 1.03s
+2026-09-27 12:53:56.903 INFO Iteration 8 finished in 81.37s (real) and 73.49s (process)
+2026-09-27 12:53:56.904 INFO Start timestep 2013-07-26 00:00:00+00:00 -> 2013-08-25 00:00:00+00:00
+2026-09-27 12:54:38.936 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       1.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       1.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:54:38.936 INFO Loading data (2013-07-26 00:00:00+00:00 -> 2013-08-25 00:00:00+00:00) done in 42.03s (real) and 15.00s (process)
+2026-09-27 12:54:38.936 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:54:38.936 INFO Memory usage (start of timestep, current): 6.54 GiB
+2026-09-27 12:54:38.936 INFO Calculating metrics
+2026-09-27 12:54:38.936 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:54:57.698 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:54:58.123 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:54:58.124 INFO Memory usage (end of timestep, current): 6.61 GiB
+2026-09-27 12:54:58.124 INFO (Iteration 9) schema_fulfillment_count: real 18.76s | cpu 43.85s
+2026-09-27 12:54:58.124 INFO (Iteration 9) schema_fulfillment_per_schema_optional: real 0.43s | cpu 0.37s
+2026-09-27 12:54:58.124 INFO Iteration 9 finished in 61.22s (real) and 59.24s (process)
+2026-09-27 12:54:58.124 INFO Start timestep 2013-08-25 00:00:00+00:00 -> 2013-09-24 00:00:00+00:00
+2026-09-27 12:55:25.075 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       1.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       1.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:55:25.075 INFO Loading data (2013-08-25 00:00:00+00:00 -> 2013-09-24 00:00:00+00:00) done in 26.95s (real) and 21.30s (process)
+2026-09-27 12:55:25.075 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:55:25.075 INFO Memory usage (start of timestep, current): 7.36 GiB
+2026-09-27 12:55:25.075 INFO Calculating metrics
+2026-09-27 12:55:25.075 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:55:44.335 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:55:45.451 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:55:45.451 INFO Memory usage (end of timestep, current): 6.96 GiB
+2026-09-27 12:55:45.451 INFO (Iteration 10) schema_fulfillment_count: real 19.26s | cpu 43.59s
+2026-09-27 12:55:45.451 INFO (Iteration 10) schema_fulfillment_per_schema_optional: real 1.12s | cpu 1.01s
+2026-09-27 12:55:45.451 INFO Iteration 10 finished in 47.33s (real) and 65.90s (process)
+2026-09-27 12:55:45.452 INFO Start timestep 2013-09-24 00:00:00+00:00 -> 2013-10-24 00:00:00+00:00
+2026-09-27 12:56:52.358 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:56:52.359 INFO Loading data (2013-09-24 00:00:00+00:00 -> 2013-10-24 00:00:00+00:00) done in 66.91s (real) and 25.36s (process)
+2026-09-27 12:56:52.359 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:56:52.360 INFO Memory usage (start of timestep, current): 7.64 GiB
+2026-09-27 12:56:52.360 INFO Calculating metrics
+2026-09-27 12:56:52.360 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:57:12.956 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:57:14.655 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:57:14.655 INFO Memory usage (end of timestep, current): 8.60 GiB
+2026-09-27 12:57:14.655 INFO (Iteration 11) schema_fulfillment_count: real 20.60s | cpu 46.61s
+2026-09-27 12:57:14.655 INFO (Iteration 11) schema_fulfillment_per_schema_optional: real 1.70s | cpu 1.58s
+2026-09-27 12:57:14.655 INFO Iteration 11 finished in 89.20s (real) and 73.55s (process)
+2026-09-27 12:57:14.656 INFO Start timestep 2013-10-24 00:00:00+00:00 -> 2013-11-23 00:00:00+00:00
+2026-09-27 12:58:01.381 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:58:01.381 INFO Loading data (2013-10-24 00:00:00+00:00 -> 2013-11-23 00:00:00+00:00) done in 46.73s (real) and 21.15s (process)
+2026-09-27 12:58:01.382 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:58:01.382 INFO Memory usage (start of timestep, current): 7.45 GiB
+2026-09-27 12:58:01.382 INFO Calculating metrics
+2026-09-27 12:58:01.382 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:58:20.194 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:58:21.153 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:58:21.154 INFO Memory usage (end of timestep, current): 8.30 GiB
+2026-09-27 12:58:21.154 INFO (Iteration 12) schema_fulfillment_count: real 18.81s | cpu 43.75s
+2026-09-27 12:58:21.154 INFO (Iteration 12) schema_fulfillment_per_schema_optional: real 0.96s | cpu 0.84s
+2026-09-27 12:58:21.154 INFO Iteration 12 finished in 66.50s (real) and 65.75s (process)
+2026-09-27 12:58:21.154 INFO Start timestep 2013-11-23 00:00:00+00:00 -> 2013-12-23 00:00:00+00:00
+2026-09-27 12:59:16.802 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 12:59:16.802 INFO Loading data (2013-11-23 00:00:00+00:00 -> 2013-12-23 00:00:00+00:00) done in 55.65s (real) and 31.87s (process)
+2026-09-27 12:59:16.803 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 12:59:16.803 INFO Memory usage (start of timestep, current): 7.87 GiB
+2026-09-27 12:59:16.803 INFO Calculating metrics
+2026-09-27 12:59:16.803 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 12:59:35.275 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 12:59:35.683 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 12:59:35.683 INFO Memory usage (end of timestep, current): 8.16 GiB
+2026-09-27 12:59:35.683 INFO (Iteration 13) schema_fulfillment_count: real 18.47s | cpu 43.60s
+2026-09-27 12:59:35.684 INFO (Iteration 13) schema_fulfillment_per_schema_optional: real 0.41s | cpu 0.34s
+2026-09-27 12:59:35.684 INFO Iteration 13 finished in 74.53s (real) and 75.81s (process)
+2026-09-27 12:59:35.684 INFO Start timestep 2013-12-23 00:00:00+00:00 -> 2014-01-22 00:00:00+00:00
+2026-09-27 13:00:04.178 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:00:04.178 INFO Loading data (2013-12-23 00:00:00+00:00 -> 2014-01-22 00:00:00+00:00) done in 28.49s (real) and 26.25s (process)
+2026-09-27 13:00:04.178 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 13:00:04.178 INFO Memory usage (start of timestep, current): 7.75 GiB
+2026-09-27 13:00:04.178 INFO Calculating metrics
+2026-09-27 13:00:04.179 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:00:23.322 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:00:24.307 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 13:00:24.307 INFO Memory usage (end of timestep, current): 7.93 GiB
+2026-09-27 13:00:24.308 INFO (Iteration 14) schema_fulfillment_count: real 19.14s | cpu 44.64s
+2026-09-27 13:00:24.308 INFO (Iteration 14) schema_fulfillment_per_schema_optional: real 0.98s | cpu 0.92s
+2026-09-27 13:00:24.308 INFO Iteration 14 finished in 48.62s (real) and 71.82s (process)
+2026-09-27 13:00:24.308 INFO Start timestep 2014-01-22 00:00:00+00:00 -> 2014-02-21 00:00:00+00:00
+2026-09-27 13:00:55.969 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:00:55.970 INFO Loading data (2014-01-22 00:00:00+00:00 -> 2014-02-21 00:00:00+00:00) done in 31.66s (real) and 30.11s (process)
+2026-09-27 13:00:55.970 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 13:00:55.970 INFO Memory usage (start of timestep, current): 7.61 GiB
+2026-09-27 13:00:55.970 INFO Calculating metrics
+2026-09-27 13:00:55.970 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:01:15.774 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:01:17.131 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 13:01:17.131 INFO Memory usage (end of timestep, current): 7.79 GiB
+2026-09-27 13:01:17.131 INFO (Iteration 15) schema_fulfillment_count: real 19.80s | cpu 45.83s
+2026-09-27 13:01:17.131 INFO (Iteration 15) schema_fulfillment_per_schema_optional: real 1.36s | cpu 1.23s
+2026-09-27 13:01:17.131 INFO Iteration 15 finished in 52.82s (real) and 77.16s (process)
+2026-09-27 13:01:17.132 INFO Start timestep 2014-02-21 00:00:00+00:00 -> 2014-03-23 00:00:00+00:00
+2026-09-27 13:02:16.606 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:02:16.606 INFO Loading data (2014-02-21 00:00:00+00:00 -> 2014-03-23 00:00:00+00:00) done in 59.47s (real) and 44.45s (process)
+2026-09-27 13:02:16.606 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 13:02:16.606 INFO Memory usage (start of timestep, current): 8.03 GiB
+2026-09-27 13:02:16.606 INFO Calculating metrics
+2026-09-27 13:02:16.606 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:02:37.044 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:02:39.448 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 13:02:39.448 INFO Memory usage (end of timestep, current): 8.30 GiB
+2026-09-27 13:02:39.448 INFO (Iteration 16) schema_fulfillment_count: real 20.44s | cpu 45.11s
+2026-09-27 13:02:39.448 INFO (Iteration 16) schema_fulfillment_per_schema_optional: real 2.40s | cpu 2.29s
+2026-09-27 13:02:39.448 INFO Iteration 16 finished in 82.32s (real) and 91.85s (process)
+2026-09-27 13:02:39.449 INFO Start timestep 2014-03-23 00:00:00+00:00 -> 2014-04-22 00:00:00+00:00
+2026-09-27 13:03:08.227 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:03:08.227 INFO Loading data (2014-03-23 00:00:00+00:00 -> 2014-04-22 00:00:00+00:00) done in 28.78s (real) and 14.58s (process)
+2026-09-27 13:03:08.227 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 13:03:08.227 INFO Memory usage (start of timestep, current): 7.09 GiB
+2026-09-27 13:03:08.227 INFO Calculating metrics
+2026-09-27 13:03:08.227 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:03:32.327 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:03:36.055 INFO Memory usage (end of timestep, peak): 10.62 GiB
+2026-09-27 13:03:36.056 INFO Memory usage (end of timestep, current): 7.43 GiB
+2026-09-27 13:03:36.056 INFO (Iteration 17) schema_fulfillment_count: real 24.10s | cpu 47.26s
+2026-09-27 13:03:36.056 INFO (Iteration 17) schema_fulfillment_per_schema_optional: real 3.73s | cpu 3.63s
+2026-09-27 13:03:36.056 INFO Iteration 17 finished in 56.61s (real) and 65.47s (process)
+2026-09-27 13:03:36.056 INFO Start timestep 2014-04-22 00:00:00+00:00 -> 2014-05-22 00:00:00+00:00
+2026-09-27 13:04:21.241 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       4.3 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       4.3 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:04:21.241 INFO Loading data (2014-04-22 00:00:00+00:00 -> 2014-05-22 00:00:00+00:00) done in 45.18s (real) and 37.24s (process)
+2026-09-27 13:04:21.242 INFO Memory usage (start of timestep, peak): 10.62 GiB
+2026-09-27 13:04:21.242 INFO Memory usage (start of timestep, current): 9.37 GiB
+2026-09-27 13:04:21.242 INFO Calculating metrics
+2026-09-27 13:04:21.242 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:04:46.352 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:04:51.150 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:04:51.151 INFO Memory usage (end of timestep, current): 11.55 GiB
+2026-09-27 13:04:51.151 INFO (Iteration 18) schema_fulfillment_count: real 25.11s | cpu 51.06s
+2026-09-27 13:04:51.151 INFO (Iteration 18) schema_fulfillment_per_schema_optional: real 4.80s | cpu 4.68s
+2026-09-27 13:04:51.151 INFO Iteration 18 finished in 75.09s (real) and 92.98s (process)
+2026-09-27 13:04:51.151 INFO Start timestep 2014-05-22 00:00:00+00:00 -> 2014-06-21 00:00:00+00:00
+2026-09-27 13:05:45.204 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.7 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.7 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:05:45.204 INFO Loading data (2014-05-22 00:00:00+00:00 -> 2014-06-21 00:00:00+00:00) done in 54.05s (real) and 24.78s (process)
+2026-09-27 13:05:45.204 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:05:45.204 INFO Memory usage (start of timestep, current): 8.86 GiB
+2026-09-27 13:05:45.204 INFO Calculating metrics
+2026-09-27 13:05:45.204 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:06:07.581 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:06:11.132 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:06:11.133 INFO Memory usage (end of timestep, current): 10.30 GiB
+2026-09-27 13:06:11.133 INFO (Iteration 19) schema_fulfillment_count: real 22.38s | cpu 48.49s
+2026-09-27 13:06:11.133 INFO (Iteration 19) schema_fulfillment_per_schema_optional: real 3.55s | cpu 3.44s
+2026-09-27 13:06:11.133 INFO Iteration 19 finished in 79.98s (real) and 76.72s (process)
+2026-09-27 13:06:11.133 INFO Start timestep 2014-06-21 00:00:00+00:00 -> 2014-07-21 00:00:00+00:00
+2026-09-27 13:06:29.091 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:06:29.091 INFO Loading data (2014-06-21 00:00:00+00:00 -> 2014-07-21 00:00:00+00:00) done in 17.96s (real) and 12.20s (process)
+2026-09-27 13:06:29.091 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:06:29.092 INFO Memory usage (start of timestep, current): 8.37 GiB
+2026-09-27 13:06:29.092 INFO Calculating metrics
+2026-09-27 13:06:29.092 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:06:50.103 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:06:52.545 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:06:52.545 INFO Memory usage (end of timestep, current): 8.97 GiB
+2026-09-27 13:06:52.545 INFO (Iteration 20) schema_fulfillment_count: real 21.01s | cpu 47.16s
+2026-09-27 13:06:52.546 INFO (Iteration 20) schema_fulfillment_per_schema_optional: real 2.44s | cpu 2.34s
+2026-09-27 13:06:52.546 INFO Iteration 20 finished in 41.41s (real) and 61.70s (process)
+2026-09-27 13:06:52.546 INFO Start timestep 2014-07-21 00:00:00+00:00 -> 2014-08-20 00:00:00+00:00
+2026-09-27 13:07:08.513 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       1.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       1.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:07:08.513 INFO Loading data (2014-07-21 00:00:00+00:00 -> 2014-08-20 00:00:00+00:00) done in 15.97s (real) and 10.29s (process)
+2026-09-27 13:07:08.513 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:07:08.514 INFO Memory usage (start of timestep, current): 7.98 GiB
+2026-09-27 13:07:08.514 INFO Calculating metrics
+2026-09-27 13:07:08.514 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:07:29.432 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:07:31.901 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:07:31.901 INFO Memory usage (end of timestep, current): 8.66 GiB
+2026-09-27 13:07:31.902 INFO (Iteration 21) schema_fulfillment_count: real 20.92s | cpu 46.10s
+2026-09-27 13:07:31.902 INFO (Iteration 21) schema_fulfillment_per_schema_optional: real 2.47s | cpu 2.35s
+2026-09-27 13:07:31.902 INFO Iteration 21 finished in 39.36s (real) and 58.73s (process)
+2026-09-27 13:07:31.902 INFO Start timestep 2014-08-20 00:00:00+00:00 -> 2014-09-19 00:00:00+00:00
+2026-09-27 13:08:00.029 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:08:00.029 INFO Loading data (2014-08-20 00:00:00+00:00 -> 2014-09-19 00:00:00+00:00) done in 28.13s (real) and 36.74s (process)
+2026-09-27 13:08:00.029 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:08:00.029 INFO Memory usage (start of timestep, current): 9.12 GiB
+2026-09-27 13:08:00.029 INFO Calculating metrics
+2026-09-27 13:08:00.029 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:08:20.446 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:08:21.577 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:08:21.577 INFO Memory usage (end of timestep, current): 8.39 GiB
+2026-09-27 13:08:21.577 INFO (Iteration 22) schema_fulfillment_count: real 20.42s | cpu 46.49s
+2026-09-27 13:08:21.577 INFO (Iteration 22) schema_fulfillment_per_schema_optional: real 1.13s | cpu 1.02s
+2026-09-27 13:08:21.577 INFO Iteration 22 finished in 49.67s (real) and 84.25s (process)
+2026-09-27 13:08:21.578 INFO Start timestep 2014-09-19 00:00:00+00:00 -> 2014-10-19 00:00:00+00:00
+2026-09-27 13:09:13.513 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:09:13.513 INFO Loading data (2014-09-19 00:00:00+00:00 -> 2014-10-19 00:00:00+00:00) done in 51.94s (real) and 22.77s (process)
+2026-09-27 13:09:13.513 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:09:13.513 INFO Memory usage (start of timestep, current): 8.66 GiB
+2026-09-27 13:09:13.513 INFO Calculating metrics
+2026-09-27 13:09:13.513 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:09:33.611 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:09:35.460 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:09:35.460 INFO Memory usage (end of timestep, current): 9.28 GiB
+2026-09-27 13:09:35.460 INFO (Iteration 23) schema_fulfillment_count: real 20.10s | cpu 45.14s
+2026-09-27 13:09:35.460 INFO (Iteration 23) schema_fulfillment_per_schema_optional: real 1.85s | cpu 1.74s
+2026-09-27 13:09:35.460 INFO Iteration 23 finished in 73.88s (real) and 69.64s (process)
+2026-09-27 13:09:35.461 INFO Start timestep 2014-10-19 00:00:00+00:00 -> 2014-11-18 00:00:00+00:00
+2026-09-27 13:10:47.455 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:10:47.456 INFO Loading data (2014-10-19 00:00:00+00:00 -> 2014-11-18 00:00:00+00:00) done in 71.99s (real) and 58.28s (process)
+2026-09-27 13:10:47.456 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:10:47.456 INFO Memory usage (start of timestep, current): 9.71 GiB
+2026-09-27 13:10:47.456 INFO Calculating metrics
+2026-09-27 13:10:47.457 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:11:09.645 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:11:10.909 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:11:10.909 INFO Memory usage (end of timestep, current): 9.87 GiB
+2026-09-27 13:11:10.910 INFO (Iteration 24) schema_fulfillment_count: real 22.19s | cpu 49.14s
+2026-09-27 13:11:10.910 INFO (Iteration 24) schema_fulfillment_per_schema_optional: real 1.26s | cpu 1.15s
+2026-09-27 13:11:10.910 INFO Iteration 24 finished in 95.45s (real) and 108.57s (process)
+2026-09-27 13:11:10.910 INFO Start timestep 2014-11-18 00:00:00+00:00 -> 2014-12-18 00:00:00+00:00
+2026-09-27 13:12:03.817 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:12:03.817 INFO Loading data (2014-11-18 00:00:00+00:00 -> 2014-12-18 00:00:00+00:00) done in 52.91s (real) and 23.04s (process)
+2026-09-27 13:12:03.818 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:12:03.818 INFO Memory usage (start of timestep, current): 8.38 GiB
+2026-09-27 13:12:03.818 INFO Calculating metrics
+2026-09-27 13:12:03.818 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:12:22.718 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:12:23.749 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:12:23.750 INFO Memory usage (end of timestep, current): 8.51 GiB
+2026-09-27 13:12:23.750 INFO (Iteration 25) schema_fulfillment_count: real 18.90s | cpu 42.89s
+2026-09-27 13:12:23.750 INFO (Iteration 25) schema_fulfillment_per_schema_optional: real 1.03s | cpu 0.89s
+2026-09-27 13:12:23.750 INFO Iteration 25 finished in 72.84s (real) and 66.83s (process)
+2026-09-27 13:12:23.750 INFO Start timestep 2014-12-18 00:00:00+00:00 -> 2015-01-17 00:00:00+00:00
+2026-09-27 13:13:07.406 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:13:07.406 INFO Loading data (2014-12-18 00:00:00+00:00 -> 2015-01-17 00:00:00+00:00) done in 43.66s (real) and 17.81s (process)
+2026-09-27 13:13:07.406 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:13:07.406 INFO Memory usage (start of timestep, current): 8.18 GiB
+2026-09-27 13:13:07.406 INFO Calculating metrics
+2026-09-27 13:13:07.406 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:13:26.824 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:13:28.027 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:13:28.027 INFO Memory usage (end of timestep, current): 8.53 GiB
+2026-09-27 13:13:28.028 INFO (Iteration 26) schema_fulfillment_count: real 19.42s | cpu 43.67s
+2026-09-27 13:13:28.028 INFO (Iteration 26) schema_fulfillment_per_schema_optional: real 1.20s | cpu 1.09s
+2026-09-27 13:13:28.028 INFO Iteration 26 finished in 64.28s (real) and 62.58s (process)
+2026-09-27 13:13:28.028 INFO Start timestep 2015-01-17 00:00:00+00:00 -> 2015-02-16 00:00:00+00:00
+2026-09-27 13:14:28.292 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:14:28.292 INFO Loading data (2015-01-17 00:00:00+00:00 -> 2015-02-16 00:00:00+00:00) done in 60.26s (real) and 26.21s (process)
+2026-09-27 13:14:28.292 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:14:28.292 INFO Memory usage (start of timestep, current): 9.29 GiB
+2026-09-27 13:14:28.292 INFO Calculating metrics
+2026-09-27 13:14:28.292 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:14:48.315 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:14:50.157 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:14:50.157 INFO Memory usage (end of timestep, current): 9.78 GiB
+2026-09-27 13:14:50.158 INFO (Iteration 27) schema_fulfillment_count: real 20.02s | cpu 44.75s
+2026-09-27 13:14:50.158 INFO (Iteration 27) schema_fulfillment_per_schema_optional: real 1.84s | cpu 1.71s
+2026-09-27 13:14:50.158 INFO Iteration 27 finished in 82.13s (real) and 72.67s (process)
+2026-09-27 13:14:50.158 INFO Start timestep 2015-02-16 00:00:00+00:00 -> 2015-03-18 00:00:00+00:00
+2026-09-27 13:15:24.351 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.7 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.7 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:15:24.351 INFO Loading data (2015-02-16 00:00:00+00:00 -> 2015-03-18 00:00:00+00:00) done in 34.19s (real) and 20.95s (process)
+2026-09-27 13:15:24.351 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:15:24.351 INFO Memory usage (start of timestep, current): 9.07 GiB
+2026-09-27 13:15:24.352 INFO Calculating metrics
+2026-09-27 13:15:24.352 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:15:44.606 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:15:46.568 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:15:46.569 INFO Memory usage (end of timestep, current): 9.67 GiB
+2026-09-27 13:15:46.569 INFO (Iteration 28) schema_fulfillment_count: real 20.25s | cpu 45.28s
+2026-09-27 13:15:46.569 INFO (Iteration 28) schema_fulfillment_per_schema_optional: real 1.96s | cpu 1.85s
+2026-09-27 13:15:46.569 INFO Iteration 28 finished in 56.41s (real) and 68.07s (process)
+2026-09-27 13:15:46.569 INFO Start timestep 2015-03-18 00:00:00+00:00 -> 2015-04-17 00:00:00+00:00
+2026-09-27 13:16:18.345 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:16:18.345 INFO Loading data (2015-03-18 00:00:00+00:00 -> 2015-04-17 00:00:00+00:00) done in 31.78s (real) and 21.20s (process)
+2026-09-27 13:16:18.345 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:16:18.346 INFO Memory usage (start of timestep, current): 9.82 GiB
+2026-09-27 13:16:18.346 INFO Calculating metrics
+2026-09-27 13:16:18.346 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:16:37.692 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:16:38.767 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:16:38.768 INFO Memory usage (end of timestep, current): 9.93 GiB
+2026-09-27 13:16:38.768 INFO (Iteration 29) schema_fulfillment_count: real 19.35s | cpu 44.47s
+2026-09-27 13:16:38.768 INFO (Iteration 29) schema_fulfillment_per_schema_optional: real 1.07s | cpu 0.96s
+2026-09-27 13:16:38.768 INFO Iteration 29 finished in 52.20s (real) and 66.64s (process)
+2026-09-27 13:16:38.768 INFO Start timestep 2015-04-17 00:00:00+00:00 -> 2015-05-17 00:00:00+00:00
+2026-09-27 13:17:20.722 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       2.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       2.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:17:20.722 INFO Loading data (2015-04-17 00:00:00+00:00 -> 2015-05-17 00:00:00+00:00) done in 41.95s (real) and 18.87s (process)
+2026-09-27 13:17:20.722 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:17:20.723 INFO Memory usage (start of timestep, current): 8.64 GiB
+2026-09-27 13:17:20.723 INFO Calculating metrics
+2026-09-27 13:17:20.723 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:17:41.168 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:17:43.081 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:17:43.082 INFO Memory usage (end of timestep, current): 8.89 GiB
+2026-09-27 13:17:43.082 INFO (Iteration 30) schema_fulfillment_count: real 20.44s | cpu 44.81s
+2026-09-27 13:17:43.082 INFO (Iteration 30) schema_fulfillment_per_schema_optional: real 1.91s | cpu 1.79s
+2026-09-27 13:17:43.082 INFO Iteration 30 finished in 64.31s (real) and 65.47s (process)
+2026-09-27 13:17:43.083 INFO Start timestep 2015-05-17 00:00:00+00:00 -> 2015-06-16 00:00:00+00:00
+2026-09-27 13:18:59.588 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       4.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       4.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:18:59.588 INFO Loading data (2015-05-17 00:00:00+00:00 -> 2015-06-16 00:00:00+00:00) done in 76.51s (real) and 75.27s (process)
+2026-09-27 13:18:59.589 INFO Memory usage (start of timestep, peak): 11.55 GiB
+2026-09-27 13:18:59.589 INFO Memory usage (start of timestep, current): 10.59 GiB
+2026-09-27 13:18:59.589 INFO Calculating metrics
+2026-09-27 13:18:59.589 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:19:19.689 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:19:21.085 INFO Memory usage (end of timestep, peak): 11.55 GiB
+2026-09-27 13:19:21.086 INFO Memory usage (end of timestep, current): 10.74 GiB
+2026-09-27 13:19:21.086 INFO (Iteration 31) schema_fulfillment_count: real 20.10s | cpu 43.87s
+2026-09-27 13:19:21.086 INFO (Iteration 31) schema_fulfillment_per_schema_optional: real 1.40s | cpu 1.28s
+2026-09-27 13:19:21.086 INFO Iteration 31 finished in 98.00s (real) and 120.43s (process)
+2026-09-27 13:19:21.087 INFO Start timestep 2015-06-16 00:00:00+00:00 -> 2015-07-16 00:00:00+00:00
+2026-09-27 13:20:07.211 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:20:07.212 INFO Loading data (2015-06-16 00:00:00+00:00 -> 2015-07-16 00:00:00+00:00) done in 46.13s (real) and 28.12s (process)
+2026-09-27 13:20:07.212 INFO Memory usage (start of timestep, peak): 11.84 GiB
+2026-09-27 13:20:07.212 INFO Memory usage (start of timestep, current): 9.99 GiB
+2026-09-27 13:20:07.212 INFO Calculating metrics
+2026-09-27 13:20:07.212 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:20:26.776 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:20:28.393 INFO Memory usage (end of timestep, peak): 11.84 GiB
+2026-09-27 13:20:28.394 INFO Memory usage (end of timestep, current): 10.19 GiB
+2026-09-27 13:20:28.394 INFO (Iteration 32) schema_fulfillment_count: real 19.56s | cpu 44.26s
+2026-09-27 13:20:28.394 INFO (Iteration 32) schema_fulfillment_per_schema_optional: real 1.62s | cpu 1.46s
+2026-09-27 13:20:28.394 INFO Iteration 32 finished in 67.31s (real) and 73.85s (process)
+2026-09-27 13:20:28.394 INFO Start timestep 2015-07-16 00:00:00+00:00 -> 2015-08-15 00:00:00+00:00
+2026-09-27 13:21:44.580 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       4.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       4.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:21:44.581 INFO Loading data (2015-07-16 00:00:00+00:00 -> 2015-08-15 00:00:00+00:00) done in 76.19s (real) and 71.66s (process)
+2026-09-27 13:21:44.581 INFO Memory usage (start of timestep, peak): 12.18 GiB
+2026-09-27 13:21:44.582 INFO Memory usage (start of timestep, current): 12.19 GiB
+2026-09-27 13:21:44.582 INFO Calculating metrics
+2026-09-27 13:21:44.582 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:22:08.382 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:22:09.421 INFO Memory usage (end of timestep, peak): 12.38 GiB
+2026-09-27 13:22:09.421 INFO Memory usage (end of timestep, current): 11.28 GiB
+2026-09-27 13:22:09.421 INFO (Iteration 33) schema_fulfillment_count: real 23.80s | cpu 49.42s
+2026-09-27 13:22:09.422 INFO (Iteration 33) schema_fulfillment_per_schema_optional: real 1.04s | cpu 0.92s
+2026-09-27 13:22:09.422 INFO Iteration 33 finished in 101.03s (real) and 122.00s (process)
+2026-09-27 13:22:09.422 INFO Start timestep 2015-08-15 00:00:00+00:00 -> 2015-09-14 00:00:00+00:00
+2026-09-27 13:23:12.053 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       4.7 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       4.7 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:23:12.053 INFO Loading data (2015-08-15 00:00:00+00:00 -> 2015-09-14 00:00:00+00:00) done in 62.63s (real) and 38.50s (process)
+2026-09-27 13:23:12.053 INFO Memory usage (start of timestep, peak): 12.38 GiB
+2026-09-27 13:23:12.053 INFO Memory usage (start of timestep, current): 11.31 GiB
+2026-09-27 13:23:12.053 INFO Calculating metrics
+2026-09-27 13:23:12.054 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:23:31.102 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:23:32.006 INFO Memory usage (end of timestep, peak): 12.38 GiB
+2026-09-27 13:23:32.006 INFO Memory usage (end of timestep, current): 11.42 GiB
+2026-09-27 13:23:32.006 INFO (Iteration 34) schema_fulfillment_count: real 19.05s | cpu 44.28s
+2026-09-27 13:23:32.006 INFO (Iteration 34) schema_fulfillment_per_schema_optional: real 0.90s | cpu 0.76s
+2026-09-27 13:23:32.006 INFO Iteration 34 finished in 82.58s (real) and 83.54s (process)
+2026-09-27 13:23:32.007 INFO Start timestep 2015-09-14 00:00:00+00:00 -> 2015-10-14 00:00:00+00:00
+2026-09-27 13:26:16.479 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      10.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      10.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:26:16.480 INFO Loading data (2015-09-14 00:00:00+00:00 -> 2015-10-14 00:00:00+00:00) done in 164.47s (real) and 87.67s (process)
+2026-09-27 13:26:16.480 INFO Memory usage (start of timestep, peak): 17.43 GiB
+2026-09-27 13:26:16.480 INFO Memory usage (start of timestep, current): 17.04 GiB
+2026-09-27 13:26:16.480 INFO Calculating metrics
+2026-09-27 13:26:16.480 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:26:51.072 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:26:52.372 INFO Memory usage (end of timestep, peak): 17.43 GiB
+2026-09-27 13:26:52.372 INFO Memory usage (end of timestep, current): 17.30 GiB
+2026-09-27 13:26:52.372 INFO (Iteration 35) schema_fulfillment_count: real 34.59s | cpu 61.16s
+2026-09-27 13:26:52.373 INFO (Iteration 35) schema_fulfillment_per_schema_optional: real 1.30s | cpu 1.18s
+2026-09-27 13:26:52.373 INFO Iteration 35 finished in 200.37s (real) and 150.01s (process)
+2026-09-27 13:26:52.373 INFO Start timestep 2015-10-14 00:00:00+00:00 -> 2015-11-13 00:00:00+00:00
+2026-09-27 13:31:02.020 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      12.3 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      12.3 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:31:02.021 INFO Loading data (2015-10-14 00:00:00+00:00 -> 2015-11-13 00:00:00+00:00) done in 249.65s (real) and 113.61s (process)
+2026-09-27 13:31:02.021 INFO Memory usage (start of timestep, peak): 18.83 GiB
+2026-09-27 13:31:02.021 INFO Memory usage (start of timestep, current): 18.84 GiB
+2026-09-27 13:31:02.022 INFO Calculating metrics
+2026-09-27 13:31:02.022 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:31:24.863 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:31:26.821 INFO Memory usage (end of timestep, peak): 19.53 GiB
+2026-09-27 13:31:26.822 INFO Memory usage (end of timestep, current): 19.42 GiB
+2026-09-27 13:31:26.822 INFO (Iteration 36) schema_fulfillment_count: real 22.84s | cpu 49.29s
+2026-09-27 13:31:26.822 INFO (Iteration 36) schema_fulfillment_per_schema_optional: real 1.96s | cpu 1.84s
+2026-09-27 13:31:26.822 INFO Iteration 36 finished in 274.45s (real) and 164.75s (process)
+2026-09-27 13:31:26.822 INFO Start timestep 2015-11-13 00:00:00+00:00 -> 2015-12-13 00:00:00+00:00
+2026-09-27 13:34:32.117 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      10.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      10.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:34:32.119 INFO Loading data (2015-11-13 00:00:00+00:00 -> 2015-12-13 00:00:00+00:00) done in 185.30s (real) and 97.40s (process)
+2026-09-27 13:34:32.119 INFO Memory usage (start of timestep, peak): 19.53 GiB
+2026-09-27 13:34:32.119 INFO Memory usage (start of timestep, current): 17.52 GiB
+2026-09-27 13:34:32.119 INFO Calculating metrics
+2026-09-27 13:34:32.119 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:34:56.778 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:34:58.512 INFO Memory usage (end of timestep, peak): 19.53 GiB
+2026-09-27 13:34:58.513 INFO Memory usage (end of timestep, current): 18.05 GiB
+2026-09-27 13:34:58.513 INFO (Iteration 37) schema_fulfillment_count: real 24.66s | cpu 49.39s
+2026-09-27 13:34:58.513 INFO (Iteration 37) schema_fulfillment_per_schema_optional: real 1.73s | cpu 1.61s
+2026-09-27 13:34:58.513 INFO Iteration 37 finished in 211.69s (real) and 148.40s (process)
+2026-09-27 13:34:58.513 INFO Start timestep 2015-12-13 00:00:00+00:00 -> 2016-01-12 00:00:00+00:00
+2026-09-27 13:38:42.411 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      14.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      14.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:38:42.412 INFO Loading data (2015-12-13 00:00:00+00:00 -> 2016-01-12 00:00:00+00:00) done in 223.90s (real) and 296.46s (process)
+2026-09-27 13:38:42.413 INFO Memory usage (start of timestep, peak): 24.26 GiB
+2026-09-27 13:38:42.413 INFO Memory usage (start of timestep, current): 21.13 GiB
+2026-09-27 13:38:42.413 INFO Calculating metrics
+2026-09-27 13:38:42.413 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:39:02.619 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:39:03.477 INFO Memory usage (end of timestep, peak): 24.26 GiB
+2026-09-27 13:39:03.477 INFO Memory usage (end of timestep, current): 21.28 GiB
+2026-09-27 13:39:03.477 INFO (Iteration 38) schema_fulfillment_count: real 20.21s | cpu 46.18s
+2026-09-27 13:39:03.477 INFO (Iteration 38) schema_fulfillment_per_schema_optional: real 0.86s | cpu 0.74s
+2026-09-27 13:39:03.477 INFO Iteration 38 finished in 244.96s (real) and 343.37s (process)
+2026-09-27 13:39:03.478 INFO Start timestep 2016-01-12 00:00:00+00:00 -> 2016-02-11 00:00:00+00:00
+2026-09-27 13:41:37.226 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       8.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       8.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:41:37.227 INFO Loading data (2016-01-12 00:00:00+00:00 -> 2016-02-11 00:00:00+00:00) done in 153.75s (real) and 200.19s (process)
+2026-09-27 13:41:37.227 INFO Memory usage (start of timestep, peak): 24.26 GiB
+2026-09-27 13:41:37.228 INFO Memory usage (start of timestep, current): 15.70 GiB
+2026-09-27 13:41:37.228 INFO Calculating metrics
+2026-09-27 13:41:37.228 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:41:57.965 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:41:59.656 INFO Memory usage (end of timestep, peak): 24.26 GiB
+2026-09-27 13:41:59.656 INFO Memory usage (end of timestep, current): 16.27 GiB
+2026-09-27 13:41:59.656 INFO (Iteration 39) schema_fulfillment_count: real 20.74s | cpu 45.83s
+2026-09-27 13:41:59.657 INFO (Iteration 39) schema_fulfillment_per_schema_optional: real 1.69s | cpu 1.58s
+2026-09-27 13:41:59.657 INFO Iteration 39 finished in 176.18s (real) and 247.61s (process)
+2026-09-27 13:41:59.657 INFO Start timestep 2016-02-11 00:00:00+00:00 -> 2016-03-12 00:00:00+00:00
+2026-09-27 13:44:23.868 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      12.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      12.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:44:23.869 INFO Loading data (2016-02-11 00:00:00+00:00 -> 2016-03-12 00:00:00+00:00) done in 144.21s (real) and 79.78s (process)
+2026-09-27 13:44:23.869 INFO Memory usage (start of timestep, peak): 24.26 GiB
+2026-09-27 13:44:23.870 INFO Memory usage (start of timestep, current): 18.86 GiB
+2026-09-27 13:44:23.870 INFO Calculating metrics
+2026-09-27 13:44:23.870 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:44:44.502 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:44:45.674 INFO Memory usage (end of timestep, peak): 24.26 GiB
+2026-09-27 13:44:45.675 INFO Memory usage (end of timestep, current): 19.76 GiB
+2026-09-27 13:44:45.675 INFO (Iteration 40) schema_fulfillment_count: real 20.63s | cpu 47.26s
+2026-09-27 13:44:45.675 INFO (Iteration 40) schema_fulfillment_per_schema_optional: real 1.17s | cpu 1.05s
+2026-09-27 13:44:45.675 INFO Iteration 40 finished in 166.02s (real) and 128.09s (process)
+2026-09-27 13:44:45.675 INFO Start timestep 2016-03-12 00:00:00+00:00 -> 2016-04-11 00:00:00+00:00
+2026-09-27 13:48:47.293 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      15.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      15.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:48:47.294 INFO Loading data (2016-03-12 00:00:00+00:00 -> 2016-04-11 00:00:00+00:00) done in 241.62s (real) and 146.81s (process)
+2026-09-27 13:48:47.294 INFO Memory usage (start of timestep, peak): 24.26 GiB
+2026-09-27 13:48:47.294 INFO Memory usage (start of timestep, current): 22.58 GiB
+2026-09-27 13:48:47.294 INFO Calculating metrics
+2026-09-27 13:48:47.294 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:49:08.086 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:49:09.662 INFO Memory usage (end of timestep, peak): 24.26 GiB
+2026-09-27 13:49:09.663 INFO Memory usage (end of timestep, current): 22.91 GiB
+2026-09-27 13:49:09.663 INFO (Iteration 41) schema_fulfillment_count: real 20.79s | cpu 47.22s
+2026-09-27 13:49:09.663 INFO (Iteration 41) schema_fulfillment_per_schema_optional: real 1.58s | cpu 1.47s
+2026-09-27 13:49:09.663 INFO Iteration 41 finished in 263.99s (real) and 195.49s (process)
+2026-09-27 13:49:09.663 INFO Start timestep 2016-04-11 00:00:00+00:00 -> 2016-05-11 00:00:00+00:00
+2026-09-27 13:51:41.095 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       7.3 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       7.3 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:51:41.096 INFO Loading data (2016-04-11 00:00:00+00:00 -> 2016-05-11 00:00:00+00:00) done in 151.43s (real) and 70.66s (process)
+2026-09-27 13:51:41.096 INFO Memory usage (start of timestep, peak): 24.26 GiB
+2026-09-27 13:51:41.096 INFO Memory usage (start of timestep, current): 14.34 GiB
+2026-09-27 13:51:41.096 INFO Calculating metrics
+2026-09-27 13:51:41.096 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:52:02.404 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:52:03.798 INFO Memory usage (end of timestep, peak): 24.26 GiB
+2026-09-27 13:52:03.798 INFO Memory usage (end of timestep, current): 14.65 GiB
+2026-09-27 13:52:03.798 INFO (Iteration 42) schema_fulfillment_count: real 21.31s | cpu 47.12s
+2026-09-27 13:52:03.798 INFO (Iteration 42) schema_fulfillment_per_schema_optional: real 1.39s | cpu 1.27s
+2026-09-27 13:52:03.798 INFO Iteration 42 finished in 174.13s (real) and 119.06s (process)
+2026-09-27 13:52:03.799 INFO Start timestep 2016-05-11 00:00:00+00:00 -> 2016-06-10 00:00:00+00:00
+2026-09-27 13:56:05.382 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      20.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      20.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:56:05.383 INFO Loading data (2016-05-11 00:00:00+00:00 -> 2016-06-10 00:00:00+00:00) done in 241.58s (real) and 151.03s (process)
+2026-09-27 13:56:05.383 INFO Memory usage (start of timestep, peak): 28.85 GiB
+2026-09-27 13:56:05.384 INFO Memory usage (start of timestep, current): 28.85 GiB
+2026-09-27 13:56:05.384 INFO Calculating metrics
+2026-09-27 13:56:05.384 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:56:26.678 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:56:27.773 INFO Memory usage (end of timestep, peak): 28.85 GiB
+2026-09-27 13:56:27.774 INFO Memory usage (end of timestep, current): 27.74 GiB
+2026-09-27 13:56:27.774 INFO (Iteration 43) schema_fulfillment_count: real 21.29s | cpu 48.68s
+2026-09-27 13:56:27.774 INFO (Iteration 43) schema_fulfillment_per_schema_optional: real 1.10s | cpu 0.95s
+2026-09-27 13:56:27.774 INFO Iteration 43 finished in 263.98s (real) and 200.66s (process)
+2026-09-27 13:56:27.775 INFO Start timestep 2016-06-10 00:00:00+00:00 -> 2016-07-10 00:00:00+00:00
+2026-09-27 13:57:57.050 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       5.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       5.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:57:57.051 INFO Loading data (2016-06-10 00:00:00+00:00 -> 2016-07-10 00:00:00+00:00) done in 89.28s (real) and 46.70s (process)
+2026-09-27 13:57:57.051 INFO Memory usage (start of timestep, peak): 28.85 GiB
+2026-09-27 13:57:57.052 INFO Memory usage (start of timestep, current): 12.80 GiB
+2026-09-27 13:57:57.052 INFO Calculating metrics
+2026-09-27 13:57:57.052 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:58:18.891 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:58:20.590 INFO Memory usage (end of timestep, peak): 28.85 GiB
+2026-09-27 13:58:20.590 INFO Memory usage (end of timestep, current): 13.37 GiB
+2026-09-27 13:58:20.590 INFO (Iteration 44) schema_fulfillment_count: real 21.84s | cpu 47.06s
+2026-09-27 13:58:20.590 INFO (Iteration 44) schema_fulfillment_per_schema_optional: real 1.70s | cpu 1.55s
+2026-09-27 13:58:20.591 INFO Iteration 44 finished in 112.82s (real) and 95.31s (process)
+2026-09-27 13:58:20.591 INFO Start timestep 2016-07-10 00:00:00+00:00 -> 2016-08-09 00:00:00+00:00
+2026-09-27 13:59:11.864 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       3.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       3.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 13:59:11.864 INFO Loading data (2016-07-10 00:00:00+00:00 -> 2016-08-09 00:00:00+00:00) done in 51.27s (real) and 30.01s (process)
+2026-09-27 13:59:11.864 INFO Memory usage (start of timestep, peak): 28.85 GiB
+2026-09-27 13:59:11.865 INFO Memory usage (start of timestep, current): 11.21 GiB
+2026-09-27 13:59:11.865 INFO Calculating metrics
+2026-09-27 13:59:11.865 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 13:59:31.831 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 13:59:32.677 INFO Memory usage (end of timestep, peak): 28.85 GiB
+2026-09-27 13:59:32.678 INFO Memory usage (end of timestep, current): 11.50 GiB
+2026-09-27 13:59:32.678 INFO (Iteration 45) schema_fulfillment_count: real 19.97s | cpu 46.41s
+2026-09-27 13:59:32.678 INFO (Iteration 45) schema_fulfillment_per_schema_optional: real 0.85s | cpu 0.72s
+2026-09-27 13:59:32.678 INFO Iteration 45 finished in 72.09s (real) and 77.15s (process)
+2026-09-27 13:59:32.678 INFO Start timestep 2016-08-09 00:00:00+00:00 -> 2016-09-08 00:00:00+00:00
+2026-09-27 14:01:49.512 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       9.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       9.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:01:49.514 INFO Loading data (2016-08-09 00:00:00+00:00 -> 2016-09-08 00:00:00+00:00) done in 136.84s (real) and 72.96s (process)
+2026-09-27 14:01:49.514 INFO Memory usage (start of timestep, peak): 28.85 GiB
+2026-09-27 14:01:49.514 INFO Memory usage (start of timestep, current): 16.20 GiB
+2026-09-27 14:01:49.514 INFO Calculating metrics
+2026-09-27 14:01:49.515 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:02:14.473 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:02:16.942 INFO Memory usage (end of timestep, peak): 28.85 GiB
+2026-09-27 14:02:16.942 INFO Memory usage (end of timestep, current): 17.39 GiB
+2026-09-27 14:02:16.942 INFO (Iteration 46) schema_fulfillment_count: real 24.96s | cpu 51.28s
+2026-09-27 14:02:16.942 INFO (Iteration 46) schema_fulfillment_per_schema_optional: real 2.47s | cpu 2.33s
+2026-09-27 14:02:16.942 INFO Iteration 46 finished in 164.26s (real) and 126.57s (process)
+2026-09-27 14:02:16.943 INFO Start timestep 2016-09-08 00:00:00+00:00 -> 2016-10-08 00:00:00+00:00
+2026-09-27 14:06:12.568 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      12.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      12.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:06:12.570 INFO Loading data (2016-09-08 00:00:00+00:00 -> 2016-10-08 00:00:00+00:00) done in 235.63s (real) and 106.67s (process)
+2026-09-27 14:06:12.570 INFO Memory usage (start of timestep, peak): 28.85 GiB
+2026-09-27 14:06:12.570 INFO Memory usage (start of timestep, current): 19.80 GiB
+2026-09-27 14:06:12.570 INFO Calculating metrics
+2026-09-27 14:06:12.570 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:06:33.963 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:06:35.144 INFO Memory usage (end of timestep, peak): 28.85 GiB
+2026-09-27 14:06:35.144 INFO Memory usage (end of timestep, current): 20.17 GiB
+2026-09-27 14:06:35.144 INFO (Iteration 47) schema_fulfillment_count: real 21.39s | cpu 47.29s
+2026-09-27 14:06:35.144 INFO (Iteration 47) schema_fulfillment_per_schema_optional: real 1.18s | cpu 1.00s
+2026-09-27 14:06:35.144 INFO Iteration 47 finished in 258.20s (real) and 154.97s (process)
+2026-09-27 14:06:35.145 INFO Start timestep 2016-10-08 00:00:00+00:00 -> 2016-11-07 00:00:00+00:00
+2026-09-27 14:14:18.978 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      27.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      27.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:14:18.989 INFO Loading data (2016-10-08 00:00:00+00:00 -> 2016-11-07 00:00:00+00:00) done in 463.84s (real) and 545.92s (process)
+2026-09-27 14:14:18.989 INFO Memory usage (start of timestep, peak): 36.31 GiB
+2026-09-27 14:14:18.989 INFO Memory usage (start of timestep, current): 34.94 GiB
+2026-09-27 14:14:18.990 INFO Calculating metrics
+2026-09-27 14:14:18.990 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:14:40.180 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:14:41.439 INFO Memory usage (end of timestep, peak): 36.31 GiB
+2026-09-27 14:14:41.440 INFO Memory usage (end of timestep, current): 35.57 GiB
+2026-09-27 14:14:41.440 INFO (Iteration 48) schema_fulfillment_count: real 21.19s | cpu 48.81s
+2026-09-27 14:14:41.440 INFO (Iteration 48) schema_fulfillment_per_schema_optional: real 1.26s | cpu 1.13s
+2026-09-27 14:14:41.440 INFO Iteration 48 finished in 486.30s (real) and 595.86s (process)
+2026-09-27 14:14:41.441 INFO Start timestep 2016-11-07 00:00:00+00:00 -> 2016-12-07 00:00:00+00:00
+2026-09-27 14:23:17.940 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      27.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      27.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:23:17.953 INFO Loading data (2016-11-07 00:00:00+00:00 -> 2016-12-07 00:00:00+00:00) done in 516.51s (real) and 258.54s (process)
+2026-09-27 14:23:17.954 INFO Memory usage (start of timestep, peak): 36.31 GiB
+2026-09-27 14:23:17.954 INFO Memory usage (start of timestep, current): 34.75 GiB
+2026-09-27 14:23:17.954 INFO Calculating metrics
+2026-09-27 14:23:17.954 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:23:38.164 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:23:39.428 INFO Memory usage (end of timestep, peak): 36.31 GiB
+2026-09-27 14:23:39.429 INFO Memory usage (end of timestep, current): 34.89 GiB
+2026-09-27 14:23:39.429 INFO (Iteration 49) schema_fulfillment_count: real 20.21s | cpu 46.12s
+2026-09-27 14:23:39.429 INFO (Iteration 49) schema_fulfillment_per_schema_optional: real 1.26s | cpu 1.04s
+2026-09-27 14:23:39.429 INFO Iteration 49 finished in 537.99s (real) and 305.71s (process)
+2026-09-27 14:23:39.429 INFO Start timestep 2016-12-07 00:00:00+00:00 -> 2017-01-06 00:00:00+00:00
+2026-09-27 14:30:11.291 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      21.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      21.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:30:11.304 INFO Loading data (2016-12-07 00:00:00+00:00 -> 2017-01-06 00:00:00+00:00) done in 391.87s (real) and 208.38s (process)
+2026-09-27 14:30:11.304 INFO Memory usage (start of timestep, peak): 36.31 GiB
+2026-09-27 14:30:11.305 INFO Memory usage (start of timestep, current): 29.98 GiB
+2026-09-27 14:30:11.305 INFO Calculating metrics
+2026-09-27 14:30:11.305 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:30:33.256 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:30:35.108 INFO Memory usage (end of timestep, peak): 36.31 GiB
+2026-09-27 14:30:35.109 INFO Memory usage (end of timestep, current): 29.15 GiB
+2026-09-27 14:30:35.109 INFO (Iteration 50) schema_fulfillment_count: real 21.95s | cpu 48.82s
+2026-09-27 14:30:35.109 INFO (Iteration 50) schema_fulfillment_per_schema_optional: real 1.85s | cpu 1.72s
+2026-09-27 14:30:35.109 INFO Iteration 50 finished in 415.68s (real) and 258.92s (process)
+2026-09-27 14:30:35.109 INFO Start timestep 2017-01-06 00:00:00+00:00 -> 2017-02-05 00:00:00+00:00
+2026-09-27 14:41:54.349 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      30.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      30.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:41:54.362 INFO Loading data (2017-01-06 00:00:00+00:00 -> 2017-02-05 00:00:00+00:00) done in 679.25s (real) and 295.95s (process)
+2026-09-27 14:41:54.363 INFO Memory usage (start of timestep, peak): 37.21 GiB
+2026-09-27 14:41:54.363 INFO Memory usage (start of timestep, current): 37.21 GiB
+2026-09-27 14:41:54.363 INFO Calculating metrics
+2026-09-27 14:41:54.363 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:42:16.353 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:42:17.886 INFO Memory usage (end of timestep, peak): 38.02 GiB
+2026-09-27 14:42:17.886 INFO Memory usage (end of timestep, current): 38.00 GiB
+2026-09-27 14:42:17.887 INFO (Iteration 51) schema_fulfillment_count: real 21.99s | cpu 50.08s
+2026-09-27 14:42:17.887 INFO (Iteration 51) schema_fulfillment_per_schema_optional: real 1.53s | cpu 1.39s
+2026-09-27 14:42:17.887 INFO Iteration 51 finished in 702.78s (real) and 347.42s (process)
+2026-09-27 14:42:17.887 INFO Start timestep 2017-02-05 00:00:00+00:00 -> 2017-03-07 00:00:00+00:00
+2026-09-27 14:47:08.931 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      15.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      15.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:47:08.932 INFO Loading data (2017-02-05 00:00:00+00:00 -> 2017-03-07 00:00:00+00:00) done in 291.04s (real) and 223.78s (process)
+2026-09-27 14:47:08.932 INFO Memory usage (start of timestep, peak): 38.02 GiB
+2026-09-27 14:47:08.932 INFO Memory usage (start of timestep, current): 23.09 GiB
+2026-09-27 14:47:08.932 INFO Calculating metrics
+2026-09-27 14:47:08.932 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:47:29.654 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:47:30.922 INFO Memory usage (end of timestep, peak): 38.02 GiB
+2026-09-27 14:47:30.922 INFO Memory usage (end of timestep, current): 23.48 GiB
+2026-09-27 14:47:30.922 INFO (Iteration 52) schema_fulfillment_count: real 20.72s | cpu 46.28s
+2026-09-27 14:47:30.922 INFO (Iteration 52) schema_fulfillment_per_schema_optional: real 1.27s | cpu 1.07s
+2026-09-27 14:47:30.922 INFO Iteration 52 finished in 313.03s (real) and 271.13s (process)
+2026-09-27 14:47:30.923 INFO Start timestep 2017-03-07 00:00:00+00:00 -> 2017-04-06 00:00:00+00:00
+2026-09-27 14:50:12.569 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes       9.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes       9.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:50:12.570 INFO Loading data (2017-03-07 00:00:00+00:00 -> 2017-04-06 00:00:00+00:00) done in 161.65s (real) and 81.95s (process)
+2026-09-27 14:50:12.570 INFO Memory usage (start of timestep, peak): 38.02 GiB
+2026-09-27 14:50:12.571 INFO Memory usage (start of timestep, current): 16.87 GiB
+2026-09-27 14:50:12.571 INFO Calculating metrics
+2026-09-27 14:50:12.571 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:50:32.704 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:50:33.405 INFO Memory usage (end of timestep, peak): 38.02 GiB
+2026-09-27 14:50:33.406 INFO Memory usage (end of timestep, current): 16.98 GiB
+2026-09-27 14:50:33.406 INFO (Iteration 53) schema_fulfillment_count: real 20.13s | cpu 46.62s
+2026-09-27 14:50:33.406 INFO (Iteration 53) schema_fulfillment_per_schema_optional: real 0.70s | cpu 0.66s
+2026-09-27 14:50:33.406 INFO Iteration 53 finished in 182.48s (real) and 129.23s (process)
+2026-09-27 14:50:33.406 INFO Start timestep 2017-04-06 00:00:00+00:00 -> 2017-05-06 00:00:00+00:00
+2026-09-27 14:54:42.137 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      13.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      13.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:54:42.138 INFO Loading data (2017-04-06 00:00:00+00:00 -> 2017-05-06 00:00:00+00:00) done in 248.73s (real) and 116.23s (process)
+2026-09-27 14:54:42.138 INFO Memory usage (start of timestep, peak): 38.02 GiB
+2026-09-27 14:54:42.139 INFO Memory usage (start of timestep, current): 20.80 GiB
+2026-09-27 14:54:42.139 INFO Calculating metrics
+2026-09-27 14:54:42.139 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 14:55:04.479 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 14:55:05.797 INFO Memory usage (end of timestep, peak): 38.02 GiB
+2026-09-27 14:55:05.798 INFO Memory usage (end of timestep, current): 21.78 GiB
+2026-09-27 14:55:05.798 INFO (Iteration 54) schema_fulfillment_count: real 22.34s | cpu 49.94s
+2026-09-27 14:55:05.798 INFO (Iteration 54) schema_fulfillment_per_schema_optional: real 1.32s | cpu 1.20s
+2026-09-27 14:55:05.798 INFO Iteration 54 finished in 272.39s (real) and 167.37s (process)
+2026-09-27 14:55:05.798 INFO Start timestep 2017-05-06 00:00:00+00:00 -> 2017-06-05 00:00:00+00:00
+2026-09-27 14:59:43.818 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      17.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      17.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 14:59:43.819 INFO Loading data (2017-05-06 00:00:00+00:00 -> 2017-06-05 00:00:00+00:00) done in 278.02s (real) and 353.44s (process)
+2026-09-27 14:59:43.819 INFO Memory usage (start of timestep, peak): 38.02 GiB
+2026-09-27 14:59:43.820 INFO Memory usage (start of timestep, current): 25.06 GiB
+2026-09-27 14:59:43.820 INFO Calculating metrics
+2026-09-27 14:59:43.820 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 15:00:05.084 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 15:00:06.059 INFO Memory usage (end of timestep, peak): 38.02 GiB
+2026-09-27 15:00:06.060 INFO Memory usage (end of timestep, current): 25.80 GiB
+2026-09-27 15:00:06.060 INFO (Iteration 55) schema_fulfillment_count: real 21.26s | cpu 49.18s
+2026-09-27 15:00:06.060 INFO (Iteration 55) schema_fulfillment_per_schema_optional: real 0.97s | cpu 0.87s
+2026-09-27 15:00:06.060 INFO Iteration 55 finished in 300.26s (real) and 403.49s (process)
+2026-09-27 15:00:06.060 INFO Start timestep 2017-06-05 00:00:00+00:00 -> 2017-07-05 00:00:00+00:00
+2026-09-27 15:09:07.595 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      30.7 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      30.7 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 15:09:07.608 INFO Loading data (2017-06-05 00:00:00+00:00 -> 2017-07-05 00:00:00+00:00) done in 541.55s (real) and 268.64s (process)
+2026-09-27 15:09:07.608 INFO Memory usage (start of timestep, peak): 38.07 GiB
+2026-09-27 15:09:07.608 INFO Memory usage (start of timestep, current): 38.07 GiB
+2026-09-27 15:09:07.609 INFO Calculating metrics
+2026-09-27 15:09:07.609 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 15:09:31.257 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 15:09:32.939 INFO Memory usage (end of timestep, peak): 40.07 GiB
+2026-09-27 15:09:32.939 INFO Memory usage (end of timestep, current): 39.80 GiB
+2026-09-27 15:09:32.940 INFO (Iteration 56) schema_fulfillment_count: real 23.65s | cpu 54.26s
+2026-09-27 15:09:32.940 INFO (Iteration 56) schema_fulfillment_per_schema_optional: real 1.68s | cpu 1.50s
+2026-09-27 15:09:32.940 INFO Iteration 56 finished in 566.88s (real) and 324.40s (process)
+2026-09-27 15:09:32.940 INFO Start timestep 2017-07-05 00:00:00+00:00 -> 2017-08-04 00:00:00+00:00
+2026-09-27 15:23:18.834 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      43.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      43.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 15:23:18.846 INFO Loading data (2017-07-05 00:00:00+00:00 -> 2017-08-04 00:00:00+00:00) done in 825.91s (real) and 405.72s (process)
+2026-09-27 15:23:18.846 INFO Memory usage (start of timestep, peak): 50.68 GiB
+2026-09-27 15:23:18.847 INFO Memory usage (start of timestep, current): 50.68 GiB
+2026-09-27 15:23:18.847 INFO Calculating metrics
+2026-09-27 15:23:18.847 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 15:23:41.263 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 15:23:42.483 INFO Memory usage (end of timestep, peak): 53.78 GiB
+2026-09-27 15:23:42.483 INFO Memory usage (end of timestep, current): 53.31 GiB
+2026-09-27 15:23:42.483 INFO (Iteration 57) schema_fulfillment_count: real 22.42s | cpu 56.11s
+2026-09-27 15:23:42.483 INFO (Iteration 57) schema_fulfillment_per_schema_optional: real 1.22s | cpu 1.07s
+2026-09-27 15:23:42.483 INFO Iteration 57 finished in 849.54s (real) and 462.91s (process)
+2026-09-27 15:23:42.484 INFO Start timestep 2017-08-04 00:00:00+00:00 -> 2017-09-03 00:00:00+00:00
+2026-09-27 15:49:04.088 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      79.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      79.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 15:49:04.102 INFO Loading data (2017-08-04 00:00:00+00:00 -> 2017-09-03 00:00:00+00:00) done in 1521.62s (real) and 1034.43s (process)
+2026-09-27 15:49:04.102 INFO Memory usage (start of timestep, peak): 85.89 GiB
+2026-09-27 15:49:04.103 INFO Memory usage (start of timestep, current): 85.89 GiB
+2026-09-27 15:49:04.103 INFO Calculating metrics
+2026-09-27 15:49:04.103 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 15:49:30.377 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 15:49:31.996 INFO Memory usage (end of timestep, peak): 90.89 GiB
+2026-09-27 15:49:31.997 INFO Memory usage (end of timestep, current): 89.13 GiB
+2026-09-27 15:49:31.997 INFO (Iteration 58) schema_fulfillment_count: real 26.27s | cpu 66.86s
+2026-09-27 15:49:31.997 INFO (Iteration 58) schema_fulfillment_per_schema_optional: real 1.62s | cpu 1.40s
+2026-09-27 15:49:31.997 INFO Iteration 58 finished in 1549.51s (real) and 1102.68s (process)
+2026-09-27 15:49:31.998 INFO Start timestep 2017-09-03 00:00:00+00:00 -> 2017-10-03 00:00:00+00:00
+2026-09-27 16:29:27.487 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes     132.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes     132.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 16:29:27.489 INFO Loading data (2017-09-03 00:00:00+00:00 -> 2017-10-03 00:00:00+00:00) done in 2395.49s (real) and 1305.02s (process)
+2026-09-27 16:29:27.489 INFO Memory usage (start of timestep, peak): 140.17 GiB
+2026-09-27 16:29:27.490 INFO Memory usage (start of timestep, current): 140.17 GiB
+2026-09-27 16:29:27.490 INFO Calculating metrics
+2026-09-27 16:29:27.490 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 16:29:55.357 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 16:29:57.010 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 16:29:57.011 INFO Memory usage (end of timestep, current): 139.78 GiB
+2026-09-27 16:29:57.011 INFO (Iteration 59) schema_fulfillment_count: real 27.87s | cpu 73.31s
+2026-09-27 16:29:57.011 INFO (Iteration 59) schema_fulfillment_per_schema_optional: real 1.65s | cpu 1.52s
+2026-09-27 16:29:57.011 INFO Iteration 59 finished in 2425.01s (real) and 1379.85s (process)
+2026-09-27 16:29:57.012 INFO Start timestep 2017-10-03 00:00:00+00:00 -> 2017-11-02 00:00:00+00:00
+2026-09-27 16:39:07.450 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      30.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      30.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 16:39:07.465 INFO Loading data (2017-10-03 00:00:00+00:00 -> 2017-11-02 00:00:00+00:00) done in 550.45s (real) and 380.43s (process)
+2026-09-27 16:39:07.465 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 16:39:07.465 INFO Memory usage (start of timestep, current): 38.38 GiB
+2026-09-27 16:39:07.466 INFO Calculating metrics
+2026-09-27 16:39:07.466 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 16:39:30.854 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 16:39:32.709 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 16:39:32.709 INFO Memory usage (end of timestep, current): 39.38 GiB
+2026-09-27 16:39:32.709 INFO (Iteration 60) schema_fulfillment_count: real 23.39s | cpu 53.73s
+2026-09-27 16:39:32.709 INFO (Iteration 60) schema_fulfillment_per_schema_optional: real 1.85s | cpu 1.71s
+2026-09-27 16:39:32.710 INFO Iteration 60 finished in 575.70s (real) and 435.87s (process)
+2026-09-27 16:39:32.710 INFO Start timestep 2017-11-02 00:00:00+00:00 -> 2017-12-02 00:00:00+00:00
+2026-09-27 16:48:49.782 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      39.3 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      39.3 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 16:48:49.795 INFO Loading data (2017-11-02 00:00:00+00:00 -> 2017-12-02 00:00:00+00:00) done in 557.08s (real) and 686.13s (process)
+2026-09-27 16:48:49.795 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 16:48:49.796 INFO Memory usage (start of timestep, current): 47.22 GiB
+2026-09-27 16:48:49.796 INFO Calculating metrics
+2026-09-27 16:48:49.796 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 16:49:13.918 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 16:49:15.974 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 16:49:15.974 INFO Memory usage (end of timestep, current): 49.48 GiB
+2026-09-27 16:49:15.974 INFO (Iteration 61) schema_fulfillment_count: real 24.12s | cpu 55.58s
+2026-09-27 16:49:15.974 INFO (Iteration 61) schema_fulfillment_per_schema_optional: real 2.06s | cpu 1.91s
+2026-09-27 16:49:15.975 INFO Iteration 61 finished in 583.26s (real) and 743.62s (process)
+2026-09-27 16:49:15.975 INFO Start timestep 2017-12-02 00:00:00+00:00 -> 2018-01-01 00:00:00+00:00
+2026-09-27 17:04:32.995 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      54.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      54.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 17:04:33.007 INFO Loading data (2017-12-02 00:00:00+00:00 -> 2018-01-01 00:00:00+00:00) done in 917.03s (real) and 470.18s (process)
+2026-09-27 17:04:33.008 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 17:04:33.008 INFO Memory usage (start of timestep, current): 62.30 GiB
+2026-09-27 17:04:33.008 INFO Calculating metrics
+2026-09-27 17:04:33.008 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 17:05:02.689 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 17:05:10.298 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 17:05:10.298 INFO Memory usage (end of timestep, current): 65.72 GiB
+2026-09-27 17:05:10.299 INFO (Iteration 62) schema_fulfillment_count: real 29.68s | cpu 64.76s
+2026-09-27 17:05:10.299 INFO (Iteration 62) schema_fulfillment_per_schema_optional: real 7.61s | cpu 7.46s
+2026-09-27 17:05:10.299 INFO Iteration 62 finished in 954.32s (real) and 542.40s (process)
+2026-09-27 17:05:10.299 INFO Start timestep 2018-01-01 00:00:00+00:00 -> 2018-01-31 00:00:00+00:00
+2026-09-27 17:09:44.536 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      16.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      16.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 17:09:44.537 INFO Loading data (2018-01-01 00:00:00+00:00 -> 2018-01-31 00:00:00+00:00) done in 274.24s (real) and 143.27s (process)
+2026-09-27 17:09:44.538 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 17:09:44.538 INFO Memory usage (start of timestep, current): 26.22 GiB
+2026-09-27 17:09:44.538 INFO Calculating metrics
+2026-09-27 17:09:44.538 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 17:10:06.379 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 17:10:08.002 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 17:10:08.003 INFO Memory usage (end of timestep, current): 26.90 GiB
+2026-09-27 17:10:08.003 INFO (Iteration 63) schema_fulfillment_count: real 21.84s | cpu 49.89s
+2026-09-27 17:10:08.003 INFO (Iteration 63) schema_fulfillment_per_schema_optional: real 1.62s | cpu 1.50s
+2026-09-27 17:10:08.003 INFO Iteration 63 finished in 297.70s (real) and 194.66s (process)
+2026-09-27 17:10:08.003 INFO Start timestep 2018-01-31 00:00:00+00:00 -> 2018-03-02 00:00:00+00:00
+2026-09-27 17:24:54.656 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      53.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      53.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 17:24:54.669 INFO Loading data (2018-01-31 00:00:00+00:00 -> 2018-03-02 00:00:00+00:00) done in 886.67s (real) and 459.64s (process)
+2026-09-27 17:24:54.669 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 17:24:54.669 INFO Memory usage (start of timestep, current): 61.40 GiB
+2026-09-27 17:24:54.669 INFO Calculating metrics
+2026-09-27 17:24:54.669 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 17:25:19.350 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 17:25:21.284 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 17:25:21.284 INFO Memory usage (end of timestep, current): 63.54 GiB
+2026-09-27 17:25:21.285 INFO (Iteration 64) schema_fulfillment_count: real 24.68s | cpu 58.21s
+2026-09-27 17:25:21.285 INFO (Iteration 64) schema_fulfillment_per_schema_optional: real 1.93s | cpu 1.80s
+2026-09-27 17:25:21.285 INFO Iteration 64 finished in 913.28s (real) and 519.65s (process)
+2026-09-27 17:25:21.285 INFO Start timestep 2018-03-02 00:00:00+00:00 -> 2018-04-01 00:00:00+00:00
+2026-09-27 17:35:54.319 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      42.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      42.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 17:35:54.334 INFO Loading data (2018-03-02 00:00:00+00:00 -> 2018-04-01 00:00:00+00:00) done in 633.05s (real) and 376.32s (process)
+2026-09-27 17:35:54.334 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 17:35:54.334 INFO Memory usage (start of timestep, current): 52.57 GiB
+2026-09-27 17:35:54.334 INFO Calculating metrics
+2026-09-27 17:35:54.335 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 17:36:16.184 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 17:36:17.437 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 17:36:17.437 INFO Memory usage (end of timestep, current): 51.88 GiB
+2026-09-27 17:36:17.437 INFO (Iteration 65) schema_fulfillment_count: real 21.85s | cpu 51.50s
+2026-09-27 17:36:17.437 INFO (Iteration 65) schema_fulfillment_per_schema_optional: real 1.25s | cpu 1.11s
+2026-09-27 17:36:17.437 INFO Iteration 65 finished in 656.15s (real) and 428.93s (process)
+2026-09-27 17:36:17.438 INFO Start timestep 2018-04-01 00:00:00+00:00 -> 2018-05-01 00:00:00+00:00
+2026-09-27 17:42:59.260 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      29.7 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      29.7 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 17:42:59.261 INFO Loading data (2018-04-01 00:00:00+00:00 -> 2018-05-01 00:00:00+00:00) done in 401.82s (real) and 224.20s (process)
+2026-09-27 17:42:59.261 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 17:42:59.262 INFO Memory usage (start of timestep, current): 38.80 GiB
+2026-09-27 17:42:59.262 INFO Calculating metrics
+2026-09-27 17:42:59.262 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 17:43:21.678 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 17:43:22.891 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 17:43:22.892 INFO Memory usage (end of timestep, current): 40.81 GiB
+2026-09-27 17:43:22.892 INFO (Iteration 66) schema_fulfillment_count: real 22.42s | cpu 53.61s
+2026-09-27 17:43:22.892 INFO (Iteration 66) schema_fulfillment_per_schema_optional: real 1.21s | cpu 1.13s
+2026-09-27 17:43:22.892 INFO Iteration 66 finished in 425.45s (real) and 278.94s (process)
+2026-09-27 17:43:22.892 INFO Start timestep 2018-05-01 00:00:00+00:00 -> 2018-05-31 00:00:00+00:00
+2026-09-27 17:59:26.134 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      50.2 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      50.2 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 17:59:26.148 INFO Loading data (2018-05-01 00:00:00+00:00 -> 2018-05-31 00:00:00+00:00) done in 963.26s (real) and 468.14s (process)
+2026-09-27 17:59:26.148 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 17:59:26.149 INFO Memory usage (start of timestep, current): 58.91 GiB
+2026-09-27 17:59:26.149 INFO Calculating metrics
+2026-09-27 17:59:26.149 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 17:59:50.361 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 17:59:52.291 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 17:59:52.292 INFO Memory usage (end of timestep, current): 60.93 GiB
+2026-09-27 17:59:52.292 INFO (Iteration 67) schema_fulfillment_count: real 24.21s | cpu 57.52s
+2026-09-27 17:59:52.292 INFO (Iteration 67) schema_fulfillment_per_schema_optional: real 1.93s | cpu 1.79s
+2026-09-27 17:59:52.292 INFO Iteration 67 finished in 989.40s (real) and 527.46s (process)
+2026-09-27 17:59:52.292 INFO Start timestep 2018-05-31 00:00:00+00:00 -> 2018-06-30 00:00:00+00:00
+2026-09-27 18:12:31.739 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      46.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      46.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 18:12:31.751 INFO Loading data (2018-05-31 00:00:00+00:00 -> 2018-06-30 00:00:00+00:00) done in 759.46s (real) and 400.00s (process)
+2026-09-27 18:12:31.752 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 18:12:31.752 INFO Memory usage (start of timestep, current): 55.90 GiB
+2026-09-27 18:12:31.752 INFO Calculating metrics
+2026-09-27 18:12:31.752 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 18:12:54.162 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 18:12:56.019 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 18:12:56.019 INFO Memory usage (end of timestep, current): 57.16 GiB
+2026-09-27 18:12:56.019 INFO (Iteration 68) schema_fulfillment_count: real 22.41s | cpu 51.83s
+2026-09-27 18:12:56.019 INFO (Iteration 68) schema_fulfillment_per_schema_optional: real 1.86s | cpu 1.72s
+2026-09-27 18:12:56.019 INFO Iteration 68 finished in 783.73s (real) and 453.56s (process)
+2026-09-27 18:12:56.020 INFO Start timestep 2018-06-30 00:00:00+00:00 -> 2018-07-30 00:00:00+00:00
+2026-09-27 18:30:27.767 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      58.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      58.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 18:30:27.780 INFO Loading data (2018-06-30 00:00:00+00:00 -> 2018-07-30 00:00:00+00:00) done in 1051.76s (real) and 501.97s (process)
+2026-09-27 18:30:27.780 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 18:30:27.781 INFO Memory usage (start of timestep, current): 67.20 GiB
+2026-09-27 18:30:27.781 INFO Calculating metrics
+2026-09-27 18:30:27.781 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 18:30:53.928 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 18:30:56.911 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 18:30:56.912 INFO Memory usage (end of timestep, current): 68.66 GiB
+2026-09-27 18:30:56.912 INFO (Iteration 69) schema_fulfillment_count: real 26.15s | cpu 56.08s
+2026-09-27 18:30:56.912 INFO (Iteration 69) schema_fulfillment_per_schema_optional: real 2.98s | cpu 2.83s
+2026-09-27 18:30:56.912 INFO Iteration 69 finished in 1080.89s (real) and 560.88s (process)
+2026-09-27 18:30:56.912 INFO Start timestep 2018-07-30 00:00:00+00:00 -> 2018-08-29 00:00:00+00:00
+2026-09-27 18:44:02.377 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      42.7 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      42.7 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 18:44:02.389 INFO Loading data (2018-07-30 00:00:00+00:00 -> 2018-08-29 00:00:00+00:00) done in 785.48s (real) and 381.57s (process)
+2026-09-27 18:44:02.390 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 18:44:02.390 INFO Memory usage (start of timestep, current): 52.24 GiB
+2026-09-27 18:44:02.390 INFO Calculating metrics
+2026-09-27 18:44:02.390 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 18:44:28.154 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 18:44:30.545 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 18:44:30.546 INFO Memory usage (end of timestep, current): 53.45 GiB
+2026-09-27 18:44:30.546 INFO (Iteration 70) schema_fulfillment_count: real 25.76s | cpu 55.25s
+2026-09-27 18:44:30.546 INFO (Iteration 70) schema_fulfillment_per_schema_optional: real 2.39s | cpu 2.25s
+2026-09-27 18:44:30.546 INFO Iteration 70 finished in 813.63s (real) and 439.07s (process)
+2026-09-27 18:44:30.547 INFO Start timestep 2018-08-29 00:00:00+00:00 -> 2018-09-28 00:00:00+00:00
+2026-09-27 19:00:31.916 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      53.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      53.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 19:00:31.929 INFO Loading data (2018-08-29 00:00:00+00:00 -> 2018-09-28 00:00:00+00:00) done in 961.38s (real) and 469.89s (process)
+2026-09-27 19:00:31.929 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 19:00:31.929 INFO Memory usage (start of timestep, current): 62.92 GiB
+2026-09-27 19:00:31.929 INFO Calculating metrics
+2026-09-27 19:00:31.930 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 19:00:56.084 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 19:00:57.834 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 19:00:57.834 INFO Memory usage (end of timestep, current): 64.03 GiB
+2026-09-27 19:00:57.834 INFO (Iteration 71) schema_fulfillment_count: real 24.15s | cpu 56.38s
+2026-09-27 19:00:57.834 INFO (Iteration 71) schema_fulfillment_per_schema_optional: real 1.75s | cpu 1.60s
+2026-09-27 19:00:57.834 INFO Iteration 71 finished in 987.29s (real) and 527.87s (process)
+2026-09-27 19:00:57.835 INFO Start timestep 2018-09-28 00:00:00+00:00 -> 2018-10-28 00:00:00+00:00
+2026-09-27 19:29:02.121 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      85.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      85.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 19:29:02.133 INFO Loading data (2018-09-28 00:00:00+00:00 -> 2018-10-28 00:00:00+00:00) done in 1684.30s (real) and 772.28s (process)
+2026-09-27 19:29:02.134 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 19:29:02.134 INFO Memory usage (start of timestep, current): 93.73 GiB
+2026-09-27 19:29:02.134 INFO Calculating metrics
+2026-09-27 19:29:02.134 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 19:29:32.847 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 19:29:35.767 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 19:29:35.767 INFO Memory usage (end of timestep, current): 95.79 GiB
+2026-09-27 19:29:35.767 INFO (Iteration 72) schema_fulfillment_count: real 30.71s | cpu 64.44s
+2026-09-27 19:29:35.767 INFO (Iteration 72) schema_fulfillment_per_schema_optional: real 2.92s | cpu 2.75s
+2026-09-27 19:29:35.767 INFO Iteration 72 finished in 1717.93s (real) and 839.47s (process)
+2026-09-27 19:29:35.768 INFO Start timestep 2018-10-28 00:00:00+00:00 -> 2018-11-27 00:00:00+00:00
+2026-09-27 19:43:24.731 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      36.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      36.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 19:43:24.743 INFO Loading data (2018-10-28 00:00:00+00:00 -> 2018-11-27 00:00:00+00:00) done in 828.98s (real) and 336.14s (process)
+2026-09-27 19:43:24.743 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 19:43:24.744 INFO Memory usage (start of timestep, current): 45.98 GiB
+2026-09-27 19:43:24.744 INFO Calculating metrics
+2026-09-27 19:43:24.744 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 19:43:53.913 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 19:43:56.827 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 19:43:56.828 INFO Memory usage (end of timestep, current): 47.94 GiB
+2026-09-27 19:43:56.828 INFO (Iteration 73) schema_fulfillment_count: real 29.17s | cpu 59.88s
+2026-09-27 19:43:56.828 INFO (Iteration 73) schema_fulfillment_per_schema_optional: real 2.91s | cpu 2.78s
+2026-09-27 19:43:56.828 INFO Iteration 73 finished in 861.06s (real) and 398.80s (process)
+2026-09-27 19:43:56.828 INFO Start timestep 2018-11-27 00:00:00+00:00 -> 2018-12-27 00:00:00+00:00
+2026-09-27 19:55:43.215 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      36.3 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      36.3 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 19:55:43.229 INFO Loading data (2018-11-27 00:00:00+00:00 -> 2018-12-27 00:00:00+00:00) done in 706.40s (real) and 307.65s (process)
+2026-09-27 19:55:43.229 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 19:55:43.229 INFO Memory usage (start of timestep, current): 46.40 GiB
+2026-09-27 19:55:43.230 INFO Calculating metrics
+2026-09-27 19:55:43.230 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 19:56:10.055 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 19:56:13.142 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 19:56:13.142 INFO Memory usage (end of timestep, current): 47.67 GiB
+2026-09-27 19:56:13.143 INFO (Iteration 74) schema_fulfillment_count: real 26.82s | cpu 53.76s
+2026-09-27 19:56:13.143 INFO (Iteration 74) schema_fulfillment_per_schema_optional: real 3.09s | cpu 2.94s
+2026-09-27 19:56:13.143 INFO Iteration 74 finished in 736.31s (real) and 364.34s (process)
+2026-09-27 19:56:13.143 INFO Start timestep 2018-12-27 00:00:00+00:00 -> 2019-01-26 00:00:00+00:00
+2026-09-27 20:04:25.497 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      23.4 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      23.4 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:04:25.510 INFO Loading data (2018-12-27 00:00:00+00:00 -> 2019-01-26 00:00:00+00:00) done in 492.37s (real) and 209.92s (process)
+2026-09-27 20:04:25.510 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:04:25.510 INFO Memory usage (start of timestep, current): 33.93 GiB
+2026-09-27 20:04:25.510 INFO Calculating metrics
+2026-09-27 20:04:25.510 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:04:50.697 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:04:53.436 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:04:53.437 INFO Memory usage (end of timestep, current): 35.21 GiB
+2026-09-27 20:04:53.437 INFO (Iteration 75) schema_fulfillment_count: real 25.19s | cpu 52.40s
+2026-09-27 20:04:53.437 INFO (Iteration 75) schema_fulfillment_per_schema_optional: real 2.74s | cpu 2.61s
+2026-09-27 20:04:53.437 INFO Iteration 75 finished in 520.29s (real) and 264.92s (process)
+2026-09-27 20:04:53.437 INFO Start timestep 2019-01-26 00:00:00+00:00 -> 2019-02-25 00:00:00+00:00
+2026-09-27 20:10:16.824 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      16.1 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      16.1 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:10:16.826 INFO Loading data (2019-01-26 00:00:00+00:00 -> 2019-02-25 00:00:00+00:00) done in 323.39s (real) and 206.73s (process)
+2026-09-27 20:10:16.827 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:10:16.827 INFO Memory usage (start of timestep, current): 26.91 GiB
+2026-09-27 20:10:16.827 INFO Calculating metrics
+2026-09-27 20:10:16.827 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:10:45.084 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:10:47.830 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:10:47.830 INFO Memory usage (end of timestep, current): 29.11 GiB
+2026-09-27 20:10:47.831 INFO (Iteration 76) schema_fulfillment_count: real 28.26s | cpu 55.51s
+2026-09-27 20:10:47.831 INFO (Iteration 76) schema_fulfillment_per_schema_optional: real 2.75s | cpu 2.60s
+2026-09-27 20:10:47.831 INFO Iteration 76 finished in 354.39s (real) and 264.84s (process)
+2026-09-27 20:10:47.831 INFO Start timestep 2019-02-25 00:00:00+00:00 -> 2019-03-27 00:00:00+00:00
+2026-09-27 20:21:58.850 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      33.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      33.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:21:58.864 INFO Loading data (2019-02-25 00:00:00+00:00 -> 2019-03-27 00:00:00+00:00) done in 671.03s (real) and 281.78s (process)
+2026-09-27 20:21:58.864 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:21:58.865 INFO Memory usage (start of timestep, current): 44.74 GiB
+2026-09-27 20:21:58.865 INFO Calculating metrics
+2026-09-27 20:21:58.865 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:22:21.989 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:22:23.350 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:22:23.350 INFO Memory usage (end of timestep, current): 45.96 GiB
+2026-09-27 20:22:23.350 INFO (Iteration 77) schema_fulfillment_count: real 23.12s | cpu 53.17s
+2026-09-27 20:22:23.350 INFO (Iteration 77) schema_fulfillment_per_schema_optional: real 1.36s | cpu 1.21s
+2026-09-27 20:22:23.350 INFO Iteration 77 finished in 695.52s (real) and 336.16s (process)
+2026-09-27 20:22:23.351 INFO Start timestep 2019-03-27 00:00:00+00:00 -> 2019-04-26 00:00:00+00:00
+2026-09-27 20:30:42.526 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      31.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      31.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:30:42.539 INFO Loading data (2019-03-27 00:00:00+00:00 -> 2019-04-26 00:00:00+00:00) done in 499.19s (real) and 351.01s (process)
+2026-09-27 20:30:42.539 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:30:42.539 INFO Memory usage (start of timestep, current): 43.38 GiB
+2026-09-27 20:30:42.539 INFO Calculating metrics
+2026-09-27 20:30:42.540 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:31:04.870 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:31:06.446 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:31:06.446 INFO Memory usage (end of timestep, current): 44.35 GiB
+2026-09-27 20:31:06.447 INFO (Iteration 78) schema_fulfillment_count: real 22.33s | cpu 52.28s
+2026-09-27 20:31:06.447 INFO (Iteration 78) schema_fulfillment_per_schema_optional: real 1.58s | cpu 1.44s
+2026-09-27 20:31:06.447 INFO Iteration 78 finished in 523.10s (real) and 404.72s (process)
+2026-09-27 20:31:06.447 INFO Start timestep 2019-04-26 00:00:00+00:00 -> 2019-05-26 00:00:00+00:00
+2026-09-27 20:39:56.662 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      24.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      24.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:39:56.676 INFO Loading data (2019-04-26 00:00:00+00:00 -> 2019-05-26 00:00:00+00:00) done in 530.23s (real) and 218.38s (process)
+2026-09-27 20:39:56.677 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:39:56.677 INFO Memory usage (start of timestep, current): 36.71 GiB
+2026-09-27 20:39:56.677 INFO Calculating metrics
+2026-09-27 20:39:56.677 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:40:20.750 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:40:23.213 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:40:23.214 INFO Memory usage (end of timestep, current): 38.00 GiB
+2026-09-27 20:40:23.214 INFO (Iteration 79) schema_fulfillment_count: real 24.07s | cpu 51.32s
+2026-09-27 20:40:23.214 INFO (Iteration 79) schema_fulfillment_per_schema_optional: real 2.46s | cpu 2.33s
+2026-09-27 20:40:23.214 INFO Iteration 79 finished in 556.77s (real) and 272.03s (process)
+2026-09-27 20:40:23.214 INFO Start timestep 2019-05-26 00:00:00+00:00 -> 2019-06-25 00:00:00+00:00
+2026-09-27 20:44:00.647 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      13.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      13.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:44:00.648 INFO Loading data (2019-05-26 00:00:00+00:00 -> 2019-06-25 00:00:00+00:00) done in 217.43s (real) and 104.25s (process)
+2026-09-27 20:44:00.649 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:44:00.649 INFO Memory usage (start of timestep, current): 26.45 GiB
+2026-09-27 20:44:00.649 INFO Calculating metrics
+2026-09-27 20:44:00.649 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:44:28.374 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:44:31.319 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:44:31.319 INFO Memory usage (end of timestep, current): 27.95 GiB
+2026-09-27 20:44:31.319 INFO (Iteration 80) schema_fulfillment_count: real 27.72s | cpu 54.21s
+2026-09-27 20:44:31.319 INFO (Iteration 80) schema_fulfillment_per_schema_optional: real 2.94s | cpu 2.82s
+2026-09-27 20:44:31.319 INFO Iteration 80 finished in 248.11s (real) and 161.28s (process)
+2026-09-27 20:44:31.320 INFO Start timestep 2019-06-25 00:00:00+00:00 -> 2019-07-25 00:00:00+00:00
+2026-09-27 20:50:59.985 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      23.6 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      23.6 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:50:59.998 INFO Loading data (2019-06-25 00:00:00+00:00 -> 2019-07-25 00:00:00+00:00) done in 388.68s (real) and 183.26s (process)
+2026-09-27 20:50:59.998 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:50:59.999 INFO Memory usage (start of timestep, current): 36.18 GiB
+2026-09-27 20:50:59.999 INFO Calculating metrics
+2026-09-27 20:50:59.999 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:51:31.519 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:51:37.947 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:51:37.947 INFO Memory usage (end of timestep, current): 37.85 GiB
+2026-09-27 20:51:37.948 INFO (Iteration 81) schema_fulfillment_count: real 31.52s | cpu 56.84s
+2026-09-27 20:51:37.948 INFO (Iteration 81) schema_fulfillment_per_schema_optional: real 6.43s | cpu 6.19s
+2026-09-27 20:51:37.948 INFO Iteration 81 finished in 426.63s (real) and 246.29s (process)
+2026-09-27 20:51:37.948 INFO Start timestep 2019-07-25 00:00:00+00:00 -> 2019-08-24 00:00:00+00:00
+2026-09-27 20:54:45.070 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      13.9 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      13.9 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 20:54:45.071 INFO Loading data (2019-07-25 00:00:00+00:00 -> 2019-08-24 00:00:00+00:00) done in 187.12s (real) and 94.66s (process)
+2026-09-27 20:54:45.072 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 20:54:45.072 INFO Memory usage (start of timestep, current): 27.26 GiB
+2026-09-27 20:54:45.072 INFO Calculating metrics
+2026-09-27 20:54:45.072 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 20:55:15.035 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 20:55:18.637 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 20:55:18.637 INFO Memory usage (end of timestep, current): 28.73 GiB
+2026-09-27 20:55:18.637 INFO (Iteration 82) schema_fulfillment_count: real 29.96s | cpu 57.76s
+2026-09-27 20:55:18.637 INFO (Iteration 82) schema_fulfillment_per_schema_optional: real 3.60s | cpu 3.48s
+2026-09-27 20:55:18.637 INFO Iteration 82 finished in 220.69s (real) and 155.90s (process)
+2026-09-27 20:55:18.638 INFO Start timestep 2019-08-24 00:00:00+00:00 -> 2019-09-23 00:00:00+00:00
+2026-09-27 21:05:03.667 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      35.0 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      35.0 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 21:05:03.679 INFO Loading data (2019-08-24 00:00:00+00:00 -> 2019-09-23 00:00:00+00:00) done in 585.04s (real) and 282.25s (process)
+2026-09-27 21:05:03.679 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 21:05:03.680 INFO Memory usage (start of timestep, current): 48.01 GiB
+2026-09-27 21:05:03.680 INFO Calculating metrics
+2026-09-27 21:05:03.680 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 21:05:27.497 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 21:05:29.620 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 21:05:29.621 INFO Memory usage (end of timestep, current): 49.93 GiB
+2026-09-27 21:05:29.621 INFO (Iteration 83) schema_fulfillment_count: real 23.82s | cpu 55.02s
+2026-09-27 21:05:29.621 INFO (Iteration 83) schema_fulfillment_per_schema_optional: real 2.12s | cpu 1.99s
+2026-09-27 21:05:29.621 INFO Iteration 83 finished in 610.98s (real) and 339.26s (process)
+2026-09-27 21:05:29.622 INFO Start timestep 2019-09-23 00:00:00+00:00 -> 2019-10-23 00:00:00+00:00
+2026-09-27 21:30:16.771 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      92.5 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      92.5 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 21:30:16.784 INFO Loading data (2019-09-23 00:00:00+00:00 -> 2019-10-23 00:00:00+00:00) done in 1487.16s (real) and 1071.31s (process)
+2026-09-27 21:30:16.784 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 21:30:16.784 INFO Memory usage (start of timestep, current): 104.87 GiB
+2026-09-27 21:30:16.784 INFO Calculating metrics
+2026-09-27 21:30:16.784 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 21:30:42.187 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 21:30:43.938 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 21:30:43.938 INFO Memory usage (end of timestep, current): 106.72 GiB
+2026-09-27 21:30:43.938 INFO (Iteration 84) schema_fulfillment_count: real 25.40s | cpu 65.65s
+2026-09-27 21:30:43.938 INFO (Iteration 84) schema_fulfillment_per_schema_optional: real 1.75s | cpu 1.56s
+2026-09-27 21:30:43.938 INFO Iteration 84 finished in 1514.32s (real) and 1138.51s (process)
+2026-09-27 21:30:43.939 INFO Start timestep 2019-10-23 00:00:00+00:00 -> 2019-11-22 00:00:00+00:00
+2026-09-27 21:50:39.531 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      87.8 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      87.8 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 21:50:39.543 INFO Loading data (2019-10-23 00:00:00+00:00 -> 2019-11-22 00:00:00+00:00) done in 1195.60s (real) and 805.25s (process)
+2026-09-27 21:50:39.543 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 21:50:39.544 INFO Memory usage (start of timestep, current): 99.53 GiB
+2026-09-27 21:50:39.544 INFO Calculating metrics
+2026-09-27 21:50:39.544 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 21:51:16.562 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 21:51:27.867 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 21:51:27.868 INFO Memory usage (end of timestep, current): 103.49 GiB
+2026-09-27 21:51:27.868 INFO (Iteration 85) schema_fulfillment_count: real 37.02s | cpu 79.62s
+2026-09-27 21:51:27.868 INFO (Iteration 85) schema_fulfillment_per_schema_optional: real 11.31s | cpu 11.05s
+2026-09-27 21:51:27.868 INFO Iteration 85 finished in 1243.93s (real) and 895.93s (process)
+2026-09-27 21:51:27.868 INFO Start timestep 2019-11-22 00:00:00+00:00 -> 2019-12-22 00:00:00+00:00
+2026-09-27 22:07:24.112 INFO DuckDB memory logs:
+  database_name database_size  block_size  ...  wal_size  memory_usage  memory_limit
+0   postgres_db       6.4 TiB           0  ...   0 bytes      59.3 GiB     267.0 GiB
+1        memory       0 bytes           0  ...   0 bytes      59.3 GiB     267.0 GiB
+
+[2 rows x 9 columns]
+2026-09-27 22:07:24.124 INFO Loading data (2019-11-22 00:00:00+00:00 -> 2019-12-22 00:00:00+00:00) done in 956.26s (real) and 493.21s (process)
+2026-09-27 22:07:24.124 INFO Memory usage (start of timestep, peak): 141.98 GiB
+2026-09-27 22:07:24.124 INFO Memory usage (start of timestep, current): 72.63 GiB
+2026-09-27 22:07:24.125 INFO Calculating metrics
+2026-09-27 22:07:24.125 INFO Calculating metric: schema_fulfillment_count
+2026-09-27 22:07:57.992 INFO Calculating metric: schema_fulfillment_per_schema_optional
+2026-09-27 22:08:06.216 INFO Memory usage (end of timestep, peak): 141.98 GiB
+2026-09-27 22:08:06.217 INFO Memory usage (end of timestep, current): 76.28 GiB
+2026-09-27 22:08:06.217 INFO (Iteration 86) schema_fulfillment_count: real 33.87s | cpu 72.72s
+2026-09-27 22:08:06.217 INFO (Iteration 86) schema_fulfillment_per_schema_optional: real 8.22s | cpu 8.06s
+2026-09-27 22:08:06.217 INFO Iteration 86 finished in 998.35s (real) and 573.98s (process)
+2026-09-27 22:08:06.217 INFO Start timestep 2019-12-22 00:00:00+00:00 -> 2020-01-21 00:00:00+00:00

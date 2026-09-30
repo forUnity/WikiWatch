@@ -1,0 +1,18 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<wikidata-givenname>
+
+# sample items (some values used by P734):
+# SELECT DISTINCT ?item { [] wdt:P735 ?item } LIMIT 100
+
+# should pass: 
+# SELECT DISTINCT ?item { ?item wdt:P31 wd:Q12308941; ^wdt:P735 []; wdt:P1705 []; wdt:P282 [] } LIMIT 20
+
+<wikidata-givenname> EXTRA p:P31 {    
+	## STATEMENTS
+        wdt:P31 [wd:Q202444 wd:Q11879590 wd:Q12308941];
+        wdt:P1705 . ;
+        wdt:P282 [wd:Q8196 wd:Q8201 wd:Q8209 wd:Q8216 wd:Q8222 wd:Q8229 wd:Q11932 wd:Q33513 wd:Q38592 wd:Q82772 ] ;
+}

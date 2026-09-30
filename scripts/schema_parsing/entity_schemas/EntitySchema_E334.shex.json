@@ -1,0 +1,20 @@
+{
+    "type": "Schema",
+    "start": "wikidata-instanceof",
+    "shapes": [
+        {
+            "type": "Shape",
+            "id": "wikidata-instanceof",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/direct/P31",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "nodeKind": "iri"
+                },
+                "min": 1,
+                "max": -1
+            }
+        }
+    ]
+}

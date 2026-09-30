@@ -1,0 +1,71 @@
+PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# SELECT ?lexeme { ?lexeme dct:language wd:Q9035 ; wikibase:lexicalCategory wd:Q36224 }
+
+start = @<danish-pronoun>
+
+<danish-pronoun> {
+
+  # Danish pronoun must have lexical category pronoun
+  wikibase:lexicalCategory [ wd:Q36224 ] ;
+
+  # Must have a word stem
+  wdt:P5187 [ @da ] ;
+
+  # Must have novalue for DanNet
+  p:P6140 @<pronoun-dannet-statement> ; 
+
+  # Must have one or more forms.
+  ontolex:lexicalForm @<danish-pronoun-form> + ;
+
+  # Must have one or more usage examples in Danish
+  p:P5831 @<danish-pronoun-usage-example> + ;
+
+  wdt:P31 [
+    wd:Q468801  # personligt stedord - personal pronoun
+    wd:Q953129  # refleksivt stedord - reflexive pronoun
+    wd:Q1462657  # gensidigt tilbagevisende stedord - reciprocal pronoun
+    wd:Q1502460  # ejestedord - possessive pronoun
+    wd:Q54310231  # spørgende stedord - interrogative pronoun
+    wd:Q61202164  # refleksivt ejestedord - reflexive possessive pronoun
+    wd:Q61439673  # kvantitativt stedord - quantitative pronoun
+  ] * ; 
+
+  # Zero or more "described in"
+  wdt:P1343 IRI * ; 
+}
+
+<pronoun-dannet-statement> EXTRA rdf:type {
+  # DanNet identifier should be novalue for pronoun
+  rdf:type [ wdno:P6140 ] ;
+}
+
+<danish-pronoun-form> EXTRA a {
+  a [ ontolex:Form ] ; 
+  wikibase:grammaticalFeature IRI * ; 
+  ontolex:representation [ @da ] ; 
+
+  # Hyphenation
+  p:P5279 @<hyphenation-statement> + ; 
+
+}
+
+<danish-pronoun-usage-example> {
+  ps:P5831 [ @da ] ; 
+  pq:P5830 @<danish-pronoun-form> ;
+  prov:wasDerivedFrom IRI + ; 
+}
+
+<hyphenation-statement> EXTRA a {
+  a [ wdno:P5279 ] | ps:P5279 /.+‧.+/ ;
+}

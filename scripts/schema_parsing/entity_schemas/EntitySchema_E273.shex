@@ -1,0 +1,29 @@
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# References
+
+# The first reference pattern is to express that any reference is acceptable.
+
+<#reference> { } # Any reference will suffice. 
+
+<#disease-ontology-reference> { # reference to a term from the disease ontology term
+  pr:P248   [ wd:Q5282129 ] ; # stated in [P248] Mondo disease ontology [Q27468140]
+  pr:P699   xsd:string ; # Disease Ontology ID
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}
+
+<#mondo-disease-reference> { # reference to a term from the MonDo ontology
+  pr:P248   [ wd:Q27468140 ] ; # stated in [P248] Mondo disease ontology [Q27468140]
+  pr:P5270  xsd:string ; # Mondo ID
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}
+
+<#symptom-ontology-reference> { # reference to a term from the Symptom Ontology
+  pr:P248   [ wd:Q5282129 ] ; # stated in [P248] Symptom ontology [Q27468140]
+  pr:P8656   xsd:string ; # Symptom Ontology ID
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}

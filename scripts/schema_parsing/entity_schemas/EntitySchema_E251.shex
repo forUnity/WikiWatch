@@ -1,0 +1,79 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+BASE <http://www.wikidata.org/entity/>
+
+start = @<#wikidata-ncrna>
+
+# Query with results
+# SELECT * WHERE {?item wdt:P31 wd:Q427087 .} LIMIT 10
+
+<#wikidata-ncrna> EXTRA p:P31  {
+
+    p:P31 @<#P31_instance_of_ncrna> ;
+    p:P279 @<#P279_subclass_of_ncrna> ;  # specific subclass of ncRNA required
+    p:P703 @<#P703_found_in_taxon> ;
+    p:P702 @<#P702_encoded_by> ;
+	
+    ### IDENTIFIER STATEMENTS
+    p:P639 @<#P639_refseq_rna_id> ;
+    p:P704 @<#P704_ensembl_transcript_id>* ; # Ensembl not mandatory
+
+    ### negative shapes
+    p:P31 @<#P31_instance_of_gene>{0} ; # no mixing with gene entries
+	
+}
+
+<#P31_instance_of_ncrna> { 
+   ps:P31 [ wd:Q427087 ] ;     # Instance of non-coding RNA
+      prov:wasDerivedFrom IRI+
+} 
+
+<#P279_subclass_of_ncrna> { 
+   ps:P279 @<#ncrna_types> ; # Subclass of [P279]
+      prov:wasDerivedFrom IRI+
+} 
+
+<#P702_encoded_by> {	
+   ps:P702 IRI ;
+	  prov:wasDerivedFrom IRI+ 
+}
+
+<#P703_found_in_taxon> {    
+   ps:P703 IRI ; # the ncRNA is found in taxon [P703]
+      prov:wasDerivedFrom IRI+
+}
+
+<#P31_instance_of_gene> {
+   ps:P31 [ wd:Q7187 ]
+}
+
+## IDENTIFIERS
+<#P639_refseq_rna_id> {
+   ps:P639 LITERAL ; # The RefSeq RNA identifier [P351] for the ncRNA
+      prov:wasDerivedFrom IRI+
+}
+
+<#P704_ensembl_transcript_id> {
+   ps:P704 LITERAL ; # The Ensembl transcript identifier [P704]
+      prov:wasDerivedFrom IRI+
+}
+
+## Lists with Wikidata items
+<#ncrna_types> [
+  wd:Q427087 # ncRNA
+  wd:Q284578 # snRNA
+  wd:Q284416 # snoRNA
+  wd:Q15087973 # lncrna
+  wd:Q101069161 # precursor RNA
+  wd:Q423832 # antisense RNA
+  wd:Q7917415 # vault RNA
+  wd:Q4039747 # guide RNA
+			 ]

@@ -1,0 +1,84 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# Query Map: SELECT ?item WHERE {?item wdt:P31 wd:Q2441216. } LIMIT 10
+
+start = @<#interstellar_object>
+
+<#interstellar_object> EXTRA wdt:P31 {
+
+ # instance of
+  wdt:P31 [ wd:Q2441216 ] ;
+
+ # video
+  wdt:P10 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+  
+ # image
+  wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+  
+ # discoverer or inventor
+  wdt:P61 [ <http://www.wikidata.org/entity>~ ];
+  
+ # site of astronomical discovery
+  wdt:P65 [ <http://www.wikidata.org/entity>~ ] + ;
+   
+ # named after
+  wdt:P138 [ <http://www.wikidata.org/entity>~ ] ;
+  
+ # Commons category
+  wdt:P373 xsd:string * ;
+    
+ # pronunciation audio
+  wdt:P443 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+
+# time of discovery or invention; 
+  wdt:P575 xsd:dateTime ;
+
+# JPL Small-Body Database ID
+    wdt:P716 xsd:string ;
+
+# IPA transcription
+    wdt:P898 xsd:string ;
+
+# orbital eccentricity
+    wdt:P1096 xsd:decimal ;
+
+# absolute magnitude
+    wdt:P1457 xsd:decimal ;
+
+# orbital inclination
+    wdt:P2045 xsd:decimal ;
+
+# rotation period
+    wdt:P2147 xsd:decimal ;
+
+# longitude of ascending node
+    wdt:P2213 xsd:decimal ;
+
+# periapsis
+    wdt:P2244 xsd:decimal ;
+
+# argument of periapsis
+    wdt:P2248 xsd:decimal ;
+
+# mean anomaly
+    wdt:P2325 xsd:decimal ;
+
+# diameter
+    wdt:P2386 xsd:decimal ;
+
+# albedo
+    wdt:P4501 xsd:decimal ;
+
+# Extrasolar Planets Encyclopaedia exoplanet ID
+    wdt:P5653 xsd:string ;
+
+# Minor Planet Center body ID
+    wdt:P5736 xsd:string
+}

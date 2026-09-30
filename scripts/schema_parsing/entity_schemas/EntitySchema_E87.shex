@@ -1,0 +1,12 @@
+## Main schema on biological pathways in Wikidata. It imports the schema for Reactome and Wikidata, 
+## which imports, in turn, the native RDF schema for Wikipathways E86
+
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E39>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E41>
+
+# SPARQL: SELECT * WHERE {{?pathway wdt:P2410 ?id } UNION {?pathway wdt:P2410 ?id }}
+
+<#biological_pathway> [
+   <#wikidata-reactome-pathway> # Reactome
+   <#wikidata-wp-pathway> # Wikipathways
+]

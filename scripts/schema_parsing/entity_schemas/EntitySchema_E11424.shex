@@ -1,0 +1,30 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+#films with core properties (P31, P1476, P577, P364, P136, P57, P161, P344, P58, P1040, P2047) and a cast of 5+
+
+#samples:
+#   SELECT ?item { ?item wdt:P57 wd:Q7374 }
+
+start = @<wikidata-film>
+
+<wikidata-film> EXTRA p:P31 {    
+	## STATEMENTS
+	wdt:P31 [wd:Q11424] ;
+        wdt:P31 . *  ;
+        wdt:P1476 . + ;
+        wdt:P577 . + ;
+        wdt:P364 . + ;
+        wdt:P136 . + ;
+        wdt:P57 @<human> +;
+        wdt:P161 . {5,} ;
+        wdt:P344 @<human> +;
+        wdt:P58  @<human> +;
+        wdt:P1040  @<human> +;
+        wdt:P2047 . ? ;
+}
+
+<human> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5] +;
+}

@@ -1,0 +1,8 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start=@<complex_portal_entry>
+
+<complex_portal_entry> {
+    wdt:P7718 xsd:string ;
+}

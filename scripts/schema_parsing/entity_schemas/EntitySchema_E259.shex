@@ -1,0 +1,66 @@
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+prefix ps: <http://www.wikidata.org/prop/statement/> 
+prefix psv: <http://www.wikidata.org/prop/statement/value/> 
+prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/> 
+prefix pq: <http://www.wikidata.org/prop/qualifier/> 
+prefix pqv: <http://www.wikidata.org/prop/qualifier/value/> 
+prefix pqn: <http://www.wikidata.org/prop/qualifier/value-normalized/> 
+prefix pr: <http://www.wikidata.org/prop/reference/> 
+prefix prv: <http://www.wikidata.org/prop/reference/value/> 
+prefix prn: <http://www.wikidata.org/prop/reference/value-normalized/>
+prefix wdno: <http://www.wikidata.org/prop/novalue/> 
+prefix wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+<property> {
+  rdf:type [wikibase:Property] ;
+  
+  # A property has a set of 1 or more sets of labels, descriptions and aliases. 
+  (rdfs:label @<languageLabel> ;
+   skos:prefLabel @<languageLabel> ;
+   schema:name @<languageLabel> ;
+   skos:altLabel rdf:langString* ;
+   schema:description rdf:langString ;)+ ;
+  
+  wikibase:propertyType @<propertyTypes> ;
+  wikibase:directClaim @<wdt>  ;
+  wikibase:claim [p:~] ;
+  wikibase:statementProperty [ps:~] ;
+  wikibase:statementValue [psv:~] ;
+  wikibase:statementValue [psv:~] ;
+  wikibase:qualifier [pq:~] ;
+  wikibase:qualifierValue [pqv:~] ;
+  wikibase:reference [pr:~] ;
+  wikibase:referenceValue [prv:~] ;
+  wikibase:novalue [wdno:~] ;
+  wikibase:directClaimNormalized [wdtn:~] ;
+  wikibase:statementValueNormalized [psn:~] ;
+  wikibase:qualifierValueNormalized [pqn:~] ;
+  wikibase:referenceValueNormalized [prn:~] ;
+}
+
+<languageLabel> [rdf:lang]
+
+<wdt> [wdt:~]  
+
+<propertyTypes> [
+	wikibase:ExternalId
+    wikibase:CommonsMedia
+    wikibase:Globecoordinate
+    wikibase:Monolingualtext
+    wikibase:Quantity
+    wikibase:String
+    wikibase:Time
+    wikibase:Url
+    wikibase:WikibaseItem
+    wikibase:WikibaseProperty
+    wikibase:GeoShape
+    wikibase:TabularData
+    wikibase:Math
+]

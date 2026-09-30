@@ -1,0 +1,64 @@
+## Plazi taxon treatment
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E291>
+PREFIX E292: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E291#>
+
+## This schema describes the shapes of a subgraph in Wikidata on a taxon treatment
+## sourced from plazi (http://plazi.org/) and crossref.
+## This schema is drafted from wd:Q105626659
+
+## Work in progress
+
+prefix p: <http://www.wikidata.org/prop/>
+prefix pq: <http://www.wikidata.org/prop/qualifier/>
+prefix wd: <http://www.wikidata.org/entity/>
+prefix pr: <http://www.wikidata.org/prop/reference/>
+prefix ps: <http://www.wikidata.org/prop/statement/>
+prefix psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+prefix schema: <http://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+
+start = @<#taxon_name>
+
+<#taxon_name> {
+	rdfs:label  		rdf:langString* ;
+	schema:description  rdf:langString* ; 
+	schema:name  		rdf:langString* ; 
+	skos:prefLabel  	rdf:langString* ; 
+  
+  	p:P31 				@<#P31_instance_of> ; 
+	p:P225 				@<#P225_taxon_name> ; 
+    p:P1343				@<#P1343_described_by_source> ;
+}
+
+<#P31_instance_of> {
+  ps:P31  IRI ; 
+  prov:wasDerivedFrom @<#treatmentRef>; 
+}
+
+
+
+<#P225_taxon_name> {
+	ps:P225  xsd:string; 
+    prov:wasDerivedFrom @<#plaziRef>; 
+}
+
+<#P1343_described_by_source> {
+   ps:P1343				@E291:taxon_treatment ;
+   prov:wasDerivedFrom	@<#plaziRef> ;
+   
+}
+
+# References
+<#plaziRef> {
+  pr:P248				[wd:Q7203726] ;
+  pr:P356				xsd:string ;
+  pr:P1992				xsd:string ;
+}
+
+<#treatmentRef> {
+	pr:P248  			@E291:taxon_treatment ; 
+}

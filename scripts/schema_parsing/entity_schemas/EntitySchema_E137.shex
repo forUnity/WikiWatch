@@ -1,0 +1,7 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+START=@<privacy_policy>
+
+<privacy_policy>{
+   wdt:P7101 IRI;
+ }

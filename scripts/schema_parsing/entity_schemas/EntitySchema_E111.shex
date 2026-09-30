@@ -1,0 +1,41 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E73>
+PREFIX E73: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E73#>
+
+# query map: SELECT ?item WHERE {?item wdt:P31 wd:Q19600329. } LIMIT 10 
+
+start = @<#virtual_reality_headset>
+
+<#virtual_reality_headset> EXTRA wdt:P31 {
+
+  # instance of
+  wdt:P31 [ wd:Q19600329 ] ;
+
+  # developer
+  wdt:P178 @E73:wikidata_software_company * ;
+
+  # official website
+  wdt:P856 IRI ? ;
+
+  # mass
+  wdt:P2067 xsd:decimal * ;
+
+  # display technology
+  wdt:P5307 IRI * ;
+
+  # manufacturer
+  wdt:P176 IRI * ;
+
+  # price
+  wdt:P2284 xsd:decimal * ;
+
+  # publication date
+  wdt:P577 xsd:dateTime * ;
+
+  # subreddit
+   wdt:P3984 xsd:string * ;
+}

@@ -1,0 +1,54 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<#wikidata-file_format_family>
+
+<#wikidata-file_format_family> {
+	
+	p:P31 @<#P31_instance_of_file_format_family>* ; # This item is a file format family
+	 
+	
+	p:P1195 @<#P1195_file_extension>* ;		# File extensions used by this file format family
+	
+
+	p:P527 @<#P527_has_part>*;	  		# Items that are members of this family
+	
+	#identifiers
+	
+	p:P2748 @<#P2748_pronom_id>* ;			# PUID for this file format from The National Archives
+	
+	p:P3266 @<#P3266_locfdd_id>* ;			# Library of Congress File Format Discription Document for this file format
+	
+	p:P3381 @<#P3381_ffw_id>* ;			# Zero or more page(s) for this file format in the Just Solve the File Format Problem wiki	
+}	
+
+
+<#P31_instance_of_file_format_family> {	# Instance of [P31] file format
+  ps:P31 [wd:Q26085352] ;
+}
+
+
+
+<#P2748_pronom_id> {			# Zero or more PUID for this file format family from The National Archives
+  ps:P2748 LITERAL ;
+}
+
+
+<#P3266_locfdd_id> {			# Zero or more Library of Congress File Format Discription Document for this file format family
+  ps:P3266 LITERAL ;
+}
+
+
+<#P3381_ffw_id> {			# Zero or more page(s) for this file format family in the Just Solve the File Format Problem wiki
+  ps:P3381 LITERAL ;
+}
+
+<#P1195_file_extension> {		# Zero or more file extensions for this file format family
+  ps:P1195 LITERAL ;
+}
+
+
+<#P527_has_part> {			# Zero or more items that are members of this family
+  p:P527 IRI ;
+}

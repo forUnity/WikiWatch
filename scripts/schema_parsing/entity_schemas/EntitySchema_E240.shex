@@ -1,0 +1,31 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E239>
+PREFIX E239: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E239#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q11173 ; wdt:P1582 [] } limit 5
+
+start = @<#wikidata-natural-product>
+
+<#wikidata-natural-product> @ E239:wikidata-chemical-compound AND {
+  # Needs to have a taxon
+  wdt:P1582 {
+     p:P31 @<#taxon>+;
+
+  }+;
+  # Has at least one reference for every taxon it has been found in
+  p:P1582 {
+     prov:wasDerivedFrom {pr:P248 .+}+;
+}+;
+
+}
+
+<#taxon> {
+    ps:P31 [wd:Q16521] ;
+}

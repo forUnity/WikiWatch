@@ -1,0 +1,37 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX bgee14: <https://bgee.org/?page=gene&gene_id=>
+PREFIX bgee15: <https://bgee.org/bgee15_0/gene/>
+
+start=@<bgee_GeneExpression>
+
+<bgee_GeneExpression> {
+  wdt:P31 [wd:Q7187] ; 
+  wdt:P703 [wd:Q15978631 ] ; 
+  p:P5572 @<#P5572_expressed_in> ;
+}
+
+<#P5572_expressed_in> {
+  ps:P5572 @<#tissue> ;
+  prov:wasDerivedFrom @<#BGeeDB_reference> ;
+}
+
+<#tissue> {
+  wdt:P31 [
+    wd:Q4936952 # anatomical structure
+    wd:Q103812671 # anatomical entity tyoe
+  ] ;
+}
+
+<#BGeeDB_reference> {
+  pr:P248 [wd:Q54985720] ;
+  pr:P813 xsd:dateTime ;
+  pr:P854 [
+   bgee14:~
+   bgee15:~ ]
+}

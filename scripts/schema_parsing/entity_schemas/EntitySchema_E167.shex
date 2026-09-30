@@ -1,0 +1,56 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E165>
+PREFIX E165: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E165#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Example SPARQL query: select * where {  ?x wdt:P31 wd:Q8054 } limit 5
+
+start = @<#wikidata-protein>
+
+<#wikidata-protein> EXTRA p:P31 {
+  p:P31 @<#P31_instance_of_protein> ;
+  p:P702 @<#P702_encoded_by> ;
+  
+  
+  ## Identifiers
+  p:P352 @<#P352_uniprot_id>? ;
+  p:P637 @<#P637_RefSeq_Protein_ID>+ ;
+  p:P638 @<#P638_PDB_ID>* ;
+  p:P5458 @<#P5458_Guide_to_Pharmacology_Target_ID>* ;
+}
+
+<#P31_instance_of_protein> {
+	ps:P31 [wd:Q8054 ] ;
+	prov:wasDerivedFrom @<#protein_reference>;
+}
+
+<#P702_encoded_by> {
+   ps:P702 IRI ; # protein encoded by [6702] a gene
+}
+
+## References
+<#protein_reference> { # TODO
+
+}
+
+<#P703_found_in_taxon> { # TODO
+}
+
+<#P352_uniprot_id> { # TODO
+}
+
+<#P637_RefSeq_Protein_ID> { # TODO
+}
+
+<#P638_PDB_ID> { # TODO
+}
+
+<#P5458_Guide_to_Pharmacology_Target_ID> { # TODO
+}

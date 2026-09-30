@@ -1,0 +1,27 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+#SPARQL query
+# SELECT ?item ?value { ?item wdt:P6269 ?value }
+
+start = @<apiendpoint>
+
+<apiendpoint> {
+  wdt:P6269 .+ ;#instances with SPARQL endpoint
+  wdt:P856 .+ ;#official website
+  wdt:P921 .+ ;#main subject(s)
+  wdt:P1535 .* ;#used by
+  wdt:P1343 .* ;#described by source
+  wdt:P973 .* ;#described at URL
+  wdt:P1324 .* ;#source code repository
+  wdt:P277 .* ;#programming language
+  wdt:P400 .* ;#platform
+  wdt:P306 .* ;#operating system
+  wdt:P577 .{0,1} ;#publication date
+  wdt:P408 .* ;#software engine
+  wdt:P366 .* ;#use
+  wdt:P1401 .* ;#bug tracking system
+  wdt:P495 .* ;#country of origin
+  wdt:P1325 .* ;#external data available at 
+}

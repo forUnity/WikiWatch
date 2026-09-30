@@ -1,0 +1,41 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+start = @<act>
+
+<act> EXTRA wdt:P921 {
+  wdt:P31 [wd:Q91586285 wd:Q100532807]; # 1 instance of with value Act of the Oireachtas, Irish Statutory Instrument
+  wdt:P577 .; # 1 publication date with any value
+  wdt:P1001 [wd:Q27 wd:Q31747]; # 1 applies to jurisdiction with value Ireland, Irish Free State
+  wdt:P467 [wd:Q129821 wd:Q2016884]; # 1 legislated by with value Oireachtas, Oireachtas of the Irish Free State
+  wdt:P953 .+; # 1 or more full work available at url with any value
+  wdt:P1031 .; # 1 legal citation of this text with any value
+  p:P179 @<act_P179>; # 1 part of the series with shape act_P179
+  wdt:P17 [wd:Q27 wd:Q31747]; # 1 country with value Ireland, Irish Free State
+  wdt:P8726 .; # 1 Irish Statute ID with any value
+  wdt:P457 .*; # 0 or more foundational text with any value
+  wdt:P1448 .?; # 0 or 1 official name with any value
+  wdt:P50 .?; # 0 or 1 author with any value
+  wdt:P921 @<act_P921> +; # 1 or more Main Subject with shape act_P921
+  wdt:P3148 @<act_P3148> *; # 0 or more Repeals with shape act_P3148
+  wdt:P2567 @<act_P2567> *; # 0 or more Amended by with shape act_P2567
+}
+
+<act_P179> {
+  ps:P179 .; # 1 statement part of the series with any value
+  pq:P1545 .; # 1 qualifier series ordinal with any value
+}
+
+<act_P921> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q1756157]; # 1 instance of with value area of law
+}
+
+<act_P2567> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q91586285 wd:Q100532807]; # 1 instance of with value Act of the Oireachtas, Irish Statutory Instrument
+}
+
+<act_P3148> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q91586285 wd:Q100532807]; # 1 instance of with value Act of the Oireachtas, Irish Statutory Instrument
+}

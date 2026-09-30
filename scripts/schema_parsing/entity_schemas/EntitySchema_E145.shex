@@ -1,0 +1,51 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q174989. } LIMIT 10
+
+start =@<#file_system>
+<#file_system> {
+
+    # instance of
+    wdt:P31 [ wd:Q174989 ] ;
+    # developer; 
+    wdt:P178 [ <http://www.wikidata.org/entity>~ ] * ;
+    # publication date
+    wdt:P577 xsd:dateTime ? ;
+    # named after; frequency
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] * ;
+    # programming language
+    wdt:P277 [ <http://www.wikidata.org/entity>~ ] * ;
+    # software version identifier
+    wdt:P348 xsd:string * ;
+    # official website
+    wdt:P856 IRI * ;
+    # operating system
+    wdt:P306 [ <http://www.wikidata.org/entity>~ ] * ;
+    # described at URL
+    wdt:P973 IRI * ;
+    # license
+    wdt:P275 [ <http://www.wikidata.org/entity>~ ] * ;
+    # source code repository
+    wdt:P1324 IRI ? ;
+    # inception
+    wdt:P571 xsd:dateTime ? ;
+    # depends on software
+    wdt:P1547 [ <http://www.wikidata.org/entity>~ ] * ;
+    # Stack Exchange tag
+    wdt:P1482 [ <https://stackoverflow.com/tags>~ ] ? ;
+    # described by source
+    wdt:P1343 [ <http://www.wikidata.org/entity>~ ] * ;
+    # subreddit
+    wdt:P3984 xsd:string ? ;
+    # Freebase ID
+    wdt:P646 xsd:string ? ;
+    # Quora topic ID
+    wdt:P3417 xsd:string ? ;
+    # File Format Wiki page ID
+    wdt:P3381 xsd:string ? ;
+}

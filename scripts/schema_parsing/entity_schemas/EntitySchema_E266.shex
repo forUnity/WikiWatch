@@ -1,0 +1,90 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+## E265 collects references to primary sources being described here
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+
+<#P227_GND_ID> {
+  ps:P227 xsd:string ; 
+  prov:wasDerivedFrom  @E265:reference+ ;
+}
+
+<#P351_ncbi_gene_id> {
+   ps:P351  xsd:string  ;   
+   prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P352_uniprot_id> { 
+  ps:P352 xsd:string ;
+  prov:wasDerivedFrom  @E265:reference+ ;
+}
+
+<#P486_MeSH_descriptor_ID> {
+  ps:P486              xsd:string ;  
+  prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P594_ensembl_gene_id> {
+    ps:P594  xsd:string ;
+    prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P637_RefSeq_Protein_ID> { 
+  ps:P637  xsd:string ;
+  prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P638_PDB_ID> { 
+  ps:P638 xsd:string ;
+  prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P703_found_in_taxon>  { 
+  ps:P703 {
+     wdt:P31 [wd:Q16521] ;
+  } ;
+  prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P2393_ncbi_locus_tag> {
+ ps:P2393 xsd:string ;
+  prov:wasDerivedFrom  @E265:reference+ ; 
+}
+
+
+<#P2410_wikipathways-identifier> {
+	ps:P2410  LITERAL  /^WP[0-9]+$/;
+	prov:wasDerivedFrom @E265:wikipathways_reference ;
+}
+
+<#P2946_BacDive_ID> {
+  ps:P2946             xsd:string ; # BacDive ID
+  prov:wasDerivedFrom  @E265:reference+  
+}
+
+<#P3031_EPPO_ID> {
+  ps:P3031 xsd:string ; # EPPO Code
+  prov:wasDerivedFrom  @E265:reference + 
+}
+
+<#P4333_GenBank_Assembly_Accession> {
+  ps:P4333             xsd:string ; # GenBank Assembly Accession
+  prov:wasDerivedFrom  @E265:reference + 
+}
+
+<#P5458_Guide_to_Pharmacology_Target_ID> { 
+   ps:P5459 xsd:string ;
+   prov:wasDerivedFrom  @E265:reference+ ;
+}
+
+<#P6694_MeSH_ConceptID> {
+  ps:P6694             xsd:string ; # MeSH Concept ID
+  prov:wasDerivedFrom  @E265:reference +
+}

@@ -1,0 +1,18 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example SPARQL query: select ?病院 where { ?病院 wdt:P31 wd:Q16917 } limit 5
+
+start = @<病院>
+
+<病院>  EXTRA wdt:P31  {
+  wdt:P31   [ wd:Q16917 wd:Q7257872 ] ;# 病院のインスタンス
+  wdt:P17   .{1} ;         # 国
+  wdt:P131  .{1} ;         # 位置する行政区画
+  wdt:P625  .+   ;         # 位置座標
+  wdt:P6801 xsd:decimal? ; # 病床数
+  wdt:P856  IRI* ;         # 公式ウェブサイト
+  wdt:P1705 .*   ;         # 原語ラベル
+  wdt:P6375 .*   ;         # 所在地
+}

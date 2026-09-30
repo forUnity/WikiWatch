@@ -1,0 +1,20 @@
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+
+start = @<RomeMunicipio>
+
+<RomeMunicipio> {
+  p:P31 [wd:Q525504] ; #has to be a municipio of Rome
+  p:P17 [wd:Q38] ; #has to be in Italy
+  p:P131 [wd:Q3940419] ; #has to be in Rome
+  p:P571 [psv:P571 "+2013-03-11T00:00:00Z"^^xsd:dateTime ]; #date of official creation
+  p:P1448 .+ ; #official name
+  p:P2046 .+ ; #area
+  p:P1082 .+ ; #population
+  p:P421 [wd:Q6655 wd:Q6723] ; #has to be in Rome
+}

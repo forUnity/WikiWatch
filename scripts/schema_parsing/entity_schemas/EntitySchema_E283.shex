@@ -1,0 +1,37 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Project see https://sv.wikipedia.org/wiki/Wikipedia:Projekt_svenska_f%C3%B6rsamlingar
+# https://www.wikidata.org/wiki/Q58899083
+
+# Example SPARQL query: https://w.wiki/rju 
+# SELECT ?item ?itemLabel WHERE {?item (wdt:P31/(wdt:P279*)) wd:Q615980}
+
+start = @<SCP>
+<SCP> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q615980 ] ;
+ wdt:P17    [ wd:Q34 ] ; # country 
+ wdt:P131  .+; # administrative unit
+ wdt:P3842  .*; # located in present-day administrative territorial entity
+
+ wdt:P625  .+ ; # coordinates
+ wdt:P18    .+ ; # picture 
+ wdt:P1365    .+ ; # replaces 
+ wdt:P1366    .+ ; # replaced by 
+ wdt:P5324    .+ ; # Swedish National Archive ID
+ wdt:P571 .+ ; # inception
+ wdt:P576 .+ ; # dissolved, abolished or demolished date QUESTION; Should we use this see talk page
+ wdt:P6104 [ wd:Q58899083]   * ; # maintained by WikiProject 
+ wdt:P778 .+ ; # Church of Sweden parish code
+
+ wdt:P5048 .* ; # Church of Sweden ID
+ wdt:P2124 .* ; # member count
+ wdt:P1082 .* ; # population
+ wdt:P779 .* ; # Church of Sweden Pastoratskod
+ wdt:P3222 .* ; # NE.se ID
+
+ wdt:P361 .* ; # part of
+ wdt:P708 .* ; # diocese
+ wdt:P7607 .* ; # WikiTree Kategori
+
+}

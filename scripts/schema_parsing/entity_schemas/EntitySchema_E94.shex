@@ -1,0 +1,30 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# select ?id where { ?id wdt:P31 wd:Q65651503 }
+
+start = @<clippings-archives>
+
+<clippings-archives> EXTRA wdt:P31 {
+
+  # instance of
+  wdt:P31 [ wd:Q65651503 ];
+
+  # country
+  wdt:P17 . ;
+
+  # located in the administrative territorial entity
+  wdt:P131 . ;
+
+  # official website
+  wdt:P856 . ;
+
+  # parent organization
+  wdt:P749 . ;
+
+  # topics
+  wdt:P921 . ;
+
+  # collection size
+  wdt:P1436 . ;
+}

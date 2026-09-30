@@ -1,0 +1,31 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?x WHERE { ?x wdt:P31 wd:Q45791. ?x wdt:P361 wd:Q2620036 } LIMIT 10
+
+start =@<#nazca_line>
+<#nazca_line> {
+
+    # instance of
+    wdt:P31 [ wd:Q45791 ] ;
+    # part of
+    wdt:P361 [ wd:Q2620036 ] ;
+    # country; 
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ;
+    # located in the administrative territorial entity
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] ;
+    # creator; 
+    wdt:P170 [ <http://www.wikidata.org/entity>~ ] ;
+    # depicts; 
+    wdt:P180 [ <http://www.wikidata.org/entity>~ ] ;
+    # coordinate location; 
+    wdt:P625 geo:wktLiteral ;
+    # image; 
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # present in work; 
+    wdt:P1441 [ <http://www.wikidata.org/entity>~ ] ?
+    }

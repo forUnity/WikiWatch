@@ -1,0 +1,62 @@
+{
+    "type": "Schema",
+    "imports": [
+        "https://www.wikidata.org/wiki/Special:EntitySchemaText/E107"
+    ],
+    "start": "#humanChromosome",
+    "shapes": [
+        {
+            "type": "ShapeAnd",
+            "id": "#humanChromosome",
+            "shapeExprs": [
+                "https://www.wikidata.org/wiki/Special:EntitySchemaText/E107#chromosome",
+                {
+                    "type": "Shape",
+                    "expression": {
+                        "type": "EachOf",
+                        "expressions": [
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/P361",
+                                "valueExpr": "#human_genome"
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/P703",
+                                "valueExpr": "#found_in_taxon_homo_sapiens"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Shape",
+            "id": "#human_genome",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P361",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "values": [
+                        "http://www.wikidata.org/entity/Q720988"
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#found_in_taxon_homo_sapiens",
+            "expression": {
+                "type": "TripleConstraint",
+                "predicate": "http://www.wikidata.org/prop/statement/P703",
+                "valueExpr": {
+                    "type": "NodeConstraint",
+                    "values": [
+                        "http://www.wikidata.org/entity/Q15978631"
+                    ]
+                }
+            }
+        }
+    ]
+}

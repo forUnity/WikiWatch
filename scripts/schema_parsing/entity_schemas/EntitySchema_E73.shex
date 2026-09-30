@@ -1,0 +1,100 @@
+#Shape Expression for software companies on Wikidata 
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+
+start = @<#wikidata_software_company>
+
+# Query with results:
+
+<#wikidata_software_company> EXTRA p:P31 p:P279  {
+	# STATEMENTS
+	
+	
+	p:31 {ps:P31 [wd:Q4830453]} ;		
+
+	p:P279  @<E73#P279_business-parent-class>* ;
+
+	p:1056 @<E73#P1056_product_or_material_produced>* ;		
+	
+	p:452 @<E73#P452_industry>* ;
+
+        p:P571 xsd:dateTime ? ;
+
+ 	p:P159 [ <http://www.wikidata.org/entity>~ ] * ;
+	
+	# IDENTIFIERS
+
+  
+  	p:2088 @<E73#P2088_crunchbase_organization_id>* ;
+
+	p:1320 @<E73#P1320_open_corporates_id>* ;
+
+ 	p:213  @<E73#P213_ISNI>* ;
+
+  	p:3500 @<E73#P3500_RingoldID>* ;
+
+  	p:2427 @<E73#P2427_GRIDid>* ;
+
+  	p:3153 @<E73#P3153_CrossRef>* ;
+
+ 	p:214 @<E73#P214_VIAF>* ;
+}
+
+# Shape expression for Wikidata statements related to software companies
+
+
+<E73#P279_business-parent-class> {
+  ps:P279  [wd:Q4830453] ; 
+ }
+
+<E73#P1056_product_or_material_produced> {
+        ps:P1056 IRI ;
+}
+
+<E73#P452_industry> {
+       ps:P452 [wd:Q880371 wd:Q5268834];
+}
+
+
+
+#EXTERNAL IDs
+
+
+<E73#P2088_crunchbase_organization_id> {
+	ps:P2088 LITERAL;
+}
+
+<E73#P1320_open_corporates_id> {
+        ps:P1320 LITERAL;
+}
+
+<E73#P213_ISNI> {
+	ps:P213 LITERAL;
+}
+
+<E73#P3500_RingoldID> {
+        ps:P3500 LITERAL;
+}
+
+<E73#P2427_GRIDid> {
+	ps:P2427 LITERAL;
+}
+
+<E73#P3153_CrossRef> {
+        ps:P3153 LITERAL;
+}
+
+<E73#P214_VIAF> {
+       ps:P214 LITERAL;
+}

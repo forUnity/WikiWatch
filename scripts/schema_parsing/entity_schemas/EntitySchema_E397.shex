@@ -1,0 +1,126 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example query for validation: SELECT ?AnatomicalStructure WHERE { ?AnatomicalStructure wdt:P31 wd:Q4936952 } LIMIT 10
+
+start = @<AnatomicalStructureShape>
+
+<AnatomicalStructureShape> EXTRA  wdt:P31 {
+	# instance of - one or more values
+	wdt:P31 [ wd:Q4936952] + ;
+
+	# part of - zero or more values
+	wdt:P361  . * ;
+
+	# has part - zero or more values
+	wdt:P527  . * ;
+
+	# connects with - zero or more values
+	wdt:P2789 . * ;
+
+	# anatomical branch of - zero or more values
+	wdt:P3261 . * ;
+
+	# anatomical location - zero or more values
+	wdt:P927  . * ;
+
+	# innervated by - zero or more values
+	wdt:P3189 . * ;
+
+	# innervates - zero or more values
+	wdt:P3190 . * ;
+
+	# arterial supply - zero or more values
+	wdt:P2286 . * ;
+
+	# venous drainage - zero or more values
+	wdt:P2289 . * ;
+
+	# lymphatic drainage - zero or more values
+	wdt:P2288 . * ;
+
+	# muscle origin - zero or more values
+	wdt:P3490 . * ;
+
+	# muscle insertion - zero or more values
+	wdt:P3491 . * ;
+
+	# muscle action - zero or more values
+	wdt:P3310 . * ;
+
+	# antagonist muscle - zero or more values
+	wdt:P2329 . * ;
+
+	# has use - zero or more values
+	wdt:P366  . * ;
+
+	# development of anatomical structure - zero or more values
+	wdt:P4843 . * ;
+
+	# found in taxon - zero or more values
+	wdt:P703 . * ;
+
+	# image - zero or more values
+	wdt:P18   . * ;
+
+	# Commons category - zero or one value
+	wdt:P373  . ? ;
+
+	# described by source - zero or more values
+	wdt:P1343 . * ;
+
+	# Foundational Model of Anatomy ID - zero or one value
+	wdt:P1402 . ? ;
+
+	# UBERON ID - zero or one value
+	wdt:P1554 . ? ;
+
+	# Terminologia Anatomica 98 ID - zero or one value
+	wdt:P1323 . ? ;
+
+	# TA98 Latin term - zero or one value
+	wdt:P3982 . ? ;
+
+	# TA2 ID - zero or one value
+	wdt:P7173 . ? ;
+
+	# NeuroNames ID (plain mode) - zero or one value
+	wdt:P4394 . ? ;
+
+	# Store medisinske leksikon ID - zero or one value
+	wdt:P5082 . ? ;
+
+	# Xenopus Anatomical Ontology ID - zero or one value
+	wdt:P4495 . ? ;
+
+	# BrainInfo ID, hierarchical - zero or one value
+	wdt:P4395 . ? ;
+
+	# Terminologia Histologica - zero or one value
+	wdt:P1694 . ? ;
+
+	# Terminologia Embryologica - zero or one value
+	wdt:P1693 . ? ;
+
+	# Brenda Tissue Ontology ID - zero or one value
+	wdt:P5501 . ? ;
+
+	# ICD-11 (foundation) - zero or one value
+	wdt:P7807 . ? ;
+
+	# ICD-11 ID (MMS) - zero or one value
+	wdt:P7329 . ? ;
+
+	# UMLS CUI - zero or one value
+	wdt:P2892 . ? ;
+
+	# MeSH tree code - zero or one value
+	wdt:P672  . ? ;
+
+	# MeSH descriptor ID - zero or one value
+	wdt:P486  . ? ;
+
+	# Treccani's Dizionario di Medicina ID - zero or one value
+	wdt:P10022 . ? ;
+
+}

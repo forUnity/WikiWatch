@@ -1,0 +1,60 @@
+## Import shapes about references
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E273>
+PREFIX E273: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#>
+
+## Import shapes about external identifiers
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E274>
+PREFIX E274: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#>
+
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX obo: <http://purl.obolibrary.org/obo/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start=@<#gene-wiki-disease-item>
+
+<#gene-wiki-disease-item> EXTRA p:P279 p:P2888 
+   {
+    p:P279 @<#P279_subclassof>* ;
+	p:P2888 @<#P2888_exactmatch> ;
+    p:P780 @<#P780_symptoms>* ;
+  
+    # Identifiers
+    p:P699       @E274:P699_disease_ontology ;
+    p:P5270     @E274:P5270_mondo_id ;
+	p:P492      @E274:P492_omim_id* ;
+	p:P1550     @E274:P1550_orphanet_id* ;
+	p:P1748     @E274:P1748_nci_theraurus_id* ;
+ 	p:P2892 	@E274:P2892_umls_cui* ;
+    p:P4229     @E274:P4229_icd10-cm* ;
+    p:P5806		@E274:P5806-snomed-ct* ;
+}
+
+## Shapes describing statements in detail.
+<#P279_subclassof> {
+   ps:P279 @<#gene-wiki-disease-item> OR {
+       ps:P279 [wd:Q12136] ;
+       prov:wasDerivedFrom 	@E273:disease-ontology-reference OR 
+                            @E273:mondo-disease-reference ;
+   } ;
+}
+    
+<#P492_omim_id> {
+   ps:P492 xsd:string ;
+   prov:wasDerivedFrom @E273:disease-ontology-reference 
+  					   OR @E273:mondo-disease-reference ;      
+}
+      
+<#P780_symptoms> {
+   ps:P780 {} ; # TODO create and import EntitySchema for the Symptom Ontology 
+   prov:wasDerivedFrom @E273:symptom-ontology-reference ;   
+}
+            
+<#P2888_exactmatch> {
+  ps:P2888 [obo:~] ;
+  prov:wasDerivedFrom 	@E273:disease-ontology-reference 
+  						OR @E273:mondo-disease-reference ;
+}

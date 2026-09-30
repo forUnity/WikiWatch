@@ -1,0 +1,128 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108>
+PREFIX E108: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E108#>
+
+# Example query: select * { ?x wdt:P31 wd:Q7187 . ?x wdt:P279 wd:Q101110906  } LIMIT 5
+
+start = @<#wikidata-ncrna-gene>
+
+<#wikidata-ncrna-gene> {
+  p:P31 @<#P31_instance_of_gene> ;
+  p:P279 @<#P279_subclass_of_ncrna_gene>? ;
+
+  p:P684 @<#P684_ortholog>* ; # Zero or more known orthologs.
+  p:P688 @<#P688_encodes>* ; # Zero or one geneproducts.
+  p:P703 @<#P703_found_in_taxon> ; # In which taxonomy and where in that taxonomy this gene is found
+
+  # Identifiers
+  p:P351 @<#P351_ncbi_gene_id> ; # Exactly one ncbi gene identifier
+  p:P594 @<#P594_ensembl_gene_id>* ; # Zero or more Ensembl gene identifier
+  p:P2393 @<#P2393_ncbi_locus_tag>?; # Zero or one NCBI Locus tag
+    
+  ### negative shapes
+  p:P31 @<#P31_instance_of_ncrna>{0} ; # no mixing with ncRNA entries
+  p:P279 @<#P279_subclass_of_ncrna>{0} ;
+  p:P639 @<#P639_refseq_rna_id>{0} ; # no RNA IDs here, use encodes
+  p:P704 @<#P704_ensembl_transcript_id>{0} ;
+}
+
+
+## Statement details
+<#P31_instance_of_gene> {
+  ps:P31 [wd:Q7187] ; 	# Instance of [P31] gene
+  prov:wasDerivedFrom @<#ncbi-gene-reference> OR @<#ensembl-gene-reference> ;
+}
+
+<#P279_subclass_of_ncrna_gene> {
+  ps:P279 [wd:Q101110906] ; # Subclass of [P279] ncRNA gene (Q101110906)
+  prov:wasDerivedFrom @<#ncbi-gene-reference> OR @<#ensembl-gene-reference> ;
+}
+
+<#P644_genomic_start> {
+  ps:P644 LITERAL ;  # genomic start [P644] value
+  pq:P659    @E108:sequence_assembly+ ;  # Qualifier indicating the applicable genomic assembly versions.
+  prov:wasDerivedFrom @<#ensembl-gene-reference> ;
+}
+
+<#P645_genomic_end> {
+  ps:P645 LITERAL ; # genomic start [P645] value
+  pq:P659    @E108:sequence_assembly+ ; # Qualifier indicating the applicable genomic assembly versions.
+  prov:wasDerivedFrom @<#ensembl-gene-reference> ;
+}
+
+<#P684_ortholog> {
+  ps:P684 IRI ; # Known orthologs [P684].
+  pq:P703    IRI ; # Qualifier indicating in which taxon the ortholog is found [P703].
+  prov:wasDerivedFrom    @<#homologene-reference> ;
+}
+
+<#P688_encodes> {
+  ps:P688 IRI ; # gene encodes [688] for a gene product.
+  prov:wasDerivedFrom @<#ncbi-gene-reference>;
+}
+
+<#P703_found_in_taxon> { 
+  ps:P703 IRI ; # the gene is found in some taxon [P703]
+  prov:wasDerivedFrom @<#ncbi-gene-reference> ;
+}
+
+## REFERENCES
+<#ncbi-gene-reference> { # reference to a NCBI gene record
+  pr:P248   [ wd:Q20641742 ] ; # stated in [P248] NCBI gene [Q20641742]
+  pr:P351    LITERAL ; # NCBI gene identifier
+  pr:P813    xsd:dateTime ; # Date of retrieval
+}
+
+<#ensembl-gene-reference> {
+  pr:P248    {
+    wdt:P31 [wd:Q3331189] ;
+    wdt:P629 [wd:Q1344256] ;
+  };
+  pr:P594    LITERAL ; # Ensembl Gene ID [P594]
+}
+
+<#P351_ncbi_gene_id> { }
+
+<#P594_ensembl_gene_id> { }
+
+<#P2393_ncbi_locus_tag> { }
+
+<#homologene-reference> { }
+
+### DEFINITIONS FOR NEGATIVE SHAPES
+
+<#P31_instance_of_ncrna> { 
+   ps:P31 [ wd:Q427087 ] ;     # Instance of non-coding RNA
+} 
+
+<#P279_subclass_of_ncrna> { 
+   ps:P279 @<#ncrna_types> ; # Subclass of [P279]
+}
+
+<#P639_refseq_rna_id> {
+   ps:P639 LITERAL ; # The RefSeq RNA identifier [P351] for the ncRNA
+}
+
+<#P704_ensembl_transcript_id> {
+   ps:P704 LITERAL ; # The Ensembl transcript identifier [P704]
+}
+
+## Lists with Wikidata items
+<#ncrna_types> [
+  wd:Q427087 # ncRNA
+  wd:Q284578 # snRNA
+  wd:Q284416 # snoRNA
+  wd:Q15087973 # lncrna
+  wd:Q101069161 # precursor RNA
+  wd:Q423832 # antisense RNA
+  wd:Q7917415 # vault RNA
+  wd:Q4039747 # guide RNA
+			 ]

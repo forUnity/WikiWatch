@@ -1,0 +1,30 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q4343. } LIMIT 10
+
+start =@<sound_card>
+<sound_card> {
+
+    # instance of
+    wdt:P31 [ wd:Q4343 ] ;
+    # manufacturer
+    wdt:P176 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # inception
+    wdt:P571 xsd:dateTime ? ;
+    # Commons category
+    wdt:P373 xsd:string ? ;
+    # official website
+    wdt:P856 IRI ? ;
+    # discontinued date
+    wdt:P2669 xsd:dateTime ? ;
+    
+}

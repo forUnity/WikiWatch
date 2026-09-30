@@ -1,0 +1,38 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Example SPARQL query (Tim Berners Lee)
+# select ?p { values ?p { wd:Q80 }}
+# This schema has been created as a simple demo for ShEx and WShEx
+
+start = @<Researcher>
+
+<Researcher> {
+ wdt:P31  [ wd:Q5 ]         ;
+ wdt:P19  @<Place>          ;     
+ wdt:P569 xsd:dateTime    ? ; 
+ wdt:P108 @<Organization> * ;
+ p:P108 { 
+  ps:P108 @<Organization>   ;
+  pq:P580 xsd:dateTime    ? ; 
+  pq:P582 xsd:dateTime    ?
+ } * ;
+ wdt:P166    @<Award>   *     ; 
+ p:P166 { 
+  ps:P166  @<Award>         ;
+  pq:P585  xsd:dateTime   ? ; 
+  pq:P1706 @<Researcher>  *
+ } *
+}
+<Place> { 
+ wdt:P17 @<Country> 
+}
+<Organization>   {}
+<Award> { 
+  wdt:P17 @<Country> ?
+}
+<Country> {}

@@ -1,0 +1,25 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+start = @<flag>
+
+<flag> EXTRA wdt:P31{
+	wdt:P31 [wd:Q7242811] ;
+        wdt:P18 . ;
+        wdt:P571 .*  ;
+        wdt:P1268 .*; # representss something linked to LGBT+ community
+        wdt:P3089 .*;
+        p:P462 @<color>+;
+}
+
+<color> {
+        ps:P462 @<colorinstance>;
+	pq:P465 .; # P465 as qualifier
+}
+
+<colorinstance> EXTRA wdt:P31 {
+    wdt:P31 [wd:Q1075];
+}

@@ -1,0 +1,65 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<island>
+
+<island> {
+  #must be an instance or subclass of "island"
+  wdt:P31 IRI +;
+  #must be located in a body of water
+  wdt:P206 IRI +;
+  #must have an OSM way ID or OSM relation ID
+  wdt:P402 LITERAL *;
+  wdt:P10689 LITERAL *;
+  (wdt:P402 LITERAL +; | wdt:P10689 LITERAL +;);
+  #may have an official name
+  wdt:P1448 LITERAL *;
+  #may be named after something notable
+  wdt:P138 IRI *;
+  #may have an unofficial or alternative name
+  wdt:P4970 LITERAL *;
+  #should have a satellite image
+  wdt:P11832 IRI +;
+  #may have an aerial image (for smaller islands)
+  wdt:P8592 IRI *;
+  #may have a locator map image
+  wdt:P242 IRI *;
+  #may have a general image (for smaller islands)
+  wdt:P18 IRI *;
+  #may have a Wikimedia Commons category
+  wdt:P373 LITERAL *;
+  #should have an area
+  wdt:P2046 LITERAL +;
+  #must not have an ambiguous coordinate location when P5140 was probably intended to be used instead
+  wdt:P625 LITERAL {0};
+  #should have a coordinate location of centrepoint
+  wdt:P5140 LITERAL +;
+  #should have a nothernmost coordinate location
+  wdt:P1332 LITERAL +;
+  #should have a easternmost coordinate location
+  wdt:P1334 LITERAL +;
+  #should have a southernmost coordinate location
+  wdt:1333 LITERAL +;
+  #should have a westernmost coordinate location
+  wdt:P1335 LITERAL +;
+  #should have a perimeter distance
+  wdt:P2547 LITERAL +;
+  #must not have a length as islands aren't (usually) rectangular
+  wdt:P2043 LITERAL {0};
+  #must not have a width as islands aren't (usually) rectangular
+  wdt:P2049 LITERAL {0};
+  #may be located in a country border or is claimed by more than one country or "None" if unclaimed
+  wdt:P17 IRI *;
+  #may be located in one or more administrative territories or "None" if unclaimed
+  wdt:P131 IRI *;
+  #may be located in a protected area
+  wdt:P3018 IRI *;
+  #must not be located in/on physical a feature as this should be applied to the body of water the island resides
+  wdt:P706 IRI {0};
+  #may have a discoverer
+  wdt:P61 IRI *;
+  #may have a discovery date
+  wdt:P575 LITERAL *;
+}

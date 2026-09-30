@@ -1,0 +1,22 @@
+PREFIX വികിബെസ്: <http://wikiba.se/ontology#>
+PREFIX ആർഡിഎഫ്:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ഡിസി: <http://purl.org/dc/terms/>
+PREFIX വിക്കിഡാറ്റ: <http://www.wikidata.org/entity/>
+
+# മലയാളം ലെക്സീം
+
+# SELECT ?ലെക്സീമുകൾ { ?ലെക്സീമുകൾ ഡിസി:language വിക്കിഡാറ്റ:Q36236 }
+
+START = @<മലയാളം-ലെക്സീം>
+
+<മലയാളം-ലെക്സീം> {
+
+  ഡിസി:language [ വിക്കിഡാറ്റ:Q36236 ]
+    // ആർഡിഎഫ്:label "ഭാഷ"
+    // ആർഡിഎഫ്:comment "ലെക്സീമിന്റെ ഭാഷ മലയാളമായിരിക്കണം." ;
+
+  വികിബെസ്:lemma [ @ml ]
+    // ആർഡിഎഫ്:label "ലെമ്മ"
+    // ആർഡിഎഫ്:comment "ലെമ്മ മലയാളമായിരിക്കണം." ;
+
+ }

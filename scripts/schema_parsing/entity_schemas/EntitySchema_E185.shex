@@ -1,0 +1,56 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E193>
+PREFIX E193: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E193#>
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example query: SELECT ?preprint WHERE { ?preprint wdt:P31 wd:Q580922 . } limit 5
+
+start = @<preprint>
+
+<preprint> EXTRA wdt:P31  {
+ wdt:P31    [ wd:Q580922  ] ;# instance of a preprint; see also discussion at https://w.wiki/MY$
+ wdt:P1476  @<title>        ; # title of the preprint
+ wdt:P921   @<subject> *    ; # main subject of the preprint
+
+# This author part needs to be adapted to reflect that
+# there should be one of (P50 | P2039) for each position on the author list
+ p:P50    @<author>  *    ; # author
+ p:P2093  @<authornamestring>  *    ; # author name string
+
+ wdt:P407   @<language> ?   ; # language of work or name
+ wdt:P577   xsd:dateTime OR xsd:date +  ; # publication date
+ wdt:P1433 @ E193:preprint_server * ; # preprint server
+ p:P1104 @<pagecount> ?; # number of pages
+ wdt:P356   xsd:string *    ; # DOI 
+} 
+
+# Example of condition. Preprints should have at least 3 pages
+<pagecount> {
+ ps:P1104 xsd:integer or xsd:decimal MinInclusive 3;
+}
+ 
+<author> {
+  ps:P50 .;
+  pq:P1545 xsd:string ;
+  pq:P1932 xsd:string ?;
+}
+
+<authornamestring> {
+  ps:P2093 .;
+  pq:P1545 xsd:string 
+}
+
+<title> {
+}
+
+<subject> {
+}
+
+<language> EXTRA wdt:P31{
+ wdt:P31 [ wd:Q34770 wd:Q436240 wd:Q1288568] + ;
+}

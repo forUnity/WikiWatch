@@ -1,0 +1,44 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E69>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E174>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E192>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+
+PREFIX E69: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E69#>
+PREFIX E174: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E174#>
+PREFIX E192: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E192#>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+
+# Some example query: select * where { ?virus wdt:P171* wd:Q808 } limit 5
+start = @<#corona-virus>
+
+<#corona-virus> @E174:wikidata-strain AND {
+  p:P170 @<#P170_parent_taxon> ;
+  p:P171 @<#corona-virusses>+ ;
+  p:P1542 @<#P1542_has_effect>* ;   
+}
+
+<#P170_parent_taxon> {
+    ps:P170 @E192:virustaxon ;
+    prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#corona-virusses> {
+  ps:P171 [wd:Q1134583] OR @<#corona-virusses> ;
+  prov:wasDerivedFrom @E265:reference+ ;
+}
+
+<#P1542_has_effect> {
+   ps:P1542 @E69:disease ;
+   prov:wasDerivedFrom @E265:reference+ ;
+}

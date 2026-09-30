@@ -1,0 +1,51 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# example SPARQL: SELECT ?wdItem_overledene_op_nlWikipedia WHERE { ?artikel_over_overledene_op_nlWikipedia schema:isPartOf <https://nl.wikipedia.org/> ; schema:about ?wdItem_overledene_op_nlWikipedia . ?wdItem_overledene_op_nlWikipedia  wdt:P31 wd:Q5 ; wdt:P570 ?dod .} LIMIT 100
+
+start=@<deceased_person> 
+
+<deceased_person> EXTRA p:P31 {
+	wdt:P31   [wd:Q5] ;
+	p:P570  @<P570_dod> ;
+	p:P569  @<P569_dob>? ;
+	p:P27   @<P27_citizenship>+ ;
+}
+
+<P570_dod> {
+	ps:P570 xsd:dateTime ;
+	#prov:wasDerivedFrom @<main_reference>+ ; 
+}
+
+<P569_dob> {
+	ps:P569 xsd:dateTime ;
+	#prov:wasDerivedFrom @<main_reference>+ ; 
+} 
+
+<P27_citizenship> {
+	ps:P27  @<country> ;
+	#prov:wasDerivedFrom @<main_reference>+ ;
+}
+
+<main_reference> {
+	pr:P248 {} ;
+	pr:P577 {} ;
+	pr:P854 {} ;
+	pr:P1476 {} ;
+	pr:P6333 {} ;
+	pr:P813 {} ;
+}
+
+<country> {
+	wdt:P31 [wd:Q6256] ;
+}

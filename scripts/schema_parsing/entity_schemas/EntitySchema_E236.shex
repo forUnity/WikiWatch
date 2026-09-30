@@ -1,0 +1,17 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+start = @<TD>
+
+<TD> EXTRA wdt:P39 wdt:P106 wdt:P27 { # TD can have other position helds or occupations than those mentioned below
+  wdt:P31 [wd:Q5]; # 1 instance of with value human
+  wdt:P4690 .; # 1 oireachtas member id with any value
+  wdt:P39 [wd:Q654291 wd:Q18043391] +; # 1 or more position held with teachta dala or senator of ireland
+  wdt:P106 [wd:Q82955] ; # 1 occupation with value politician
+  wdt:P734 . +; # 1 or more given name with any value
+  wdt:P735 .+; # 1 or more surname with any value
+  wdt:P569 .; # 1 date of birth with any value
+  wdt:P102 .*; # 0 or more member of political party with any value
+  wdt:P21 [wd:Q6581097 wd:Q6581072 wd:Q1097630 wd:Q1052281 wd:Q2449503 wd:Q48270]; # 1 gender with these values
+  wdt:P27 [wd:Q27 wd:Q31747 wd:Q1140152] +;
+  wdt:P18 . +; # 1 or more images with any value
+}

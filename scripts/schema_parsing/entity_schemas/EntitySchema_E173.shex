@@ -1,0 +1,36 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<outbreak>
+
+# Example query: select * { ?x wdt:P31 wd:Q3241045 } LIMIT 5
+
+<outbreak> {
+  wdt:P31 [ wd:Q3241045  ] ;# instance of an outbreak
+# Core properties
+  wdt:P1603 .{1} ;# number of cases
+  wdt:P580 .{1} ;# start time
+
+# Important, optional properties
+  wdt:P582 .{1} ;# end time
+  wdt:P1120 .* ;# number of deaths
+  wdt:P8011 .* ;# number of clinical tests
+  wdt:P8010 .* ;# number of recoveries
+  wdt:P8045 .* ;# organized responses related to this event
+  wdt:P276 .* ;# location
+  wdt:P17 .* ;# country (caution: this property is used in many different ways) 
+
+# Other compatible optional properties
+  wdt:P361 .* ;# part of which larger outbreak
+  wdt:P527 .* ;# smaller outbreaks part of this one
+  wdt:P1846 .* ;# distribution map
+  wdt:P373 .* ;# Commons category
+  wdt:P3984 .* ;# subreddit
+  wdt:P2572 .* ;# hashtag
+  wdt:P1660 .* ;# has index case
+
+}

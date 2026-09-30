@@ -1,0 +1,80 @@
+# try with SELECT ?s { ?s wdt:P31 wd:Q186516 } LIMIT 50
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+start=@<national_flag>
+
+<national_flag> EXTRA wdt:P31 {
+  #must be an instance of at least national flag
+  wdt:P31 [wd:Q186516];
+
+  #must have a jurisdiction of country
+  wdt:P1001 @<jurisdiction>;
+
+  #must have an inception date
+  wdt:P571 .;
+
+  #must have an image
+  wdt:P18 .;
+
+  #must have one or more colours defined
+  wdt:P462 @<colour>+;
+
+  #must have a shape
+  wdt:P1419 @<shape>;
+
+  #must have an aspect ratio if the flag is rectangular
+  (
+    # flag is rectangular and must have an aspect ratio
+    wdt:P1419 [wd:Q209];
+    wdt:P2061 @<aspect_ratio>;
+    |
+    # flag is not rectangular and does not need to have an aspect ratio
+    wdt:P1419 [. -wd:Q209];
+  );
+
+  #must have a Unicode flag character
+  wdt:P487 LITERAL;
+
+  #must have a Commons category
+  wdt:P373 .;
+
+  #must have a flags of the world ID
+  wdt:P3089 LITERAL;
+
+  #must have one or more designers (including the possibility of being set to unknown value)
+  #TODO: handle unknown value
+  wdt:P287 @<designer>+;
+
+  #must depict one or more things (including the possibility of being set to unknown value or no value)
+  #TODO: handle unknown value and no value
+  wdt:P180 .+;
+}
+
+<jurisdiction> EXTRA wdt:P31 {
+  #must be an instance of at least country
+  wdt:P31 [wd:Q6256];
+}
+
+<colour> EXTRA wdt:P31 {
+  #must be an instance of at least colour
+  wdt:P31 [wd:Q1075];
+}
+
+<shape> EXTRA wdt:P31 {
+  #must be an instance of at least geometric shape
+  wdt:P31 [wd:Q815741];
+}
+
+<aspect_ratio> EXTRA wdt:P31 {
+  #must be an instance of at least aspect ratio
+  wdt:P31 [wd:Q20970434];
+}
+
+<designer> EXTRA wdt:P31 {
+  #must be an instance of a person or organisation
+  wdt:P31 [wd:Q5 wd:Q43229];
+}

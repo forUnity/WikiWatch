@@ -1,0 +1,15 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Sample items:
+#   SELECT DISTINCT ?item { {?item wdt:P179 wd:Q607514 } UNION { VALUES ?item { wd:Q607514 } } }
+
+start = @<wikidata-E20>
+
+<wikidata-E20> EXTRA p:P31 {    
+	## STATEMENTS
+	ps:P31 [wd:Q5398426] ;
+} 
+#to do - define seasons/episodes to check

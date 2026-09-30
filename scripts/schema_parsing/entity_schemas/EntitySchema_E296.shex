@@ -1,0 +1,25 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# query: SELECT ?cie WHERE { ?cie wdt:P31 wd:Q73126803. }
+
+start = @<boat_manufacturing_company>
+
+<boat_manufacturing_company> EXTRA wdt:P31 {
+  wdt:P31             [wd:Q73126803];       # instance of boat manufacturing company
+  wdt:P17             . +;                  # country
+  wdt:P1813           . +;                  # short name
+  wdt:P159            . +;                  # headquarters location
+  wdt:P154            . +;                  # logo image
+  wdt:P571            . +;                  # inception
+  wdt:P112            . *;                  # founded by	
+  wdt:P1037           . *;                  # director / manager
+  wdt:P1128           . *;                  # employees
+  wdt:P1056           . *;                  # product or material produced
+  wdt:P856            . *;                  # official website
+  wdt:P749            . *;                  # parent organization
+  wdt:P576            . *;                  # dissolved, abolished or demolished date
+  wdt:P793            . *;                  # significant event
+}

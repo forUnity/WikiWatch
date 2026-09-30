@@ -1,0 +1,42 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: select * where { ?s wdt:P361 wd:Q106908720 }
+
+start = @<#book>
+
+<#book> {
+  wdt:P31 [wd:Q7725634] ; # instance of literary work
+  wdt:P31 [wd:Q3331189] ; # instance of version, edition or translation
+  wdt:P31 IRI? ; # additional types is fine
+  wdt:P361 [wd:Q106908720] ; # 'part of' the 'Golden age of illustration collection'
+  wdt:P18 .? ; # image
+  wdt:P276 [wd:Q15734302] ; # 'location' 'Maastricht University Library'
+  wdt:P1476 rdf:langString ; # title
+  wdt:P50 IRI+ ; # author (one or more)
+  wdt:P110 IRI* ; # illustrator (optional)
+  wdt:P655 IRI {0,1} ; # translator (at most one?)
+  wdt:P767 IRI* ; # contributor (TODO: use qualifiers)
+  wdt:P123 IRI {0,1} ; # publisher
+  wdt:P291 IRI {0,1} ; # place of publication
+  wdt:P407 [ wd:Q7411 wd:Q1860 wd:Q397 ] ; # language: Dutch, English, or Latin
+  wdt:P577 Literal ; # publication date
+  wdt:P1104 xsd:decimal ; # number of pages
+  wdt:P217 xsd:string ; # inventory number
+  wdt:P528 xsd:string ; # catalog code
+  wdt:P186 [ wd:Q226697 wd:286 wd:11472 ] ; # made from [ parchment, leather, or paper ]
+  wdt:P2048 xsd:integer ; # height
+  wdt:P2049 xsd:integer ; # width
+  wdt:P973 IRI /^https:\/\/maastrichtuniversity\.on\.worldcat\.org\/.*/ OR IRI /^https:\/\/n2t\.net\/ark:\/.*/; # described at UM WorldCat OR ARK-persistent identifier
+  wdt:P953 IRI? ; # full work available at
+  wdt:P996 IRI? ; # doc file on Wikimedia Commons
+  wdt:P373 Literal? ; # Wikimedia Commons category
+  wdt:P5008 [ wd:Q94727761 ] ; # focus list of WikiProject Collection highlight of the KB
+  wdt:P6216 [ wd:19652 ] ; # copyright = public domain
+}

@@ -1,0 +1,21 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<dataset>
+
+<dataset> {
+  wdt:P31 [ wd:Q1172284  ] ;#instance of a dataset
+  wdt:P859 .* ;#sponsor
+  wdt:P577 .{0,1} ;#publication date
+  wdt:P953 .+ ;#full work available at
+  wdt:P2093 .* ;#author name string
+  wdt:P921 .+ ;#main subject(s)
+  wdt:P856 .* ;#official website
+  wdt:P275 .+ ;#copyright license
+  wdt:P1535 .* ;#used by
+  wdt:P366 .* ;#use
+  wdt:P2860 .* ;#cites work
+  wdt:P495 .* ;#country of origin
+  wdt:P1065 .* ;#archive URL
+}

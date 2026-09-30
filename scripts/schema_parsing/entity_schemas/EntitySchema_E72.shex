@@ -1,0 +1,28 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+start = @<#pharmaceutical_drug>
+
+<#pharmaceutical_drug> EXTRA p:P31 {
+    # P31 = instance of & wd:Q12140 = Pharmaceutical drug
+    p:P31 { ps:P31	[
+          wd:Q12140 # Pharmaceutical drug
+          wd:Q11173 # chemical compound
+          wd:Q35456 # essential medicine 
+                        ] ;
+ 	  prov:wasDerivedFrom @<#reference>+ ;}* ;
+			
+    # P274 = chemical formula
+    p:P274 { ps:P274	LITERAL ;
+ 	  prov:wasDerivedFrom @<#reference>+ ;
+    }* ;
+
+    #has active ingredient
+    p:P3781 { ps:P3781 {p:P31 {ps:P31  [wd:Q11344]+} }*;
+  }
+} 
+
+<#reference> {
+}

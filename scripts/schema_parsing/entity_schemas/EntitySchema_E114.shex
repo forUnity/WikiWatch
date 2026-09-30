@@ -1,0 +1,65 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+# query map: SELECT ?item WHERE {?item wdt:P31 wd:Q628179. } LIMIT 10 
+
+start = @<#trail>
+
+<#trail> EXTRA wdt:P31 {
+
+
+  # instance of
+  wdt:P31 [ wd:Q628179 ] ;
+
+  # country
+  wdt:P17 IRI * ;
+
+  # located in the administrative territorial entity
+  wdt:P131 IRI * ;
+
+  # Commons category
+  wdt:P373 xsd:string ? ;
+
+  # coordinate location
+  wdt:P625 geo:wktLiteral ? ;
+
+  # image
+  wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+
+  # located in protected area
+  wdt:P3018 IRI * ;
+
+  # named after
+  wdt:P138 IRI ? ;
+
+  # inception
+  wdt:P571 xsd:dateTime ? ;
+  
+  # locator map image
+  wdt:P242 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+
+  # OSM relation ID
+  wdt:P402 xsd:string ? ;
+
+  # mountain range
+  wdt:P4552 IRI ? ;
+
+  # offers view on
+  wdt:P3173 IRI ? ;
+
+  # highest point
+  wdt:P610 IRI ? ;
+
+  # National Recreation Trails Database ID
+  wdt:P3353 xsd:string ? ;
+
+  # AllTrails trail ID
+  wdt:P7127 xsd:string ? ;
+
+  # Hiking Project trail ID
+  wdt:P7116 xsd:string ? ;
+
+}

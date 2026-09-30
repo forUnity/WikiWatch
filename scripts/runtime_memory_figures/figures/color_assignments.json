@@ -1,0 +1,14 @@
+{
+  "completeness_currency": 0,
+  "consistency_mem": 7,
+  "range_consistency": 1,
+  "reference_completeness_10p": 2,
+  "reference_completeness_10p_mem": 8,
+  "reference_trustworthiness": 3,
+  "reference_trustworthiness_mem": 9,
+  "schema_completeness_mem": 10,
+  "schema_completness": 4,
+  "subject_consistency": 5,
+  "timeliness": 6,
+  "timeliness_mem": 11
+}

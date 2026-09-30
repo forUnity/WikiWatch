@@ -1,0 +1,63 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E273>
+PREFIX E273: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#>
+
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+<#P486_mesh> {
+   ps:P486 xsd:string ;
+   prov:wasDerivedFrom @E273:disease-ontology-reference 
+                       OR @E273:mondo-disease-reference ;   
+}
+
+<#P492_omim_id> {
+   ps:P492 xsd:string ;
+   prov:wasDerivedFrom @E273:disease-ontology-reference 
+                       OR @E273:mondo-disease-reference ;      
+}
+
+<#P699_omim_id> {
+   ps:P699 xsd:string ;
+   prov:wasDerivedFrom @E273:disease-ontology-reference 
+                       OR @E273:mondo-disease-reference ;      
+}
+
+<P1550_orphanet_id> {
+    ps:P1550 xsd:string ;  
+    prov:wasDerivedFrom @E273:disease-ontology-reference 
+                        OR @E273:mondo-disease-reference ;  
+}
+
+<#P1748_nci_theraurus_id> {
+    ps:P1748 xsd:string ;
+    prov:wasDerivedFrom @E273:disease-ontology-reference 
+                        OR @E273:mondo-disease-reference ; 
+}
+
+<#P2892_umls_cui> {
+    ps:P2892 xsd:string ;
+    prov:wasDerivedFrom @E273:disease-ontology-reference 
+                        OR @E273:mondo-disease-reference ; 
+}
+    
+<#P4229_icd10-cm> {
+    ps:P4229 xsd:string ;
+    prov:wasDerivedFrom @E273:disease-ontology-reference 
+                        OR @E273:mondo-disease-reference ; 
+}
+  
+<#P5806-snomed-ct> {
+    ps:P5806 xsd:string ;
+    prov:wasDerivedFrom @E273:disease-ontology-reference  
+                        OR @E273:mondo-disease-reference ;
+}
+
+<#P8656_symptom_ontology> {
+   ps:P8656 xsd:string ;
+    prov:wasDerivedFrom @E273:symptom-ontology-reference ;
+}

@@ -1,0 +1,8 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd:  <http://www.wikidata.org/entity/>
+
+start = @<wikimedia-disambiguation-page>
+
+<wikimedia-disambiguation-page>  {
+	wdt:P31 [ wd:Q4167410] ;
+}

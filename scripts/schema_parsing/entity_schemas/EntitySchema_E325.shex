@@ -1,0 +1,27 @@
+PREFIX pr: <http://purl.org/ontology/prv/core#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <https://w3id.org/payswarm#>
+PREFIX p: <http://www.wikidata.org/prop/>
+prefix wdt: <http://www.wikidata.org/prop/direct/> 
+prefix wd: <http://www.wikidata.org/entity/>
+
+# Example SPARQL query:  SELECT * WHERE { ?expedition wdt:P31 wd:Q366301 .} LIMIT 5
+
+start = @<research_expedition> 
+
+<research_expedition> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q366301 ]  ;
+  wdt:P3712 @<objective_of_project_or_action> ; 
+  
+  p:P138 @<P138_named_after> ;
+}
+
+<objective_of_project_or_action> [
+  wd:Q7201504 # plant collection
+  wd:Q2915366 # geological survey
+] 
+
+<P138_named_after> {
+  ps:P138 . ;
+  # prov:wasDerivedFrom @<named_after_reference> ;
+}

@@ -1,0 +1,87 @@
+PREFIX prov:      <http://www.w3.org/ns/prov#>
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:       <http://www.wikidata.org/prop/direct/>
+PREFIX p:         <http://www.wikidata.org/prop/>
+PREFIX wd:        <http://www.wikidata.org/entity/>
+PREFIX xsd:       <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml:       <http://www.w3.org/XML/1998/namespace>
+PREFIX wikibase:  <http://wikiba.se/ontology#>
+PREFIX schema:    <http://schema.org/>
+PREFIX skos:      <http://www.w3.org/2004/02/skos/core#>
+PREFIX ps:        <http://www.wikidata.org/prop/statement/>
+#Imports of other EntitySchema
+## E265 collects references to primary sources being described here
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265>
+PREFIX E265: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E265#>
+## E266 collects describes the shapes that cover the external identifiers in this EntitySchema
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266>
+PREFIX E266: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E266#>
+ # Example query: SELECT ?item WHERE { ?item wdt:P31 wd:Q855769. } LIMIT 10
+
+start = @<#wikidata-strain>
+
+<#wikidata-strain> EXTRA p:P31 p:P171 {
+  ## Statements
+  ### With provenance
+  p:P31      @<#P31_instance_of_strain> ; 
+  p:P171     @<#P171_parent_taxon> * ;            # parent taxon
+  p:P225     @<#P225_taxon_name> * ;              # taxon name 
+  p:P1605    @<#P1605_has_natural_reservoir> * ;  # has natural reservoir
+  p:P1889    @<#wikidata-strain> ? ;              # different from <strain>
+  p:P2143    @<#P2143_genome_size> ? ;            # genome size
+  p:P2975    @<#P2975_host> * ;                   # host
+  p:P4628    @<#P4628_ICTV_virus_genome_composition> * ;  # ICTV virus genome composition
+  
+  ## Statements that do not need references
+  wdt:P18    IRI ? ;         # image when available
+  wdt:P373   xsd:string * ;  # commons category?
+  wdt:P973   IRI * ;         # described at URL?
+
+  ## Identifiers
+  ### With provenance
+  p:P227     @E266:P227_GND_ID * ;              # GND ID
+  p:P486     @E266:P486_MeSH_descriptor_ID * ;  # MeSH descriptor ID?
+  p:P2946    @E266:P2946_BacDive_ID ? ;         # bacdive identifier
+  p:P3031    @E266:P3031_EPPO_ID * ;            # EPPO identifier for a taxon in the EPPO Global Database
+  p:P4333    @E266:P4333_GenBank_Assembly_Accession ? ;  # genbank accession? genome level or?
+  p:P6694    @E266:P6694_MeSH_ConceptID * ;     # MeSH concept ID
+}
+
+## Shape details. Starting from a property how does the downstream tree is structured
+
+<#P31_instance_of_strain> EXTRA ps:P31 {
+  ps:P31               [ wd:Q855769 # strain 
+                       ] ; 
+  prov:wasDerivedFrom  @E265:reference+  
+}
+
+<#P171_parent_taxon> {
+  ps:P31               [ wd:Q16521 ] ;  # Instance of [P31] taxon
+  prov:wasDerivedFrom  @E265:reference+  ;
+}
+
+<#P225_taxon_name> {
+  ps:P225              xsd:string ; # taxon name
+  prov:wasDerivedFrom  @E265:reference+ ;  
+}
+
+<#P1605_has_natural_reservoir>  {
+  ps:P1605 {wdt:P31 [wd:Q16521] ;} ;  # has natural reservoir
+  prov:wasDerivedFrom  @E265:reference+  
+}
+
+<#P2143_genome_size> {
+  ps:P2143             xsd:int  OR xsd:decimal ; # Genome size
+  prov:wasDerivedFrom  @E265:reference+  
+}
+
+<#P2975_host> {
+  ps:P31               [ wd:Q16521 ] ;  # Instance of [P31] taxon
+  prov:wasDerivedFrom  @E265:reference+  ;
+}
+
+<#P4628_ICTV_virus_genome_composition> {
+  ps:P31				. ;
+  prov:wasDerivedFrom  @E265:reference+ ;
+}

@@ -1,0 +1,17 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<taxon_by_wd_ontology> OR @<taxon_by_identifier>
+
+<taxon_by_wd_ontology> {
+    wdt:P31  [wd:Q16521] ;
+}
+
+<taxon_by_identifier>
+{wdt:P685 . +;} OR # NCBI taxonomy ID
+{wdt:P846 . +;} OR # GBIF taxon ID
+{wdt:P3151 . +;} OR # iNaturalist taxon ID
+{wdt:P3444 . +;} # eBird taxon ID

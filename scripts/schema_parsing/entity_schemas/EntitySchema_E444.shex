@@ -1,0 +1,11 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<enclyclopedia_article>
+
+<enclyclopedia_article>  {
+	wdt:P31 [ wd:Q13433827] ;
+	wdt:P1433 . ;
+	wdt:P1476 . ;
+	wdt:P407 . ;
+}

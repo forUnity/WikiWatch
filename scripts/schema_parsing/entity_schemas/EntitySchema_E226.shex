@@ -1,0 +1,29 @@
+# see https://www.wikidata.org/wiki/Wikidata:WikiProject_Sweden/Swedish_Academy
+#
+# Chairs SPARQL https://w.wiki/XTW
+#
+# SELECT ?chair ?chairLabel {
+#    ?chair wdt:P31 wd:Q4164871.
+#    ?chair wdt:P361 wd:Q207360.
+#    ?chair wdt:P1545 ?order
+#   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,sv". }
+#  } order by xsd:integer(?order) 
+#
+#
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Example query: https://w.wiki/XT5
+
+start = @<SwedishAcademyChair>
+
+<SwedishAcademyChair>
+ EXTRA wdt:P31 {
+ wdt:P31 [wd:Q4164871];   # instance of
+ wdt:P361 [wd:Q207360];   # part of
+ wdt:P1424 . + ; # Template
+ wdt:P1545 . ? ; # series ordinal          
+ wdt:P6104 . + ; # Maintained by project          
+}

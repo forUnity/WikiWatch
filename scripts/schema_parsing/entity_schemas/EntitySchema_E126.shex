@@ -1,0 +1,74 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# === QUERIES:  ===
+
+# Example Query:
+# SELECT ?winner WHERE {
+#   ?winner wdt:P166 ?prize.
+#   ?prize (wdt:P361|wdt:P31|wdt:P279) wd:Q7191.
+# }
+
+#
+# SELECT * WHERE { ?people wdt:P8024 ?nobel. }
+#
+
+#  Authors of scientific articles who received a Nobel prize
+#  SELECT ?item
+#  WHERE {
+#  ?person wdt:P166 ?award ; #person received an award
+#          wdt:P31 wd:Q5 . #person is instance of human
+#  ?award wdt:P31/wdt:P279* wd:Q7191 . #award is a Nobel Prize
+#  ?item wdt:P50 ?person ; #person is an author of item
+#        wdt:P31 wd:Q13442814 . #item is a scientific article
+#  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+# 
+#  OPTIONAL { ?person wdt:P18 ?_image. } #Wikimedia Commons has an image of person
+#}
+
+# People that received both Academy Award and Nobel Prize
+# SELECT DISTINCT ?person ?personLabel WHERE {
+#  ?person wdt:P166/wdt:P31? wd:Q7191 .
+#  ?person wdt:P166/wdt:P31? wd:Q19020 .
+#  SERVICE wikibase:label {
+#    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .
+#  }
+# }
+
+# === SCHEMA: ===
+
+ start = @<nobel_winner>
+
+# must be instance of Human Q5 ??  Probably not since EU European Union won once in 2012 ??
+# so this probably needs to be an Boolean OR condition that includes the instance of a subclass of Organization ??
+# wdt:P31 wd:Q5 | wdt:P31 ???what???
+# TODO: add other instance types as necessary
+
+ <nobel_winner> {
+   # instance of human OR instance of organization
+   wdt:P31 [wd:Q5] | wdt:P31 [wd:Q43229] ;
+   # has award_received
+   wdt:P166 @<nobel_award>+ ;
+  # has API property
+   wdt:P8024 LITERAL
+ }
+
+# the award SHOULD ALWAYS be a subclass of "Nobel Prize" Q7191  OR instance of Q7191 ??
+# TODO: Fix the cardinality errors such as this:
+#  ✗wd:Q106471@!START
+#        validating http://www.wikidata.org/entity/Q106471 as //www.wikidata.org/wiki/Special:EntitySchemaText/nobel_winner:
+#              validating http://www.wikidata.org/entity/Q44585: exceeds cardinality
+
+<nobel_award> {
+  (
+    (wdt:P31 [wd:Q7191]; wdt:P31 .*) |
+    (wdt:P31 @<subclass_of_nobel_award>; wdt:P31 .*)
+  )
+}
+
+<subclass_of_nobel_award> {
+  (
+    (wdt:P279 [wd:Q7191]; wdt:P279 .*) |
+    (wdt:P279 @<subclass_of_nobel_award>; wdt:P279 .*)
+  )
+}

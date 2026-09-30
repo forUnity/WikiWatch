@@ -1,0 +1,156 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdref: <http://www.wikidata.org/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX pr: <http://www.wikidata.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#example data: SELECT * WHERE {?conference wdt:P31 wd:Q2020153 .} LIMIT 10
+
+start = @<#academic_conference> 
+<#academic_conference> EXTRA p:P31  {
+
+      #instance of # academic conference
+      p:P31 { 
+           ps:P31  [wd:Q2020153] ;
+           prov:wasDerivedFrom {}+ ;
+           }; 
+
+      #organizer
+      p:P664 { 
+            ps:P664  [wd:~] * ;
+            prov:wasDerivedFrom {}+ ;
+            } *;
+
+      #end time
+      p:P582 { 
+            ps:P582  xsd:dateTime ;   
+            prov:wasDerivedFrom {}+ ;
+      } ;
+
+      #official website
+      p:P856 { 
+            ps:P856  IRI ;
+            prov:wasDerivedFrom {}+ ;  
+      } ?;
+
+      #start time
+      p:P580 { 
+            ps:P580  xsd:dateTime *;
+            prov:wasDerivedFrom {}+ ;  
+      };
+
+      #location
+      p:P276 { 
+            ps:P276  [wd:~] ;
+            prov:wasDerivedFrom {}+ ;
+      } ;
+
+      #country
+      p:P17 {
+             ps:P17  IRI * } ;
+
+      #short name
+      p:P1813 { 
+            ps:P1813  rdf:langString * ;
+            prov:wasDerivedFrom {}+ ;
+      } ?;
+
+      #part of the series
+      p:P179 { 
+         ps:P179  [wd:~];  
+         prov:wasDerivedFrom {}+ ;
+      } ?;
+
+      #speaker
+      p:P823 { ps:P823  [wd:~] ;
+               prov:wasDerivedFrom {}+ ;
+      } *;
+
+      #Twitter hashtag
+      p:P2572 { 
+            ps:P2572  xsd:string ; 
+      } ?;
+
+      #main subject
+      p:P921 { 
+            ps:P921  [wd:~] ;
+            prov:wasDerivedFrom {}+ ;
+      } * ;
+
+      #followed by
+      p:P156 { 
+            ps:P156  [wd:~]; 
+            prov:wasDerivedFrom {}+ ; 
+      }?;
+
+      #follows
+      p:P155 { 
+            ps:P155  [wd:~]; 
+            prov:wasDerivedFrom {}+ ; 
+      } ?;
+
+      #sponsor
+      p:P859 { 
+            ps:P859  [wd:~];
+            prov:wasDerivedFrom {}+ 
+      } *;
+
+      #language used
+      p:P2936 { 
+            ps:P2936  [wd:~];
+            prov:wasDerivedFrom {}+ ; 
+      } ?;
+
+      #has program committee member
+      p:P5804 { 
+            ps:P5804  [wd:~];
+            prov:wasDerivedFrom {}+;
+      } ?;
+
+      #participant
+      p:P710 { 
+            ps:P710  [wd:~] ;
+            prov:wasDerivedFrom {}+ ;
+      } *;
+
+      #number of participants
+      p:P1132 { 
+            ps:P1132  xsd:decimal *;  
+            prov:wasDerivedFrom {}+ ;
+      } ?;
+
+      #motto text
+      p:P1451 { 
+            ps:P1451  rdf:langString * ;
+            prov:wasDerivedFrom {}+ ;
+      } ?;
+
+      #edition number
+      p:P393 { 
+            ps:P393  xsd:string ;
+            prov:wasDerivedFrom {}+; } ?;
+
+      #title
+      p:P1476 { 
+            ps:P1476  rdf:langString ;
+            prov:wasDerivedFrom {}+ ;
+       } ?;
+
+      #chairperson
+      p:P488 { 
+            ps:P488  [wd:~] ; 
+            prov:wasDerivedFrom {}+ ; 
+      } *;
+}

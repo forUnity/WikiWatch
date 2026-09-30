@@ -1,0 +1,39 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: 
+# SELECT ?planet WHERE { ?planet wdt:P31 wd:Q121134938 }
+
+start = @<BlogPlanet>
+
+<BlogPlanet> {
+ wdt:P31   [ wd:Q121134938 ] ; # blog planet
+ wdt:P921 IRI + ; # main subject
+
+ p:P856 @<#P856_official_website> + ;
+ p:P1019 @<#P1019_web_feed_URL> + ;
+}
+
+<#P856_official_website> {
+  ps:P856 IRI ; # the blog planet has a website
+  pq:P407 @<#language> OR [ wd:Q20923490 ] ; # the feed has a language OR is multilingual
+}
+
+<#P1019_web_feed_URL> {
+  ps:P1019 IRI ; # the blog planet has web feed URL
+  pq:P407 @<#language> OR [ wd:Q20923490 ] ; # the feed has a language OR is multilingual
+  pq:P2701 @<#feed_format> ; # the feed has a format (e.g. RSS or Atom)
+}
+
+<#language> {
+  wdt:P31 [ wd:Q34770 ] ; # a language
+  wdt:P31 IRI* ; # and any additional types
+}
+
+<#feed_format> {
+  wdt:P31 [ wd:Q842397 ] ; # a web feed
+  wdt:P31 IRI* ; # and any additional types
+}

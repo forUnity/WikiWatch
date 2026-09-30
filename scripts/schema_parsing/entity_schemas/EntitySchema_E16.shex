@@ -1,0 +1,92 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p:  <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/> 
+PREFIX e16: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E16#>
+
+# Example SPARQL queries
+# select ?sw where { ?sw wdt:P31 wd:Q7397 . } limit 30
+
+# Shape expression for Wikidata statements related to software
+
+start = @e16:wikidata-software
+
+e16:wikidata-software EXTRA p:P31 {
+
+ #statements
+  
+ p:P31 @e16:software + ;
+ 
+ p:P178 @e16:developer *;
+	
+ p:P306 @e16:operating_system *;
+
+ p:P577 @e16:publication_date *;
+
+ p:P1072 @e16:readable_file_format *;
+
+ p:P1073 @e16:writable_file_format *;
+
+ p:P144 @e16:based_on *;
+
+ p:P277 @e16:programming_language*;
+
+ p:P973 @e16:described_at_URL *;
+
+ p:P1343 @e16:described_by_source *;
+ 
+ p:P348 @e16:software_version *;
+}	
+
+e16:software {
+  ps:P31 [ wd:Q7397 ] ;
+} 
+
+e16:developer {
+  ps:P178 IRI;
+}
+
+e16:operating_system {
+  ps:P306 IRI;
+}
+
+e16:publication_date {
+  ps:P577 LITERAL;
+}
+
+e16:readable_file_format {
+  ps:P1072 IRI;
+}
+
+
+e16:writable_file_format {
+  ps:P1073 IRI;
+}
+
+e16:based_on {
+  ps:P144 IRI;
+}
+
+e16:programming_language {
+  ps:P277 IRI;
+}
+
+e16:described_at_URL {
+  ps:P973 LITERAL;
+}
+
+e16:described_by_source {
+  ps:P1343 IRI;
+}
+
+e16:software_version {
+  ps:P348 LITERAL;
+}

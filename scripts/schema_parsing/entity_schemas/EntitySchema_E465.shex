@@ -1,0 +1,69 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<FilmAward>
+
+<FilmAward> EXTRA wdt:P31 {
+  # WikibaseItem property
+  wdt:P31   [ wd:Q4220917 ] ;         # instance of
+  wdt:P17   @<Country> ? ;            # country
+  wdt:P1027 @<Conferrer> ? ;          # conferred by
+  wdt:P361  @<FilmFestival> ? ;       # part of
+  wdt:P138  IRI * ;                   # named after
+  wdt:P910  @<WikimediaCategory> ? ;  # topic's main category
+  wdt:P361  IRI ? ;                   # part of
+  wdt:P2517 @<WikimediaCategory> ? ;  # category for recipients of this award
+  wdt:P276  @<City> ? ;               # location
+  wdt:P1346 @<Winner> * ;             # winner
+  wdt:P527  IRI * ;                   # has part(s)
+  wdt:P1424 @<WikimediaTemplate> ? ;  # topic's main template
+  wdt:P1889 IRI * ;                   # different from
+  wdt:P112  @<Founder> * ;            # founded by
+  wdt:P136  @<FilmGenre> * ;          # genre
+
+  # URL, String, Quantity, Time property
+  wdt:P571  xsd:dateTime ? ;  # inception
+  wdt:P856  IRI ? ;           # official website
+  wdt:P373  xsd:string ? ;    # Commons category
+  wdt:P2121 xsd:decimal * ;   # prize money
+  wdt:P576  xsd:dateTime ? ;  # dissolved, abolished or demolished date
+  wdt:P2257 xsd:decimal ? ;   # event interval
+  wdt:P973  IRI * ;           # described at URL
+}
+
+<City> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q515 ]  # city
+}
+
+<Conferrer> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q220505 wd:Q43229 ]  # film festival, organization
+}
+
+<Country> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q6256 ]  # country
+}
+
+<Founder> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q5 wd:Q43229 ] # human, organization
+}
+
+<FilmFestival> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q220505 ]  # film festival
+}
+
+<FilmGenre> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q201658 ]  # film genre
+}
+
+<WikimediaCategory> {
+  wdt:P31 [ wd:Q4167836 ]  # Wikimedia category
+}
+
+<WikimediaTemplate> {
+  wdt:P31 [ wd:Q11266439 ]  # Wikimedia template
+}
+
+<Winner> EXTRA wdt:P31 {
+  wdt:P31 [ wd:Q11424 wd:Q5 ]  # film, human
+}

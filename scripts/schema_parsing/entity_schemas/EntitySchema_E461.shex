@@ -1,0 +1,31 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+# QUERY MAP: SELECT ?item WHERE {?item wdt:P31 wd:Q5. ?item wdt:P2348 ?time. ?item wdt:P5008 wd:Q114241199.  }
+
+start = @<attested_person>
+
+<attested_person> {
+
+    # instance of
+    p:P31 {        ps:P31 [ wd:Q5 ]    } +  ;
+
+    # sex or gender
+    p:P21 {	   ps:P21 [wd:~ ]      } +  ;
+
+    # time period
+    p:P2348 {      ps:P2348 [wd:~]     } +  ;
+
+    # on focus list of Wikidata WikiProject IDEA
+    p:5008 {       ps:P5008 [wd:Q114241199]  } +  ;
+
+}

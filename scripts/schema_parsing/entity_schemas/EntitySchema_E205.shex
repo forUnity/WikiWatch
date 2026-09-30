@@ -1,0 +1,24 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+#Reference: https://www.wikidata.org/wiki/Wikidata:WikiProject_COVID-19/Data_models/COVID-19_apps
+
+start = @<app>
+
+<app>  EXTRA wdt:P31  {
+  wdt:P31 [ wd:Q90790055 wd:Q91136116 wd:Q91137337 ]; # instance of a COVID-19 dashboard, search engine or dataset
+  wdt:P1476 LITERAL* ;#title
+  wdt:P366 .* ;#use
+  wdt:P123 . ;#publisher
+  wdt:P178 .* ;#developers
+  wdt:P495 .* ;#country of origin
+  wdt:P306 .* ;#operating system
+  wdt:P856 .* ;#official website
+  wdt:P921 .* ;#main subject
+  wdt:P144 .* ;#based on
+  wdt:P577 .? ;#publication date
+  wdt:P7103 .? ;#start of covered period
+  wdt:P275 .* ;#copyright license
+  wdt:P5008 .* ;#on focus list of Wikimedia project
+}

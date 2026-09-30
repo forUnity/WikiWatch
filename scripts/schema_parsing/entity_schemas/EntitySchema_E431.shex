@@ -1,0 +1,32 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<irishlocalelection>
+
+<irishlocalelection>  {
+	wdt:P31 [ wd:Q152450] ;
+	wdt:P17 [ wd:Q27] ;
+	wdt:P361 @<irishlocalelection-P361> ;
+	wdt:P585 . ;
+	wdt:P541 @<irishlocalelection-P541> ;
+	wdt:P155 @<irishlocalelection-P155> ? ;
+	wdt:P156 @<irishlocalelection-P156> ? ;
+	wdt:P1001 . ;
+}
+
+<irishlocalelection-P361> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q40231] ;
+}
+
+<irishlocalelection-P541> EXTRA wdt:279 {
+	wdt:P279 [ wd:Q708492] ;
+	wdt:P17 [wd:Q27] ;
+}
+
+<irishlocalelection-P155> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q152450] ;
+}
+
+<irishlocalelection-P156> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q152450] ;
+}

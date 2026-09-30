@@ -1,0 +1,19 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Consulta SPARQL: SELECT * WHERE { ?item wdt:P31 wd:Q5 . ?item wdt:P21 wd:Q6581072  . ?item wdt:P106 wd:Q937857 . ?item wdt:P27 wd:Q298 . ?item wdt:P735 . ?item wdt:P18  . ?item wdt:P734 . ?item wdt:P569 . ?item wdt:P54  }
+
+start = @<FutbolistasChilenas>
+<FutbolistasChilenas>
+{
+wdt:P31 [ wd:Q5 ] ;            #instanciaSerHumano
+wdt:P106 . * ;                     #Ocupación Futbolista
+wdt:P106 [wd:Q937857];
+wdt:P21 IRI ?;                    #GeneroFemenino
+wdt:P21 [wd:Q6581072];
+
+wdt:P27 . *;                        #PaisChile
+wdt:P27 [wd:Q298];
+ 
+}

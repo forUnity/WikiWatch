@@ -1,0 +1,64 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q9259. } LIMIT 10
+
+start = @<#UNESCO_world_heritage_site>
+
+<#UNESCO_world_heritage_site> {
+    # instance of
+    wdt:P31 [ wd:Q9259 ]  ;
+    # image; frequency: [30/30]
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] + ;
+    # instance of; frequency: [30/30]
+    wdt:P31 [ <http://www.wikidata.org/entity>~ ] + ;
+    # Commons category; frequency: [30/30]
+    wdt:P373 xsd:string ;
+    # coordinate location; frequency: [30/30]
+    wdt:P625 geo:wktLiteral + ;
+    # country; frequency: [29/30]
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] * ;
+    # located in the administrative territorial entity; frequency: [26/30]
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # heritage designation; frequency: [25/30]
+    wdt:P1435 [ <http://www.wikidata.org/entity>~ ] * ;
+    # World Heritage Site ID; frequency: [23/30]
+    wdt:P757 xsd:string * ;
+    # World Heritage criteria; frequency: [21/30]
+    wdt:P2614 [ <http://www.wikidata.org/entity>~ ] * ;
+    # area; frequency: [17/30]
+    wdt:P2046 xsd:decimal * ;
+    # official website; frequency: [13/30]
+    wdt:P856 IRI * ;
+    # native label; frequency: [9/30]
+    wdt:P1705 rdf:langString ? ;
+    # elevation above sea level; frequency: [8/30]
+    wdt:P2044 xsd:decimal ? ;
+    wdt:P571 xsd:dateTime ? ;
+    # Commons maps category; frequency: [7/30]
+    wdt:P3722 xsd:string ? ;
+    # location; frequency: [6/30]
+    wdt:P276 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # Wiki Loves Monuments ID; frequency: [6/30]
+    wdt:P2186 xsd:string ? ;
+    # Commons gallery; frequency: [4/30]
+    wdt:P935 xsd:string ? ;
+    # official name; frequency: [3/30]
+    wdt:P1448 rdf:langString ? ;
+    # WDPA ID; frequency: [2/30]
+    wdt:P809 xsd:string ? ;
+    # IUCN protected areas category; frequency: [2/30]
+    wdt:P814 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # locator map image; frequency: [2/30]
+    wdt:P242 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # date of official opening; frequency: [1/30]
+    wdt:P1619 xsd:dateTime ? ;
+    # nighttime view; frequency: [1/30]
+    wdt:P3451 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # OSM relation ID; frequency: [1/30]
+    wdt:P402 xsd:string ? ;
+}

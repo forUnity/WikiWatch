@@ -1,0 +1,244 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<video_game>
+
+<video_game> EXTRA wdt:P31 {
+  ## Core properties
+  wdt:P31 [ wd:Q7889 ] ;    # instance of video game
+  wdt:P136 @<genre> +;      # genre
+  wdt:P123 @<publisher> *;  # publisher
+  wdt:P178 @<developer> *;  # developer
+  wdt:P400 @<platform> +;   # platforms
+  wdt:P495 @<country> ;     # country of origin
+  wdt:P577 . *;             # publication date
+
+  ## Main properties
+  wdt:P1476 . ;             # title
+  wdt:P6949 . ?;            # announcement date
+  wdt:P856 . ?;             # official website
+  wdt:P750 . *;             # distributed by
+  wdt:P437 . *;             # distribution format
+  wdt:P407 . *;             # language of work or name
+
+  wdt:P408 @<engine> *;     # engine
+  wdt:P479 . *;             # input method
+
+  ## Gameplay
+  wdt:P404 @<game_mode> +;  # game mode
+  wdt:P4151 . ?;            # game mechanics
+
+  ## Characters and setting
+  wdt:P8411 . *;            # set in environment
+  wdt:P1434 . ?;            # takes place in fictional universe
+  wdt:P2408 . ?;            # set in period
+  wdt:P840 . *;             # narrative location
+
+  ## Staff
+  wdt:P57 @E10:human ?;     # director
+  wdt:P86 @E10:human *;     # composer
+  wdt:P943 @E10:human *;    # programmer
+  wdt:P162 @E10:human *;    # producer
+  wdt:P287 @E10:human *;    # designed by
+
+  ## Relationships to other works
+  wdt:P144 . *;             # based on
+  wdt:P179 @<series> *;     # series
+  wdt:P941 . *;             # inspired by
+  wdt:P8345 @<franchise> *; # media franchise
+  wdt:P5940 . ?;            # plot expanded in
+
+  ## Reception
+  wdt:P1411 . *;            # nominated for
+  wdt:P166 . *;             # award received
+  p:P444 @<review_score> *; # review score
+  wdt:P2664 . ?;            # units sold
+
+  ## Wikidata housekeping
+  wdt:P1889 . *;            # different from
+
+  ## Rating systems
+  wdt:P852 @<esrb_rating> ?; # ESRB Rating
+  wdt:P908 @<pegi_rating> ?; # PEGI Rating
+  wdt:P853 @<cero_rating> ?; # CERO Rating
+  wdt:P914 @<usk_rating> ?;  # USK Rating
+
+
+  ## External IDs
+  wdt:P214 . ?;   # VIAF ID
+  wdt:P244 . ?;   # Library of Congress authority ID
+  wdt:P268 . ?;   # Bibliothèque nationale de France ID
+  wdt:P345 . ?;   # IMDb ID
+  wdt:P600 . ?;   # Wine App ID
+  wdt:P646 . ?;   # Freebase ID
+  wdt:P1712 . *;  # Metacritic ID
+  wdt:P1733 . *;  # Steam Application ID
+  wdt:P1933 . ?;  # MobyGames ID
+  wdt:P2163 . ?;  # FAST ID
+  wdt:P2671 . ?;  # Google Knowledge Graph ID
+  wdt:P2725 . ?;  # GOG application ID
+  wdt:P2816 . ?;  # HowLongToBeat ID
+  wdt:P2864 . ?;  # OpenCritic ID
+  wdt:P3418 . ?;  # Google Play Store app ID
+  wdt:P3861 . ?;  # App Store app ID
+  wdt:P4073 . ?;  # Fandom wiki ID
+  wdt:P4467 . ?;  # Twitch category ID
+  wdt:P4685 . ?;  # Nintendo of America Game Store ID (former scheme)
+  wdt:P4477 . ?;  # Humble Store ID
+  wdt:P4671 . *;  # Hall of Light ID
+  wdt:P4710 . *;  # Guardiana ID
+  wdt:P4769 . *;  # GameFAQs game ID
+  wdt:P4806 . *;  # Gaming-History ID
+  wdt:P4846 . *;  # Lemon Amiga identifier
+  wdt:P4858 . ?;  # Atari Legend identifier
+  wdt:P4859 . *;  # Atarimania identifier
+  wdt:P4962 . ?;  # Abandonia identifier
+  wdt:P4965 . ?;  # Behind The Voice Actors video game ID
+  wdt:P5247 . ?;  # GiantBomb ID
+  wdt:P5385 . ?;  # IGN game ID
+  wdt:P5494 . ?;  # GameSpot game ID
+  wdt:P5659 . ?;  # VGMdb product ID
+  wdt:P5732 . ?;  # bgm.tv subject ID
+  wdt:P5794 . ?;  # IGDB ID
+  wdt:P5885 . ?;  # Microsoft Store product ID
+  wdt:P5944 . ?;  # North America PlayStation Store ID
+  wdt:P5971 . ?;  # Europe PlayStation Store ID
+  wdt:P5999 . ?;  # Japan PlayStation Store ID
+  wdt:P6262 . *;  # Fandom article ID
+  wdt:P6267 . ?;  # Multiplayer ID
+  wdt:P6278 . ?;  # Epic Games Store ID
+  wdt:P6299 . ?;  # PC-9801 DB ID
+  wdt:P6337 . ?;  # PCGamingWiki ID
+  wdt:P6367 . ?;  # Bahamut Gamer's Community ACG Database ID
+  wdt:P6444 . ?;  # Douban game ID
+  wdt:P6554 . ?;  # Represent Me ID
+  wdt:P6717 . ?;  # Indie DB video game ID
+  wdt:P6774 . ?;  # Mod DB game ID
+  wdt:P6783 . ?;  # speedrun.com ID
+  wdt:P6827 . ?;  # Igromania ID
+  wdt:P6839 . ?;  # TV Tropes identifier
+  wdt:P7117 . *;  # Media Arts Database console games ID (former scheme)
+  wdt:P7294 . ?;  # itch.io URL
+  wdt:P7335 . ?;  # Mixer game ID (former scheme)
+  wdt:P7555 . *;  # UVL game ID
+  wdt:P7564 . ?;  # OGDB game title ID 
+  wdt:P7591 . ?;  # VideoGameGeek game ID
+  wdt:P7597 . ?;  # Lutris ID
+  wdt:P7622 . *;  # TheGamesDB game ID
+  wdt:P7785 . *;  # LaunchBox Games Database game ID
+  wdt:P7818 . ?;  # French Vikidia ID
+  wdt:P7875 . ?;  # Eurogamer ID
+  wdt:P7877 . ?;  # GameStar ID
+  wdt:P7886 . *;  # Media Arts Database ID
+  wdt:P7909 . ?;  # Can You Run It ID
+  wdt:P7913 . ?;  # Gamekult game ID
+  wdt:P7919 . ?;  # SerialStation game ID
+  wdt:P8018 . ?;  # IGCD game ID
+  wdt:P8023 . ?;  # VideoGamer.com game ID
+  wdt:P8028 . ?;  # GameRevolution game ID
+  wdt:P8042 . ?;  # PC Games Database.de game ID
+  wdt:P8076 . ?;  # The Cover Project game ID
+  wdt:P8084 . ?;  # URL slug on Nintendo eShop
+  wdt:P8090 . ?;  # GameReactor game ID
+  wdt:P8229 . *;  # Co-Optimus ID
+  wdt:P8303 . *;  # ESRB ID
+  wdt:P8304 . ?;  # NexusMods game ID
+  wdt:P8351 . ?;  # vglist ID
+  wdt:P8364 . ?;  # Deku Deals ID
+  wdt:P8420 . ?;  # GameBanana game ID
+  wdt:P8607 . ?;  # The Cutting Room Floor ID
+  wdt:P8994 . ?;  # Game UI Database ID
+  wdt:P9075 . ?;  # StrategyWiki ID
+  wdt:P9118 . ?;  # Family Video Game Database ID
+  wdt:P9143 . ?;  # Play:Right ID
+  wdt:P9697 . ?;  # Games@Mail.ru ID
+  wdt:P9702 . ?;  # Gameblog.fr game ID
+  wdt:P9777 . ?;  # Rock Paper Shotgun game ID
+  wdt:P9806 . ?;  # WiiG game ID
+  wdt:P9816 . ?;  # Kartridge game ID
+  wdt:P9877 . ?;  # Gry-Online game ID
+  wdt:P9968 . ?;  # RAWG game ID
+  wdt:P10030 . ?; # StopGame ID
+  wdt:P10096 . ?; # Databáze her ID
+  wdt:P10100 . ?; # SensCritique work ID
+  wdt:P10144 . *; # Famitsu game ID
+  wdt:P10171 . ?; # Kanobu ID
+  wdt:P10309 . ?; # LKI ID
+  wdt:P10348 . ?; # USgamer ID
+  wdt:P10354 . ?; # PlayGround.ru ID
+  wdt:P10365 . ?; # GoodGame.ru ID
+  wdt:P10371 . ?; # A9VG game ID
+  wdt:P10383 . ?; # Game World Navigator ID
+  wdt:P10390 . ?; # GameGuru ID
+  wdt:P10393 . ?; # Riot Pixels game ID
+  wdt:P10414 . ?; # iXBT Games ID
+  wdt:P10424 . ?; # Refuge.tokyo video game ID 
+  wdt:P10437 . ?; # GoHa.ru ID
+  wdt:P10453 . ?; # VGTimes ID
+  wdt:P10455 . ?; # JeuxActu ID
+  wdt:P10501 . ?; # Cybersport.ru ID
+  wdt:P10507 . ?; # Game Informer ID
+  wdt:P10586 . ?; # Trovo ID
+  wdt:P10802 . ?; # Esports Earnings game ID
+  wdt:P11391 . *; # Nintendo World Report identifier
+}
+
+<series> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q7058673] +;
+}
+
+<franchise> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q196600] +;
+}
+
+<genre> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q659563] +;
+}
+
+<game_mode> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q1971694] +;
+}
+
+<country> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q6256 wd:Q7275] +;
+}
+
+<developer> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5 wd:Q43229] +;
+}
+
+<publisher> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5 wd:Q43229] +;
+}
+
+<platform> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q241317 wd:Q6368 wd:Q1406 wd:Q14116 wd:Q13522376 wd:Q388 wd:Q170434 wd:Q600659] +;
+}
+
+<engine> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q271680 wd:Q7397 wd:Q63533016] +;
+}
+
+<esrb_rating> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q23683568] +;
+}
+
+<pegi_rating> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q23686802] +;
+}
+
+<cero_rating> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q23683472] +;
+}
+
+<usk_rating> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q24561417] +;
+}
+
+<review_score> {
+  pq:P447 . ; # review score by
+  pq:P585 . ; # date
+  pq:P400 @<platform> *; # platform(s)
+}

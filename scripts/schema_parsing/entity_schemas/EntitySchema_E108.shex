@@ -1,0 +1,24 @@
+PREFIX wdata: <http://www.wikidata.org/wiki/Special:EntityData/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<#sequence_assembly>
+
+# Result query SELECT ?item WHERE { ?item wdt:P2576 ?id }
+# https://w.wiki/ntS
+
+<#sequence_assembly> {
+    # UCSC Genome Browser assembly ID or GenBank assembly accession 
+    ( p:P2576 { ps:P2576 xsd:string } | 
+      p:P4333 { ps:P4333 xsd:string }
+    ) ; 
+
+   # official website 
+    p:P856 { ps:P856 IRI } ;
+    
+    # publication date;
+    p:P577 { ps:P577 xsd:dateTime }  
+}

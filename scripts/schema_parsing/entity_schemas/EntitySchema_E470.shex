@@ -1,0 +1,48 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+start = @<snooker-tournament>
+
+<snooker-tournament>  {
+	wdt:P31 [ wd:Q17299750] ;
+	wdt:P361 @<snooker-tournament-P361> ;
+	wdt:P154 . ;
+	wdt:P859 @<snooker-tournament-P859> ;
+	wdt:P276 @<snooker-tournament-P276> ;
+	wdt:P155 @<snooker-tournament-P155> ;
+	wdt:P156 @<snooker-tournament-P156> ? ;
+	wdt:P393 . ;
+	wdt:P580 . ;
+	wdt:P582 . ;
+	wdt:P664 [ wd:Q1376366 wd:Q2030665 wd:Q1666379] ;
+	wdt:P1132 . ;
+    wdt:P1346 @<snooker-tournament-P1346> ;
+    wdt:P2121 . ;
+    wdt:P8127 [ wd:Q864897 wd:Q841144 ] ;
+    wdt:P11964 [ wd:Q121568393 wd:Q84263257 wd:51036091 wd:Q1079023 ] ;
+}
+
+<snooker-tournament-P361> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q18608583 wd:Q27020041] ;
+}
+
+<snooker-tournament-P859> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q431289] ;
+}
+
+<snooker-tournament-P276> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q17350442 wd:Q515] ;
+}
+
+<snooker-tournament-P155> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q17299750] ;
+}
+
+<snooker-tournament-P156> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q17299750] ;
+}
+
+<snooker-tournament-P1346> EXTRA wdt:P31 {
+	wdt:P31 [ wd:Q5 ] ;
+    wdt:P106 [ wd:Q17165321 ];
+}

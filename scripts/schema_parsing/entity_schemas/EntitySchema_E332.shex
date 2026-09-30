@@ -1,0 +1,28 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q13479680. } LIMIT 10
+
+start = @<cloud_species>
+
+<cloud_species> EXTRA p:P31 {
+    # instance of
+    p:P31 {ps:P31 [wd:Q13479680]    } ;
+    # image
+    p:P18 {ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ;  } ? ;
+    # Commons category    
+    p:P373 {ps:P373 xsd:string   } ? ;
+    # Unified Astronomy Thesaurus ID
+    p:P4466 {psn:P4466 [ <http://astrothesaurus.org/uat>~ ] ; ps:P4466 xsd:string } ? ;
+    # icon
+    p:P2910 {ps:P2910 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]    } ? ;
+    # Commons gallery
+    p:P935 {ps:P935 xsd:string } ? ;
+   
+}

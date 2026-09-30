@@ -1,0 +1,71 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+
+# Example query: SELECT * WHERE { ?item wdt:P31 wd:Q96482904 } LIMIT 5
+# Specific item: SELECT * WHERE { BIND( wd:Q97026630 AS ?item ) }
+
+start = @<decision>
+
+<decision> {
+  wdt:P31   [ wd:Q96482904 ]  ;  # Instance of
+  wdt:P1001 [ wd:Q34       ]  ;  # Applies to jurisdiction: Sweden
+  wdt:P407  [ wd:Q9027     ]  ;  # Language: sv
+  wdt:P577  .                 ;  # Publication date
+  wdt:P1031 /^NJA [0-9]{4} s\. [1-9][0-9]*( I*V?)?$/ ? ;  # Legal citation (not for last year)
+  wdt:P4884 [ wd:Q741421   ]  ;  # Court
+  wdt:P1594 @<justice> {5,16} ;  # at least five justices. Plenary would be max 16
+  p:P1594 @<reporting>           ;
+  p:P1594 @<nonReporting> {4,15} ;
+  wdt:P527  [ wd:Q6738447 wd:Q1092720 wd:Q1087840 wd:Q352858 ] + ;  # opinions and addenda'
+  p:P527 @<majorityOpinion>      ;
+  p:P527 @<nonMajorityOpinion> * ;
+  p:P527 @<addendum> *           ;
+  p:P1433 @<NJAvolume> ;
+  wdt:P8407 . +               ;  # Case number
+  ( wdt:P1476 . | a [ wdno:P1476 ] ) ;  # Title
+}
+
+<justice> [ wd:Q4981075 ] OR EXTRA wdt:P106 wdt:P39 {  # Kristina Ståhl special case
+  wdt:P31  [ wd:Q5        ] ;  # Human
+  wdt:P106 [ wd:Q16533    ] ;  # Occupation:judge
+  wdt:P39  [ wd:Q96336792 ] ;  # Position:justice on the supreme court of Sweden
+}
+
+<reporting> {
+  ps:P1594 @<justice> ;
+  pq:P3831 [ wd:Q96971913 ] ;
+}
+
+<nonReporting> {
+  ps:P1594 @<justice> ;
+  pq:P3831 [ wd:Q96971913 ] {0};
+}
+
+<majorityOpinion> {
+  ps:P527  [ wd:Q6738447 ] ;  # Majority opinion
+  pq:P7122 @<justice> +    ;  # Opinion joined by
+}
+
+<nonMajorityOpinion> {
+  ps:P527  [ wd:Q1092720 wd:Q1087840 ] ;  # Dissenting or concurring
+  pq:P7122 @<justice> +                ;  # Opinion joined by
+}
+
+<addendum> {
+  ps:P527  [ wd:Q352858 ] ;  # Addendum
+  pq:P50   @<justice> +   ;  # Opinion joined by
+  pq:P7122 @<justice> *   ;  # Opinion joined by
+}
+
+<NJAvolume> {
+  ps:P1433 {
+    wdt:P179 [ wd:Q79016945 ] ;  # part of the series NJA
+    wdt:P31  [ wd:Q1238720  ] ;  # instance of volume
+  } ;
+  pq:P304  /[1-9][0-9]*/ ;  # page number should start with non-zero digit
+}

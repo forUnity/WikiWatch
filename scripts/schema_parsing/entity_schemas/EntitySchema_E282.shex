@@ -1,0 +1,34 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# Project see https://sv.wikipedia.org/wiki/Anv%C3%A4ndare:Salgo60/Listeria/Det_litter%C3%A4ra_Stockholm
+# Q104372658
+
+# Example SPARQL query: https://w.wiki/r94 as a map https://w.wiki/37u
+#SELECT ?item ?itemLabel WHERE { ?item wdt:P31 wd:Q10567925.
+#SERVICE wikibase:label { bd:serviceParam wikibase:language "sv,en". } }
+
+start = @<sign>
+<sign> EXTRA wdt:P31 {
+ wdt:P31   [ wd:Q10567925 ] ;
+ wdt:P921    .* ; # main subject
+ wdt:P17    .+ ; # country 
+ wdt:P131  .+; # administrative unit
+ wdt:P625  .+ ; # coordinates
+ wdt:P18    .* ; # picture 
+ wdt:P138    .* ; # named after
+ wdt:P1343    .* ; # described by source
+ wdt:P1545    .* ; #  series ordinal
+ wdt:P856    .+ ; #  official website
+ wdt:P407 .+ ; # language
+ wdt:P571 .+ ; # inception
+ wdt:P582 .* ; # end date 
+ wdt:P276 .+ ; # location
+ wdt:P1683 .+ ; # quotation
+ wdt:P1801 .+ ; # commemorative plaque image
+ wdt:P6375 .+ ; # adress
+
+# Litterary signs
+ wdt:P6166 .+ ; # quotes work
+ wdt:P6104 [ wd:Q104372658]   * ; # maintained by WikiProject can be added
+}

@@ -1,0 +1,35 @@
+# Work in progress
+#
+# Project https://www.wikidata.org/wiki/Wikidata:WikiProject_Sweden/Swedish_Academy
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<human>
+
+<human> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q5] + ;
+  wdt:P463 [wd:Q182032] + ; # member of: JKT48
+  wdt:P136 [wd:Q37073] + ; # genre: pop music
+  wdt:P325 . + ; # Swedish Academi id on the website
+  wdt:P6886 . +; # writing languages
+  wdt:P21 . + ; # gender
+  wdt:P19 . + ; # place of birth
+  wdt:P569 . + ;# date of birth
+  wdt:P735 . * ; # given name
+  wdt:P734 . * ; # family name
+  wdt:P373 . ? ; # Commons category
+  wdt:P18 . ? ; # image
+  wdt:P106 . ? ; # occupation
+  wdt:P27 [wd:Q33] + ; # country of citizenship
+  wdt:P103 @<language> * ; # native language
+  wdt:P1412 @<language> * ;
+  wdt:P6886  @<language> * ;
+  rdfs:label rdf:langString +;
+}
+
+
+<language> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q9027] +;
+}

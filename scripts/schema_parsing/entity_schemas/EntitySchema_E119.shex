@@ -1,0 +1,67 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX wd: <https://www.wikidata.org/wiki/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prv: <http://www.wikidata.org/prop/reference/value/>
+PREFIX pr:  <http://www.wikidata.org/prop/reference/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+
+# Query map: SELECT ?item WHERE {?item wdt:P31 wd:Q26529. } LIMIT 10
+
+start = @<#space_probe>
+
+<#space_probe>    {
+
+# instance of
+ wdt:P31 [ wd:Q26529 ] ;
+
+# part of
+ wdt:P361 IRI ;
+
+# space launch vehicle
+ wdt:P375 IRI ;
+    
+# time of spacecraft launch
+ wdt:P619 xsd:dateTime ;
+     
+# significant event
+ wdt:P793 IRI ? ;
+    
+# start point
+ wdt:P1427 IRI + ;
+   
+# operator
+wdt:P137 IRI ? ;
+     
+# manufacturer
+wdt:P176 IRI ? ;
+    
+# Commons category
+wdt:P373 xsd:string ? ;
+    
+# image
+wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    
+# time of spacecraft orbit decay
+wdt:P621 xsd:dateTime ? ;
+      
+# time of spacecraft landing
+wdt:P620 xsd:dateTime ? ;
+    
+# described at URL
+wdt:P973 IRI ? ;
+   
+# located on astronomical location
+wdt:P376 IRI ? ;
+   
+# space tug
+wdt:P1201 IRI ? ;
+    
+# mass
+wdt:P2067 xsd:decimal ?
+}

@@ -1,0 +1,103 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q106815942. ?item wdt:P5008 wd:Q114241199. } LIMIT 10
+
+start = @<archival_resource>
+
+<archival_resource> EXTRA p:P31{
+
+
+    # instance of
+    p:P31 {        ps:P31 [ wd:Q106815942 ]  OR @<photo>  }  ;
+   
+    # image
+    p:P18 {        ps:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ]    } ? ;
+    # collection
+    p:P195 {        ps:P195 @<yuag> OR @<beinecke> } ;
+    # location
+    p:P276 {        ps:P276 [ wd:Q49145]    } ;
+    # genre
+    p:P136 {        ps:P136 [wd:Q3381576 wd:Q166509]   } ;
+    # inception
+    p:P571 {        ps:P571 [  ] ;
+        psv:P571 [ <http://www.wikidata.org/.well-known/genid>~ ] ;
+		 pq:P1319  xsd:dateTime ? ;
+		 pq:P1326  xsd:dateTime ? ;     } + ; 
+    # depicts
+    p:P180 {
+        ps:P180 [ <http://www.wikidata.org/entity>~ ]  }  ;
+    # creator
+    p:P170 {
+        ps:P170 [ <http://www.wikidata.org/entity>~ ]  ;
+        pq:P831 [wd:Q33231] ;
+} ? ;
+    # inventory number
+    p:P217 {       ps:P217 xsd:string } +;
+    # fabrication method
+    p:P2079 {     ps:P2079 @<bornDigital> OR @<analog> } ;
+    # described at URL
+    p:P973 {
+       ps:P973 xsd:string ;
+       pq:P407 [<http://www.wikidata.org/entity>~] ;
+       pq:P813 xsd:dateTime  }  ;
+    # on focus list of Wikidata WikiProject IDEA
+    p:5008 {
+    ps:P5008 [wd:Q114241199]  }  ;
+    # Wikimedia Commons Category
+    p:P373 {
+    ps:P373 xsd:string } ;
+    # location photo was taken
+    p:P1071 {
+    ps:P1071   [wd:Q464266] } ;
+    # state of conservation
+    p:P5816 {
+    ps:P5816 [wd:Q56557591 wd:Q106379705 wd:Q23009439] ;
+    pq:P518 [ <http://www.wikidata.org/entity>~ ] } * ;
+    # excavation season
+    p:P793 {
+    ps:P793 @<excavation_season> }   ;
+    # photo of a specific artifact
+    p:P144  [<http://www.wikidata.org/entity>~] *;
+
+}
+
+
+<yuag> {
+   p:P195 {        ps:P195 [ wd:Q1568434 ]    } ;
+    # inventory number
+    p:P217 {        ps:P217 xsd:string    } ;
+}
+
+<beinecke> {
+   p:P195 {        ps:P195 [ wd:Q814779 ]    } ;
+}
+
+<photo> {
+  p:P31 {  ps:P31 [wd:Q125191 wd:Q595597 wd:Q57408632 wd:Q105833892 wd:Q116878973 wd:Q117011379 wd:Q117011365 wd:Q5459695 wd:Q5460211] }
+}
+
+<bornDigital> {
+p:P2079 {   ps:2079  [wd:Q173095]      }  ;
+}
+
+<analog>  {
+p:P2079 {  ps:P2079  [wd:Q355516] ;
+                  pq:P585   xsd:dateTime   } ;
+}
+
+<excavation_season> {
+  p:P361 {   ps:P361   [wd:Q117156870] {1} } 
+  	OR 
+         {   ps:P361   [wd:Q117156870] *;
+             pq:P1480  [wd:Q13649246] } ; 
+}

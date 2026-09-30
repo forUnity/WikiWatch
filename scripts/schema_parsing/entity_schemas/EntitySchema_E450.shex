@@ -1,0 +1,20 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q13406463 } limit 5
+#
+# Invalid items SPARQL query: select * where { ?x wdt:P31 wd:Q13406463 . MINUS { ?x wdt:P360 [] } } limit 5
+
+start = @<#list>
+
+<#linkedList> {
+  wdt:P31 [ wd:Q13406463 ] ;
+}
+
+<#list> {
+  wdt:P31 [ wd:Q13406463 ] ;
+  wdt:P360 IRI + ; # at least one 'is a list of'
+  wdt:P1889 @<#linkedList> * ; # optionally, a 'different from' another list
+  wdt:P155 @<#linkedList> ? ; # optionally, a single 'follows'
+  wdt:P156 @<#linkedList> ? ; # optionally, a single 'followed by'
+}

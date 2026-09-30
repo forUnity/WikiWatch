@@ -1,0 +1,30 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+#Created with the help of https://huggingface.co/spaces/b289zhan/ESGen 
+
+start = @<large_language_model>
+
+<large_language_model> {
+	 wdt:P31 . + ;  # instance of
+	 wdt:P6216 . + ;  # copyright status
+	 wdt:P275 . + ;  # copyright license
+	 wdt:P138 . * ;  # named after 
+	 wdt:P279 . * ;  # subclass of
+	 wdt:P178 . * ;  # developer 
+	 wdt:P366 . * ;  # has use
+	 wdt:P1343 . * ;  # described by source
+	 wdt:P2283 . * ;  # uses
+	 wdt:P155 . * ;  # follows
+	 wdt:P156 . * ;  # followed by
+	 wdt:P1535 . * ;  # used by
+	 wdt:P361 . * ;  # part of
+	 wdt:P5008 . * ;  # on focus list of Wikimedia project
+	 wdt:P144 . * ;  # based on
+	 wdt:P277 . * ;  # programmed in
+	 wdt:P400 . * ;  # platform
+	 wdt:P4290 . * ;  # official app
+	 wdt:P306 . * ;  # operating system
+	 wdt:P1547 . * ;  # depends on software
+}

@@ -1,0 +1,38 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start = @<wikidata_item>
+
+<wikidata_item>  {
+  # Is a wikibase item
+  rdf:type [wikibase:Item] ;
+  
+  # Labels, description and aliases
+  (rdfs:label rdf:langString ;
+  skos:prefLabel rdf:langString ;
+  schema:name rdf:langString ;
+  schema:description rdf:langString? ;
+  skos:altLabel rdf:langString* ;
+  )+ ;
+    
+}
+
+<wikimedia_article> {
+  schema:about @<wikidata_item> ;
+  schema:inLanguage @<wikimedia_supported_languages> ;
+  schema:isPartOf @<wikimedia_projects> ;
+  schema:name rdf:langString ;
+}
+
+<wikimedia_supported_languages> [
+  "en"
+]
+
+<wikimedia_projects> [
+  
+]

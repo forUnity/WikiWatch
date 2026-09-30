@@ -1,0 +1,39 @@
+## Import shapes about references
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E273>
+PREFIX E273: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E273#>
+
+## Import shapes about external identifiers
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E274>
+PREFIX E274: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E274#>
+
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX obo: <http://purl.obolibrary.org/obo/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+start=@<#gene-wiki-symptom-item>
+
+<#gene-wiki-symptom-item> EXTRA p:P279 p:P2888 
+   {
+    p:P279 @<#P279_subclassof>* ;
+	p:P2888 @<#P2888_exactmatch> ;
+  
+    # Identifiers
+    p:P8656      @E274:P8656_symptom_ontology ;
+}
+
+## Shapes describing statements in detail.
+<#P279_subclassof> {
+   ps:P279 @<#gene-wiki-disease-item> OR {
+       ps:P279 [wd:Q12136] ;
+       prov:wasDerivedFrom 	@E273:symptom-ontology-reference ;
+   } ;
+}
+            
+<#P2888_exactmatch> {
+  ps:P2888 [obo:~] ;
+  prov:wasDerivedFrom 	@E273:symptom-ontology-reference ;
+}

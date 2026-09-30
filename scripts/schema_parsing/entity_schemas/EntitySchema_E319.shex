@@ -1,0 +1,39 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# see https://www.wikidata.org/wiki/Wikidata:WikiProject_European_Bath_Waters
+# project WD:Q107096245 European Bathing Waters
+# Example SPARQL query: 
+# SELECT * WHERE {?item wdt:P9616 ?bathWater} limit 10
+# https://w.wiki/3Jfj
+
+start = @<EuropeanBeach>
+
+<EuropeanBeach> EXTRA wdt:P9616 {
+ wdt:P31   [ wd:Q567998 ]  ; # instance of beach
+ wdt:P17   . + ; # country
+ wdt:P131  .          + ; # located in the administrative territorial entity              
+ wdt:P9616  .          + ; # Eionet bathingWaterIdentifier               
+ wdt:P625  .          + ; # coordinates              
+ wdt:P276  .          * ; # location              
+ wdt:P856  .          + ; # official website   
+ wdt:P706  .          * ; # located on terrain feature            
+ wdt:P206  .          + ; # located in or next to body of water              
+ wdt:P973  .          * ; # described by source              
+ wdt:P4173  .          * ; # Instagram location id              
+ wdt:P1997  .          * ; # Facebook location id              
+ wdt:P2572  .          * ; # hashtag              
+ wdt:P6375  .          * ; # street address
+ wdt:P2789  .          * ; # connects with
+ wdt:P3134  .          * ; # Trip Advisory id
+ wdt:P4238  .          * ; # webcam page URL
+ wdt:P3018  .          * ; # located in protected area
+
+ wdt:P6104  [wd:Q107096245] ; # maintained by WikiProject European Bathing Waters 
+
+
+}

@@ -1,0 +1,25 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E418>
+PREFIX E418: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E418#>
+
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q69154911 } limit 5
+
+start = @<#podcastSeriesSeason>
+
+<#podcastSeriesSeason> {
+  wdt:P31 [wd:Q69154911] ; # instance of podcast
+  wdt:P31 IRI * ; # additional instance types are okay
+  wdt:P179 @ E418:podcast {1} ; # at least one podcast
+  wdt:P1113 xsd:decimal * ; # optionally, the number of episodes
+  wdt:P155 @<#podcastSeriesSeason> ? ; # optionally but recommended, follows
+  wdt:P155 . ? ; # or a blank node
+  wdt:P156 @<#podcastSeriesSeason> ? ; # optionally but recommended, followed by
+  wdt:P156 . ? ; # or a blank node
+}

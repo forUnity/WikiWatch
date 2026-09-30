@@ -1,0 +1,95 @@
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://www.wikidata.org/wiki/Special:EntitySchemaText/E367#> 
+
+# Example SPARQL Query:
+# select ?x where { ?x wdt:P31 wd:Q95001953 } limit 10
+# select ?p { values ?p { wd:Q112700944 }}
+
+
+start = @:ResearchSoftware
+
+:ResearchSoftware EXTRA wdt:P31 {
+  wdt:P31   @:SoftwareInstance +     ; # instance of software
+  wdt:P50   @:Author *               ; # author
+  wdt:P170  @:Creator *              ; # creator
+  wdt:P178  @:Developer *            ; # developer
+  wdt:P277  @:ProgrammingLanguage *  ; # ProgrammingLanguage
+  wdt:P306  @:OperatingSystem *      ; # Operating system
+  wdt:P348  xsd:string ?             ; # Sofware version
+  wdt:P356  xsd:string ?             ; # DOI
+  wdt:P366  @:Usage *                 ; # has use
+  wdt:P400  @:Platform *             ; # platform
+  wdt:P571  xsd:dateTime ?           ; # Inception  
+  wdt:P767  @:Contributor *          ; # Contributor
+  wdt:P856  @:OfficialWebSite *      ; # OfficialWebSite
+  wdt:P1324 @:SourceCodeRepo *       ; # Source code repository
+  wdt:P1343 @:Source   ?             ; # Described by source 
+  wdt:P1476 rdf:langString ?         ; # title
+  wdt:P1547 @:Software *             ; # Depends on
+  wdt:P2209 @:SourceForgeProject *   ; # SourceForge Project
+  wdt:P9712 @:ResearchResourceId *   ; # Research resource identifier
+}
+
+
+:SoftwareInstance [ 
+  wd:Q7397         # Software
+  wd:Q95001953     # Research software
+  wd:Q1639024      # Mathematical software
+  wd:Q166142       # Application
+  wd:Q11121294     # Simulation software
+] 
+# Commented out to obtain better visualizations
+# OR {   wdt:P279 @<SoftwareInstance> + } # subclassOf software
+
+:Author { 
+}
+
+:Creator { 
+}
+
+
+:Contributor {}
+
+:Software EXTRA wdt:P31 {
+ wdt:P31    @:SoftwareInstance +
+}
+
+:ProgrammingLanguage { 
+}
+
+:OfficialWebSite IRI
+
+:Developer { 
+}
+
+
+:OperatingSystem { 
+}
+
+:Platform { 
+}
+
+:ResearchResourceId {
+}
+
+:SourceCodeRepo { 
+}
+
+# 
+:Source {
+ wdt:P31 @:ScholarlyArticle  
+}
+
+:SourceForgeProject {}
+
+:ScholarlyArticle [ 
+  wd:Q13442814 # Scholarly article 
+]
+
+:Usage {}

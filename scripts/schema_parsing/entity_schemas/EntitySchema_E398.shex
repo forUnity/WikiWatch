@@ -1,0 +1,48 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+# SELECT ?item ?itemLabel WHERE {?item (wdt:P31/(wdt:P279*)) wd:Q7493941}
+# https://shex.io/shex-primer/#tripleConstraints
+#    "+" - one or more
+ #   "*" - zero or more
+  #  "?" - zero or one
+   # "{m}" - exactly m
+    #"{m,n}" - at least m, no more than n
+
+start = @<shelter>
+
+<shelter> EXTRA wdt:P31 {
+  wdt:P31 [wd:Q1797440 wd:Q96357537 wd:Q96391237 wd:Q17087359 wd:Q5784097 wd:Q182676 wd:Q96399447 wd:Q96472093]{1}; # shelters
+  wdt:P17 .+; #  country
+  wdt:P18 xsd:string*; # image
+  wdt:P30 .?; # continent
+  wdt:P131 .+; # admin
+  wdt:P137 .; # operator
+  wdt:P138 .?; # named after
+  wdt:P206 .*; # located in or near water area
+  wdt:P242 .?; # locator map image
+  wdt:P276 .?; # place
+  wdt:P361 .+; # part of - all (hiking) shelters should generally  be part of a single campsite
+  wdt:P373 xsd:string?; # Commons category
+  wdt:P402 .{0}; # shelters should generally not be relations in osm
+  wdt:P527 .*; # has part
+  wdt:P571 xsd:dateTime?; # inception
+  wdt:P625 xsd:coordinate; # coordinate location
+  wdt:P706 .?; # located on the specified (geo)physical feature. Should not be used when the value is only political/administrative (P131) or a mountain range (P4552).
+  wdt:P856 .?; # official website
+  wdt:P912 .*; # equipped with
+  wdt:P973 . * ; # described at url
+  wdt:P1448 xsd:string?; # official name 
+  wdt:P2561 xsd:string?; # name
+  wdt:P2670 .*; #  has part(s) of the class
+  wdt:P3018 .?; # located in protected area
+  wdt:P3173 .*; # offers view on
+  wdt:P4552 .?; # mountain range
+  wdt:P5775 xsd:string* ; # image of interior
+  wdt:P7418 .*; # front image 
+  wdt:P8517 xsd:string* ; # image of view 
+  wdt:P9676 .{0}; # vindskyddskartan id
+  wdt:P10467 xsd:string?; # naturkartan id 
+  wdt:P11177 xsd:string{0}; # camp wild id 
+}

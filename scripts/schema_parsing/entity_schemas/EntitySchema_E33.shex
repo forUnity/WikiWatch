@@ -1,0 +1,33 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+start = @<#individual>
+
+<#individual> {
+  wdt:P31 [wd:Q179959]; # instance of: kākāpō
+  wdt:P18 IRI+; # image(s)
+  wdt:P21 [ # sex or gender
+	wd:Q43445 # female organism
+	wd:Q44148 # male organism
+  ];
+  p:P746 @<#date_of_disappearance_statement>?;
+  p:P570 @<#date_of_death_statement>?;
+  wdt:P22 @<#individual>?; # father
+  wdt:P25 @<#individual>?; # mother
+  wdt:P19 IRI?; # place of birth
+  wdt:P2974 IRI?; # habitat
+}
+
+<#date_of_disappearance_statement> {
+  ps:P746 xsd:dateTime;
+  prov:wasDerivedFrom IRI; # reference(s)
+}
+
+<#date_of_death_statement> {
+  ps:P570 xsd:dateTime;
+  prov:wasDerivedFrom IRI; # reference(s)
+}

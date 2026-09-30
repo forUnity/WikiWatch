@@ -1,0 +1,15 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E239>
+PREFIX E239: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E239#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Example SPARQL query: select * where { ?x wdt:P31 wd:Q11173 ; wdt:P2063 [] } limit 5
+
+start = @<#wikidata-lipid>
+
+<#wikidata-lipid> @ E239:wikidata-chemical-compound AND {
+  wdt:P2063 .* ; # LIPID MAPS identifier
+  wdt:P8691 .* ; # SwissLipids ID
+}

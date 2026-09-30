@@ -1,0 +1,44 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q7318358. } LIMIT 10
+
+start = @<DE_review_article>
+
+<DE_review_article> EXTRA p:P31{
+
+
+    # instance of
+    p:P31 {        ps:P31 [ wd:Q7318358 ]    } + ;
+    # main subject
+    p:P921 {    ps:P921 [ <http://www.wikidata.org/entity>~ ]    } * ;
+    # publication date
+    p:P577 {        ps:P577 xsd:dateTime    } ? ;
+    # published in
+    p:P1433 {        ps:P1433 [ <http://www.wikidata.org/entity>~ ]    } ? ;
+    # author (if author has Wikidata item)
+    p:P50 {        ps:P50 [ <http://www.wikidata.org/entity>~ ]    } * ;
+    # author name string
+    p:P2093 {        ps:P2093 xsd:string    } * ;    
+    # page(s)
+    p:P304 {        ps:P304 xsd:string    } ? ;
+    # DOI
+    p:P356 {          ps:P356 xsd:string    } ? ;
+    # language of work or name
+    p:P407 {        ps:P407 [ <http://www.wikidata.org/entity>~ ]    } ? ;
+    # issue
+    p:P433 {        ps:P433 xsd:string    } ? ;
+    # volume
+    p:P478 {        ps:P478 xsd:string    } ? ;
+    # title
+    p:P1476 {        ps:P1476 rdf:langString    } ? ;
+    
+    
+}

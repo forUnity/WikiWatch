@@ -1,0 +1,1 @@
+{"type": "Schema", "start": "complex_portal_entry", "shapes": [{"type": "Shape", "id": "complex_portal_entry", "expression": {"type": "TripleConstraint", "predicate": "http://www.wikidata.org/prop/direct/P7718", "valueExpr": {"type": "NodeConstraint", "datatype": "http://www.w3.org/2001/XMLSchema#string"}}}]}

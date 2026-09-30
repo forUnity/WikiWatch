@@ -1,0 +1,50 @@
+## schema for file format with PRONOM id
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# QUERY MAP:   SELECT ?item  ?puid WHERE {?item wdt:P2748 ?puid } LIMIT 10
+
+start=@<#file_format_with_PRONOM_id>
+
+<#file_format_with_PRONOM_id> EXTRA p:P31 {
+	# instance of
+	p:P31 { ps:P31  [wd:Q235557] }* ;
+
+	# subclass of
+        p:P279 { ps:P279 IRI }* ;
+
+	# publication date or inception date 
+	(  p:P577 { ps:P577 xsd:dateTime } ; p:P571 { ps:P571 xsd:dateTime } ?
+	 | p:P571 { ps:P571 xsd:dateTime } ) *;
+
+	# developer
+	p:P178 { ps:178 IRI }* ;
+
+	# media type
+	p:P1163 { ps:P1163 LITERAL }* ;
+
+	# version
+	p:P348 { ps:P348 LITERAL }* ;
+
+	# file extension
+	p:P1195 {ps:P1195 LITERAL }* ;
+	
+	## Identifiers
+
+	# PRONOM ID
+	p:2748 xsd:string  ;
+
+	# File Format Wiki ID
+	wdt:P3381  . * ;
+
+	# LoC FDD ID
+	wdt:P3266  . * ;
+	
+
+	
+
+}

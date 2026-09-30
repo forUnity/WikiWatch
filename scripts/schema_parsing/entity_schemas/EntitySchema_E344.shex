@@ -1,0 +1,36 @@
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<gene> {
+   wdt:P31 [wd:Q7187] | 
+   wdt:P351 xsd:string ;
+   wdt:P1050 @<disease> | 
+   wdt:P2293 @<disease> ;  
+}
+
+<disease> {
+   wdt:P31 [ wd:Q12126 ] |
+   wdt:P699 xsd:string ;
+}
+
+<pathway> {
+  wdt:P2410 xsd:string ;
+  wdt:P527 @<gene> ;
+  wdt:P1050 @<disease> ;
+}
+
+<variant> {
+   wdt:P3433 @<gene> ;
+   wdt:P3354 @<therapy> |
+   wdt:P3355 @<therapy> |
+   wdt:P3356 @<therapy> |
+   wdt:P3357 @<therapy> |
+   wdt:P3358 @<therapy> |
+   wdt:P3359 @<therapy>  ; 
+}
+  
+<therapy> {
+  pq:P2175 @<disease> ;
+}

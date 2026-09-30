@@ -1,0 +1,44 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# Example SPARQL query: 
+# SELECT ?cemetery WHERE { ?cemetery wdt:P5259 ?gid; wdt:P31 wd:Q39614 } limit 5
+# https://w.wiki/5yFG
+
+start = @<SwedishG>
+
+<SwedishG> EXTRA wdt:P106 {
+ wdt:P31   [ wd:Q39614 ]  ; # instance of cemetery
+ wdt:P5259  .          + ; # Gravestonesid       
+ wdt:P2025 .          + ; # Findagrave cemeteryid
+ wdt:P17   [ wd:Q34 ]  ; # country Sweden             
+ wdt:P18 .          ? ; # Picture
+ wdt:P856 .          + ; # www
+ wdt:P1343 . +; # describe by source
+ wdt:P131 .          * ; # Administrative   
+ wdt:P625 .           ; # Coordinates   
+ wdt:P10689 .          * ; # OSM
+ wdt:P8592 . * ; # aerial view
+ wdt:P2789 . * ; # connects with
+ wdt:P6104 [wd:Q115206846] ; # WikiProject
+ wdt:P373 . ; # Wikicommons
+ wdt:P1260 . ? ; # RAÄ
+ #wdt:P1435 . ? ; # heritage designation
+# wdt:P1705 . ? ; # native label
+ #wdt:P1791 . ? ; # category of people buried here
+ #wdt:P1889 . ? ; # not same as
+# wdt:P2003 . ? ; # Insta account
+# wdt:P4173 . ? ; # Insta place id
+# wdt:P2614 . ? ; # World Heritage criteria
+ wdt:P276   . ? ; # Place
+# wdt:P3222   . ? ; # NE.se ID
+# wdt:P7607   . ? ; # WikiTree category
+# wdt:P84   . ? ; # designer
+# wdt:P757   . ? ; # World Heritage Site ID
+# wdt:P571   . ? ; # inception 
+ wdt:P706 . ? ; # placed on 
+}

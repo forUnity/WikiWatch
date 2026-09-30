@@ -1,0 +1,20 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+# QUERY MAP:  SELECT ?item WHERE {?item wdt:P31 wd:Q918448.  } LIMIT 10
+
+start = @<coin_denomination>
+
+<coin_denomination> EXTRA p:P31 {
+   	# instance of
+    p:P31 { ps:P31 [ wd:Q918448] }
+}

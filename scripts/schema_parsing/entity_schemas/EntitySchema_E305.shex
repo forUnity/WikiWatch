@@ -1,0 +1,47 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX p: <http://www.wikidata.org/prop/>
+
+# see GITHUB https://github.com/salgo60/SvenskaBadstrander and video https://youtu.be/ZHdjwbLgzvE
+# Example SPARQL query: 
+# SELECT * WHERE {?item wdt:P6104 wd:Q106774536;wdt:P9616 ?xxx}
+# https://w.wiki/3Jfj
+
+start = @<SwedishBeach>
+
+<SwedishBeach> EXTRA wdt:P9616 {
+ wdt:P31   [ wd:Q567998 wd:Q121358286 wd:Q119052049 wd:Q12000749]+  ; # instance of beach
+ wdt:P17   [ wd:Q34 ]  ; # country Sweden
+ wdt:P131  .          + ; # located in the administrative territorial entity              
+ wdt:P9616  .          + ; # bathing water identifiers              
+ wdt:P625  .          + ; # coordinates              
+ wdt:P276  .          * ; # location              
+ wdt:P856  .          * ; # official website   
+ wdt:P706  .          * ; # located on terrain feature            
+ wdt:P206  .          + ; # located in or next to body of water              
+ wdt:P973  .          * ; # described by source              
+ wdt:P4173  .          * ; # Instagram location id              
+ wdt:P1997  .          * ; # Facebook location id              
+ wdt:P2572  .          * ; # hashtag              
+ wdt:P6375  .          * ; # street address
+ wdt:P2789  .          * ; # connects with
+ wdt:P9615  .          * ; # badkartan - swedish website about opinions of the bathing water
+ wdt:P3134  .          * ; # Trip Advisory id
+ wdt:P4238  .          * ; # webcam page URL
+ wdt:P3018  .          * ; # located in protected area
+ wdt:P1947  .          * ; # Mapillary-ID - is good for understanding accessability
+
+
+ wdt:P6104  [wd:Q106774536] ; # maintained by WikiProject Swedish beaches 
+
+ # Optional description property for 
+ wdt:P1343 [wd:Q632988  wd:Q10518645 wd:Q130363332 wd:Q130363369]?                 
+# Q632988 is the EEA where all bathing water following sss should be reported to - called xxx
+# Q10518645 is the Swedish government that report Swedish bathing water that then are reported to EEA
+# Q130363332 is an API for Swedish bathing water were you can access bathing data for the last 4 years
+# Q130363369 is another API for Swedish bathing water were you can access bathing data for the last 4 years
+
+}

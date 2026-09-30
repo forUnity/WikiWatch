@@ -1,0 +1,69 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+
+# query map: SELECT ?item WHERE {?item wdt:P31 wd:Q194188. } LIMIT 10 
+
+start = @<#spaceport>
+
+<#spaceport>  {
+    
+    # instance of
+    wdt:P31 [ wd:Q194188 ] ;
+    # country;
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] + ;
+    # coordinate location; 
+    wdt:P625 geo:wktLiteral ;
+    # image; 
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # logo image;
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # located in the administrative territorial entity
+    wdt:P131 [ <http://www.wikidata.org/entity>~ ] * ;
+    # operator;
+    wdt:P137 [ <http://www.wikidata.org/entity>~ ] * ;
+    # Commons category; 
+    wdt:P373 xsd:string ? ;
+    # official website; 
+    wdt:P856 IRI ? ;
+    # inception; 
+    wdt:P571 xsd:dateTime ? ;
+    # geoshape; 
+    wdt:P3896 [ <http://commons.wikimedia.org/data/main>~ ] ? ;
+    # owned by; 
+    wdt:P127 [ <http://www.wikidata.org/entity>~ ] * ;
+    # has part; 
+    wdt:P527 [ <http://www.wikidata.org/entity>~ ] * ;
+    # located in or next to body of water;
+    wdt:P206 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # area; 
+    wdt:P2046 xsd:decimal ? ;
+    # place served by transport hub; 
+    wdt:P931 [ <http://www.wikidata.org/entity>~ ] * ;
+    # GRID ID; 
+    wdt:P2427 xsd:string ? ;
+    # US National Archives Identifier; 
+    wdt:P1225 xsd:string ? ;
+    # Ringgold ID; 
+    wdt:P3500 xsd:string ? ;
+    # ROR ID; 
+    wdt:P6782 xsd:string ? ;
+    # OSM relation ID; 
+    wdt:P402 xsd:string ? ;
+    #Commons gallery;
+    wdt:P935 xsd:string ? ;    
+    # HAL structure ID; 
+    wdt:P6773 xsd:string ? ;
+    # VIAF ID; 
+    wdt:P214 xsd:string ? ;
+    # GeoNames ID; 
+    wdt:P1566 xsd:string ? ;
+    # ISNI; 
+    wdt:P213 xsd:string ? ;
+    # Structurae structure ID;
+    wdt:P454 xsd:string ? ;
+    
+}

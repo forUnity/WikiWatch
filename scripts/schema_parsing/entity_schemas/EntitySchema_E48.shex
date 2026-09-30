@@ -1,0 +1,10 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+BASE <http://www.wikidata.org/entity/>
+
+START = @<E48#human>
+
+<E48#human> EXTRA wdt:P31 {
+  $<E48#human-instance> wdt:P31 [ wd:Q5 ]
+}

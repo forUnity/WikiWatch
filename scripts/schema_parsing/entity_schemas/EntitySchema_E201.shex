@@ -1,0 +1,55 @@
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/>
+
+# Example queries: 
+# 5 authors: SELECT * WHERE { ?person wdt:P106 wd:Q36180 } LIMIT 5
+# Specific author (Q42): SELECT DISTINCT ?author WHERE {   VALUES ?author {  wd:Q42  }  }
+
+start = @<PersonShape>
+
+<PersonShape> EXTRA wdt:P31 wdt:P106 {
+
+      # instance of
+      wdt:P31 [ wd:Q5 ] ;
+
+      # sex or gender
+      wdt:P21 IRI ? ;
+
+      # occupation
+      wdt:P106 [ wd:Q2526255 ] ;
+
+      # Commons category
+      wdt:P373 . ?;
+
+      # notable work
+      wdt:P800 IRI *;
+
+      # date of birth
+      wdt:P569 xsd:dateTime *;
+
+      #place of birth
+      wdt:P19 IRI ?;
+
+      # date of death
+      wdt:P570 xsd:dateTime * ;
+
+      # institutional context
+      wdt:P6379 . ;
+
+      ## External Identifiers
+
+      #ISNI ID
+      #p:P213 { ps:P213  xsd:string *; psn:P213  IRI *;  } +;
+      wdt:P213  xsd:string * ;
+
+      #IMDB ID
+      p:P345 { ps:P345  xsd:string *; psn:P345  IRI *;  } +;
+
+      #ULAN ID
+      p:P245 { ps:P245  xsd:string *; psn:P245  IRI *;  } +;
+
+}

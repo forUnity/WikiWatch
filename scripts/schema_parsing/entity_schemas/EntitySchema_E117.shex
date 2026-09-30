@@ -1,0 +1,105 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Result for pattern { wdt:~ __;} and query SELECT DISTINCT ?x WHERE {?x wdt:P31 wd:Q11032. } LIMIT 10
+
+start = @<newspaper>
+
+<newspaper> {
+    # instance of; frequency: [10/10]
+    wdt:P31 [ wd:Q11032 ] + ;
+    # language of work or name; frequency: [8/10]
+    wdt:P407 [ <http://www.wikidata.org/entity>~ ] * ;
+    # inception; frequency: [8/10]
+    wdt:P571 xsd:dateTime ? ;
+    # title; frequency: [8/10]
+    wdt:P1476 rdf:langString ? ;
+    # official website; frequency: [6/10]
+    wdt:P856 IRI ? ;
+    # country of origin; frequency: [5/10]
+    wdt:P495 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # country; frequency: [4/10]
+    wdt:P17 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # logo image; frequency: [3/10]
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # headquarters location; frequency: [2/10]
+    wdt:P159 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # place of publication; frequency: [2/10]
+    wdt:P291 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # dissolved, abolished or demolished; frequency: [2/10]
+    wdt:P576 xsd:dateTime ? ;
+    # Commons category; frequency: [2/10]
+    wdt:P373 xsd:string ? ;
+    # founded by; frequency: [2/10]
+    wdt:P112 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # owned by; frequency: [2/10]
+    wdt:P127 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # award received; frequency: [2/10]
+    wdt:P166 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # newspaper format; frequency: [2/10]
+    wdt:P3912 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # image; frequency: [1/10]
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # short name; frequency: [1/10]
+    wdt:P1813 rdf:langString ? ;
+    # editor; frequency: [1/10]
+    wdt:P98 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # publisher; frequency: [1/10]
+    wdt:P123 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # topic's main category; frequency: [1/10]
+    wdt:P910 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # director/manager; frequency: [1/10]
+    wdt:P1037 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # political ideology; frequency: [1/10]
+    wdt:P1142 [ <http://www.wikidata.org/entity>~ ] * ;
+    # Twitter username; frequency: [1/10]
+    wdt:P2002 xsd:string ? ;
+    # Facebook ID; frequency: [1/10]
+    wdt:P2013 xsd:string ? ;
+    # publication interval; frequency: [1/10]
+    wdt:P2896 xsd:decimal ? ;
+    # Telegram username; frequency: [1/10]
+    wdt:P3789 xsd:string ? ;
+    # editor-in-chief; frequency: [1/10]
+    wdt:P5769 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # located at street address; frequency: [1/10]
+    wdt:P6375 rdf:langString ? ;
+    # owner of; frequency: [1/10]
+    wdt:P1830 [ <http://www.wikidata.org/entity>~ ] ? ;
+
+    ## identifiers
+    # Freebase ID; frequency: [6/10]
+    wdt:P646 xsd:string ? ;
+    # Encyclopædia Britannica Online ID; frequency: [3/10]
+    wdt:P1417 xsd:string ? ;
+    # Quora topic ID; frequency: [3/10]
+    wdt:P3417 xsd:string ? ; 
+    # ISSN; frequency: [2/10]
+    wdt:P236 xsd:string * ;
+    # OCLC control number; frequency: [2/10]
+    wdt:P243 xsd:string ? ;
+    # ISFDB series ID; frequency: [1/10]
+    wdt:P1235 xsd:string ? ;    
+    # GND ID; frequency: [1/10]
+    wdt:P227 xsd:string ? ;
+    # NKCR AUT ID; frequency: [1/10]
+    wdt:P691 xsd:string ? ;  
+    # Great Russian Encyclopedia Online ID; frequency: [1/10]
+    wdt:P2924 xsd:string ? ;
+    # Treccani ID; frequency: [1/10]
+    wdt:P3365 xsd:string ? ;
+    # Cultureel Woordenboek identifier; frequency: [1/10]
+    wdt:P3569 xsd:string ? ;
+    # Radio Radicale organizer ID; frequency: [1/10]
+    wdt:P4339 xsd:string ? ;
+    # Courrier international source ID; frequency: [1/10]
+    wdt:P5554 xsd:string ? ;
+    # NLM Unique ID; frequency: [1/10]
+    wdt:P1055 xsd:string ? ;
+    # Scopus Source ID; frequency: [1/10]
+    wdt:P1156 xsd:string ? ;
+    # JUFO ID; frequency: [1/10]
+    wdt:P1277 xsd:string ? ;
+}

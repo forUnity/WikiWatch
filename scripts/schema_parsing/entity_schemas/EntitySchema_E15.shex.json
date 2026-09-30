@@ -1,0 +1,559 @@
+{
+    "type": "Schema",
+    "start": "danish-lexeme",
+    "shapes": [
+        {
+            "type": "ShapeAnd",
+            "id": "danish-lexeme",
+            "shapeExprs": [
+                {
+                    "type": "Shape",
+                    "expression": {
+                        "type": "EachOf",
+                        "expressions": [
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://purl.org/dc/terms/language",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "values": [
+                                        "http://www.wikidata.org/entity/Q9035"
+                                    ]
+                                },
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "language"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "The language of a Danish lexeme must be Danish."
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://wikiba.se/ontology#lemma",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "values": [
+                                        {
+                                            "type": "Language",
+                                            "languageTag": "da"
+                                        }
+                                    ]
+                                },
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "lemma"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "The lemma must be Danish."
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://wikiba.se/ontology#lexicalCategory",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "values": [
+                                        "http://www.wikidata.org/entity/Q1084",
+                                        "http://www.wikidata.org/entity/Q24905",
+                                        "http://www.wikidata.org/entity/Q34698",
+                                        "http://www.wikidata.org/entity/Q36224",
+                                        "http://www.wikidata.org/entity/Q36484",
+                                        "http://www.wikidata.org/entity/Q62155",
+                                        "http://www.wikidata.org/entity/Q63116",
+                                        "http://www.wikidata.org/entity/Q103184",
+                                        "http://www.wikidata.org/entity/Q380057",
+                                        "http://www.wikidata.org/entity/Q4833830",
+                                        "http://www.wikidata.org/entity/Q55064750"
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/direct/P31",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "nodeKind": "iri"
+                                },
+                                "min": 0,
+                                "max": -1,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "instance of"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "zero or more instance of"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/direct/P5187",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "values": [
+                                        {
+                                            "type": "Language",
+                                            "languageTag": "da"
+                                        }
+                                    ]
+                                },
+                                "min": 0,
+                                "max": -1,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "word stem"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "zero or more word stems"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/direct/P1343",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "nodeKind": "iri"
+                                },
+                                "min": 0,
+                                "max": -1,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "described in"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "zero or more described in"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/direct/P5323",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "nodeKind": "iri"
+                                },
+                                "min": 0,
+                                "max": -1,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "attested in"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "zero or more attested in"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/direct/P5238",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "nodeKind": "iri"
+                                },
+                                "min": 0,
+                                "max": 4,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "compound parts"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "zero or up to four compound parts"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/P5912",
+                                "valueExpr": "#oqaasileriffik-statement",
+                                "min": 1,
+                                "max": -1,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "Oqaasileriffik ID"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "Danish lexeme must have one or more Oqaasileriffik statement"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/P6140",
+                                "valueExpr": "#dannet-statement",
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "DanNet identifier"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "Danish lexeme must have novalue or one DanNet statement"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/P5831",
+                                "valueExpr": "#danish-usage-example-statement",
+                                "min": 1,
+                                "max": -1,
+                                "annotations": [
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                        "object": {
+                                            "value": "Usage example"
+                                        }
+                                    },
+                                    {
+                                        "type": "Annotation",
+                                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                        "object": {
+                                            "value": "Danish lexeme must have one or more usage examples"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "ShapeOr",
+                    "shapeExprs": [
+                        {
+                            "type": "ShapeNot",
+                            "shapeExpr": {
+                                "type": "Shape",
+                                "expression": {
+                                    "type": "TripleConstraint",
+                                    "predicate": "http://www.wikidata.org/prop/direct/P31",
+                                    "valueExpr": {
+                                        "type": "NodeConstraint",
+                                        "datatype": "http://www.wikidata.org/entity/Q245423"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "Shape",
+                            "expression": {
+                                "type": "TripleConstraint",
+                                "predicate": "http://www.wikidata.org/prop/direct/P5238",
+                                "valueExpr": {
+                                    "type": "NodeConstraint",
+                                    "nodeKind": "iri"
+                                },
+                                "min": 2,
+                                "max": -1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Shape",
+            "id": "#danish-form",
+            "extra": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            ],
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.w3.org/ns/lemon/ontolex#Form"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://wikiba.se/ontology#grammaticalFeature",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "nodeKind": "iri"
+                        },
+                        "min": 0,
+                        "max": -1
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/lemon/ontolex#representation",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                {
+                                    "type": "Language",
+                                    "languageTag": "da"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/P5279",
+                        "valueExpr": "#danish-hyphenation-statement",
+                        "min": 1,
+                        "max": -1,
+                        "annotations": [
+                            {
+                                "type": "Annotation",
+                                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                "object": {
+                                    "value": "Hyphenation"
+                                }
+                            },
+                            {
+                                "type": "Annotation",
+                                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                "object": {
+                                    "value": "Danish form most have novalue, or one or more value statements"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#dannet-statement",
+            "extra": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            ],
+            "expression": {
+                "type": "OneOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/prop/novalue/P6140"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P6140",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "pattern": "^[0-9]{8}(-[1-9][0-9]*)?$"
+                        },
+                        "annotations": [
+                            {
+                                "type": "Annotation",
+                                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                "object": {
+                                    "value": "DanNet identifier"
+                                }
+                            },
+                            {
+                                "type": "Annotation",
+                                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                "object": {
+                                    "value": "DanNet identifier should either be novalue or a 8 digit string with possible suffix"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#oqaasileriffik-statement",
+            "extra": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            ],
+            "expression": {
+                "type": "OneOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/prop/novalue/P5912"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P5912",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "pattern": "[1-9][0-9]*"
+                        },
+                        "annotations": [
+                            {
+                                "type": "Annotation",
+                                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                                "object": {
+                                    "value": "Oqaasileriffik ID"
+                                }
+                            },
+                            {
+                                "type": "Annotation",
+                                "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#comment",
+                                "object": {
+                                    "value": "Must have novalue or one identifier for Oqaasileriffik online dictionary"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#danish-usage-example-statement",
+            "extra": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            ],
+            "expression": {
+                "type": "EachOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P5831",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                {
+                                    "type": "Language",
+                                    "languageTag": "da"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/qualifier/P5830",
+                        "valueExpr": "#danish-form"
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "nodeKind": "iri"
+                        },
+                        "min": 1,
+                        "max": -1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Shape",
+            "id": "#danish-hyphenation-statement",
+            "extra": [
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+            ],
+            "expression": {
+                "type": "OneOf",
+                "expressions": [
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "values": [
+                                "http://www.wikidata.org/prop/novalue/P5279"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.wikidata.org/prop/statement/P5279",
+                        "valueExpr": {
+                            "type": "NodeConstraint",
+                            "pattern": ".+\u2027.+"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

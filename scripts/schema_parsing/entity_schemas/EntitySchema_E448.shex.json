@@ -1,0 +1,1 @@
+{"type": "Schema", "start": "theorem", "shapes": [{"type": "Shape", "id": "theorem", "extra": ["http://www.wikidata.org/prop/direct/P31"], "expression": {"type": "TripleConstraint", "predicate": "http://www.wikidata.org/prop/direct/P31", "valueExpr": {"type": "NodeConstraint", "values": ["http://www.wikidata.org/entity/Q65943"]}}}]}

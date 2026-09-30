@@ -1,0 +1,50 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+#query map:  SELECT ?item WHERE {?item wdt:P31 wd:Q725744. } LIMIT 10
+
+start =@<#keyboard_layout>
+<#keyboard_layout> {
+
+    # instance of
+    wdt:P31 [ wd:Q725744 ] ;
+    # image
+    wdt:P18 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] * ;
+    # Commons category
+    wdt:P373 xsd:string ? ;
+    # discoverer or inventor
+    wdt:P61 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # official website
+    wdt:P856 [ <https:/>~ ] ? ;
+    # language of work or name
+    wdt:P407 [ <http://www.wikidata.org/entity>~ ] ? ;
+    # inception or time of discovery or invention
+    (p:571 {ps:P571 xsd:dateTime} ; p:P575 {ps:P575 xsd:dateTime} ?
+     | p:P575 {ps:P575 xsd:dateTime} ) *;
+    # named after
+    wdt:P138 [ <http://www.wikidata.org/entity>~ ] * ;
+    # derivative work
+    wdt:P4969 [ <http://www.wikidata.org/entity>~ ] * ;
+    # based on
+    wdt:P144 [ <http://www.wikidata.org/entity>~ ] * ;
+    # logo image
+    wdt:P154 [ <http://commons.wikimedia.org/wiki/Special:FilePath>~ ] ? ;
+    # copyright license
+    wdt:P275 [ <http://www.wikidata.org/entity>~ ] * ;
+    # operating system
+    wdt:P306 [ <http://www.wikidata.org/entity>~ ] * ;
+    # software version identifier
+    wdt:P348 xsd:string ? ;
+    # platform
+    wdt:P400 [ <http://www.wikidata.org/entity>~ ] * ;
+    # IMDb ID
+    wdt:P345 xsd:string ? ;
+    # name in kana
+    wdt:P1814 xsd:string ?
+    }

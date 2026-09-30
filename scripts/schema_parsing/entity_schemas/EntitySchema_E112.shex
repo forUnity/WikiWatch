@@ -1,0 +1,53 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# query map: SELECT ?item WHERE {?item wdt:P31 wd:Q1172284. } LIMIT 10 
+
+start = @<#data_set>
+
+<#data_set> EXTRA wdt:P31 {
+
+   # instance of
+   wdt:P31 [ wd:Q1172284 ] ;
+
+   # official website
+    wdt:P856 IRI * ;
+
+   # publication date
+   wdt:P577 xsd:dateTime ? ;
+
+   # country
+   wdt:P17 IRI * ;
+
+    # license
+    wdt:P275 IRI * ;
+
+    # language of work or name
+    wdt:P407 IRI  * ;
+
+    # publisher
+    wdt:P123 IRI * ;
+
+    # inception
+    wdt:P571 xsd:dateTime ? ;
+
+    # Datahub page
+    wdt:P2666 xsd:string ? ;
+
+    # BARTOC ID
+    wdt:P2689 xsd:string ? ;
+
+    # data.gouv.fr dataset ID
+    wdt:P6526 xsd:string ? ;
+
+    # SPARQL endpoint
+    wdt:P5305 IRI ? ;
+
+    # publication interval
+    wdt:P2896 xsd:decimal ? ;
+
+    # main subject
+    wdt:P921 IRI  ? ;
+}

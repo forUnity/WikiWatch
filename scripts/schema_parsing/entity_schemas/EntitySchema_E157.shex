@@ -1,0 +1,15 @@
+IMPORT <https://www.wikidata.org/wiki/Special:EntitySchemaText/E424>
+PREFIX E424: <https://www.wikidata.org/wiki/Special:EntitySchemaText/E424#>
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Schema
+start = @<#endangeredlanguage>
+
+<#endangeredlanguage> @ E424:language AND {
+  wdt:P31 [ wd:Q83365345 wd:Q83365347 wd:Q83365366 wd:Q83365404 wd:Q38058796 ] ;
+  wdt:P1999 [ wd:Q20672087 wd:Q20672088 wd:Q20672089 wd:Q20672090 wd:Q20672091 ] ;
+  wdt:P12341  .  * ;
+}

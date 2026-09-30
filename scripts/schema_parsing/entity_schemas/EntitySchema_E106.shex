@@ -1,0 +1,36 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# query map: SELECT ?item WHERE {?item wdt:P31 wd:Q1348589. } LIMIT 10
+
+start = @<#lunar_crater>
+<#lunar_crater>  EXTRA wdt:P31 {
+
+  # instance of
+  wdt:P31 [ wd:Q1348589 ];
+
+  # named after
+  wdt:P138 IRI;
+
+  # location
+  wdt:P276 IRI;
+
+  # image
+  wdt:P18 IRI + ;
+
+  # located on astronomical location
+  wdt:P376 IRI;
+
+  # coordinate location
+  p:P625 {ps:P625 geo:wktLiteral};
+
+  # diameter
+  p:P2386 {ps:P2386 xsd:decimal};
+
+  # Gazetteer of Planetary Nomenclature ID
+  wdt:P2824 xsd:string ;
+}

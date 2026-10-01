@@ -1,28 +1,14 @@
-# MP2025-WikiWatch
+# MP2025-WikiWatch Parser
+
+This parser is a modified version of [WiDiff: Extracting Changes from Wikidata's Edit History](https://arxiv.org/pdf/2609.08508).
 
 ## Getting Started
 
-### Server Access
+### Server
+Setup a Postgres server and download the wikidata history dumps.
 To access the server:
 
-1. Connect to the HPI network or via VPN
-2. ssh <name>.<lastname>@<server_ip> (name and lastname from your HPI email). Will ask you for your HPI password.
-   This will log you into the isfet server (`home/<name>.<lastname>`).
-
-All files are downloaded in `san2/data/wikidata-history-dumps` (from `home/<name>.<lastname>` go 2 back).
-There's a shared folder in `san2/data/wikiwatch` that you can use.
-
-SAN: 20TB on 7 HDDs (7.2k RPM, RAID 6) on SAN2
-
-### Database Access
-
-To access the database with changes:
-
-1. Connect to the HPI network or via VPN
-2. Navigate to [http://172.16.64.23:5050/browser/]
-3. Login credentials:
-   - **Username**: Your email (`<name>.<lastname>@student.hpi.uni-potsdam.de`)
-   - **Password**: Same as username
+For storage we had 20TB on 7 HDDs (7.2k RPM, RAID 6) on SAN2 available.
 
 **Database name**: `wikidata_entity_changes`
 
